@@ -1,0 +1,10 @@
+body{padding:0;margin:0;background:white;color:black;font-size:100%}
+nav,aside,#breadcrumbs ul,#print,.banners,footer,input,.button,#popup-quest,.zoom img.lens,#admMenu,#order,.vc img,.slideboxContainer .slideboxNext,.slideboxContainer .slideboxPrevious,.slideboxContainer .slideboxThumbs{display:none}
+table{border-collapse:collapse}
+th{text-align:left}
+th,td{border:1px solid black}
+.price{font-size:1.2em;font-weight:bold}
+.vc{margin:1em 0}
+.vc p{margin:0;font-size:.9em}
+.slidebox{margin:0}
+.slideboxContainer{box-shadow:none;border-radius:none}

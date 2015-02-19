@@ -1,0 +1,21 @@
+AddHandler application/x-httpd-php54 .php
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} ^/(frontend|backend|common|vendor)/
+RewriteRule . index.php
+
+# remove end slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)/$
+RewriteRule ^(.+)/$  /$1 [R=301,L]
+
+# remove end .html
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} ^(.+)\.html$
+RewriteRule ^(.+)\.html$ /$1 [L,R=301] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . index.php
+
+
