@@ -116,7 +116,6 @@ use yii\helpers\Html;
                 </li><!-- /. Чтиво -->                
                 <li><?= Html::a('Доставка', ['site/static', 'view' => 'delivery']) ?></li>    
                 <li><?= Html::a('Оплата', ['site/static', 'view' => 'payment']) ?></li>    
-                <li><?= Html::a('Оптовикам',['site/static', 'view' => 'wholesale']) ?></li>   
                 <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                 <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
