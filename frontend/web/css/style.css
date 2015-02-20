@@ -19,7 +19,10 @@ header #numbers ul { padding-left: 10px; }
 header #about ul { padding-left: 60px; }
 header #numbers li, header #numbers a, header #about li { color: #ddd; font-size: 13px; }
 
-/*.topmenu { background-color: #eee; background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.08) 100%); }*/
+.topmenu {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /*background-color: #eee; background-image: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.08) 100%); */
+}
 
 ul.dropdown-menu.extended { min-width: 760px; padding: 30px 30px 40px 30px; list-style-type: disc; color: #333; }
 ul.dropdown-menu.extended li  { margin: 0  0 6px 10px; }
