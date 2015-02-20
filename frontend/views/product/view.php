@@ -33,10 +33,6 @@ $isWarning = false;
       
     </div>
 
-    <div style="margin-top: 60px;">
-      <?= $this->render('/layouts/_banners_rotator'); ?>
-    </div>
-
     <div id="print">
       <a onclick="window.print();return false;" href="#">
         <img width="32" height="32" alt="Распечатать страницу" src="/images/ico-printer.png">

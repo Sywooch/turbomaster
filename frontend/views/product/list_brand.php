@@ -80,14 +80,7 @@ if(count($products) > 0) {
 ?>
 </section>
 
-<div style="margin-top: 60px;">
-    <?= $this->render('/layouts/_banners_rotator'); ?>
-</div>
 
 <?= $this->render('/layouts/_form_question'); ?>
 <?= $this->render('/layouts/_form_cart'); ?>
 
-
-<div style="margin: 70px 0 40px 0px;">
-    <?= $this->render('/layouts/_social_share'); ?>
-</div>

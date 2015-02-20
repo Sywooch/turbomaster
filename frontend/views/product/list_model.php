@@ -39,9 +39,5 @@ Breadcrumbs::widget([
     <?= $this->render('/layouts/_table_products', ['products' => $products, 'pages' => $pages, 'addClass' => 'emphasis']); ?> 
 </section>
 
-<div style="margin-top: 60px;">
-  <?= $this->render('/layouts/_banners_rotator'); ?>
-</div>
-
 <?= $this->render('/layouts/_form_cart'); ?>
 <?= $this->render('/layouts/_form_question'); ?>

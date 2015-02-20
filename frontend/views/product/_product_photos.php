@@ -56,8 +56,4 @@ use yii\helpers\CommonHelper;
           } ?>
       </div>
 
-      <div style="margin: 40px 0 0px 0px;">
-        <?= $this->render('/layouts/_social_share'); ?>
-      </div>
-
 </div><!-- /option -->

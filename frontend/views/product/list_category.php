@@ -58,12 +58,3 @@ $briefArray = [
   }
 ?>
 </section>
-
-<div style="margin-top: 60px;">
-  <?= $this->render('/layouts/_banners_rotator'); ?>
-</div>
-
-<div style="margin: 40px 0 40px 0px;">
-   <?= $this->render('/layouts/_social_share'); ?>
-</div>
-

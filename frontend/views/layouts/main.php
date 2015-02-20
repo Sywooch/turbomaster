@@ -25,12 +25,10 @@ AppAsset::register($this);
     <?php $this->beginBody() ?>
         <?= $this->render('_header'); ?>
 
-        <div id="wrapper">
-                 
+        <div class="container">
             <main>
             <?= $content ?>
             </main>
-
         </div><!-- /#wrapper -->
 
               

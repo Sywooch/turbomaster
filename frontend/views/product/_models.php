@@ -46,7 +46,6 @@ foreach($models as $k => $model) {
                 ]
               ) ."
               </li>\n";
-      
     $previosFirstLetter = $firstLetter;
 } 
 ?>
