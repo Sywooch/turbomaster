@@ -24,14 +24,8 @@ if(!empty($article['metakey'])) {
 } else {
     $this->registerMetaTag(['name' => 'keywords', 'content' => 'статья о турбинах, информация о турбокомпрессоре']);
 }
-
-
-
 ?>
 
-<div style="position: absolute; top: 40px; right: 0px;">
-   <?= $this->render('/layouts/_social_share'); ?>
-</div>
 <section id="breadcrumbs">
 <?php
 
