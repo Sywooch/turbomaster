@@ -15,12 +15,13 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/core/jquery-ui.min.js',        // castom  minimize ui, only autocomplete
+        'js/jquery-ui.min.js',        // castom  minimize ui, only autocomplete
+        'js/bootstrap.min.js',
         'js/site.js',
     ];
 
     public $depends = [
         'yii\web\YiiAsset',
-        // 'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];
 }
