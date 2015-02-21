@@ -24,7 +24,7 @@ use yii\helpers\Html;
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбины <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
-                        <div class="container-fluid">
+                        <div class="container">
                         <div class="row">
                             <div class="col-md-4">
                                 <li class="h4">Турбины по применению:</li>
@@ -34,16 +34,20 @@ use yii\helpers\Html;
                                 <li><a href="/turboshop/refurbish">Турбины восстановленные </a></li>
                                 <li><a href="/turboshop/ship">Турбины судовые</a></li>
                             </div>
-                            <div class="col-md-4 vertical-divide-left">
-                                <li class="h4">Турбины производителя:</li>
-                                <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
-                                <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
-                                <li><a href="#">Something else here</a></li>
+                            <div class="col-md-4">
+                                <div class="vertical-divide-left">
+                                    <li class="h4">Турбины производителя:</li>
+                                    <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
+                                    <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                </div>
                             </div>
-                            <div class="col-md-4 vertical-divide-left">
-                                <li class="h4">Запчасти для турбины:</li>
-                                <li><a href="/turboshop/cartridges">Картриджи для турбин</a></li>
-                                <li><a href="/article/turbokit">Турбо кит Нива Шевроле</a></li>
+                            <div class="col-md-4">
+                                <div class="vertical-divide-left">
+                                    <li class="h4">Запчасти для турбины:</li>
+                                    <li><a href="/turboshop/cartridges">Картриджи для турбин</a></li>
+                                    <li><a href="/article/turbokit">Турбо кит Нива Шевроле</a></li>
+                                </div>
                             </div>
                         </div>
                         </div>
@@ -82,13 +86,15 @@ use yii\helpers\Html;
                                 <li><a href="/article/glossary">Глоссарий </a></li>
                                 <li><a href="/articles/rules">Монтаж турбины</a></li>
                             </div>
-                            <div class="col-md-6 vertical-divide-left">
-                                <li class="h4">ТурбоЧтиво:</li>
-                                <li><a href="/articles/manufacturer">Производители турбин</a></li>
-                                <li><a href="/articles/technology">Современные турботехнологии</a></li>
-                                <li><a href="/articles/operation">Эксплуатация турбин</a></li>
-                                <li><a href="/articles/about-turbo">О турбонаддуве</a></li>
-                                <li><a href="/articles/why">&laquo;Почему?...Почему?...&raquo;</a></li>
+                            <div class="col-md-6">
+                                <div class="vertical-divide-left">
+                                    <li class="h4">ТурбоЧтиво:</li>
+                                    <li><a href="/articles/manufacturer">Производители турбин</a></li>
+                                    <li><a href="/articles/technology">Современные турботехнологии</a></li>
+                                    <li><a href="/articles/operation">Эксплуатация турбин</a></li>
+                                    <li><a href="/articles/about-turbo">О турбонаддуве</a></li>
+                                    <li><a href="/articles/why">&laquo;Почему?...Почему?...&raquo;</a></li>
+                                </div>
                             </div>
                         </div>
                     </ul>
