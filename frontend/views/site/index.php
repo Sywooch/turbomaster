@@ -36,11 +36,11 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
-            <div class="col-md-7 col-md-offset-1  col-xs-12">
+            <div class="col-md-7 col-md-offset-1">
                 <div class="tab-content link-dotted">
                     
                     <div id="tab1" class="tab-pane fade active in">
-                        <div class="row-fluid">
+                        <div class="row">
                             <!-- <h4>Турбомастер.ру - это интернет-магазин и собственный техцентр!</h4> -->
                             <p>В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
                         </div>
