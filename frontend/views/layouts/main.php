@@ -23,7 +23,9 @@ AppAsset::register($this);
 </head>
 <body>
     <?php $this->beginBody() ?>
-        <?= $this->render('_header'); ?>
+        <?php echo $this->render('_header'); ?>
+        <?php echo $this->render('_topmenu'); ?>
+        <?php // echo $this->render('_topmenu-test'); ?>
         <?= $content ?>
     <?php $this->endBody() ?>
 </body>

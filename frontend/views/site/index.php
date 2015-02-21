@@ -45,7 +45,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                             <p>В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"> 
+                            <div class="col-md-6"> 
                                 <div class="feature-box-icon">
                                     <i class="fa fa-tags"></i>
                                 </div>
@@ -54,7 +54,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                                     <p>В наличии и под заказ</p>
                                 </div>                          
                             </div>
-                            <div class="col-xs-6"> 
+                            <div class="col-md-6"> 
                                 <div class="feature-box-icon">
                                     <i class="fa fa-thumbs-up"></i>
                                 </div>
@@ -65,7 +65,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"> 
+                            <div class="col-md-6"> 
                                 <div class="feature-box-icon">
                                     <i class="fa fa-globe"></i>
                                 </div>
@@ -74,7 +74,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                                     <p>Мы отправляем турбины во все регионы России и страны СНГ</p>
                                 </div>                          
                             </div>
-                            <div class="col-xs-6"> 
+                            <div class="col-md-6"> 
                                 <div class="feature-box-icon">
                                     <i class="fa fa-language"></i>
                                 </div>
