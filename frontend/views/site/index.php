@@ -26,7 +26,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
     <div class="container">
         <div class="row">
             
-            <div class="col-md-4 col-xs-12">
+            <div class="col-md-4">
                 <div class="tabbable">
                     <ul class="nav nav-tabs nav-stacked">
                         <li class="active"><a data-toggle="tab" href="#tab1">ТурбоМагазин</a></li>
@@ -37,6 +37,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                 </div>
             </div><!-- /.col-md-4 -->
             <div class="col-md-7 col-md-offset-1">
+                
                 <div class="tab-content link-dotted">
                     
                     <div id="tab1" class="tab-pane fade active in">
@@ -88,7 +89,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </div><!-- .tab-pane -->
 
                     <div id="tab2" class="tab-pane fade">
-                        <div class="row-fluid">
+                        <div class="row">
                             <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
                             <p>Обратившись в <a href="/turboservice">ТурбоСервис</a>, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
                             <p>Задайте любой вопрос специалисту ТурбоСервиса по телефону <strong>(499) 391-58-75</strong></p>
@@ -96,7 +97,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </div><!-- .tab-pane -->
 
                     <div id="tab3" class="tab-pane fade">
-                        <div class="row-fluid">
+                        <div class="row">
                             <h4>ТурбоСервис на все случаи</h4>
                             <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
                             <p>Обратившись в ТурбоСервис, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
@@ -104,7 +105,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </div><!-- .tab-pane -->
 
                     <div id="tab4" class="tab-pane fade">
-                        <div class="row-fluid">
+                        <div class="row">
                             <h4>ТурбоСервис на все случаи</h4>
                             <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
                             <p>Обратившись в ТурбоСервис, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
@@ -112,6 +113,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </div><!-- .tab-pane -->
 
                 </div><!-- /tab-content -->
+
             </div><!-- /.col-md-8 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
