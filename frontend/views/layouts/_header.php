@@ -57,13 +57,13 @@ use yii\helpers\Html;
                                 <li><a href="/turboshop/ship">Турбины судовые</a></li>
                             </div>
                             <div class="col-md-4 vertical-divide-left">
-                                <li class="h4">Турбины по производителю:</li>
+                                <li class="h4">Турбины производителя:</li>
                                 <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
                                 <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
                                 <li><a href="#">Something else here</a></li>
                             </div>
                             <div class="col-md-4 vertical-divide-left">
-                                <li class="h4">Запчасти турбины:</li>
+                                <li class="h4">Запчасти для турбины:</li>
                                 <li><a href="/turboshop/cartridges">Картриджи для турбин</a></li>
                                 <li><a href="/article/turbokit">Турбо кит Нива Шевроле</a></li>
                             </div>
