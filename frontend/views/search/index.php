@@ -6,7 +6,6 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 
 $this->title = 'Результаты поиска - ТурбоМагазин - Турбомастер.ру';
-$this->registerJsFile('js/search.js', ['depends' => [AppAsset::className()]]);
 ?>
 
 <section id="breadcrumbs">
@@ -17,7 +16,7 @@ $this->registerJsFile('js/search.js', ['depends' => [AppAsset::className()]]);
 </section>
 
 <section id="main-search">
-    <?= $this->render('/layouts/_search_form', []); ?>         
+    <?= $this->render('/layouts/_form_search', []); ?>         
 </section>
 
 

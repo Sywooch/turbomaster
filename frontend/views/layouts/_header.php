@@ -12,7 +12,7 @@ use yii\helpers\Html;
         </div>
         <div class="col-md-4">
             <div id="logo">
-                <a href="/"><img src="/images/logo.png" alt="Интернет-магазин Турбомастер.ру - продажа турбин для любых автомобилей" title="Интернет-магазин Турбомастер.ру - продажа турбин для любых автомобилей"></a>
+                <a href="/"><img src="/images/logo-2.png" alt="Интернет-магазин Турбомастер.ру - продажа турбин для любых автомобилей" title="Интернет-магазин Турбомастер.ру - продажа турбин для любых автомобилей"></a>
             </div>
         </div>
         <div class="col-md-4" id="about">
@@ -119,9 +119,6 @@ use yii\helpers\Html;
                 <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                 <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
                 <li><?= Html::a('Поиск', ['search/view']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->

@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $('.stylerize').styler();
+    
     $('nav li.col').hover(
         function(){
             $(this).children('a').addClass('active');
@@ -12,38 +14,71 @@ $(document).ready(function() {
     ); 
 
 
+    // $("#inputPartnumber").css('visibility', 'visible');
+
+    $("#dropDownBrands").change(function(e) {
+    var s = this.value;
+    var params = {
+        action:       '/brand/modellist',
+        targetId:     'dropDownModels',
+        prompt:       'Выберите модель автомобиля',
+        warpTargetId: 'warpDropDownModels',
+      };
+
+    $.get(params.action, {'id': s}, 
+      
+      function(data){    
+        var $targetId     = $('#' +params.targetId);
+        var $warpTargetId = $('#' +params.warpTargetId);
+
+        $targetId[0].options.length = 0;     
+        $('#' +params.warpTargetId +' .selectbox').remove();
+
+        if(data.length > 0)  {
+          $targetId.append($('<option/>').attr('value', '').text(params.prompt));
+          $.each(data, function(i, val) {
+            $targetId.append($('<option/>').attr('value', val.id).html(val.name)); 
+          })
+          
+          $targetId.styler(); 
+        } 
+
+      }); // end get
+    });  
+    
+
     $("#question-phone-mask, #order-phone-mask").mask("+7(999) 999-99-99");
 
-    $('.banners-rotator .bxslider').bxSlider({
-        slideWidth: 335,
-        maxSlides: 2,
-        moveSlides: 1,
-        slideMargin: 10,
+    // $('.banners-rotator .bxslider').bxSlider({
+    //     slideWidth: 335,
+    //     maxSlides: 2,
+    //     moveSlides: 1,
+    //     slideMargin: 10,
 
-        auto: true,
-        controls: false,
-        pager: false,
-        captions: false,
+    //     auto: true,
+    //     controls: false,
+    //     pager: false,
+    //     captions: false,
 
-        speed: 800,
-        pause: 6000,
-      });
+    //     speed: 800,
+    //     pause: 6000,
+    //   });
 
 
-    $('.gallery-rotator .bxslider').bxSlider({
-        slideWidth: 330,
-        maxSlides: 2,
-        moveSlides: 1,
-        slideMargin: 2,
+    // $('.gallery-rotator .bxslider').bxSlider({
+    //     slideWidth: 330,
+    //     maxSlides: 2,
+    //     moveSlides: 1,
+    //     slideMargin: 2,
 
-        auto: true,
-        controls: false,
-        pager: false,
-        captions: true,
+    //     auto: true,
+    //     controls: false,
+    //     pager: false,
+    //     captions: true,
 
-        speed: 800,
-        pause: 4000,
-      });
+    //     speed: 800,
+    //     pause: 4000,
+    //   });
 
 
     var  openPopup = function(id) {
@@ -324,46 +359,46 @@ $(document).ready(function() {
     }
 
 
-    // mSlidebox
-    $('.slidebox').mSlidebox({
-        autoPlayTime:7000,
-        animSpeed:500,
-        easeType:'easeInOutQuint',
-        controlsPosition:{
-            buttonsPosition:'inside',
-            thumbsPosition:'inside'
-        },
-        pauseOnHover:true,
-        numberedThumbnails:false
-    });
+    // // mSlidebox
+    // $('.slidebox').mSlidebox({
+    //     autoPlayTime:7000,
+    //     animSpeed:500,
+    //     easeType:'easeInOutQuint',
+    //     controlsPosition:{
+    //         buttonsPosition:'inside',
+    //         thumbsPosition:'inside'
+    //     },
+    //     pauseOnHover:true,
+    //     numberedThumbnails:false
+    // });
 
     // fancybox
-    $("a.fancyble").fancybox();
-    $('a.zoom').fancybox({ nextEffect:'none', prevEffect:'none', helpers:{ overlay:{ locked:false } } });
-    $('.photogallery li a').fancybox({ openEffect:'none', closeEffect:'none', nextEffect:'fade', prevEffect:'fade', helpers:{ overlay:{ locked:false } } });
+    // $("a.fancyble").fancybox();
+    // $('a.zoom').fancybox({ nextEffect:'none', prevEffect:'none', helpers:{ overlay:{ locked:false } } });
+    // $('.photogallery li a').fancybox({ openEffect:'none', closeEffect:'none', nextEffect:'fade', prevEffect:'fade', helpers:{ overlay:{ locked:false } } });
 
   
     // jcarousel
-    $('.jcarousel').jcarousel();
+    // $('.jcarousel').jcarousel();
 
     // remove 'control-prev', 'control-next', if count of photo less 6
-    $('.jcarousel').each(function (index) {
-        var $this = $(this),
-            wrapper = $this.parent(),
-            itemCount = $this.find('li').size();
-        if(itemCount < 6) {
-            wrapper.css('margin-left', 0).children('.jcarousel-control-prev, .jcarousel-control-next').hide();
-        }
-    });
+    // $('.jcarousel').each(function (index) {
+    //     var $this = $(this),
+    //         wrapper = $this.parent(),
+    //         itemCount = $this.find('li').size();
+    //     if(itemCount < 6) {
+    //         wrapper.css('margin-left', 0).children('.jcarousel-control-prev, .jcarousel-control-next').hide();
+    //     }
+    // });
 
-    $('.jcarousel-control-prev').on('active.jcarouselcontrol', function () { jQuery( this ).removeClass('inactive'); } ).on( 'inactive.jcarouselcontrol', function(){ jQuery( this ).addClass('inactive' ); } ).jcarouselControl({ target:'-=1' });
+    // $('.jcarousel-control-prev').on('active.jcarouselcontrol', function () { jQuery( this ).removeClass('inactive'); } ).on( 'inactive.jcarouselcontrol', function(){ jQuery( this ).addClass('inactive' ); } ).jcarouselControl({ target:'-=1' });
 
-    $('.jcarousel-control-next').on('active.jcarouselcontrol', function () { jQuery( this ).removeClass('inactive'); } ).on( 'inactive.jcarouselcontrol', function(){ jQuery( this ).addClass('inactive' ); } ).jcarouselControl({ target:'+=1' });
+    // $('.jcarousel-control-next').on('active.jcarouselcontrol', function () { jQuery( this ).removeClass('inactive'); } ).on( 'inactive.jcarouselcontrol', function(){ jQuery( this ).addClass('inactive' ); } ).jcarouselControl({ target:'+=1' });
 
-    $('.jcarousel-pagination').on('active.jcarouselpagination', 'a', function () { jQuery( this ).addClass('active'); } ).on( 'inactive.jcarouselpagination', 'a', function(){ jQuery( this ).removeClass('active' ); } ).jcarouselPagination();
+    // $('.jcarousel-pagination').on('active.jcarouselpagination', 'a', function () { jQuery( this ).addClass('active'); } ).on( 'inactive.jcarouselpagination', 'a', function(){ jQuery( this ).removeClass('active' ); } ).jcarouselPagination();
 
     // columnize
-    $('.columns').columnize({columns:3});
+    // $('.columns').columnize({columns:3});
     
 }); 
 

@@ -17,6 +17,8 @@ class AppAsset extends AssetBundle
     public $js = [
         'js/jquery-ui.min.js',        // castom  minimize ui, only autocomplete
         'js/bootstrap.min.js',
+        'js/jquery.formstyler.min.js',
+        'js/jquery.maskedinput.min.js',
         'js/site.js',
     ];
 
