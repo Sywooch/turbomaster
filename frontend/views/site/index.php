@@ -13,7 +13,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                 <div class="texture-overlay"></div>
                     <div class="col-md-6 nopadding">
                     </div>
-                    <div class="col-md-6 nopadding">
+                    <div class="col-md-4 nopadding">
                          <?= $this->render('/layouts/_form_search', []); ?> 
                     </div>
                 </div>            

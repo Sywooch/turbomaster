@@ -105,7 +105,8 @@ section#news { background-image: url("../images/bg-a.jpg"); min-height: 300px; }
 .table .fa { font-size: 18px;}
 
 /*form search*/
-#form-search { float: left;  
+#form-search { float: left;
+  width: 100%;  
   /*background: #3f6184; */
   background: #555; 
   padding: 20px 40px 20px 40px; margin: 50px 0 0 0; border-radius: 8px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.2); }
