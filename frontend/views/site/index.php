@@ -26,7 +26,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
     <div class="container">
         <div class="row">
             
-            <div class="col-md-4">
+            <div class="col-md-4 col-xs-12">
                 <div class="tabbable">
                     <ul class="nav nav-tabs nav-stacked">
                         <li class="active"><a data-toggle="tab" href="#tab1">ТурбоМагазин</a></li>
@@ -36,8 +36,8 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
-            <div class="col-md-8">
-                <div class="tab-content link-dotted" style="margin-left: 20px;">
+            <div class="col-md-7 col-md-offset-1  col-xs-12">
+                <div class="tab-content link-dotted">
                     
                     <div id="tab1" class="tab-pane fade active in">
                         <div class="row-fluid">
