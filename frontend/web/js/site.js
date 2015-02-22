@@ -15,11 +15,16 @@ $(document).ready(function() {
     }
 
     hideTableColumns('#table-popular', [1, 3, 6]);
+    hideTableColumns('#table-products', [2, 5]);
 
     $(window).resize(function(){
-         hideTableColumns('#table-popular', [1, 3, 6]);
+        hideTableColumns('#table-popular', [1, 3, 6]);
+        hideTableColumns('#table-products', [2, 5]);
     });
 
+
+    // columnize
+    $('.columns').columnize({columns:3});
 
     // fancybox
     $("a.fancyble").fancybox();

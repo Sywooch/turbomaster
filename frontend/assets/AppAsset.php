@@ -30,11 +30,11 @@ class AppAsset extends AssetBundle
 
         'js/jquery.jcarousel.min.js',
         'js/jquery.fancybox.pack.js',
+        'js/jquery.columnizer.min.js',
         // 'js/modernizr.custom.js',
         // 'js/jquery.easing.1.3.js',
         // 'js/jquery.mSimpleSlidebox.js',
         // 'js/jquery.bxslider.min.js',
-        // 'js/jquery.columnizer.min.js',
 
         'js/site.js',
     ];

@@ -2,10 +2,10 @@
 use yii\helpers\Html;
 ?>
 
-<h2 style="margin-top: 20px;">Выберите модель <?= $common_name ?>:</h2>
+<h2 style="margin-top: 40px;">Выберите модель <?= $common_name ?>:</h2>
 
 <div class="columns">
-  <ul>        
+  <ul class="models-list">        
 <?php
 
 $category_alias = Yii::$app->request->get('category_alias');
@@ -13,6 +13,8 @@ $brand_alias = Yii::$app->request->get('brand_alias');
 
 $firstLetter = '';
 $previosFirstLetter = '';
+// $itemsForColumn = round(count($models) / 2);
+
 
 foreach($models as $k => $model) {
 
@@ -35,16 +37,11 @@ foreach($models as $k => $model) {
     echo '
             <li>' .
               HTML::a($model['name'], 
-                [
-                  'product/index', 
+                ['product/index', 
                   'category_alias' => $category_alias,
                   'brand_alias' => $brand_alias, 
-                  'model_alias' => $model['alias']
-                ],
-                [
-                  'title' => 'Турбины на ' .$brand_name .' ' .$model['name'],
-                ]
-              ) ."
+                  'model_alias' => $model['alias']],
+                ['title' => 'Турбины на ' .$brand_name .' ' .$model['name']]) ."
               </li>\n";
     $previosFirstLetter = $firstLetter;
 } 

@@ -54,7 +54,7 @@ $this->registerMetaTag([
         <p></p>
         
         <div class="table-responsive">
-        <table id="table-popular" class="table table-striped">
+        <table class="table table-striped">
         <thead>
         <tr class="danger"><th>Тип турбины</th><th>Объем ремонта</th><th>Стоимость, руб.</th></tr>
         </thead>

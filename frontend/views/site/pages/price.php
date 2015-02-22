@@ -30,7 +30,7 @@ $this->registerMetaTag([
 <p>Стоимость 1 нормочаса - 1200 руб.</p>
 
 <div class="table-responsive">
-    <table id="table-popular" class="table table-striped">
+    <table class="table table-striped">
 <thead>
 <tr class="danger"><th>Виды работ</th><th>Трудоемкость</th></tr>
 </thead>

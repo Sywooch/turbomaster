@@ -3,13 +3,17 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 
 ?>
-<table class="bordered subst">
+
+<div class="table-responsive">
+    <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="danger">
                 <th>Модель</th>
                 <th>Название турбины</th>
-                <th>Код Производителя</th>
-                <th style="width: 150px;">Цена</th>
+                <th></th>
+                <th>Код производ.</th>
+                <th>Цена</th>
+                <th>Купить</th>
             </tr>
         </thead>
         <tbody>
@@ -28,26 +32,19 @@ use yii\helpers\CommonHelper;
                                 ];
             }
 
-
-            echo '
-            <tr>
+            echo 
+            '<tr>
                 <td>' .$item['model_name'] .'</td>
-                <td>' .
-                    Html::a($item['name'], $link) 
-                .   Html::a(Html::img('/images/icon-more.png', ['alt' => 'Узнайте подробнее', 'title' => 'Узнайте подробнее']), $link) 
-                .'
-                </td>
-                <td>' .$item['partnumber'] .'
-                </td>
-                <td class="price_cell"><span>' .$price .'</span>'
-                    . Html::a(Html::img('/images/icon-buy.png', ['alt' => 'Купить', 'title' => 'Купить']),
-                            ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link']) .'
-                </td>
-               </tr>
-               ';
+                <td>'.Html::a($item['name'], $link) .'</td>
+                <td>' .Html::a('', $link, ['class' => 'cart-add-product-link fa fa-search-plus', 'title' => 'Узнайте подробнее']) .'</td>
+                <td>' . $item['partnumber'] . '</td>
+                <td class="price_cell"><span>' .$price .'</span></td>
+                <td>' .Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 20px;']) .'</td>
+            </tr>';  
          } ?>      
-            </tbody>
-        </table>
+        </tbody>
+    </table>
+</div>    
 
     <?php
     if(isset($pages) && $pages->pageCount >1) {
