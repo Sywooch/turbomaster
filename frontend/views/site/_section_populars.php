@@ -10,6 +10,8 @@ use yii\helpers\CommonHelper;
             
             <h2 style="margin: 40px auto; color: #888; text-align: center;">Цены на популярные турбины</h2>
 
+            <h3 id="test-a"></h3>
+
             <div class="table-responsive">
             <table id="table-popular" class="table table-striped white-stripped">
                 <thead>

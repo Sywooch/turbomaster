@@ -10,7 +10,8 @@ $(document).ready(function() {
             total += columns[i];
        }
 
-       alert(total)
+       $('#test-a').text(total)
+
        // $.each(columns, function(i, column) { 
        //      var els =  target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')';
        //      if($(window).width() < toggleWidth) {
