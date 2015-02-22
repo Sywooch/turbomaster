@@ -16,6 +16,7 @@ $(document).ready(function() {
             }
         });
     }
+    
     hideTableColumns('#table-popular', [1, 3, 6]);
     // $('window').resize(function(){
     //      hideTableColumns('#table-popular', [1, 3, 6]);
