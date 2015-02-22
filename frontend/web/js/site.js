@@ -4,6 +4,7 @@ $(document).ready(function() {
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
        
+       alert($('body').width())
        $.each(columns, function(i, column) { 
             var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
             if($('body').width() < toggleWidth) {
