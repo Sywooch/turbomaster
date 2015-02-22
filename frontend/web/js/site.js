@@ -4,20 +4,21 @@ $(document).ready(function() {
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
        
-       alert('one')
+       $(target).remove();
+       return;
        
        $.each(columns, function(i, column) { 
-            var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
+            var els =  $(target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')');
             if($(window).width() < toggleWidth) {
-                el.hide();
+                els.hide();
             }  else {
-                el.show();
+                els.show();
             }
         });
     }
-    hideTableColumns('table-popular', [1, 3, 6]);
+    hideTableColumns('#table-popular', [1, 3, 6]);
     $(window).resize(function(){
-         hideTableColumns('table-popular', [1, 3, 6]);
+         hideTableColumns('#table-popular', [1, 3, 6]);
     });
 
 
