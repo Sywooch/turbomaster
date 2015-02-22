@@ -8,7 +8,9 @@
 }
 
 .navbar { margin-bottom: 1px; }
-.navbar-collapse { padding-left: 0; padding-right: 0; }
+.navbar-collapse { 
+  /*padding-left: 0; padding-right: 0;*/
+   }
 .nav > li > a { 
   /*padding: 12px 10px;  */
   font: 700 16px "Open Sans Condensed",sans-serif; color: #666; text-transform: uppercase; }
