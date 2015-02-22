@@ -75,7 +75,14 @@ ul.dropdown-menu.extended li.h4  { list-style: none; margin: 20px 0 20px 20px; f
 ul.dropdown-menu.extended li a { color: #222; }
 /*ul.dropdown-menu .vertical-divide-left { border-left: 1px solid #ddd; padding-left: 50px; }*/
 
-.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: #000; font-weight: bold; }
+
+@media (max-width: 767px) {
+  ul.dropdown-menu.extended li a { padding: 5px 15px 5px 25px; line-height: 20px;   color: #777; 
+}
+
+
+
+.navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { color: #222; font-weight: bold; }
 
 /* MAIN PAGE */
 .texture-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: url("../images/bg-grid.png"); }
