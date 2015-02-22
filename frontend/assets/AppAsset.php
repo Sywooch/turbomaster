@@ -12,6 +12,13 @@ class AppAsset extends AssetBundle
     
     public $css = [
         'css/font-awesome.css',
+        'css/jquery.formstyler.css',
+
+        'css/jquery.jcarousel.basic.css',
+        'css/jquery.fancybox.css',
+        // 'css/jquery.mSimpleSlidebox.css',
+        // 'css/jquery.bxslider.css',
+        
         'css/style.css',
     ];
 
@@ -20,6 +27,15 @@ class AppAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/jquery.formstyler.min.js',
         'js/jquery.maskedinput.min.js',
+
+        'js/jquery.jcarousel.min.js',
+        'js/jquery.fancybox.pack.js',
+        // 'js/modernizr.custom.js',
+        // 'js/jquery.easing.1.3.js',
+        // 'js/jquery.mSimpleSlidebox.js',
+        // 'js/jquery.bxslider.min.js',
+        // 'js/jquery.columnizer.min.js',
+
         'js/site.js',
     ];
 

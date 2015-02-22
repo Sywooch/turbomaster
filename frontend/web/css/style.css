@@ -88,7 +88,9 @@ ul.dropdown-menu.extended li a { color: #222; }
 section#main-about { padding: 50px 0 40px 0; }
 section#main-populars { background-image: url("../images/bg-a.jpg"); min-height: 300px; }
 .table-striped.white-stripped > tbody > tr:nth-of-type(2n+1) { background-color: #fff; }
+
 .page-style { margin-top: 30px; margin-bottom: 90px; }
+.page-style h1 { margin-bottom: 30px; }
 
 
 /* FA-ICONS */
@@ -164,5 +166,9 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 .jq-selectbox li.option {padding-left: 25px; }
 
 
+
+/* jcarousel */
+.jcarousel-wrapper {max-height: 100px;  }
+.jcarousel-wrapper img { margin-left: 4px; }
 
 
