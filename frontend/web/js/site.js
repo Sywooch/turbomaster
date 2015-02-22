@@ -7,7 +7,7 @@ $(document).ready(function() {
        var total = '';
 
        for(var i = 0, size = columns.length; i < size; i++) {
-            total += columns[i];
+            total = total + '-' + columns[i];
        }
 
        $('#test-a').text(total)
@@ -24,7 +24,7 @@ $(document).ready(function() {
        //  });
     }
 
-    hideTableColumns('#table-popular', [1, 3, 6]);
+    hideTableColumns('#table-popular', [1, 3, 6], 768);
 
     // $(window).resize(function(){
     //      hideTableColumns('#table-popular', [1, 3, 6]);
