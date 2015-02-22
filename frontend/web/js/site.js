@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.stylerize').styler();
+    // $('.stylerize').styler();
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
         
@@ -17,9 +17,9 @@ $(document).ready(function() {
         });
     }
     hideTableColumns('#table-popular', [1, 3, 6]);
-    $(window).resize(function(){
-         hideTableColumns('#table-popular', [1, 3, 6]);
-    });
+    // $('window').resize(function(){
+    //      hideTableColumns('#table-popular', [1, 3, 6]);
+    // });
 
 
     // $('nav li.col').hover(
