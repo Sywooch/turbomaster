@@ -2,16 +2,32 @@ $(document).ready(function() {
 
     $('.stylerize').styler();
     
-    $('nav li.col').hover(
-        function(){
-            $(this).children('a').addClass('active');
-            $(this).find('ul').slideDown('fast'); 
-        },
-        function(){
-            $(this).children('a').removeClass('active');
-            $(this).find('ul').slideUp('fast'); 
-        }
-    ); 
+    var hideTableColumns = function(target, columns, toggleWidth = 768) {
+        $.each(columns, function(i, column) { 
+            var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
+            if($(window).width() < toggleWidth) {
+                el.hide();
+            }  else {
+                el.show();
+            }
+        });
+    }
+    hideTableColumns('table-popular', [1, 3, 6]);
+    $(window).resize(function(){
+         hideTableColumns('table-popular', [1, 3, 6]);
+    });
+
+
+    // $('nav li.col').hover(
+    //     function(){
+    //         $(this).children('a').addClass('active');
+    //         $(this).find('ul').slideDown('fast'); 
+    //     },
+    //     function(){
+    //         $(this).children('a').removeClass('active');
+    //         $(this).find('ul').slideUp('fast'); 
+    //     }
+    // ); 
 
 
     // $("#inputPartnumber").css('visibility', 'visible');

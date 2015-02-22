@@ -3,15 +3,18 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 ?>
 
-<h2>Цены на популярные турбины:</h2>
+<h2 style="margin: 40px auto; color: #888; text-align: center;">Цены на популярные турбины</h2>
 
-<table class="bordered subst">
+<div class="table-responsive">
+<table class="table table-striped white-stripped">
     <thead>
-        <tr>
+        <tr class="danger">
             <th>Марка</th>
             <th>Название турбины</th>
-            <th>Код Производителя</th>
+            <th></th>
+            <th>Код производителя</th>
             <th>Цена</th>
+            <th>Купить</th>
         </tr>
     </thead>
     <tbody>
@@ -31,20 +34,16 @@ use yii\helpers\CommonHelper;
              echo 
             '<tr>
                 <td>' .$item['brand_name'] .'</td>
-                <td>'.
-                Html::a($product_name, $link) .
-                Html::a(Html::img('/images/icon-more.png', ['alt' => 'Узнайте подробнее', 'title' => 'Узнайте подробнее']), $link) .'
-                </td>
+                <td>'.Html::a($product_name, $link) .'</td>
+                <td>' .Html::a('', $link, ['class' => 'cart-add-product-link fa fa-search-plus']) .'</td>
                 <td>' . $item['partnumber'] . '</td>
-                <td class="price_cell"><span>' .$price .'</span>'
-                    . Html::a(Html::img('/images/icon-buy.png', ['alt' => 'Купить', 'title' => 'Купить']),
-                                ['cart/create'], ['data-product-id' => $item['product_id'], 'class' => 'cart-add-product-link']
-                                ) .'
-                </td>
+                <td class="price_cell"><span>' .$price .'</span></td>
+                <td>' .Html::a('', ['cart/create'], ['data-product-id' => $item['product_id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 20px;']) .'</td>
             </tr>';   
     }
 ?>
     </tbody>
 </table>
+</div>
 
-<p style="text-align: right;">Открыть полный <a href="/turboshop/passenger">каталог турбин</a></p>
+<p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/passenger">каталог турбин</a></p>
