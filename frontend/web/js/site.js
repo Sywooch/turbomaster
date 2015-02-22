@@ -3,7 +3,10 @@ $(document).ready(function() {
     $('.stylerize').styler();
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
-        $.each(columns, function(i, column) { 
+       
+        alert($(window).width())
+        
+       $.each(columns, function(i, column) { 
             var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
             if($(window).width() < toggleWidth) {
                 el.hide();
