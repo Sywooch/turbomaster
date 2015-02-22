@@ -2,9 +2,9 @@ $(document).ready(function() {
 
     // $('.stylerize').styler();
     
-    var hideTableColumns = function(target, columns, toggleWidth = 768) {
-        
         alert('hello')
+
+    var hideTableColumns = function(target, columns, toggleWidth = 768) {
 
        $.each(columns, function(i, column) {
 
@@ -16,7 +16,7 @@ $(document).ready(function() {
             }
         });
     }
-    
+
     hideTableColumns('#table-popular', [1, 3, 6]);
     // $('window').resize(function(){
     //      hideTableColumns('#table-popular', [1, 3, 6]);
