@@ -3,28 +3,27 @@ use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
 $this->title = 'Качество турбин - Турбомастер.ру';
-
 $this->registerMetaTag([
     'name' => 'description', 
     'content' => 'Высокое качество наших товаров подтверждается сертификатами соответствия, выданными российскими органами сертификации продукции.']);
-
 $this->registerMetaTag([
     'name' => 'keywords', 
     'content' => 'сертификаты турбин BorgWarner, сертификаты турбин Honeywell, сертификаты турбин Mitsubishi, качество']);
 
 ?>
-    <section id="breadcrumbs">
-    <?=  
-        Breadcrumbs::widget([
-          'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
-          'links' => [['label' => 'Качество турбин']]    
-        ]); 
-    ?>
+<div class="container page-style">
+    <div class="row">
+        <div class="col-md-9">
+            <section id="breadcrumbs">
+                <?= Breadcrumbs::widget([
+                      'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+                      'links' => [['label' => 'Качество турбин']]]) ?>
     
-        <h1 class="catalog">Качество турбин</h1>
-    </section>
+            </section>
+            
+            <h1 class="catalog">Качество турбин</h1>
 
-    <article>
+            <article>
     
         <p>Высокое качество наших товаров подтверждается сертификатами соответствия, выданными российскими органами сертификации продукции.</p>
         
@@ -81,5 +80,7 @@ $this->registerMetaTag([
         </div><!-- /.photo-items -->
         <div class="clearfix"></div>
 
-            
-    </article>
+            </article>
+        </div><!-- /.col-md-9 -->
+    </div><!-- /.row -->
+</div><!-- /.container -->

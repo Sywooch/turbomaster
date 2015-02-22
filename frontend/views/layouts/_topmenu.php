@@ -4,6 +4,7 @@ use yii\helpers\Html;
 
 <nav class="navbar navbar-default topmenu">
     <div class="container">
+    <div class="row">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -106,6 +107,7 @@ use yii\helpers\Html;
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
             </ul>
         </div><!-- /.navbar-collapse -->
+    </div>
     </div><!-- /.container -->
 </nav>
     

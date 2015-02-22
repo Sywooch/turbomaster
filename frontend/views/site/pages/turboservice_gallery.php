@@ -2,32 +2,30 @@
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
-
 $this->title = 'Фоторепортажи ТурбоСервиса - ТурбоСервис - Турбомастер.ру';
-
 $this->registerMetaTag([
     'name' => 'description', 
     'content' => 'Фотогалерея самых интересных и напряженных моментов в нашем Турбосервисе. Посмотрите, как мы работаем!']);
-
 $this->registerMetaTag([
     'name' => 'keywords', 
     'content' => 'фото, турбосервис']);
 ?>
 
-    <section id="breadcrumbs">
-    <?=  
-        Breadcrumbs::widget([
-          'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
-          'links' => [['label' => 'ТурбоСервис'], ['label' => 'Фоторепортажи ТурбоСервиса']]    
-        ]); 
-    ?>
+<div class="container page-style">
+    <div class="row">
+        <div class="col-md-9">
+            <section id="breadcrumbs">
+                <?= Breadcrumbs::widget([
+                  'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+                  'links' => [['label' => 'ТурбоСервис'], ['label' => 'Фоторепортажи ТурбоСервиса']]]) ?>
+            </section>
     
-        <h1 class="catalog">Фоторепортажи ТурбоСервиса</h1>
-    </section>
+            <h1 class="catalog">Фоторепортажи ТурбоСервиса</h1>
 
-    <article>
-<p>Фотогалерея самых интересных и напряженных моментов в нашем Турбосервисе. Посмотрите, как мы работаем!</p>
-<p>         </p><section class="photogallery">
+            <article>
+                <p>Фотогалерея самых интересных и напряженных моментов в нашем Турбосервисе. Посмотрите, как мы работаем!</p>
+                <p></p>
+                <section class="photogallery">
                 
                 <p class="description"></p>
                 <div class="jcarousel-wrapper">
@@ -52,7 +50,12 @@ $this->registerMetaTag([
                     <!-- p class="jcarousel-pagination"></p -->
                 </div>
             </section>
-<p></p>
+            <p></p>
+            
             </article>
+        </div><!-- /.col-md-9 -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
+       
 
 
