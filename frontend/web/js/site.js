@@ -1,12 +1,12 @@
 $(document).ready(function() {
 
-    $('.stylerize').styler();
+    // $('.stylerize').styler();
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
        
        $(target).remove();
        return;
-       
+
        $.each(columns, function(i, column) { 
             var els =  $(target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')');
             if($(window).width() < toggleWidth) {
@@ -37,33 +37,31 @@ $(document).ready(function() {
     // $("#inputPartnumber").css('visibility', 'visible');
 
     $("#dropDownBrands").change(function(e) {
-    var s = this.value;
-    var params = {
-        action:       '/brand/modellist',
-        targetId:     'dropDownModels',
-        prompt:       'Выберите модель автомобиля',
-        warpTargetId: 'warpDropDownModels',
-      };
+        var s = this.value;
+        var params = {
+            action:       '/brand/modellist',
+            targetId:     'dropDownModels',
+            prompt:       'Выберите модель автомобиля',
+            warpTargetId: 'warpDropDownModels',
+        };
 
-    $.get(params.action, {'id': s}, 
-      
-      function(data){    
-        var $targetId     = $('#' +params.targetId);
-        var $warpTargetId = $('#' +params.warpTargetId);
+        $.get(params.action, {'id': s}, 
 
-        $targetId[0].options.length = 0;     
-        $('#' +params.warpTargetId +' .selectbox').remove();
+        function(data) {    
+            var $targetId     = $('#' +params.targetId);
+            var $warpTargetId = $('#' +params.warpTargetId);
 
-        if(data.length > 0)  {
-          $targetId.append($('<option/>').attr('value', '').text(params.prompt));
-          $.each(data, function(i, val) {
-            $targetId.append($('<option/>').attr('value', val.id).html(val.name)); 
-          })
-          
-          $targetId.styler(); 
-        } 
+            $targetId[0].options.length = 0;     
+            $('#' +params.warpTargetId +' .selectbox').remove();
 
-      }); // end get
+            if(data.length > 0)  {
+                $targetId.append($('<option/>').attr('value', '').text(params.prompt));
+                $.each(data, function(i, val) {
+                    $targetId.append($('<option/>').attr('value', val.id).html(val.name)); 
+                })
+                // $targetId.styler(); 
+            } 
+        }); // end get
     });  
     
 
@@ -116,14 +114,14 @@ $(document).ready(function() {
     });
 
 
-    $("#search-form-submit").on("click", function (event) {
-        yaCounter27743625.reachGoal('TARGET_SEARCH');
-        $("#search-form").submit();
-    });   
+    // $("#search-form-submit").on("click", function (event) {
+    //     yaCounter27743625.reachGoal('TARGET_SEARCH');
+    //     $("#search-form").submit();
+    // });   
 
-    $(document).on('click', '.onicon_chat-s3-btn', function () {
-        yaCounter27743625.reachGoal('TARGET_CHAT');
-    });
+    // $(document).on('click', '.onicon_chat-s3-btn', function () {
+    //     yaCounter27743625.reachGoal('TARGET_CHAT');
+    // });
 
 
     $("#question_submit").on("click", function (event) {
@@ -158,8 +156,8 @@ $(document).ready(function() {
                         $h3.text('Вопрос отправлен');
                         $('<p/>').css('margin', '80px 0 -80px 0').text('В ближайшее время оператор  магазина ответит на ваш вопрос.').insertAfter($h3);
 
-                        var yaCounter = new Ya.Metrika({id: 27743625});
-                        yaCounter27743625.reachGoal('TARGET_QUESTION');
+                        // var yaCounter = new Ya.Metrika({id: 27743625});
+                        // yaCounter27743625.reachGoal('TARGET_QUESTION');
                     }
                 }
             });
@@ -270,7 +268,7 @@ $(document).ready(function() {
                 }
         });    
         if(!hasErrors) {
-            yaCounter27743625.reachGoal('TARGET_ORDER');
+            // yaCounter27743625.reachGoal('TARGET_ORDER');
             $btn.prop('disabled', true);
             $form.submit();
         }  
@@ -363,9 +361,9 @@ $(document).ready(function() {
     }
 
     function createBlackScreen() {   
-      $('<div id="blackScreenOverlay"></div>')
-       .addClass('blackScreen')
-       .prependTo('html');
+        $('<div id="blackScreenOverlay"></div>')
+        .addClass('blackScreen')
+        .prependTo('html');
     }
    
 
