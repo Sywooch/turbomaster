@@ -4,10 +4,13 @@ $(document).ready(function() {
 
     function hideTableColumns(target, columns, toggleWidth = 768) {
        
-       for(var i = 0, size = columns.length; i < size; i++) {
-            alert(columns[i]);
+       var total = '';
 
+       for(var i = 0, size = columns.length; i < size; i++) {
+            total += columns[i];
        }
+
+       alert(total)
        // $.each(columns, function(i, column) { 
        //      var els =  target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')';
        //      if($(window).width() < toggleWidth) {
