@@ -2,9 +2,10 @@ $(document).ready(function() {
 
    
 
-    function hideTableColumns(target, columns, toggleWidth = 768) {
+    function hideTableColumns(target, columns) {
        
        var total = '';
+       var toggleWidth = 768;
 
        for(var i = 0, size = columns.length; i < size; i++) {
             total = total + '-' + columns[i];
