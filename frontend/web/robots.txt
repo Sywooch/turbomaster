@@ -1,23 +1,2 @@
 User-Agent: *
-Disallow: /vendor
-Disallow: /frontend
-Disallow: /common
-Disallow: /backend
-Disallow: /ask_a_question*
-Disallow: /advanced_search_result*
-
-User-Agent: Yandex
-Disallow: /vendor
-Disallow: /frontend
-Disallow: /common
-Disallow: /backend
-Disallow: /ask_a_question*
-Disallow: /advanced_search_result*
-Host: turbomaster.ru
-Sitemap: http://turbomaster.ru/sitemap.xml
-
-User-Agent: Googlebot
-Disallow: /vendor
-Disallow: /ask_a_question*
-Disallow: /advanced_search_result*
-Sitemap: http://turbomaster.ru/sitemap.xml
+Disallow: /
