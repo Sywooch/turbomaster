@@ -1,26 +1,24 @@
 $(document).ready(function() {
 
-    // $('.stylerize').styler();
+    $('.stylerize').styler();
     
-        alert('hello')
-
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
-
-       $.each(columns, function(i, column) {
-
-            var els =  $(target +  ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')');
-            if($('html').width() < toggleWidth) {
-                els.hide();
+       
+       alert('one')
+       
+       $.each(columns, function(i, column) { 
+            var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
+            if($(window).width() < toggleWidth) {
+                el.hide();
             }  else {
-                els.show();
+                el.show();
             }
         });
     }
-
-    hideTableColumns('#table-popular', [1, 3, 6]);
-    // $('window').resize(function(){
-    //      hideTableColumns('#table-popular', [1, 3, 6]);
-    // });
+    hideTableColumns('table-popular', [1, 3, 6]);
+    $(window).resize(function(){
+         hideTableColumns('table-popular', [1, 3, 6]);
+    });
 
 
     // $('nav li.col').hover(
