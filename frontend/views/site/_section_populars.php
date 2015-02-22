@@ -5,14 +5,10 @@ use yii\helpers\CommonHelper;
 
 <section id="main-populars">
     <div class="container">
-       <!--  <div class="row">
-        <div class="col-md-12"> -->
             
-            <h2 style="margin: 40px auto; color: #888; text-align: center;">Цены на популярные турбины</h2>
+        <h2 style="margin: 40px 0; color: #888; text-align: center;">Цены на популярные турбины</h2>
 
-            <h3 id="test-a"></h3>
-
-            <div class="table-responsive">
+        <div class="table-responsive">
             <table id="table-popular" class="table table-striped white-stripped">
                 <thead>
                     <tr class="danger">
@@ -48,12 +44,9 @@ use yii\helpers\CommonHelper;
                 }  ?>
                 </tbody>
             </table>
-            </div><!-- /.table-responsive -->
+        </div><!-- /.table-responsive -->
 
-            <p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/passenger">каталог турбин</a></p>
+        <p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/passenger">каталог турбин</a></p>
     
-        <!-- </div> -->
-        <!-- /.col-md-12 -->
-        <!-- </div> -->
     </div><!-- /.container -->
 </section>
