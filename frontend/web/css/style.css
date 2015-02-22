@@ -110,6 +110,7 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 .sidebar-mini h3 { margin-top: 0; }
 
 
+
 /* FORMSTYLER.JS select */
 .jq-selectbox { vertical-align: middle; cursor: pointer; }
 .jq-selectbox__select { 
@@ -142,3 +143,17 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 .jq-selectbox li.optgroup { font-weight: bold;}
 .jq-selectbox li.optgroup:hover {background: none; color: #231F20; cursor: default; }
 .jq-selectbox li.option {padding-left: 25px; }
+
+
+@media (min-width: 768px) {
+  .jq-selectbox__select { width: 270px; }
+  .jq-selectbox__dropdown { min-width: 270px; max-width: 270px; }
+  #form-search input[type="text"] { width: 270px; }
+}
+
+
+@media (min-width: 992px) {
+  .jq-selectbox__select { width: 320px; }
+  .jq-selectbox__dropdown { min-width: 320px; max-width: 320px; }
+  #form-search input[type="text"] { width: 320px; }
+}
