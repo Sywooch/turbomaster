@@ -5,11 +5,13 @@ $(document).ready(function() {
     function hideTableColumns(target, columns, toggleWidth = 768) {
        
        $.each(columns, function(i, column) { 
-            var els =  $(target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')');
+            var els =  target + ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')';
             if($(window).width() < toggleWidth) {
-                els.hide();
+                // els.hide();
+                alert(els)
             }  else {
-                els.show();
+                alert('bigger')
+                // els.show();
             }
         });
     }
