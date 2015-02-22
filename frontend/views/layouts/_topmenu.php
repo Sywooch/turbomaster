@@ -104,7 +104,6 @@ use yii\helpers\Html;
                 <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                 <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
-                <li><?= Html::a('Поиск', ['search/view']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container -->
