@@ -3,20 +3,21 @@ $(document).ready(function() {
     $('.stylerize').styler();
     
     var hideTableColumns = function(target, columns, toggleWidth = 768) {
-       
-       alert($('body').width())
-       $.each(columns, function(i, column) { 
-            var el =  $('#' + target +  ' td:nth-child(' + column + '),th:nth-child(' + column + ')');
-            if($('body').width() < toggleWidth) {
-                el.hide();
+        
+
+       $.each(columns, function(i, column) {
+
+            var els =  $(target +  ' td:nth-child(' + column + '), ' + target + ' th:nth-child(' + column + ')');
+            if($('html').width() < toggleWidth) {
+                els.hide();
             }  else {
-                el.show();
+                els.show();
             }
         });
     }
-    hideTableColumns('table-popular', [1, 3, 6]);
+    hideTableColumns('#table-popular', [1, 3, 6]);
     $(window).resize(function(){
-         hideTableColumns('table-popular', [1, 3, 6]);
+         hideTableColumns('#table-popular', [1, 3, 6]);
     });
 
 
