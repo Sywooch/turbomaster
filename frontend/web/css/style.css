@@ -97,7 +97,7 @@ section#main-about { padding: 50px 0 40px 0; }
 section#main-populars { background-image: url("../images/bg-a.jpg"); min-height: 300px; }
 .table-striped.white-stripped > tbody > tr:nth-of-type(2n+1) { background-color: #fff; }
 
-.page-style { margin-top: 30px; margin-bottom: 90px; }
+.page-style { margin-top: 20px; margin-bottom: 90px; }
 .page-style h1 { margin-bottom: 30px; }
 
 
@@ -147,6 +147,18 @@ ul.models-list ul li { display: inline-block; margin-right: 20px; }
 }
 ul.models-list ul li a { font-size: 18px; border-bottom: 1px dotted #b04340; }
 
+
+/* PRODUCT ITEM */
+
+tr.gross > td { padding: 14px 8px!important; border-bottom: 1px solid #ddd; font-size: 15px; }
+
+table.matroska td { padding: 4px 8px!important;}
+table.matroska tr:first-child td { padding-top: 8px!important;}
+table.matroska tr:last-child td { padding-bottom: 8px!important;}
+
+.product-main-photo img { max-width: 100%; height: auto; }
+.product-photo-thumbs ul {list-style: none; padding: 4px 0 0 0;}
+.product-photo-thumbs li { display: block; margin-bottom: 6px; ;}
 
 /* ARTICLE */
 .article { }

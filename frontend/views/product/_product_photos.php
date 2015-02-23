@@ -1,59 +1,33 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\CommonHelper;
+
+$isOriginalPhoto = !empty($photos) ? true : false;
+
+$mainPhoto = !empty($photos) ? CommonHelper::getImageSrc('/photo/product/240/' .$photos[0]['src']) : CommonHelper::getImageSrc('/photo/product/default/240/' .$product['manufacturer_alias'] .'.jpg');
+
 ?>
 
-    <div id="option">
-
-      <div id="slides" class="views">
-          <div class="slidebox">
-            <ul>
-            <?php
-            if(!empty($photos)) {    
-              
-
-              foreach($photos as $photo) { ?>
-              <li>
-                <div>
-                  <a class="zoom" href="<?= CommonHelper::getImageSrc('/photo/product/big/' .$photo['src']) ?>" rel="group">
-                    <?= Html::img(CommonHelper::getImageSrc('/photo/product/240/' .$photo['src']), [
-                          'width' => 240, 
-                          'height' => 240, 
-                          'alt' => $product['name']
-                          ]
-                        );
-                          ?>
-                    <img class="lens" src="/images/ico-zoom.png" width="32" height="32" alt="Увеличить">
-                  </a>
-                </div>
-              </li>
-            <?php   
-                }
-            } elseif($default_photo = CommonHelper::getImageSrc('/photo/product/default/240/' .$product['manufacturer_alias'] .'.jpg'))  {  
-
-              $isWarning = true;
-              ?>
-              <li>
-                <div>
-                  <a class="zoom" href="<?= CommonHelper::getImageSrc('/photo/product/default/big/' .$product['manufacturer_alias'] .'.jpg'); ?>" rel="group">
-                    <?= Html::img($default_photo, [
-                          'width' => 240, 
-                          'height' => 240, 
-                          'alt' => $product['name']
-                          ]
-                        );
-                          ?>
-                      <img class="lens" src="/images/ico-zoom.png" width="32" height="32" alt="Увеличить">
-                    </a>
-                </div>
-              </li>
-        <?php    
-            } ?>    
-            </ul>
-          </div>
-  <?php   if($isWarning) { echo '
-          <ins style="font-size: 75%">Внимание! На фотографии представлен образец оригинальной турбины ' .$product['manufacturer_name'] .', НЕ идентичный данному товару.</ins>';
-          } ?>
-      </div>
-
-</div><!-- /option -->
+<div class="row product-main-photo">
+    <div class="col-md-9 col-xs-4" style="padding-right: 0;">
+        <?= Html::img($mainPhoto, ['style' => 'border: 3px solid #eee;', 'alt' => $product['name']]) ?>
+        
+        <?php if(!$isOriginalPhoto) { ?>
+            <div class="alert alert-danger" role="alert" style="font-size: 13px; line-height: 1.1em;">
+                Внимание! На фотографии представлен образец оригинальной турбины <?= $product['manufacturer_name'] ?>, НЕ идентичный данному товару.
+            </div>
+        <?php } ?>
+    </div>
+    <div class="col-md-3 visible-lg visible-md product-photo-thumbs">
+        <?php
+        if(count($photos) > 1) {
+            echo '<ul>';
+            array_shift($photos);
+            foreach($photos as $photo) {
+                echo '<li>' .Html::img(CommonHelper::getImageSrc('/photo/product/240/' .$photo['src'])) .'</li>';
+            }
+            echo '<ul>';
+        }
+        ?>
+    </div>
+</div>

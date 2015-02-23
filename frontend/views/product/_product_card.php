@@ -3,7 +3,8 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 ?>
 
-<table class="bordered">
+<div class="table-responsive">
+    <table class="table table-striped">
     <tbody>
         <tr>
             <th>Марка</th>
@@ -14,61 +15,60 @@ use yii\helpers\CommonHelper;
             <td><?= $product['model_name'] ?></td>
         </tr>
         <tr>
-            <th>Наименование товара (турбины)</th>
+            <th>Наименование</th>
             <td><?= $product['name'] ?></td>
         </tr>
         <tr>
-          <th>Применение</th>
-          <td>
-            <table class="table_inside">
-              <tr>
-                <td>двигатель:</td>
-                <td><?= $product['engine'] ?></td>
-              </tr>
-              <tr>
-                <td>объём:</td>
-                <td> <?= $product['volume'] ?> ccm</td>
-              </tr>
-              <tr>
-                <td>мощность:</td>
-                <td><?= $product['power'] ?> л.с.</td>
-              </tr>
-              <tr>
-                <?php if(!empty($product['date_from'])) { ?>
-                <td>год:</td>
-                <td><?= ($product['date_from']) ? 'с '.$product['date_from'] : ''?> 
-                <?= ($product['date_to']) ? ' до ' .$product['date_to'] : '' ?></td>
-                <?php } ?>
-              </tr>
-            </table>                              
-          </td>
+            <th>Применение</th>
+            <td style="padding: 0;">
+                <table class="table matroska" style="margin-bottom: 0;">
+                    <tr>
+                        <td style="width: 34%; border-top: 0;">двигатель:</td>
+                        <td style="border-top: 0;"><?= $product['engine'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>объём:</td>
+                        <td> <?= str_replace('.', '', $product['volume']) ?> ccm</td>
+                    </tr>
+                    <tr>
+                        <td>мощность:</td>
+                        <td><?= $product['power'] ?> л.с.</td>
+                    </tr>
+                    <tr>
+                    <?php if(!empty($product['date_from'])) { ?>
+                        <td>год:</td>
+                        <td><?= ($product['date_from']) ? 'с '.$product['date_from'] : ''?> 
+                            <?= ($product['date_to']) ? ' до ' .$product['date_to'] : '' ?></td>
+                        <?php } ?>
+                    </tr>
+                </table>                              
+            </td>
         </tr>
         <tr>
-          <th>Артикул</th>
-          <td><b><?= $product['partnumber'] ?></b></td>
+            <th>Артикул</th>
+            <td><b><?= $product['partnumber'] ?></b></td>
         </tr>
         <tr>
-          <th>Взаимозаменяемость</th>
-          <td><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
+            <th>Взаимозаменяемость</th>
+            <td><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
         </tr>
         <tr>
-          <th>Производитель</th>
-          <td><?= $product['manufacturer_name'] ?></td>
+            <th>Производитель</th>
+            <td><?= $product['manufacturer_name'] ?></td>
         </tr>
         <tr>
-          <th>Гарантия</th>
-          <td><?= $product['warranty'] ?></td>
-      </tr>
+            <th>Гарантия</th>
+            <td><?= $product['warranty'] ?></td>
+        </tr>
+        <tr>
+            <th></th>
+            <td class="clearfix">
+                <i class="fa fa-question-circle" style="display: block; float: left; font-size: 32px; margin: 6px 8px 0 0; color: #b04340;"></i>
+                <a href="/question/create" class="question-add-link link-dotted" style="display: block; float: left; font-size: 18px; margin: 6px 0 12px 0;" data-question-type="common_question" data-product-id="<?= $product['id'] ?>">
+                    <span>Задать вопрос о товаре</span>
+                </a>
+            </td>
+        </tr>
     </tbody>
-
-    <tfoot>
-      <tr>
-        <td colspan="2">
-          <a href="/question/create" class="question-add-link dotted" data-question-type="common_question" data-product-id="<?= $product['id'] ?>">
-            <img width="32" height="32" alt="Задать вопрос о товаре" src="/images/ico-question.png">
-            <span>Задать вопрос о товаре</span>
-          </a>
-        </td>
-      </tr>
-    </tfoot>
 </table>
+</div>
