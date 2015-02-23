@@ -4,14 +4,17 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 
 ?>
-<table class="bordered subst">
+<div class="table-responsive">
+    <table class="table table-striped">
         <thead>
-            <tr>
+            <tr class="danger">
                 <th>Марка</th>
                 <th>Модель</th>
                 <th>Название турбины</th>
+                <th></th>
                 <th>Код Производителя</th>
-                <th style="width: 160px;">Цена</th>
+                <th>Цена</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +25,7 @@ use yii\helpers\CommonHelper;
             $name = implode(' ', array_slice($nameArray, 1));
             // $name =  $item['name'];
 
-            $price = (!empty($item['price'])) ? CommonHelper::formatPrice($item['price']) .' руб.' : '<a href="/question/create" class="question-add-link dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
+            $price = (!empty($item['price'])) ? CommonHelper::formatPrice($item['price']) .' руб.' : '<a href="/question/create" class="question-add-link link-dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
 
             if($item['type'] == Product::TYPE_TUNING) {
                 $link = ['product/view', 'tuning_id'=> $item['id']];
@@ -31,29 +34,23 @@ use yii\helpers\CommonHelper;
                             'brand_alias' => $item['brand_alias'], 
                             'model_alias' => $item['model_alias'], 
                             'partnumber'  => $item['partnumber'], 
-                            ];
+                        ];
             }
-            echo '
-            <tr>
+
+            echo 
+            '<tr>
                 <td>' .$item['brand_name'] .'</td>
                 <td>' .$item['model_name'] .'</td>
-                <td>' .
-                    Html::a($name, $link) 
-                .   Html::a(Html::img('/images/icon-more.png', ['alt' => 'Узнайте подробнее', 'title' => 'Узнайте подробнее']), $link) 
-                .'
-                </td>
-                <td>' .$item['partnumber'] .'
-                </td>
-               <td class="price_cell"><span>' .$price .'</span>'
-                    . Html::a(Html::img('/images/icon-buy.png', ['alt' => 'Купить', 'title' => 'Купить']),
-                            ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link']) .'
-                </td>
-               </tr>
-               ';
+                <td>'.Html::a($name, $link) .'</td>
+                <td>' .Html::a('', $link, ['class' => 'cart-add-product-link fa fa-search-plus', 'title' => 'Узнайте подробнее']) .'</td>
+                <td>' . $item['partnumber'] . '</td>
+                <td class="price_cell"><span>' .$price .'</span></td>
+                <td>' .Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 20px;']) .'</td>
+            </tr>';   
          } ?>      
             </tbody>
         </table>
-
+    </div>
     <?php
     if(isset($pages) && $pages->pageCount > 1) {
             echo \yii\widgets\LinkPager::widget([

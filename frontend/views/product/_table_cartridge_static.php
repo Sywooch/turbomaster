@@ -1,6 +1,8 @@
-<table class="bordered price">
+<div class="table-responsive">
+    <table id="table-products" class="table table-striped">
 <thead>
-<tr><th>Номер детали</th><th>Номер турбины</th><th>Применение</th><th>Цена, руб.</th></tr>
+<tr class="danger">
+<th>Номер детали</th><th>Номер турбины</th><th>Применение</th><th>Цена, руб.</th></tr>
 </thead>
 <tbody>
 <tr>
@@ -211,3 +213,5 @@
 </tr>
 </tbody>
 </table>
+
+</div>

@@ -21,40 +21,34 @@ $arrayMetaKeywords = [
   2 => 'каталог турбин, продажа турбин, турбина на грузовой автомобиль',
   3 => 'каталог турбин, продажа турбин, турбина судовая',
 ];
-
 $this->registerMetaTag(['name' => 'description', 'content' => $arrayMetaDescription[$category_id]]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $arrayMetaKeywords[$category_id]]);
-
 ?>
 
-<section id="breadcrumbs">
-<?=  
-Breadcrumbs::widget([
-  'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
-  'links' => [
-    ['label' => 'ТурбоМагазин'],
-    ['label' => $products[0]['category_name']],
-  ]    
-]); 
-    ?>
-  <h1 class="catalog"><?= $products[0]['category_h1']; ?></h1>
-</section>
+<div class="container page-style">
+    <section id="breadcrumbs">
+        <?= Breadcrumbs::widget([
+            'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+            'links' => [
+              ['label' => 'ТурбоМагазин'],
+              // ['label' => $products[0]['category_name']]
+              ]]) ?>
+    </section>
+    
+    <h1><?= $products[0]['category_h1']; ?></h1>
 
-<section id="list">
-
+    <section id="list">
 <?php  
-
 $briefArray = [
     1 =>'<p>В нашем ТурбоМагазине вы можете купить новые оригинальные турбины для легковых бензиновых и дизельных автомобилей производства мировых лидеров - Garrett, Borg Warner, MHI, IHI. В широком ассортименте представлены турбины для популярных марок автомобилей Audi, VW, Skoda, Mercedes, BMW, Ssang Yong, KIA и др. Также в нашем каталоге вы найдете турбокомпрессоры для микроавтобусов, минивенов, легких коммерческих грузовиков Ford, Hyundai, Iveco, Mercedes и многие другие. С нами купить турбокомпрессор совсем просто!</p><p>Даже если Вы не нашли нужную турбину, звоните нам (499) 650-76-45, и мы сможем Вам помочь!</p>',
     2 => '<p>В нашем ТурбоМагазине вы можете купить новые оригинальные турбины для грузовых автомобилей и автобусов импортного производства. В широком ассортименте представлены популярные турбины для автомобилей Mercedes, Iveco, Scania, Volvo и др.</p><p>Даже если Вы не нашли нужную турбину, звоните нам (499) 650-76-45, и мы сможем Вам помочь!</p>',
     3 => '<p>Судовые турбины в каталоге ТурбоМагазин – это специализированные турбокомпрессоры оригинального качества, рекомендованные для сервисной замены вышедших из строя турбоагрегатов силовых установок морских и речных судов любых классов. Доставка заказа в любой город России!</p><p>Бесплатные консультации по телефону: (499) 650-76-45.</p>',
       ];
+        echo $briefArray[$category_id];
 
-
-  echo $briefArray[$category_id];
-
-  if(count($brands)>0) {
-    echo $this->render('_brands', ['brands' => $brands]);
-  }
+        if(count($brands) > 0) {
+            echo $this->render('_brands', ['brands' => $brands]);
+        }
 ?>
-</section>
+    </section>
+</div>
