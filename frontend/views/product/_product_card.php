@@ -48,7 +48,7 @@ use yii\helpers\CommonHelper;
             <td><strong><?= $product['partnumber'] ?></strong></td>
         </tr>
         <tr>
-            <th>Взаимозаменяемость</th>
+            <th style="word-wrap: break-word;">Взаимоза&shy;<wbr>меняемость</th>
             <td style="word-wrap: break-word;"><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
         </tr>
         <tr>
