@@ -3,12 +3,11 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 ?>
 
-<div class="table-responsive">
-    <table class="table table-striped">
+<table id="product-card-table" class="table table-striped">
     <tbody>
         <tr>
             <th>Марка</th>
-            <td><?= $product['brand_name'] ?></td>
+            <td style="width: 60%;"><?= $product['brand_name'] ?></td>
         </tr>
         <tr>
             <th>Модель</th>
@@ -16,7 +15,7 @@ use yii\helpers\CommonHelper;
         </tr>
         <tr>
             <th>Наименование</th>
-            <td><?= $product['name'] ?></td>
+            <td><strong><?= $product['name'] ?></strong></td>
         </tr>
         <tr>
             <th>Применение</th>
@@ -46,11 +45,11 @@ use yii\helpers\CommonHelper;
         </tr>
         <tr>
             <th>Артикул</th>
-            <td><b><?= $product['partnumber'] ?></b></td>
+            <td><strong><?= $product['partnumber'] ?></strong></td>
         </tr>
         <tr>
             <th>Взаимозаменяемость</th>
-            <td><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
+            <td style="word-wrap: break-word;"><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
         </tr>
         <tr>
             <th>Производитель</th>
@@ -63,12 +62,11 @@ use yii\helpers\CommonHelper;
         <tr>
             <th></th>
             <td class="clearfix">
-                <i class="fa fa-question-circle" style="display: block; float: left; font-size: 32px; margin: 6px 8px 0 0; color: #b04340;"></i>
-                <a href="/question/create" class="question-add-link link-dotted" style="display: block; float: left; font-size: 18px; margin: 6px 0 12px 0;" data-question-type="common_question" data-product-id="<?= $product['id'] ?>">
+                <i class="fa fa-question-circle" style="display: block; float: left; font-size: 26px; margin: 6px 8px 0 0; color: #b04340;"></i>
+                <a href="/question/create" class="question-add-link link-dotted" style="display: block; float: left; font-size: 16px; margin: 6px 0 12px 0;" data-question-type="common_question" data-product-id="<?= $product['id'] ?>">
                     <span>Задать вопрос о товаре</span>
                 </a>
             </td>
         </tr>
     </tbody>
 </table>
-</div>

@@ -16,15 +16,16 @@ $isWarning = false;
 
 <div class="container page-style" style="position: relative;">
     
-    <div id="print-label" style="position: absolute; top: 60px; right: 40px;">
+    <div id="print-label" class="visible-lg visible-md">
         <a onclick="window.print(); return false;" href="#">
-            <div class="fa fa-print" style="font-size: 28px;" title="Распечатать страницу"></div>
+            <div class="fa fa-print" title="Распечатать страницу"></div>
         </a>
     </div>
 
     <section id="breadcrumbs">
         <?= Breadcrumbs::widget([
-          'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+          // 'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
+          'homeLink' => false,
           'links'    => $breadcrumbsLinks]); ?>
     </section>
 

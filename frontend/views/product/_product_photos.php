@@ -9,16 +9,18 @@ $mainPhoto = !empty($photos) ? CommonHelper::getImageSrc('/photo/product/240/' .
 ?>
 
 <div class="row product-main-photo">
-    <div class="col-md-9 col-xs-4" style="padding-right: 0;">
-        <?= Html::img($mainPhoto, ['style' => 'border: 3px solid #eee;', 'alt' => $product['name']]) ?>
-        
+    <div class="col-md-10 col-md-offset-2 col-xs-8">
+        <?= Html::img($mainPhoto, ['alt' => $product['name']]) ?>
         <?php if(!$isOriginalPhoto) { ?>
-            <div class="alert alert-danger" role="alert" style="font-size: 13px; line-height: 1.1em;">
+            <div class="alert alert-warning" role="alert" style="max-width: 242px; font-size: 13px; line-height: 1.1em;">
                 Внимание! На фотографии представлен образец оригинальной турбины <?= $product['manufacturer_name'] ?>, НЕ идентичный данному товару.
             </div>
         <?php } ?>
     </div>
-    <div class="col-md-3 visible-lg visible-md product-photo-thumbs">
+</div>
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-2 col-xs-8 product-thumbs">
         <?php
         if(count($photos) > 1) {
             echo '<ul>';

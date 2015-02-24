@@ -299,7 +299,7 @@ class Product extends \yii\db\ActiveRecord
             $links[] =  ['label' => $product['model_name'], 'url' => ['product/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias'], 'model_alias' => $product['model_alias']]];
             }
         }
-        $links[] = ['label' => $product['name']];
+        // $links[] = ['label' => $product['name']];
         return $links;
     }   
 
