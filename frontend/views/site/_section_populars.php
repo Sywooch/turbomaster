@@ -6,7 +6,7 @@ use yii\helpers\CommonHelper;
 <section id="main-populars">
     <div class="container">
             
-        <h2 style="margin: 40px 0; color: #888; text-align: center;">Цены на популярные турбины</h2>
+        <h2 class="mainpage-title">Цены на популярные турбины</h2>
 
         <div class="table-responsive">
             <table id="table-popular" class="table table-striped white-stripped">

@@ -8,7 +8,7 @@ use yii\helpers\Html;
             
             <div class="col-md-4">
                 <div class="tabbable">
-                    <ul class="nav nav-tabs nav-stacked" style="margin-bottom: 30px;">
+                    <ul class="tabs-stack" style="margin-top: 10px;">
                         <li class="active"><a data-toggle="tab" href="#tab1">ТурбоМагазин</a></li>
                         <li class=""><a data-toggle="tab" href="#tab2">ТурбоСервис</a></li>
                         <li class=""><a data-toggle="tab" href="#tab3">ТурбоРемонт</a></li>
