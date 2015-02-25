@@ -12,6 +12,7 @@ class AppAsset extends AssetBundle
     
     public $css = [
         'css/font-awesome.css',
+        'css/jquery-ui.min.css',
         'css/jquery.formstyler.css',
 
         'css/jquery.jcarousel.basic.css',

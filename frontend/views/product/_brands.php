@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 ?>
 
-<h2 style="margin-top: 40px;">Выберите марку:</h2>
+<!-- <h2 style="margin-top: 40px;">Выберите марку:</h2> -->
 
 <div class="columns">
   <ul class="models-list">       

@@ -48,7 +48,7 @@ use yii\helpers\CommonHelper;
             <td><strong><?= $product['partnumber'] ?></strong></td>
         </tr>
         <tr>
-            <th style="word-wrap: break-word;">Взаимоза&shy;<wbr>меняемость</th>
+            <th style="word-wrap: break-word; hyphens: auto;">Взаимоза&shy;меняемость</th>
             <td style="word-wrap: break-word;"><?= \common\models\Product::interchangeViewFormat($product['interchange']) ?></td>
         </tr>
         <tr>
@@ -60,13 +60,12 @@ use yii\helpers\CommonHelper;
             <td><?= $product['warranty'] ?></td>
         </tr>
         <tr>
-            <th></th>
-            <td class="clearfix">
-                <i class="fa fa-question-circle" style="display: block; float: left; font-size: 26px; margin: 6px 8px 0 0; color: #b04340;"></i>
-                <a href="/question/create" class="question-add-link link-dotted" style="display: block; float: left; font-size: 16px; margin: 6px 0 12px 0;" data-question-type="common_question" data-product-id="<?= $product['id'] ?>">
-                    <span>Задать вопрос о товаре</span>
+            <th colspan="2" class="fa-hover" style="padding-left: 30%;">
+                <a href="/question/create" data-question-type="common_question" data-product-id="<?= $product['id'] ?>" class="question-add-link">
+                    <i class="fa fa-question-circle" style="font-size: 26px; color: #b04340;"></i>
+                    <span style="border-bottom: 1px dotted #b04340;">Задать вопрос о товаре</span>
                 </a>
-            </td>
+            </th>
         </tr>
     </tbody>
 </table>

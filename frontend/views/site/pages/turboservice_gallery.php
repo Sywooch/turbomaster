@@ -13,7 +13,7 @@ $this->registerMetaTag([
 
 <div class="container page-style">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-10">
             <section id="breadcrumbs">
                 <?= Breadcrumbs::widget([
                   'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
@@ -22,15 +22,14 @@ $this->registerMetaTag([
     
             <h1 class="catalog">Фоторепортажи ТурбоСервиса</h1>
 
-            <article>
-                <p>Фотогалерея самых интересных и напряженных моментов в нашем Турбосервисе. Посмотрите, как мы работаем!</p>
-                <p></p>
-                <section class="photogallery">
-                
-                <p class="description"></p>
-                <div class="jcarousel-wrapper">
-                    <div class="jcarousel" data-jcarousel="true">
-                        <ul style="left: 0px; top: 0px;">
+            <p>Фотогалерея самых интересных и напряженных моментов в нашем Турбосервисе. Посмотрите, как мы работаем!</p>
+            
+            <section class="photogallery">
+                    <div class="row"></div>
+                <!-- <p class="description"></p> -->
+              <!--   <div class="jcarousel-wrapper">
+                    <div class="jcarousel" data-jcarousel="true"> -->
+                         <ul class="gallery-items" style="margin: 20px 0 40px 0px;">
                             <li><a href="/photo/gallery/big/1.jpg" title="За «белым безмолвием» - напряженный ритм Турбосервиса." data-fancybox-group="gallery1"><img width="100" height="100" alt="Снег да снег кругом" src="/photo/gallery/small/1.jpg"></a></li>
                             <li><a href="/photo/gallery/big/83.jpg" title="За внешним спокойствием - напряженная работа ТурбоСервиса" data-fancybox-group="gallery1"><img width="100" height="100" alt="Летний вариант" src="/photo/gallery/small/83.jpg"></a></li>
                             <li><a href="/photo/gallery/big/2.jpg" title="Направо пойдешь &ndash; «коня» потеряешь..." data-fancybox-group="gallery1"><img width="100" height="100" alt="Добро пожаловать" src="/photo/gallery/small/2.jpg"></a></li>
@@ -50,10 +49,8 @@ $this->registerMetaTag([
                     <!-- p class="jcarousel-pagination"></p -->
                 </div>
             </section>
-            <p></p>
             
-            </article>
-        </div><!-- /.col-md-9 -->
+        </div><!-- /.col-md-10 -->
     </div><!-- /.row -->
 </div><!-- /.container -->
        

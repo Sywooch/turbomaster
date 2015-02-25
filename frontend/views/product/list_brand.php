@@ -29,22 +29,24 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => "турбина на 
     <h1><?= $title ?></h1>
 
     <section id="list">
+        <?php  
+        if(count($models) > 0) {
+            echo $this->render('_models', 
+                [
+                    'models' => $models, 
+                    'common_name' => $common_name,
+                    'brand_name' => $brand_name, 
+                ]);
+        }
+        ?>
+    </section>
+
+    <section id="intro">
         <p> Оригинальные турбины для автомобилей марки <?= $brand_name ?> в наличии на складе в Москве и под заказ. Бесплатные консультации, информация о наличии и заказе турбин по телефону: (499) 650-76-45. Бесплатная доставка турбин для <?= $common_name ?> по Москве. Оперативная <a href="http://turbomaster.loc/delivery">доставка</a> во все регионы России!</p>
         <p>При заказе диагностики и ремонта турбины на <?= $brand_name ?> в нашем 
         <a href="http://www.turbomaster.ru/turboservice">ТурбоСервисе</a>
          - расширенная общая гарантия на турбокомпрессор и на выполненные работы. <a href="http://www.turbomaster.ru/price">Стоимость замены</a> турбины на <?= $common_name ?>  нашем профильном центре вас приятно удивит!
         </p>
-
-    <?php  
-    if(count($models) > 0) {
-        echo $this->render('_models', 
-            [
-                'models' => $models, 
-                'common_name' => $common_name,
-                'brand_name' => $brand_name, 
-            ]);
-    }
-    ?>
     </section>
 
     <?php 

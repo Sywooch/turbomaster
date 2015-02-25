@@ -35,13 +35,13 @@ if($analogs) {
             ?>
         
             <tr class="gross">
-                <td><?= $item['name'] ?></td>
+                <td><strong><?= $item['name'] ?></strong></td>
                 <td><?= $item['partnumber'] ?></td>
                 <td><?= $item['manufacturer_name'] ?></td>
                 <td><?= $state ?></td>
                 <td nowrap class="price_cell"><?= $price ?></td>
                 <td>
-                <?= Html::a('Заказать', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link link-dotted']) ?>
+                <?= Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 24px; padding-left: 15px;']) ?>
                 </td>
             </tr>
         <?php } ?>   

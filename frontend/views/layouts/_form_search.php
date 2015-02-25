@@ -19,16 +19,16 @@ $modelList = ($brand_id) ? ArrayHelper::map(Model::listByBrandId($brand_id), 'id
 <form method="get" action="<?= \Yii::$app->urlManager->createUrl(['search/index']); ?>" id="search-form">
 
     <div class="form-group">
-        <?= Html::dropDownList('brand_id', $brand_id, $brandList, ['prompt'=> 'Выберите марку автомобиля', 'id'=>'dropDownBrands', 'class' => 'stylerize']); ?> 
+        <?= Html::dropDownList('brand_id', $brand_id, $brandList, ['prompt'=> 'Выберите марку автомобиля', 'id'=>'select-cascade-brand', 'class' => 'stylerize']); ?> 
     </div>
     <div class="form-group">
-        <div id="warpDropDownModels">
-            <?= Html::dropDownList('model_id', $model_id,  $modelList, ['prompt' => 'Выберите модель автомобиля', 'id'=>'dropDownModels', 'class' => 'stylerize']); ?>
+        <div id="wrap-cascade-model">
+            <?= Html::dropDownList('model_id', $model_id,  $modelList, ['id'=>'select-cascade-model', 'class' => 'stylerize']); ?>
         </div>
     </div>
     <div class="form-group">
         <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-        <input type="text" value="" placeholder="Введите номер производителя или ОЕM-код" class="turbosearch ui-autocomplete-input" id="inputPartnumber" name="partnumber" autocomplete="off">
+        <input type="text" value="" placeholder="Введите номер производителя или ОЕM-код" class="turbosearch ui-autocomplete-input" id="input-partnumber" name="partnumber" autocomplete="off">
     </div>
 
     <div style="margin: 20px 0 0 0;" class="form-group">

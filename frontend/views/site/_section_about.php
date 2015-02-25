@@ -12,7 +12,8 @@ use yii\helpers\Html;
                         <li class="active"><a data-toggle="tab" href="#tab1">ТурбоМагазин</a></li>
                         <li class=""><a data-toggle="tab" href="#tab2">ТурбоСервис</a></li>
                         <li class=""><a data-toggle="tab" href="#tab3">ТурбоРемонт</a></li>
-                        <li class=""><a data-toggle="tab" href="#tab4">ТурбоИнформация</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab4">ТурбоФакты</a></li>
+                        <li class=""><a data-toggle="tab" href="#tab5">ТурбоМастер от А до Я</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
@@ -28,7 +29,7 @@ use yii\helpers\Html;
                                     <i class="fa fa-tags"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <h4>3211 турбин</h4>
+                                    <h4>3211 &nbsp;турбин</h4>
                                     <p>В наличии и под заказ</p>
                                 </div>                          
                             </div>
@@ -37,7 +38,7 @@ use yii\helpers\Html;
                                     <i class="fa fa-thumbs-up"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <h4>12 месяцев гарантии</h4>
+                                    <h4>12 &nbsp;месяцев гарантии</h4>
                                     <p>На все новые турбины</p>
                                 </div>                          
                             </div>

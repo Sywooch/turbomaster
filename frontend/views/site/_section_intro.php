@@ -9,7 +9,7 @@ use yii\helpers\Html;
                 <div class="texture-overlay"></div>
                     <div class="col-md-6 nopadding">
                     </div>
-                    <div class="col-md-4 nopadding">
+                    <div class="col-md-4 nopadding" style="padding-top: 40px;">
                          <?= $this->render('/layouts/_form_search', []); ?> 
                     </div>
                 </div>            
