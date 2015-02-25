@@ -27,7 +27,7 @@ use yii\helpers\CommonHelper;
                     </tr>
                     <tr>
                         <td>объём:</td>
-                        <td> <?= str_replace('.', '', $product['volume']) ?> ccm</td>
+                        <td> <?= str_replace('.', '', $product['volume']) ?> cm<sup>3</sup></td>
                     </tr>
                     <tr>
                         <td>мощность:</td>
