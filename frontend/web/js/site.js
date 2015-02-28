@@ -9,27 +9,42 @@ $(document).ready(function() {
     //     current += 1; 
     // }, 3000);
 
-
-
-
-    $('.panenable li a').click(function(event){
-
-        var $this = $(this),
-            parentLi = $this.parent('li'),
-            targetId = $($this.attr('href')),
-            targetSet = $('.' + $this.data('set'));
-
-        event.preventDefault();
-        targetSet.hide().removeClass('in');
-        targetId.show().addClass('in');
+    
+    var $items =  $('.panenable li a'),
+        count = $items.length,
+        current = 0,
+        interval;
+   
+   var activateTab = function(el) {
+        var parentLi = el.parent('li'),
+            targetSet = $('.' + el.data('set')),
+            targetId = $(el.attr('href'));
 
         $('.panenable li').removeClass('active');
         parentLi.addClass('active');
+        targetSet.hide().removeClass('active');
+        targetId.show().addClass('active');
+    }
+
+    $('.panenable li a').click(function(event){
+        event.preventDefault();
+        clearInterval(interval);
+        activateTab($(this));
     })
 
+    var startRotator = function(duration) {
+        interval = setInterval(function() {
+            if(current == count) { 
+                current = 0; 
+            }
+            activateTab($items.eq(current));
+            current += 1; 
+        }, duration);
+    }
 
+    startRotator(4000);
 
-
+    // ......................
 
     $('.stylerize').styler();
 

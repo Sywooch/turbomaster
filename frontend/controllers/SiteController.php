@@ -16,8 +16,6 @@ use yii\web\Controller;
 class SiteController extends Controller
 {
     
-
-
     public function actions()
     {
         return [
@@ -40,20 +38,15 @@ class SiteController extends Controller
     public function actionIndex()
     {   
         $connection = \Yii::$app->db;
-        $command = $connection
-            ->createCommand('SET SQL_BIG_SELECTS=1')
-            ->execute();
+        $command = $connection->createCommand('SET SQL_BIG_SELECTS=1')->execute();
 
         $items = Mainpage::queryFull()->all();
         $populars = Popular::getProductList();
         $news = Article::listForMainpage();
 
-        return $this->render('index', [
-                                        'items' => $items,
-                                        'populars' => $populars,
-                                        'news' => $news,
-                                        ]);
+        return $this->render('index', compact('items', 'populars', 'news'));
     }
+
 
     public function actionError() 
     {   

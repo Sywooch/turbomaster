@@ -8,5 +8,5 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
 ?>
 
 <?php echo $this->render('_section_intro') ?>
-<?php echo $this->render('_section_about') ?>
+<?php echo $this->render('_section_about', ['news' => $news]) ?>
 <?php echo $this->render('_section_populars', ['populars' => $populars]) ?>

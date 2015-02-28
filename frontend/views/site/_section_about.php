@@ -7,22 +7,23 @@ use yii\helpers\Html;
         <div class="row">
             
             <div class="col-md-4">
-                <div class="tabbable-xx panenable">
+                <div class="panenable">
                     <ul class="tabs-stack" style="margin-top: 10px;">
-                        <li class="active"><a data-set="tab-pane" href="#pane1">ТурбоМагазин</a></li>
-                        <li class=""><a data-set="tab-pane" href="#pane2">ТурбоСервис</a></li>
-                        <li class=""><a data-set="tab-pane" href="#pane3">ТурбоРемонт</a></li>
-                        <li class=""><a data-set="tab-pane" href="#pane4">ТурбоФакты</a></li>
-                        <li class=""><a data-set="tab-pane" href="#pane5">ТурбоМастер от А до Я</a></li>
+                        <li class="active"><a data-set="pane-item" href="#pane1">ТурбоМагазин</a></li>
+                        <li class=""><a data-set="pane-item" href="#pane2">ТурбоСервис</a></li>
+                        <li class=""><a data-set="pane-item" href="#pane3">ТурбоРемонт</a></li>
+                        <li class=""><a data-set="pane-item" href="#pane4">ТурбоНовости</a></li>
+                        <li class=""><a data-set="pane-item" href="#pane5">ТурбоФакты</a></li>
+                        <li class=""><a data-set="pane-item" href="#pane6">ТурбоМастер от А до Я</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
             <div class="col-md-7 col-md-offset-1">
                 
-                <div class="pane-collection link-dotted">
+                <div class="pane-collection">
                     
-                    <div id="pane1" class="tab-pane fade active in">
-                        <p>В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
+                    <div id="pane1" class="pane-item active">
+                        <p class="link-dotted">В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
                         <div class="row">
                             <div class="col-md-6"> 
                                 <div class="feature-box-icon">
@@ -66,28 +67,110 @@ use yii\helpers\Html;
 
                     </div><!-- .tab-pane -->
 
-                    <div id="pane2" class="tab-pane fade">
-                        <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
-                        <p>Обратившись в <a href="/turboservice">ТурбоСервис</a>, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
-                        <p>Задайте любой вопрос специалисту ТурбоСервиса по телефону <strong>(499) 391-58-75</strong></p>
+                    <div id="pane2" class="pane-item">
+                        <p class="link-dotted">Профессиональное решение любых проблем в <a href="/turboservice">ТурбоСервисе</a>: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели. Все  <a href="/price">цены здесь</a>. Вы можете получить консультацию специалиста по телефону (499) 391-58-75</p>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Профессиональное обслуживание</h4>
+                                    <p>Квалифицированный персонал с огромным опытом работ.</p>
+                                </div>                          
+                            </div>
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-cog"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Импортное оборудование</h4>
+                                    <p>Оснащение ТурбоСервиса соответствует нормам европейских производителей.</p>
+                                </div>                          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-rocket"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Без выходных</h4>
+                                    <p>Турбомастера работают от рассвета до заката (с 9-00 до 21-00).</p>
+                                </div>                          
+                            </div>
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-life-ring"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Твердые гарантии</h4>
+                                    <p>Расширенная общая гарантия на турбокомпрессор и на выполненные работы</p>
+                                </div>                          
+                            </div>
+                        </div>
                     </div><!-- .tab-pane -->
 
-                    <div id="pane3" class="tab-pane fade">
-                        <h4>ТурбоСервис на все случаи</h4>
-                        <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
-                        <p>Обратившись в ТурбоСервис, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
+                    <div id="pane3" class="pane-item">
+                        <p class="link-dotted">ТурбоРемонт – это восстановление работоспособности турбокомпрессора, снятого с автомобиля. Профессиональный ремонт турбин <a href="/turborepair">выполняется</a> в производственном цехе, оснащенном специализированным оборудованием. <a href="/repair-price">Цены на ремонт турбин.</a></p>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-thumbs-up"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Высокое качество</h4>
+                                    <p>Ремонт по технологиям, рекомендованным производителями.</p>
+                                </div>                          
+                            </div>
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-sliders"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Только оригинал</h4>
+                                    <p>Применяется оригинал или детали от известных поставщиков запчастей.</p>
+                                </div>                          
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-paper-plane"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Гарантия 6 месяцев</h4>
+                                    <p>На отремонтированную (восстановленную) турбину предоставляется гарантия 6 месяцев.</p>
+                                </div>                          
+                            </div>
+                            <div class="col-md-6"> 
+                                <div class="feature-box-icon">
+                                    <i class="fa fa-database"></i>
+                                </div>
+                                <div class="feature-box-content">
+                                    <h4>Все по-честному</h4>
+                                    <p>Возможность ремонта, объем работ и их стоимость уточняются после дефектовки турбины.</p>
+                                </div>                          
+                            </div>
+                        </div>
                     </div><!-- .tab-pane -->
 
-                    <div id="pane4" class="tab-pane fade">
+                    <div id="pane4" class="pane-item">
+                        <div style="margin-top: 10px;">
+                            <?= $this->render('_news', ['news' => $news]) ?>
+                        </div>
+                    </div><!-- .tab-pane -->
+                    
+                    <div id="pane5" class="pane-item">
                         <h4>ТурбоФакты</h4>
                         <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
                         <p>Обратившись в ТурбоСервис, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
                     </div><!-- .tab-pane -->
 
-                    <div id="pane5" class="tab-pane fade">
+
+                    <div id="pane6" class="pane-item">
                         <h4>ТурбоМастер от А до Я</h4>
                         <p>ТурбоМастер от А до Я: </p>
-                       
                     </div><!-- .tab-pane -->
 
                 </div><!-- /tab-content -->

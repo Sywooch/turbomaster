@@ -179,6 +179,7 @@ class Article extends \yii\db\ActiveRecord
         return static::queryArticleFull()
             ->andWhere('article.is_main = 1')
             ->orderBy('article.pos, article.id DESC')
+            ->limit(4)
             ->asArray()
             ->all();
     } 

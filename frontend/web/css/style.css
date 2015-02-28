@@ -95,13 +95,18 @@ ul.dropdown-menu.extended .fa-hover a { line-height: 1.2em; }
 
 /* MAIN PAGE */
 
-/* my tabs-stack */
+/* my TABS-STACK */
 ul.tabs-stack { padding: 0;}
 .tabs-stack li { display: block; list-style-type: none; list-style-position: outside;
   border-bottom: 1px solid #ddd; }
 .tabs-stack li:first-child { border-top: 1px solid #ddd; }
 .tabs-stack li.active > a { background: #eee; border-right: 10px solid #d9534f; }
 .tabs-stack li a { display: block; padding: 12px 15px; font: 700 16px "Open Sans Condensed",sans-serif; color: #666; text-transform: uppercase; text-decoration: none; }
+
+.pane-item {display: none; }
+.pane-item.active {display: block; }
+
+
 
 .texture-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: url("../images/bg-grid.png"); }
 .intro-bg { position: relative; min-height: 400px; background: url("../images/main-intro-f.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0); }
@@ -121,6 +126,7 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 }
 .feature-box-content { padding-left: 40px; }
 .feature-box-content h4 { text-transform: uppercase; }
+.feature-box-content p { line-height: 1.2em; }
 .table .fa { font-size: 18px;}
 
 
@@ -189,6 +195,18 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 .article h1 { font-size: 32px; line-height: 1.1em; margin-bottom: 40px; }
 .sidebar-mini { padding: 10px 20px 20px 20px;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
 .sidebar-mini h3 { margin-top: 0; }
+
+
+ /* ARTICLE LIST */
+ul.articles-list { list-style: outside none none; padding: 0; }
+ul.articles-list img { max-width: 100%; height: auto; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4); }
+ul.articles-list li { display: block; margin-bottom: 20px; padding: 0; font: 14px/1.2em "Open Sans",​Arial,​sans-serif; }
+ul.articles-list .text h3 { margin: -6px 0 8px 0;font: 700 16px "Open Sans Condensed",sans-serif; text-transform: uppercase; }
+ul.articles-list .text a { text-decoration: none; }
+ul.articles-list .text a, ul.articles-list .title a:visited { color: #222; }
+ul.articles-list .text a:hover { color: #4d6e8d; text-decoration: none; }
+ul.articles-list .text span { display: block; margin-bottom: 6px; }
+#articles-list ul.pagination { margin-left: 40px; }
 
 
  /*GALLERY PARTIAL */
