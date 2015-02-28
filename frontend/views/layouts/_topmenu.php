@@ -108,7 +108,7 @@ use yii\helpers\Html;
                 <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                 <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
-                <li class="fa-hover clearfix"><?= Html::a('<i class="fa fa-search"></i>', ['search/index'], ['style' => '']) ?></li>
+                <li><?= Html::a('Поиск', ['search/index', 'view'=>'about']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>

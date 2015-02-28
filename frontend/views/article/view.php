@@ -67,14 +67,16 @@ if(isset($category_name))
 
         <div class="col-md-3 visible-lg visible-md">
             <aside class="sidebar-mini">
-                <h3>На ту же тему:</h3>
+                <h3>Рубрики</h3>
                 <ul>
-                    <li>Раз</li>
-                    <li>Два</li>
-                    <li>Три</li>
+                    <?php
+                    foreach($rubrics as $rubric) {
+                    echo '<li>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
+                    }
+                    ?>
                 </ul>
             </aside>
-
         </div><!-- /.col-md-3 -->
     </div><!-- /.row -->
-</div>
+</div><!-- /.container -->
+

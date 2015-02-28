@@ -55,6 +55,17 @@ class Rubric extends \yii\db\ActiveRecord
             ->all();
     }
     
-       
+    public static function getListSubrubricHasPublishArticles()
+    {
+        return static::find()
+            ->select('rubric.*')
+            ->innerJoin('article', 'article.category_id = rubric.id') 
+            ->andWhere('rubric.parent_id > 0')
+            ->andWhere('article.state = 1')
+            ->orderBy('rubric.name')
+            ->asArray()
+            ->all();
+    }
+
 
 }

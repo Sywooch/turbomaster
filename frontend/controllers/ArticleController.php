@@ -27,14 +27,9 @@ class ArticleController extends Controller
     public function actionIndex($alias)
     {   
         Article::$isActiveOnly = true;
-        $articles = Article::listByRubricAlias($alias);
-            
-        if ($articles) {
-            return $this->render('index', ['articles' => $articles,
-                                          ]);
-        } else {
-             throw new NotFoundHttpException('The requested page does not exist.');
-        }
+        $items = Article::listByRubricAlias($alias);
+        $rubrics = Rubric::getListSubrubricHasPublishArticles();
+        return $this->render('index', compact('items', 'rubrics'));
     }
 
     public function actionRubrics($alias)
@@ -49,15 +44,9 @@ class ArticleController extends Controller
         Article::$isActiveOnly = true;
         $article = Article::findByAlias($alias);
         $photos  = Article::getPhotoArrayByArticleId($article['id']);
+        $rubrics = Rubric::getListSubrubricHasPublishArticles();
 
-        if ($article) {
-            return $this->render('view', [
-                                            'article' => $article,
-                                            'photos'  => $photos,
-                                         ]);
-        } else {
-             throw new NotFoundHttpException('The requested page does not exist.');
-        }
+        return $this->render('view', compact('article', 'photos', 'rubrics'));
     }
 
 

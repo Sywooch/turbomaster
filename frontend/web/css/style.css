@@ -16,7 +16,7 @@
   /*padding-left: 0; padding-right: 0;*/
    }
 .nav > li > a { 
-  /*padding: 12px 10px;  */
+  padding-left: 14px; padding-right: 14px;  
   font: 700 16px "Open Sans Condensed",sans-serif; color: #666; text-transform: uppercase; }
 
 /*.navbar-nav > li { border-right: 1px solid #ddd; }
@@ -193,8 +193,16 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 /* ARTICLE */
 .article { }
 .article h1 { font-size: 32px; line-height: 1.1em; margin-bottom: 40px; }
-.sidebar-mini { padding: 10px 20px 20px 20px;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
-.sidebar-mini h3 { margin-top: 0; }
+
+.article figure.left { width: 30%; float: left; padding: 4px 10px 0 0; }
+.article figure.right { width: 30%; float: right; padding: 4px 0 0 10px; }
+
+/*ARTICLE SIDEBAR*/
+.sidebar-mini { margin-top: 50px; padding: 10px 20px 20px 20px;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
+.sidebar-mini h3 { margin: 0 0 30px 14px; }
+.sidebar-mini ul { padding-left: 30px; }
+.sidebar-mini li { color: #555; margin-bottom: 10px; line-height: 1.2em; }
+.sidebar-mini li a { color: #555;  }
 
 
  /* ARTICLE LIST */
