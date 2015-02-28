@@ -1,7 +1,37 @@
 $(document).ready(function() {
 
-    $('.stylerize').styler();
+    // var $items =  $('ul.tabs-stack li a'),
+    //     count = $items.length,
+    //     current = 0;
+    // setInterval(function(){
+    //     if(current == count) { current = 0; }
+    //     $items.eq(current).trigger('click');
+    //     current += 1; 
+    // }, 3000);
 
+
+
+
+    $('.panenable li a').click(function(event){
+
+        var $this = $(this),
+            parentLi = $this.parent('li'),
+            targetId = $($this.attr('href')),
+            targetSet = $('.' + $this.data('set'));
+
+        event.preventDefault();
+        targetSet.hide().removeClass('in');
+        targetId.show().addClass('in');
+
+        $('.panenable li').removeClass('active');
+        parentLi.addClass('active');
+    })
+
+
+
+
+
+    $('.stylerize').styler();
 
     $("#select-cascade-brand").change(function(e) {
         $.get('/brand/modellist', {'id': this.value }, 
@@ -104,7 +134,7 @@ $(document).ready(function() {
 
     // $('.jcarousel-pagination').on('active.jcarouselpagination', 'a', function () { jQuery( this ).addClass('active'); } ).on( 'inactive.jcarouselpagination', 'a', function(){ jQuery( this ).removeClass('active' ); } ).jcarouselPagination();
 
-
+  
 
 }); 
 

@@ -22,8 +22,7 @@ use yii\helpers\Html;
   <!--          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li> -->
                 
-                 <li class="fa-hover clearfix"><a href="/" style="padding-left: 0; padding-right: 2px;"><i class="fa fa-home"></i></a></li>
-
+                <li class="fa-hover clearfix"><a href="/" style="padding-left: 0; padding-right: 2px;"><i class="fa fa-home"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбины <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
@@ -109,7 +108,7 @@ use yii\helpers\Html;
                 <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                 <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
-                <li><?= Html::a('Поиск', ['search/index'], ['style' => 'padding-left: 10px;']) ?></li>    
+                <li class="fa-hover clearfix"><?= Html::a('<i class="fa fa-search"></i>', ['search/index'], ['style' => '']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div>
