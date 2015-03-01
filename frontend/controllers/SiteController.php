@@ -42,7 +42,7 @@ class SiteController extends Controller
 
         $items = Mainpage::queryFull()->all();
         $populars = Popular::getProductList();
-        $news = Article::listForMainpage();
+        $news = Article::listForMainpage(3);
 
         return $this->render('index', compact('items', 'populars', 'news'));
     }

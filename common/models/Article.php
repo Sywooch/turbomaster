@@ -174,12 +174,12 @@ class Article extends \yii\db\ActiveRecord
         return  $query->offset(static::$pages->offset)->limit(static::$pages->limit)->all();
     }  
 
-    public static function listForMainpage()
+    public static function listForMainpage($limit = 10)
     {
         return static::queryArticleFull()
             ->andWhere('article.is_main = 1')
             ->orderBy('article.pos, article.id DESC')
-            ->limit(4)
+            ->limit($limit)
             ->asArray()
             ->all();
     } 

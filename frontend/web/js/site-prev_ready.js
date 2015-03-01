@@ -1,66 +1,48 @@
 $(document).ready(function() {
 
-    var Player = function(params) {
-        
-        var opts = {};
+    // var $items =  $('ul.tabs-stack li a'),
+    //     count = $items.length,
+    //     current = 0;
+    // setInterval(function(){
+    //     if(current == count) { current = 0; }
+    //     $items.eq(current).trigger('click');
+    //     current += 1; 
+    // }, 3000);
 
-        this.init = function() {
-            opts = {
-                items: $(params.items),
-                count: $(params.items).length,
-                duration: params.duration,
-                interval: 0,
-                current: 1,
-                lastActive: 0,
-                startRotator: this.startRotator
-            }
+    
+    var $items =  $('.panenable li a'),
+        count = $items.length,
+        current = 0,
+        interval;
+   
+    var activateTab = function(el) {
+        var parentLi = el.parent('li'),
+            liSet = parentLi.siblings(),
+            targetSet = $('.' + el.data('set')),
+            targetId = $(el.attr('href'));
 
-            $(opts.items).on('click', function(event) {
-                event.preventDefault();
-                clearInterval(opts.interval);
+        liSet.removeClass('active');
+        parentLi.addClass('active');
 
-                activateTab($(this));
-                setTimeout(opts.startRotator(), 10000);
-            });
-            this.startRotator();
-        };
-
-        var activateTab = function(el) {
-            var parentLi = el.parent('li'),
-                prevLi = el.prev(),
-                liSet = parentLi.siblings(),
-                targetSet = $('.' + el.data('set')),
-                target = $(el.attr('href'));
-
-            opts.lastActive = parentLi.index();
-            liSet.removeClass('active');
-            parentLi.addClass('active');
-
-            targetSet.animate({opacity: 0}, 200);
-            setTimeout(function() {
-                targetSet.hide();
-                target.show().animate({opacity: 1}, 1600);
-            }, 200);
-        }
-
-        this.startRotator = function(from) {
-            if (from === undefined) from = 0;
-            opts.interval = setInterval(function() {
-                var count = opts.count,
-                    items = opts.items;
-
-                // from = (index == opts.count) ? 0 : index += 1;
-                opts.current = (opts.current < count) ? opts.current : from;
-                activateTab(items.eq(opts.current));
-                opts.current += 1; 
-            }, opts.duration);
-        }
-
-        this.init();
+        targetSet.hide().removeClass('active');
+        targetId.show().addClass('active');
     }
-    
-    var player = new Player({items: '.panenable li a', duration: 4000});
-    
+
+    $('.panenable li a').click(function(event){
+        event.preventDefault();
+        clearInterval(interval);
+        activateTab($(this));
+    })
+
+    var startRotator = function(duration) {
+        interval = setInterval(function() {
+            current = (current < count) ? current : 0;
+            activateTab($items.eq(current));
+            current += 1; 
+        }, duration);
+    }
+
+    startRotator(4000);
 
     // ......................
 
