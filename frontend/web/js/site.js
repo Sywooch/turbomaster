@@ -1,65 +1,60 @@
 $(document).ready(function() {
 
-    var Player = function(params) {
+    var Player = function(tabItems, options) {
         
-        var opts = {};
+        var $tabItems = $(tabItems),
+            countItems = $tabItems.length,
+            intervalID,
+            currentIndex = 0,
+            
+            defaults = {
+                timeOut: 2000,
+                delayAfterClick: 10000,
+            },
+            options = $.extend(defaults, options);
 
         this.init = function() {
-            opts = {
-                items: $(params.items),
-                count: $(params.items).length,
-                duration: params.duration,
-                interval: 0,
-                current: 1,
-                lastActive: 0,
-                startRotator: this.startRotator
-            }
-
-            $(opts.items).on('click', function(event) {
+            $($tabItems).on('click', function(event) {
                 event.preventDefault();
-                clearInterval(opts.interval);
-
+                currentIndex = $(this).closest('li').index();
                 activateTab($(this));
-                setTimeout(opts.startRotator(), 10000);
+                clearInterval(intervalID);
+                // setTimeout(startRotator(true), 10000);
             });
-            this.startRotator();
+
+            startRotator();
         };
 
         var activateTab = function(el) {
             var parentLi = el.parent('li'),
-                prevLi = el.prev(),
                 liSet = parentLi.siblings(),
                 targetSet = $('.' + el.data('set')),
-                target = $(el.attr('href'));
+                targetItem = $(el.attr('href'));
 
-            opts.lastActive = parentLi.index();
             liSet.removeClass('active');
             parentLi.addClass('active');
 
-            targetSet.animate({opacity: 0}, 200);
+            
+            targetSet.animate({opacity: 0}, 100);
             setTimeout(function() {
                 targetSet.hide();
-                target.show().animate({opacity: 1}, 1600);
+                targetItem.show().animate({opacity: 1}, 600);
             }, 200);
         }
 
-        this.startRotator = function(from) {
-            if (from === undefined) from = 0;
-            opts.interval = setInterval(function() {
-                var count = opts.count,
-                    items = opts.items;
-
-                // from = (index == opts.count) ? 0 : index += 1;
-                opts.current = (opts.current < count) ? opts.current : from;
-                activateTab(items.eq(opts.current));
-                opts.current += 1; 
-            }, opts.duration);
+        var startRotator = function(delay) {
+            
+            intervalID = setInterval(function() {
+                currentIndex += 1;
+                currentIndex = (currentIndex < countItems) ? currentIndex : 0;
+                activateTab($tabItems.eq(currentIndex));
+            }, options.timeOut);
         }
 
         this.init();
     }
     
-    var player = new Player({items: '.panenable li a', duration: 4000});
+    var player = new Player('.panenable li a', {timeOut: 6000});
     
 
     // ......................
