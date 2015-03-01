@@ -6,6 +6,7 @@ $(document).ready(function() {
             countItems = $tabItems.length,
             intervalID,
             currentIndex = 0,
+            li, liSet, targetSet, targetItem,
             
             defaults = {
                 timeOut: 5000,
@@ -25,22 +26,23 @@ $(document).ready(function() {
            
 
         var activateTab = function(el) {
-            var parentLi = el.parent('li'),
-                liSet = parentLi.siblings(),
-                targetSet = $('.' + el.data('set')),
-                targetItem = $(el.attr('href'));
+            li = el.parent('li');
+            liSet = li.siblings();
+            targetSet = $('.' + el.data('set'));
+            targetItem = $(el.attr('href'));
 
             liSet.removeClass('active');
-            parentLi.addClass('active');
+            li.addClass('active');
 
             targetSet.animate({opacity: 0}, 100);
             setTimeout(function() {
                 targetSet.hide();
                 targetItem.show().animate({opacity: 1}, 600);
-            }, 200);
+            }, 100);
         }
 
         var startRotator = function(delay) {
+            clearInterval(intervalID);
             intervalID = setInterval(function() {
                 currentIndex += 1;
                 currentIndex = (currentIndex < countItems) ? currentIndex : 0;
