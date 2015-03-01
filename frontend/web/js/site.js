@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var Player = function(tabItems, options) {
+    var TabRotator = function(tabItems, options) {
         
         var $tabItems = $(tabItems),
             countItems = $tabItems.length,
@@ -8,22 +8,21 @@ $(document).ready(function() {
             currentIndex = 0,
             
             defaults = {
-                timeOut: 2000,
-                delayAfterClick: 10000,
+                timeOut: 5000,
+                delayAfterClick: 24000,
             },
             options = $.extend(defaults, options);
 
-        this.init = function() {
-            $($tabItems).on('click', function(event) {
-                event.preventDefault();
-                currentIndex = $(this).closest('li').index();
-                activateTab($(this));
-                clearInterval(intervalID);
-                // setTimeout(startRotator(true), 10000);
-            });
-
-            startRotator();
-        };
+        $($tabItems).on('click', function(event) {
+            event.preventDefault();
+            currentIndex = $(this).closest('li').index();
+            activateTab($(this));
+            clearInterval(intervalID);
+            setTimeout(function() {
+                startRotator();
+                }, options.delayAfterClick);
+        });
+           
 
         var activateTab = function(el) {
             var parentLi = el.parent('li'),
@@ -34,7 +33,6 @@ $(document).ready(function() {
             liSet.removeClass('active');
             parentLi.addClass('active');
 
-            
             targetSet.animate({opacity: 0}, 100);
             setTimeout(function() {
                 targetSet.hide();
@@ -43,7 +41,6 @@ $(document).ready(function() {
         }
 
         var startRotator = function(delay) {
-            
             intervalID = setInterval(function() {
                 currentIndex += 1;
                 currentIndex = (currentIndex < countItems) ? currentIndex : 0;
@@ -51,10 +48,10 @@ $(document).ready(function() {
             }, options.timeOut);
         }
 
-        this.init();
+        startRotator();
     }
     
-    var player = new Player('.panenable li a', {timeOut: 6000});
+    var player = new TabRotator('.panenable li a', {timeOut: 5000});
     
 
     // ......................
