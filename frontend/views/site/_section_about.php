@@ -9,18 +9,18 @@ use yii\helpers\Html;
             <div class="col-md-4">
                 <div class="panenable">
                     <ul class="tabs-stack" style="margin-top: 10px;">
-                        <li class="active"><a data-set="pane-item" href="#pane1">ТурбоМагазин</a></li>
-                        <li class=""><a data-set="pane-item" href="#pane2">ТурбоСервис</a></li>
-                        <li class=""><a data-set="pane-item" href="#pane3">ТурбоРемонт</a></li>
-                        <li class=""><a data-set="pane-item" href="#pane4">ТурбоНовости</a></li>
-                        <li class=""><a data-set="pane-item" href="#pane5">ТурбоМастер от А до Я</a></li>
-                        <li class=""><a data-set="pane-item" href="#pane6">ТурбоФакты</a></li>
+                        <li class="active"><a href="#pane1">ТурбоМагазин</a></li>
+                        <li class=""><a href="#pane2">ТурбоСервис</a></li>
+                        <li class=""><a href="#pane3">ТурбоРемонт</a></li>
+                        <li class=""><a href="#pane4">ТурбоНовости</a></li>
+                        <li class=""><a href="#pane5">ТурбоМастер от А до Я</a></li>
+                        <li class=""><a href="#pane6">ТурбоФакты</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
             <div class="col-md-7 col-md-offset-1">
                 
-                <div class="pane-collection">
+                <div id="paneBox" class="pane-collection">
                     
                     <div id="pane1" class="pane-item active">
                         <p class="link-dotted">В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
@@ -168,9 +168,15 @@ use yii\helpers\Html;
                     </div><!-- .tab-pane -->
                     
                     <div id="pane6" class="pane-item">
-                        <h4>ТурбоФакты</h4>
-                        <p>Профессиональное решение любых проблем с турбиной: оперативная диагностика неисправностей, проверка параметров системы турбонаддува, регулировка, снятие и установка турбокомпрессора на двигатель а/м любой модели!</p>
-                        <p>Обратившись в ТурбоСервис, вы получите следующие преимущества: профессиональное обслуживание, поддержку гарантии продавца турбокомпрессора.</p>
+                       
+                       <div id="paneBlockquote" class="pane-collection">
+
+                        <div class="pane-item active">
+                            <blockquote>Sed sagittis vel dui vulputate consectetur. Duis sapien eros, pellentesque vitae nibh non, consequat dictum justo. Suspendisse sed justo nec purus egestas mollis quis dapibus elit. Nulla facilisi. In dignissim felis vitae faucibus sodales. Quisque id massa nec sapien feugiat varius ...</blockquote>
+                        </div>
+                        <div class="pane-item">
+                            <blockquote>Nunc lacus nulla, mattis vitae posuere nec, pretium sollicitudin nisi. Praesent auctor ac nisl sit amet imperdiet. Fusce placerat, elit at ultrices bibendum, elit magna lacinia mauris, ac ultricies enim odio sit amet lectus. Nullam at venenatis turpis, eget interdum nulla ...</blockquote>
+                        </div>
                     </div><!-- .tab-pane -->
 
 

@@ -1,13 +1,16 @@
 $(document).ready(function() {
 
-    var TabRotator = function(tabItems, options) {
+    var TabRotator = function(tabItems, targetBlock, options) {
         
         var $tabItems = $(tabItems),
-            countItems = $tabItems.length,
+            countItems = options.countItems || $tabItems.length,
             intervalID,
             currentIndex = 0,
-            li, liSet, targetSet, targetItem,
-            
+            prevIndex = 0,
+            alink, 
+            li, 
+            targetItem, 
+            $targetBlock = $(targetBlock + ' > .pane-item'),
             defaults = {
                 timeOut: 5000,
                 delayAfterClick: 24000,
@@ -17,28 +20,27 @@ $(document).ready(function() {
         $($tabItems).on('click', function(event) {
             event.preventDefault();
             currentIndex = $(this).closest('li').index();
-            activateTab($(this));
+           
+            activate(currentIndex);
             clearInterval(intervalID);
             setTimeout(function() {
-                startRotator();
+                    startRotator();
                 }, options.delayAfterClick);
         });
            
+        var activate = function(index) {
+            alink = $tabItems.eq(index);
+            li = alink.parent('li');
+            targetItem = $(alink.attr('href'));
 
-        var activateTab = function(el) {
-            li = el.parent('li');
-            liSet = li.siblings();
-            targetSet = $('.' + el.data('set'));
-            targetItem = $(el.attr('href'));
-
-            liSet.removeClass('active');
+            li.siblings().removeClass('active');
             li.addClass('active');
 
-            targetSet.animate({opacity: 0}, 100);
+            $targetBlock.animate({opacity: 0}, 300);
             setTimeout(function() {
-                targetSet.hide();
+                $targetBlock.hide();
                 targetItem.show().animate({opacity: 1}, 600);
-            }, 100);
+            }, 300);
         }
 
         var startRotator = function(delay) {
@@ -46,14 +48,15 @@ $(document).ready(function() {
             intervalID = setInterval(function() {
                 currentIndex += 1;
                 currentIndex = (currentIndex < countItems) ? currentIndex : 0;
-                activateTab($tabItems.eq(currentIndex));
+                activate(currentIndex);
             }, options.timeOut);
         }
-
         startRotator();
     }
     
-    var player = new TabRotator('.panenable li a', {timeOut: 5000});
+    var player = new TabRotator('.panenable li a', '#paneBox', {timeOut: 5000});
+    
+    var player2 = new TabRotator('.panenable2 li a', '#paneBlockquote', {timeOut: 1000, countItems: 2});
     
 
     // ......................

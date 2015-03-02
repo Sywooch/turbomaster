@@ -103,8 +103,9 @@ ul.tabs-stack { padding: 0;}
 .tabs-stack li.active > a { background: #eee; border-right: 10px solid #d9534f; }
 .tabs-stack li a { display: block; padding: 12px 15px; font: 700 16px "Open Sans Condensed",sans-serif; color: #666; text-transform: uppercase; text-decoration: none; }
 
-.pane-item {display: none; }
-.pane-item.active {display: block; }
+#paneBox { position: relative; }
+.pane-item { position: absolute; display: none; opacity: 0; }
+.pane-item.active { display: block; opacity: 1; }
 
 
 
