@@ -8,13 +8,13 @@ use yii\helpers\Html;
             
             <div class="col-md-4">
                 <div class="panenable">
-                    <ul class="tabs-stack" style="margin-top: 10px;">
-                        <li class="active"><a href="#pane1">ТурбоМагазин</a></li>
-                        <li class=""><a href="#pane2">ТурбоСервис</a></li>
-                        <li class=""><a href="#pane3">ТурбоРемонт</a></li>
-                        <li class=""><a href="#pane4">ТурбоНовости</a></li>
-                        <li class=""><a href="#pane5">ТурбоМастер от А до Я</a></li>
-                        <li class=""><a href="#pane6">ТурбоФакты</a></li>
+                    <ul class="tabs-stack" id="controls-wrap" style="margin-top: 10px;">
+                        <li class="active"><a href="#">ТурбоМагазин</a></li>
+                        <li class=""><a href="#">ТурбоСервис</a></li>
+                        <li class=""><a href="#">ТурбоРемонт</a></li>
+                        <li class=""><a href="#">ТурбоНовости</a></li>
+                        <li class=""><a href="#">ТурбоМастер от А до Я</a></li>
+                        <li class=""><a href="#">ТурбоФакты</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->

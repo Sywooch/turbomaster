@@ -1,6 +1,84 @@
 $(document).ready(function() {
 
-    var TabRotator = function(tabItems, targetBlock, options) {
+
+
+    var fadeRotator = function(paneBox, options) {
+        
+        var defaults = {
+            mode: 'fade',               // 'fade', 'none', default: 'fade'
+            // CONTROLS
+            outControls: true,          // default: false
+            outControlsBox: '',         // eg '#controls-wrap',  
+            createNavigation: false,    // default: false
+            // AUTO
+            infiniteLoop: true,         // default: true
+            auto: true,                 // default: true
+            pause: 2000,
+            autoStart: true,
+            delay: 10000,
+        };
+
+        var panes = $(paneBox +' > .pane-item'),
+            countItems = panes.length,
+            controls = false,
+            currentIndex = 0,
+            intervalId,
+            currentPane;
+
+  
+        var init = function() {
+            options = $.extend(defaults, options);
+            if(options.outControls && options.outControlsBox) {
+                controls = $(options.outControlsBox + ' > li');
+            }
+
+            if(options.infiniteLoop === true) {
+                startLoop();
+            }
+        }
+
+        var nextPane = function(index) {
+            currentPane = panes.eq(index);
+            panes.animate({opacity: 0}, 300);
+            setTimeout(function() {
+                panes.hide();
+                currentPane.show().animate({opacity: 1}, 600);
+            }, 300); 
+        }
+
+        var changeControlElement = function(index) {
+            if(controls) {
+                console.log('controls.eq = ' + index)  ////
+
+                controls.removeClass('active');
+                controls.eq(index).addClass('active');
+            }
+        }
+
+        var startLoop = function() {
+            clearInterval(intervalId);
+            console.log('options.outControls = ' + options.outControls);
+            
+            intervalId = setInterval(function() {
+                currentIndex = (currentIndex < countItems ) ? currentIndex : 0;
+                if(options.outControls === true) {
+                    changeControlElement(currentIndex);
+                }
+                nextPane(currentIndex);
+                currentIndex += 1;
+            }, options.pause);
+        }
+
+        init();
+    };   
+
+    var rotator = new fadeRotator('#paneBox', {outControls: true, outControlsBox: '#controls-wrap'});
+
+
+    // =====================================
+
+
+    var TabRotatorPrev = function(tabItems, targetBlock, options) {
         
         var $tabItems = $(tabItems),
             countItems = options.countItems || $tabItems.length,
@@ -54,9 +132,9 @@ $(document).ready(function() {
         startRotator();
     }
     
-    var player = new TabRotator('.panenable li a', '#paneBox', {timeOut: 5000});
+    // var player = new TabRotator('.panenable li a', '#paneBox', {timeOut: 5000});
     
-    var player2 = new TabRotator('.panenable2 li a', '#paneBlockquote', {timeOut: 1000, countItems: 2});
+    // var player2 = new TabRotator('.panenable2 li a', '#paneBlockquote', {timeOut: 1000, countItems: 2});
     
 
     // ......................
