@@ -55,18 +55,18 @@ $this->registerMetaTag([
         <section class="photogallery">
                 
             <p class="description"></p>
-            <div class="jcarousel-wrapper">
-                <div data-jcarousel="true" class="jcarousel">
-                    <ul style="left: 0px; top: 0px;">
+            <!-- <div class="jcarousel-wrapper"> -->
+                <!-- <div data-jcarousel="true" class="jcarousel"> -->
+                    <ul class="gallery-items clearfix">
                         <li><a data-fancybox-group="gallery4" title="Из новой турбины масло – во все стороны! «Спецы» не сняли транспортировочную заглушку с отверстия для слива. " href="/photo/gallery/big/29.jpg"><img src="/photo/gallery/small/29.jpg" alt="1" height="100" width="100"></a></li>
                         <li><a data-fancybox-group="gallery4" title="Уж где только не написано: герметики запрещено применять категорически! Не читают..." href="/photo/gallery/big/30.jpg"><img src="/photo/gallery/small/30.jpg" alt="2" height="100" width="100"></a></li>
                         <li><a data-fancybox-group="gallery4" title="Если бы «турбомонтер» не оставил во впуске железку, «это» все еще было бы крыльчаткой компрессора." href="/photo/gallery/big/31.jpg"><img src="/photo/gallery/small/31.jpg" alt="3" height="100" width="100"></a></li>
                     </ul>
-                </div>
-                <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-prev inactive">‹</a>
-                <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-next inactive">›</a>
+                <!-- </div> -->
+                <!-- <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-prev inactive">‹</a> -->
+                <!-- <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-next inactive">›</a> -->
                 <!-- p class="jcarousel-pagination"></p -->
-            </div>
+            <!-- </div> -->
             </section>
 
             <p></p>
@@ -87,18 +87,18 @@ $this->registerMetaTag([
             <section class="photogallery">
                             
                 <p class="description"></p>
-                <div class="jcarousel-wrapper">
-                    <div data-jcarousel="true" class="jcarousel">
-                        <ul style="left: 0px; top: 0px;">
+                <!-- <div class="jcarousel-wrapper"> -->
+                    <!-- <div data-jcarousel="true" class="jcarousel"> -->
+                        <ul class="gallery-items clearfix">
                             <li><a data-fancybox-group="gallery5" title="Компьютерная диагностика позволяет выявить неисправность турбины или, наоборот, ее непричастность к проблемам двигателя." href="/photo/gallery/big/32.jpg"><img src="/photo/gallery/small/32.jpg" alt="1" height="100" width="100"></a></li>
                             <li><a data-fancybox-group="gallery5" title="Давление картерных газов оказывает сильное влияние на работоспособность и ресурс турбины." href="/photo/gallery/big/33.jpg"><img src="/photo/gallery/small/33.jpg" alt="2" height="100" width="100"></a></li>
                             <li><a data-fancybox-group="gallery5" title="Ассортимент и стоимость запчастей, использующихся при замене турбины, обычно не велики. На этом экономить не стоит." href="/photo/gallery/big/34.jpg"><img src="/photo/gallery/small/34.jpg" alt="3" height="100" width="100"></a></li>
                         </ul>
-                    </div>
-                    <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-prev inactive">‹</a>
-                    <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-next inactive">›</a>
+                    <!-- </div> -->
+                    <!-- <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-prev inactive">‹</a> -->
+                    <!-- <a data-jcarouselcontrol="true" href="#" class="jcarousel-control-next inactive">›</a> -->
                     <!-- p class="jcarousel-pagination"></p -->
-                </div>
+                <!-- </div> -->
             </section>
                     
             <p></p>

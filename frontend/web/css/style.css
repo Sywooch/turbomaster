@@ -116,34 +116,16 @@ ul.dropdown-menu.extended .fa-hover a { line-height: 1.2em; }
 
 /* MAIN PAGE */
 
-blockquote {
+#paneBlockquote blockquote {
     /*border-left: 6px solid #ddd;*/
-    border-left: 0;
-    font:  16px/1.2em "Open Sans",sans-serif;
-    color: #555;
-    margin: 40px 0;
-    padding: 10px 14px;
-}
-blockquote:before {
-    color: #d9534f;
+    border-left: 0; font:  16px/1.2em "Open Sans",sans-serif; color: #555; margin: 40px 0; padding: 10px 14px; }
+#paneBlockquote blockquote:before { color: #d9534f;
     /*font: bold italic 22px Arial,sans-serif;*/
     content: "\201C"; /* Непечатаемый символ слева */
-    font-size: 3em;
-    line-height: 0.1em;
-    margin-right: 0.2em;
-    vertical-align: -.4em;
-}
-blockquote:after {
-    color: #fff;
-    content: "\201D"; /* Непечатаемый символ справа */
-    font-size: 3em;
-    line-height: 0.1em;
-    margin-left: 0.2em;
-    vertical-align: -.45em;
-}
-blockquote > p:first-child {
-    display: inline;
-}
+    font-size: 3em; line-height: 0.1em; margin-right: 0.2em; vertical-align: -.4em; }
+#paneBlockquote blockquote:after { color: #fff; content: "\201D"; font-size: 3em; line-height: 0.1em;
+    margin-left: 0.2em; vertical-align: -.45em; }
+#paneBlockquote blockquote > p:first-child { display: inline; }
 
 /* MY TABS-STACK */
 ul.tabs-stack { padding: 0;}
