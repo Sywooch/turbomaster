@@ -6,12 +6,8 @@ use yii\helpers\CommonHelper;
 <table id="product-card-table" class="table table-striped">
     <tbody>
         <tr>
-            <th>Марка</th>
-            <td style="width: 60%;"><?= $product['brand_name'] ?></td>
-        </tr>
-        <tr>
             <th>Модель</th>
-            <td><?= $product['model_name'] ?></td>
+            <td><?= $product['brand_name'] .' ' .$product['model_name'] ?></td>
         </tr>
         <tr>
             <th>Наименование</th>
