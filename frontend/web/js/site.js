@@ -6,13 +6,12 @@ $(document).ready(function() {
         
         var defaults = {
             mode: 'fade',               // 'fade', 'none', default: 'fade'
-            // CONTROLS
+
             outControls: true,          // default: false
             outControlsBox: '',         // eg '#controls-wrap',  
             createNavigation: false,    // default: false
-            // AUTO
-            //infiniteLoop: true,         // default: true
-            autoLoop: true,                 // default: true
+
+            autoLoop: true,             // default: true
             pause: 5000,
             autoStart: true,            // after click
             delay: 20000,

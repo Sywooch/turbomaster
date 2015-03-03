@@ -4,8 +4,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-5">
-                        <h4>Популярные турбины <br>для легковых автомобилей:</h4>
-                        <div class="tagcloud">
+                        <h4>Топ турбин для легковых:</h4>
+                        <div class="tagcloud" style="margin-right: 20px;">
                             <a href="/article/turbokit" title="Турбина для Нива">Нива</a>
                             <a href="/turboshop/passenger/bmw" title="Турбина для БМВ">БМВ</a>
                             <a href="/turboshop/passenger/audi" title="Турбина для Ауди">Ауди</a>
@@ -31,8 +31,8 @@
                         </div>
                     </div><!-- /.col-md-6 -->    
                     <div class="col-md-4">
-                        <h4>Популярные турбины <br>для грузовых автомобилей:</h4>
-                        <div class="tagcloud">
+                        <h4>Топ турбин для грузовых:</h4>
+                        <div class="tagcloud" style="margin-right: 20px;">
                             <a href="/turboshop/trucks/cummins" title="Турбина для Камминс">Камминс</a>
                             <a href="/turboshop/trucks/daf" title="Турбина для ДАФ">ДАФ</a>
                             <a href="/turboshop/trucks/ddc" title="Турбина для Детройт Дизель">Детройт Дизель</a>
@@ -52,7 +52,7 @@
                             119034, г. Москва, Волгоградский проспект. д.32, к. 24, офис 208 <a href="/contact#map-turbomaster">(cхема проезда)</a><br>
                             <span class="bold">+7 (499) 650-76-45</span>, 
                             <span class="bold">+7 (963) 777-0949</span><br>
-                            Пн-Пт с 8:00 до 19:00<br> Сб с 10:00 до 14:00<br>
+                            <!-- Пн-Пт с 8:00 до 19:00<br> Сб с 10:00 до 14:00<br> -->
                             e-mail: <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a><br>
                         </div>
                     </div>
