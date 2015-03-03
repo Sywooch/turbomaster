@@ -94,7 +94,7 @@ $(document).ready(function() {
 
     var rotator = new fadeRotator('#paneBox', {outControls: true, outControlsBox: '#controls-wrap'});
    
-    var rotatorQuote = new fadeRotator('#paneBlockquote', {pause: 5000});
+    var rotatorQuote = new fadeRotator('#paneBlockquote', {pause: 12000});
 
 
 
