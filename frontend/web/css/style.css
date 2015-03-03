@@ -68,13 +68,26 @@ header #numbers ul { padding-left: 10px; }
 header #about ul { padding-left: 80px; }
 header #numbers li, header #numbers a, header #about li { color: #ddd; font-size: 13px; }
 
+
+/* FOOTER */
+
 footer {}
+
+.footer-wrap {
+ /* background-attachment: fixed; background-image: url("../images/main-intro-b.jpg"); background-repeat: no-repeat; background-size: cover; color: #fff; padding-top: 0; text-align: center;*/ 
+ padding: 20px 20px 1px 20px;
+  background: #ddd;  border-top: 4px solid #bbb; 
+}
+
+.overlay-grid-dark { background-attachment: fixed; /*background-image: url("../images/bg-grid-dark.png");*/ }
 .footer-bgr { position: relative;
   /*background: url("../images/footer-bg-a.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0);*/
-  background: #bbb;
-}
+  background: #bbb; }
+
 footer .tagcloud  { position: relative; z-index: 2;  }
-footer .tagcloud a { font: 15px "Open Sans",​sans-serif; margin-right: 20px;  }
+footer .tagcloud a { font:  15px Arial,​sans-serif; margin-right: 8px; }
+footer h4 { color: #888; }
+
 
  /* TOPMENU */
 .topmenu { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); background: #eee url("../images/bg-topmenu.png") repeat-x; }
