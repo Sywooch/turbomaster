@@ -8,7 +8,7 @@ if($analogs) {
 }
 ?>
 
-<h2 style="margin: 30px 0 10px 0;">На складе:</h2>
+<h3 style="margin: 30px 0 10px 0; color: #888;">На складе:</h3>
 
 <div class="table-responsive">
     <table class="table table-striped">
