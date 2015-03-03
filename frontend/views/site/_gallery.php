@@ -12,14 +12,16 @@ $arGallery = [
 ];
 ?>
 
-<ul class="gallery-items img-140 bxslider clearfix">
-<!-- <ul class="bxslider"> -->
-<?php
-foreach($arGallery as $k => $val) { ?>
-    <li>
-        <a class="zoom" rel="group" href="/photo/gallery/big/<?= $k ?>.jpg" title="<?= $val ?>">
-            <img  alt="<?= $val ?>" src="/photo/gallery/midi/<?= $k ?>.jpg" title="<?= $val ?>">
-        </a>
-    </li>
-<?php } ?>
-</ul>
+<div class="row">
+    <ul class="gallery-items img-140 bxslider clearfix">
+    <!-- <ul class="bxslider"> -->
+    <?php
+    foreach($arGallery as $k => $val) { ?>
+        <li>
+            <a class="zoom" rel="group" href="/photo/gallery/big/<?= $k ?>.jpg" title="<?= $val ?>">
+                <img  alt="<?= $val ?>" src="/photo/gallery/midi/<?= $k ?>.jpg" title="<?= $val ?>">
+            </a>
+        </li>
+    <?php } ?>
+    </ul>
+</div>

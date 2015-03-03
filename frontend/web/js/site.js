@@ -11,11 +11,11 @@ $(document).ready(function() {
             outControlsBox: '',         // eg '#controls-wrap',  
             createNavigation: false,    // default: false
             // AUTO
-            infiniteLoop: true,         // default: true
-            auto: true,                 // default: true
-            pause: 2000,
-            autoStart: true,
-            delay: 10000,
+            //infiniteLoop: true,         // default: true
+            autoLoop: true,                 // default: true
+            pause: 5000,
+            autoStart: true,            // after click
+            delay: 20000,
         };
 
         var panes = $(paneBox +' > .pane-item'),
@@ -30,15 +30,24 @@ $(document).ready(function() {
             options = $.extend(defaults, options);
             if(options.outControls && options.outControlsBox) {
                 controls = $(options.outControlsBox + ' > li');
+                clickControlHandler();
             }
-
-            if(options.infiniteLoop === true) {
+            if(options.autoLoop === true) {
                 startLoop();
             }
         }
 
-        var nextPane = function(index) {
-            currentPane = panes.eq(index);
+        var next = function() {
+            currentIndex += 1;
+            currentIndex = (currentIndex < countItems ) ? currentIndex : 0;
+            if(options.outControls === true) {
+                changeControlElement(currentIndex);
+            }
+            goToNextPane();
+        }
+
+        var goToNextPane = function() {
+            currentPane = panes.eq(currentIndex);
             panes.animate({opacity: 0}, 300);
             setTimeout(function() {
                 panes.hide();
@@ -48,94 +57,46 @@ $(document).ready(function() {
 
         var changeControlElement = function(index) {
             if(controls) {
-                console.log('controls.eq = ' + index)  ////
-
                 controls.removeClass('active');
                 controls.eq(index).addClass('active');
             }
         }
 
+        var pause = function() {
+            clearInterval(intervalId);
+            if(options.autoStart) {
+                setTimeout(function() {
+                    startLoop();
+                }, options.delay);
+            }
+        }
+
+        var clickControlHandler = function() {
+            controls.find('a').on('click', function(event) {
+                event.preventDefault();
+                currentIndex = $(this).closest('li').index();
+                changeControlElement(currentIndex);
+                goToNextPane();
+                pause();
+            });
+        }
+
         var startLoop = function() {
             clearInterval(intervalId);
-            console.log('options.outControls = ' + options.outControls);
-            
             intervalId = setInterval(function() {
-                currentIndex = (currentIndex < countItems ) ? currentIndex : 0;
-                if(options.outControls === true) {
-                    changeControlElement(currentIndex);
-                }
-                nextPane(currentIndex);
-                currentIndex += 1;
+                next();
             }, options.pause);
         }
 
         init();
     };   
 
+
     var rotator = new fadeRotator('#paneBox', {outControls: true, outControlsBox: '#controls-wrap'});
+   
+    var rotatorQuote = new fadeRotator('#paneBlockquote', {pause: 5000});
 
 
-    // =====================================
-
-
-    var TabRotatorPrev = function(tabItems, targetBlock, options) {
-        
-        var $tabItems = $(tabItems),
-            countItems = options.countItems || $tabItems.length,
-            intervalID,
-            currentIndex = 0,
-            prevIndex = 0,
-            alink, 
-            li, 
-            targetItem, 
-            $targetBlock = $(targetBlock + ' > .pane-item'),
-            defaults = {
-                timeOut: 5000,
-                delayAfterClick: 24000,
-            },
-            options = $.extend(defaults, options);
-
-        $($tabItems).on('click', function(event) {
-            event.preventDefault();
-            currentIndex = $(this).closest('li').index();
-           
-            activate(currentIndex);
-            clearInterval(intervalID);
-            setTimeout(function() {
-                    startRotator();
-                }, options.delayAfterClick);
-        });
-           
-        var activate = function(index) {
-            alink = $tabItems.eq(index);
-            li = alink.parent('li');
-            targetItem = $(alink.attr('href'));
-
-            li.siblings().removeClass('active');
-            li.addClass('active');
-
-            $targetBlock.animate({opacity: 0}, 300);
-            setTimeout(function() {
-                $targetBlock.hide();
-                targetItem.show().animate({opacity: 1}, 600);
-            }, 300);
-        }
-
-        var startRotator = function(delay) {
-            clearInterval(intervalID);
-            intervalID = setInterval(function() {
-                currentIndex += 1;
-                currentIndex = (currentIndex < countItems) ? currentIndex : 0;
-                activate(currentIndex);
-            }, options.timeOut);
-        }
-        startRotator();
-    }
-    
-    // var player = new TabRotator('.panenable li a', '#paneBox', {timeOut: 5000});
-    
-    // var player2 = new TabRotator('.panenable2 li a', '#paneBlockquote', {timeOut: 1000, countItems: 2});
-    
 
     // ......................
 

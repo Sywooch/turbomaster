@@ -68,6 +68,14 @@ header #numbers ul { padding-left: 10px; }
 header #about ul { padding-left: 80px; }
 header #numbers li, header #numbers a, header #about li { color: #ddd; font-size: 13px; }
 
+footer {}
+.footer-bgr { position: relative;
+  /*background: url("../images/footer-bg-a.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0);*/
+  background: #bbb;
+}
+footer .tagcloud  { position: relative; z-index: 2;  }
+footer .tagcloud a { font: 15px "Open Sans",​sans-serif; margin-right: 20px;  }
+
  /* TOPMENU */
 .topmenu { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); background: #eee url("../images/bg-topmenu.png") repeat-x; }
 ul.dropdown-menu.extended { min-width: 760px; padding: 10px 10px 30px 10px;  }
@@ -95,7 +103,36 @@ ul.dropdown-menu.extended .fa-hover a { line-height: 1.2em; }
 
 /* MAIN PAGE */
 
-/* my TABS-STACK */
+blockquote {
+    /*border-left: 6px solid #ddd;*/
+    border-left: 0;
+    font:  16px/1.2em "Open Sans",sans-serif;
+    color: #555;
+    margin: 40px 0;
+    padding: 10px 14px;
+}
+blockquote:before {
+    color: #d9534f;
+    /*font: bold italic 22px Arial,sans-serif;*/
+    content: "\201C"; /* Непечатаемый символ слева */
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -.4em;
+}
+blockquote:after {
+    color: #fff;
+    content: "\201D"; /* Непечатаемый символ справа */
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-left: 0.2em;
+    vertical-align: -.45em;
+}
+blockquote > p:first-child {
+    display: inline;
+}
+
+/* MY TABS-STACK */
 ul.tabs-stack { padding: 0;}
 .tabs-stack li { display: block; list-style-type: none; list-style-position: outside;
   border-bottom: 1px solid #ddd; }
@@ -106,13 +143,15 @@ ul.tabs-stack { padding: 0;}
 #paneBox { position: relative; }
 .pane-item { position: absolute; display: none; opacity: 0; }
 .pane-item.active { display: block; opacity: 1; }
+/* end MY TABS-STACK */
 
 
 
 .texture-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: url("../images/bg-grid.png"); }
 .intro-bg { position: relative; min-height: 400px; background: url("../images/main-intro-f.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0); }
+
 section#main-about { padding: 50px 0 40px 0; }
-section#main-populars { background-image: url("../images/bg-a.jpg"); min-height: 300px; }
+section#main-populars { background-image: url("../images/bg-a.jpg"); min-height: 300px; padding-bottom: 70px; }
 .table-striped.white-stripped > tbody > tr:nth-of-type(2n+1) { background-color: #fff; }
 
 .mainpage-title { margin: 30px 0 30px; font-size: 22px; text-transform: uppercase; color: #555; text-align: center; }
@@ -154,16 +193,12 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 
 
 /* MODELS LIST */
-
 section#intro  { margin: 40px 0; }
-
 .column .models-list { padding-right: 30px; }
-
 ul.models-list, ul.models-list ul { padding-left: 0; }
 ul.models-list  li { list-style: none; }
 ul.models-list > li { margin: 20px 0 6px; }
 ul.models-list span { display: inline-block; padding: 4px 10px; background: #b04340; color: #fff; border-radius: 4px; }
-
 ul.models-list ul { display: block; padding-top: 8px; }
 ul.models-list ul li { display: inline-block; margin-right: 20px; }
 @media (max-width: 768px) {
@@ -173,22 +208,17 @@ ul.models-list ul li a { font-size: 18px; border-bottom: 1px dotted #b04340; }
 
 
 /* PRODUCT ITEM */
-
 #print-label { position: absolute; top: 60px; right: 40px; }
 #print-label div { font-size: 28px; }
-
 tr.gross > td { padding: 14px 8px!important; border-bottom: 1px solid #ddd; font-size: 15px; }
-
 table.matroska td { padding: 4px 8px!important;}
 table.matroska tr:first-child td { padding-top: 8px!important;}
 table.matroska tr:last-child td { padding-bottom: 8px!important;}
-
 .product-main-photo img { max-width: 100%; height: auto; border: 1px solid #ccc;
     border-radius: 3px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
 .product-thumbs ul {list-style: none; padding: 4px 0 0 0; }
 .product-thumbs li { display: block; float: left; margin: 2px 6px 0 0; }
 .product-thumbs li img { max-width: 76px; height: auto;  }
-
 
 
 /* ARTICLE */

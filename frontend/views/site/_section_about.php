@@ -167,15 +167,9 @@ use yii\helpers\Html;
                         </div>
                     </div><!-- .tab-pane -->
                     
-                    <div id="pane6" class="pane-item">
-                       
-                       <div id="paneBlockquote" class="pane-collection">
-
-                        <div class="pane-item active">
-                            <blockquote>Sed sagittis vel dui vulputate consectetur. Duis sapien eros, pellentesque vitae nibh non, consequat dictum justo. Suspendisse sed justo nec purus egestas mollis quis dapibus elit. Nulla facilisi. In dignissim felis vitae faucibus sodales. Quisque id massa nec sapien feugiat varius ...</blockquote>
-                        </div>
-                        <div class="pane-item">
-                            <blockquote>Nunc lacus nulla, mattis vitae posuere nec, pretium sollicitudin nisi. Praesent auctor ac nisl sit amet imperdiet. Fusce placerat, elit at ultrices bibendum, elit magna lacinia mauris, ac ultricies enim odio sit amet lectus. Nullam at venenatis turpis, eget interdum nulla ...</blockquote>
+                    <div id="pane6" class="pane-item" style="position: relative;">
+                       <div id="paneBlockquote">
+                            <?= $this->render('_facts', ['facts' => $facts]) ?>
                         </div>
                     </div><!-- .tab-pane -->
 
