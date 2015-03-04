@@ -118,7 +118,7 @@ ul.dropdown-menu.extended .fa-hover a { line-height: 1.2em; }
 
 #paneBlockquote blockquote {
     /*border-left: 6px solid #ddd;*/
-    border-left: 0; font:  16px/1.2em "Open Sans",sans-serif; color: #555; margin: 40px 0; padding: 10px 14px; }
+    border-left: 0; font:  16px/1.2em "Open Sans",sans-serif; color: #555; margin-top: 40px; padding: 10px 14px; }
 #paneBlockquote blockquote:before { color: #d9534f;
     /*font: bold italic 22px Arial,sans-serif;*/
     content: "\201C"; /* Непечатаемый символ слева */
@@ -136,7 +136,7 @@ ul.tabs-stack { padding: 0;}
 .tabs-stack li a { display: block; padding: 12px 15px; font: 700 16px "Open Sans Condensed",sans-serif; color: #666; text-transform: uppercase; text-decoration: none; }
 
 #paneBox { position: relative; }
-.pane-item { position: absolute; display: none; opacity: 0; }
+.pane-item { display: none; opacity: 0; }
 .pane-item.active { display: block; opacity: 1; }
 /* end MY TABS-STACK */
 
