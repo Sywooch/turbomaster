@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 ?>
 
-<section id="main-about" style="min-height: 440px;">
+<section id="main-about" style="min-height: 400px;">
     <div class="container">
         <div class="row">
             
@@ -20,7 +20,7 @@ use yii\helpers\Html;
             </div><!-- /.col-md-4 -->
             <div class="col-md-7 col-md-offset-1">
                 
-                <div id="paneBox" class="pane-collection">
+                <div id="paneBox" class="pane-collection"  style="min-height: 360px;">
                     
                     <div id="pane1" class="pane-item active">
                         <p class="link-dotted">В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
