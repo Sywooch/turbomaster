@@ -2,7 +2,7 @@
 use yii\helpers\Html;
 ?>
 
-<section id="main-about" style="min-height: 400px;">
+<section id="main-about">
     <div class="container">
         <div class="row">
             
