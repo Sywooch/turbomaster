@@ -12,7 +12,7 @@ if(count($news) > 0 ) { ?>
         ?>
         <li>
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3" style="margin-bottom: 14px;">
                 <?= Html::a($img, $link); ?>
             </div>
             <div class="col-md-9 text">
