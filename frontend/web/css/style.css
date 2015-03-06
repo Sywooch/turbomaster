@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "Open Sans Condensed",sans-serif; font-wei
 a, a:hover, a:visited { color: #b04340; }
 a:hover { text-decoration: none;}
 .link-dotted a, a.link-dotted { border-bottom: 1px dotted #b04340; }
+.link-red a, a.link-red { color: #b04340 !important; }
 
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus { background-color: #d9534f; border-color: #d9534f; }
@@ -63,7 +64,7 @@ header {
 }
 
 header #logo { margin: 6px 0 0 0px; }
-header ul { list-style: none; margin: 14px 0 0 0; }
+header ul { list-style: none; margin: 4px 0 0 0; }
 header #numbers ul { padding-left: 10px; }
 header #about ul { padding-left: 80px; }
 header #numbers li, header #numbers a, header #about li { color: #ddd; font-size: 13px; }
@@ -155,7 +156,7 @@ section#main-populars { background-image: url("../images/bg-a.jpg"); min-height:
 
 .mainpage-title { margin: 30px 0 30px; font-size: 22px; text-transform: uppercase; color: #555; text-align: center; }
 
-.page-style { margin-top: 20px; margin-bottom: 90px; }
+.page-style { margin-top: 20px; margin-bottom: 90px; min-height: 800px; }
 .page-style h1 { margin-bottom: 30px; }
 
 
@@ -231,8 +232,18 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 .article figure.right { width: 30%; float: right; padding: 4px 0 0 10px; }
 
 /*ARTICLE SIDEBAR*/
-.sidebar-mini { margin-top: 50px; padding: 10px 20px 20px 20px;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
-.sidebar-mini h3 { margin: 0 0 30px 14px; }
+.sidebar-mini { margin-top: 0px; padding: 10px 20px 20px 0px; background: #fafafa;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
+
+.sidebar-mini {
+    background: none repeat scroll 0 0 #fafafa;
+    border-radius: 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-top: 0;
+    padding: 10px 20px 10px 0;
+}
+
+.sidebar-mini h3 { margin: 0 0 30px 24px; }
 .sidebar-mini ul { padding-left: 30px; }
 .sidebar-mini li { color: #555; margin-bottom: 10px; line-height: 1.2em; }
 .sidebar-mini li a { color: #555;  }
@@ -245,7 +256,7 @@ ul.articles-list li { display: block; margin-bottom: 20px; padding: 0; font: 14p
 ul.articles-list .text h3 { margin: -6px 0 8px 0;font: 700 16px "Open Sans Condensed",sans-serif; text-transform: uppercase; }
 ul.articles-list .text a { text-decoration: none; }
 ul.articles-list .text a, ul.articles-list .title a:visited { color: #222; }
-ul.articles-list .text a:hover { color: #4d6e8d; text-decoration: none; }
+ul.articles-list .text a:hover { color: #b04340; text-decoration: none; }
 ul.articles-list .text span { display: block; margin-bottom: 6px; }
 #articles-list ul.pagination { margin-left: 40px; }
 

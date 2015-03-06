@@ -27,6 +27,7 @@ AppAsset::register($this);
         <?= $this->render('_topmenu'); ?>
         <?= $content ?>
         <?= $this->render('_footer'); ?>
+        <?php // echo $this->render('_counts'); ?>
     <?php $this->endBody() ?>
 </body>
 </html>

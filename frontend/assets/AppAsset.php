@@ -29,7 +29,8 @@ class AppAsset extends AssetBundle
         'js/jquery.formstyler.min.js',
         'js/jquery.maskedinput.min.js',
 
-        'js/jquery.jcarousel.min.js',
+        'js/jquery.unirotator.js',
+        // 'js/jquery.jcarousel.min.js',
         'js/jquery.fancybox.pack.js',
         'js/jquery.columnizer.min.js',
         // 'js/modernizr.custom.js',

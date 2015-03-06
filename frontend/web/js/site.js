@@ -1,103 +1,12 @@
 $(document).ready(function() {
 
 
-
-    var fadeRotator = function(paneBox, options) {
-        
-        var defaults = {
-            mode: 'fade',               // 'fade', 'none', default: 'fade'
-
-            outControls: true,          // default: false
-            outControlsBox: '',         // eg '#controls-wrap',  
-            createNavigation: false,    // default: false
-
-            autoLoop: true,             // default: true
-            pause: 5000,
-            autoStart: true,            // after click
-            delay: 20000,
-        };
-
-        var panes = $(paneBox +' > .pane-item'),
-            countItems = panes.length,
-            controls = false,
-            currentIndex = 0,
-            intervalId,
-            currentPane;
-
-  
-        var init = function() {
-            options = $.extend(defaults, options);
-            if(options.outControls && options.outControlsBox) {
-                controls = $(options.outControlsBox + ' > li');
-                clickControlHandler();
-            }
-            if(options.autoLoop === true) {
-                startLoop();
-            }
-        }
-
-        var next = function() {
-            currentIndex += 1;
-            currentIndex = (currentIndex < countItems ) ? currentIndex : 0;
-            if(options.outControls === true) {
-                changeControlElement(currentIndex);
-            }
-            goToNextPane();
-        }
-
-        var goToNextPane = function() {
-            currentPane = panes.eq(currentIndex);
-            panes.animate({opacity: 0}, 300);
-            setTimeout(function() {
-                panes.hide();
-                currentPane.show().animate({opacity: 1}, 600);
-            }, 300); 
-        }
-
-        var changeControlElement = function(index) {
-            if(controls) {
-                controls.removeClass('active');
-                controls.eq(index).addClass('active');
-            }
-        }
-
-        var pause = function() {
-            clearInterval(intervalId);
-            if(options.autoStart) {
-                setTimeout(function() {
-                    startLoop();
-                }, options.delay);
-            }
-        }
-
-        var clickControlHandler = function() {
-            controls.find('a').on('click', function(event) {
-                event.preventDefault();
-                currentIndex = $(this).closest('li').index();
-                changeControlElement(currentIndex);
-                goToNextPane();
-                pause();
-            });
-        }
-
-        var startLoop = function() {
-            clearInterval(intervalId);
-            intervalId = setInterval(function() {
-                next();
-            }, options.pause);
-        }
-
-        init();
-    };   
+    $('#paneBox').unirotator( {outControls: true, outControlsBox: '#controls-wrap'});
+    $('#paneBlockquote').unirotator( {pause: 12000});
+    
+    // $('#photo-rotator').unirotator( {mode: 'shift'});
 
 
-    var rotator = new fadeRotator('#paneBox', {outControls: true, outControlsBox: '#controls-wrap'});
-   
-    var rotatorQuote = new fadeRotator('#paneBlockquote', {pause: 12000});
-
-
-
-    // ......................
 
     $('.stylerize').styler();
 

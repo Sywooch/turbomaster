@@ -41,12 +41,12 @@ class SiteController extends Controller
         $connection = \Yii::$app->db;
         $command = $connection->createCommand('SET SQL_BIG_SELECTS=1')->execute();
 
-        $items = Mainpage::queryFull()->all();
+        $sweets = Mainpage::queryFull()->all();
         $populars = Popular::getProductList();
         $news = Article::listForMainpage(3);
         $facts = Fact::find()->orderBy('RAND()')->asArray()->all();
 
-        return $this->render('index', compact('items', 'populars', 'news', 'facts'));
+        return $this->render('index', compact('sweets', 'populars', 'news', 'facts'));
     }
 
 

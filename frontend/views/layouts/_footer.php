@@ -49,7 +49,7 @@
                         <h4>О компании:</h4>
                         <div id="copyright" style="margin-top: 14px; font-size: 13px;">
                             "ТурбоМастер" © 2015<br>
-                            119034, г. Москва, Волгоградский проспект. д.32, к. 24, офис 208 <a href="/contact#map-turbomaster">(cхема проезда)</a><br>
+                            109316, г. Москва, Волгоградский проспект. д.32, к.24, офис 208 <a href="/contact#map-turbomaster">(cхема проезда)</a><br>
                             <span class="bold">+7 (499) 650-76-45</span>, 
                             <span class="bold">+7 (963) 777-0949</span><br>
                             <!-- Пн-Пт с 8:00 до 19:00<br> Сб с 10:00 до 14:00<br> -->
@@ -58,41 +58,19 @@
                     </div>
                 </div><!-- /.row -->
 
-            <section>
-                <!-- Yandex.Metrika counter -->
-<script type="text/javascript">var yaParams = {/*Здесь параметры визита*/};</script><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter27743625 = new Ya.Metrika({id:27743625, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true,params:window.yaParams||{ }}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript>
-    <div>
-        <img src="//mc.yandex.ru/watch/27743625" style="position:absolute; left:-9999px;" alt="" />
-    </div>
-</noscript><!-- /Yandex.Metrika counter -->
-
-<!-- GoogleAnalytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-55165556-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-<!--LiveInternet counter-->
-<script type="text/javascript"><!--
-    document.write("<a href='http://www.liveinternet.ru/click' "+
-        "target=_blank><img src='//counter.yadro.ru/hit?t45.3;r"+
-        escape(document.referrer)+((typeof(screen)=="undefined")?"":
-        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-        ";"+Math.random()+
-        "' alt='' title='LiveInternet' "+
-        "border='0' width='20' height='20'><\/a>")
-</script>
-
-            </section>
-
-
+                <section>
+                    <!--LiveInternet -->
+                    <script type="text/javascript"><!--
+                        document.write("<a href='http://www.liveinternet.ru/click' "+
+                            "target=_blank><img src='//counter.yadro.ru/hit?t45.3;r"+
+                            escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                            ";"+Math.random()+
+                            "' alt='' title='LiveInternet' "+
+                            "border='0' width='20' height='20'><\/a>")
+                    </script>
+                </section>
 
             </div><!-- /.row -->
         </div><!-- /.row -->

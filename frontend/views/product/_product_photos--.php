@@ -20,14 +20,13 @@ $mainPhoto = !empty($photos) ? CommonHelper::getImageSrc('/photo/product/240/' .
 </div>
 
 <div class="row">
-    <!-- <div class="col-md-10 col-md-offset-2 col-xs-8 product-thumbs"> -->
-    <div class="col-md-10 col-xs-8" style="margin-top: 40px;">
+    <div class="col-md-10 col-md-offset-2 col-xs-8 product-thumbs">
         <?php
         if(count($photos) > 1) {
-            echo '<ul id="photo-rotator">';
-            // array_shift($photos);
+            echo '<ul>';
+            array_shift($photos);
             foreach($photos as $photo) {
-                echo '<li class="pane-item">' .Html::img(CommonHelper::getImageSrc('/photo/product/240/' .$photo['src'])) .'</li>';
+                echo '<li>' .Html::img(CommonHelper::getImageSrc('/photo/product/240/' .$photo['src'])) .'</li>';
             }
             echo '<ul>';
         }

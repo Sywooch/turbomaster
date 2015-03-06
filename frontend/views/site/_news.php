@@ -24,3 +24,8 @@ if(count($news) > 0 ) { ?>
     <?php } ?>
     </ul>
 <?php } ?>
+
+<div class="link-dotted" style="margin: -4px 0 10px 0;">
+    <?= Html::a('Все новости', 'articles/news'); ?>
+</div>
+

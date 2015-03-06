@@ -15,6 +15,7 @@ use yii\helpers\Html;
                         <li class=""><a href="#">ТурбоНовости</a></li>
                         <li class=""><a href="#">ТурбоМастер от А до Я</a></li>
                         <li class=""><a href="#">ТурбоФакты</a></li>
+                        <li class=""><a href="#">ТурбоПредложения</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
@@ -165,13 +166,19 @@ use yii\helpers\Html;
                         <div style="margin-top: 10px;">
                             <?= $this->render('_gallery') ?>
                         </div>
-                    </div><!-- .tab-pane -->
+                    </div>
                     
                     <div id="pane6" class="pane-item" style="position: relative;">
                        <div id="paneBlockquote">
                             <?= $this->render('_facts', ['facts' => $facts]) ?>
                         </div>
-                    </div><!-- .tab-pane -->
+                    </div>
+
+                    <div id="pane7" class="pane-item" style="position: relative;">
+                       <div id="paneBlockquote">
+                            <?= $this->render('_sweet', ['sweets' => $sweets]) ?>
+                        </div>
+                    </div>
 
 
 
