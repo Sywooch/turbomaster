@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-    $('#paneBox').unirotator( {outControls: true, outControlsBox: '#controls-wrap'});
+    $('#paneBox').unirotator( {outControls: true, outControlsBox: '#controls-wrap', pause: 10000});
     $('#paneBlockquote').unirotator( {pause: 12000});
     
     // $('#photo-rotator').unirotator( {mode: 'shift'});
