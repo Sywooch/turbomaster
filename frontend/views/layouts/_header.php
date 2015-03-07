@@ -6,12 +6,25 @@ use yii\helpers\Html;
         <div class="row">
             <div class="col-md-4" id="numbers">
                 <ul>
-                    <li><a class="receiver tel" title="Проводной телефон" href="tel:+74996507645">8 (499) 650-76-45</a></li>
-                    <li><a class="cellphone tel" title="Мобильный телефон" href="tel:+79637770949">8 (963) 777-09-49</a></li>
-                    <li><a class="freephone tel" title="Бесплатный звонок по России" href="tel:+78003336623"><span>Бесплатный звонок по России:</span><br>
-                    8 (800) 333-66-23</a></li>
-
-                    <li style="margin-top: 4px;">E-mail: <a href="mailto:sales@turbomaster.ru" class="email">sales@turbomaster.ru</a></li>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone-square"></i></span>
+                        <a class="receiver tel" title="Проводной телефон" href="tel:+74996507645">8 (499) 650-76-45</a>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone-square"></i></span>
+                        <a class="cellphone tel" title="Мобильный телефон" href="tel:+79637770949">8 (963) 777-09-49</a>
+                    </li>
+                    <li>
+                        <span style="font-size: 12px;">Бесплатный звонок по России:</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-comments"></i></span>
+                        <a class="freephone tel" title="Бесплатный звонок по России" href="tel:+78003336623">8 (800) 333-66-23</a>
+                    </li>
+                    <li style="margin-top: 6px;">
+                        <span class="icon" style="font-size: 13px;"><i class="fa fa-envelope"></i></span>
+                        <a href="mailto:sales@turbomaster.ru" class="email">sales@turbomaster.ru</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-4">
@@ -25,7 +38,7 @@ use yii\helpers\Html;
                     <li>Москва, Волгоградский проспект,<br>д. 32, к. 24, офис 208 &nbsp;
                     <a href="/contact#map-turbomaster"> на карте</a>
                     </li>
-                    <li style="margin-top: 10px;">пн-пт 8:00-19:00, сб 10:00-14:00</li>
+                    <li style="margin-top: 10px;">пн-пт 8:00-19:00<br>сб 10:00-14:00</li>
                 </ul>
             </div>
         </div>

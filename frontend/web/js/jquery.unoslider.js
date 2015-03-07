@@ -1,6 +1,6 @@
 (function($) {
 
-$.fn.unirotator = function(options) {
+$.fn.unoslider = function(options) {
 
     var defaults = {
             mode: 'fade',               // 'fade', 'shift', default: 'fade'

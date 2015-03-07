@@ -17,7 +17,7 @@ use yii\helpers\CommonHelper;
                         <th></th>
                         <th>Код производ.</th>
                         <th>Цена</th>
-                        <th>Купить</th>
+                        <th>Заказать</th>
                     </tr>
                 </thead>
                 <tbody>
