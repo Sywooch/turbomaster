@@ -71,20 +71,15 @@ header #numbers li, header #numbers a, header #about li { color: #ddd; font-size
 
 
 /* FOOTER */
-
-footer {}
-
 .footer-wrap {
  /* background-attachment: fixed; background-image: url("../images/main-intro-b.jpg"); background-repeat: no-repeat; background-size: cover; color: #fff; padding-top: 0; text-align: center;*/ 
  padding: 20px 20px 1px 20px;
   background: #ddd;  border-top: 4px solid #bbb; 
 }
-
 .overlay-grid-dark { background-attachment: fixed; /*background-image: url("../images/bg-grid-dark.png");*/ }
 .footer-bgr { position: relative;
   /*background: url("../images/footer-bg-a.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0);*/
   background: #bbb; }
-
 footer .tagcloud  { position: relative; z-index: 2;  }
 footer .tagcloud a { font:  15px Arial,​sans-serif; margin-right: 8px; }
 footer h4 { color: #888; }
@@ -147,6 +142,9 @@ ul.tabs-stack { padding: 0;}
 
 .texture-overlay { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: url("../images/bg-grid.png"); }
 .intro-bg { position: relative; min-height: 400px; background: url("../images/main-intro-f.jpg") no-repeat scroll  center center / cover rgba(0, 0, 0, 0); }
+@media (max-width: 768px) {
+  .intro-bg { background: #ccc; }
+}
 
 section#main-about { min-height: 430px; padding: 50px 0 10px 0; }
 

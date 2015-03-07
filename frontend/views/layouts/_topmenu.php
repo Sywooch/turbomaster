@@ -7,13 +7,15 @@ use yii\helpers\Html;
     <div class="row">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- <a class="navbar-brand" href="#">Brand</a> -->
+            <button type="button" class="navbar-toggle" style="background: #f0f0f0;" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand visible-xs" href="/" style="padding: 4px 0 0 40px;">
+                <img src="/images/logo-red.png" style="width: 150px; height: auto;" role="banner">
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
