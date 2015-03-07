@@ -238,8 +238,16 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 .article { }
 .article h1 { font-size: 32px; line-height: 1.1em; margin-bottom: 40px; }
 
-.article figure.left { width: 30%; float: left; padding: 4px 10px 0 0; }
-.article figure.right { width: 30%; float: right; padding: 4px 0 0 10px; }
+.article figure.left { width: 30%; float: left; padding: 4px 20px 0 0; }
+.article figure.right { width: 30%; float: right; padding: 4px 0 0 20px; }
+.article img { max-width: 100%; height: auto; }
+.article figcaption { background: #f0f0f0; padding: 6px;  font-size: 13px; line-height: 1.1em; color: #444; }
+
+@media (max-width: 768px) {
+  .article figure.left, .article figure.right { width: 100%; float: none; padding: 0; margin: 14px 0; }
+  .article img { width: 100%; }
+  .article figcaption { padding: 12px; }
+}
 
 /*ARTICLE SIDEBAR*/
 .sidebar-mini { margin-top: 0px; padding: 10px 20px 20px 0px; background: #fafafa;  border-radius: 3px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); }
