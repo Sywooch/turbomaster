@@ -267,9 +267,9 @@ ul.articles-list .text span { display: block; margin-bottom: 6px; }
  /*GALLERY PARTIAL */
 
 ul.gallery-items { list-style: none; }
-.gallery-items li  { display: block; float: left; margin: 0 4px 4px 0; }
+.gallery-items li { display: block; float: left; margin: 0 4px 4px 0; }
 
-.img-140 img { max-width: 140px; opacity: 0.7; }
+.img-140 img { max-width: 140px; opacity: 0.8; }
 .img-140 img:hover { opacity: 1; }
 
 

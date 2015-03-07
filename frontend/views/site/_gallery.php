@@ -13,7 +13,7 @@ $arGallery = [
 ?>
 
 <div class="row">
-    <ul class="gallery-items img-140 bxslider clearfix">
+    <ul class="gallery-items img-140 clearfix">
     <!-- <ul class="bxslider"> -->
     <?php
     foreach($arGallery as $k => $val) { ?>
