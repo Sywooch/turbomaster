@@ -23,10 +23,10 @@ if(count($sweets) > 0 ) { ?>
             ?>
             <li>
             <div class="row">
-                <div class="col-xs-3" style="margin-bottom: 14px;">
+                <div class="col-md-3 hidden-xs">
                     <?= Html::a($img, $link); ?>
                 </div>
-                <div class="col-xs-9 text">
+                <div class="col-md-9 text">
                     <h3><?= $mapper[$item['type']] ?></h3>
                     <?= Html::a($item['description'], $link); ?>
                 </div>
