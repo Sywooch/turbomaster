@@ -8,7 +8,7 @@ use yii\helpers\Html;
             
             <div class="col-md-4">
                 <div class="panenable">
-                    <ul class="tabs-stack" id="controls-wrap" style="margin-top: 10px;">
+                    <ul class="tabs-stack" id="controls-wrap" style="margin: 10px 0 30px 0;">
                         <li class="active"><a href="#">ТурбоМагазин</a></li>
                         <li class=""><a href="#">ТурбоСервис</a></li>
                         <li class=""><a href="#">ТурбоРемонт</a></li>
@@ -21,7 +21,7 @@ use yii\helpers\Html;
             </div><!-- /.col-md-4 -->
             <div class="col-md-7 col-md-offset-1">
                 
-                <div id="paneBox" class="pane-collection"  style="min-height: 360px;">
+                <div id="paneBox" class="pane-collection">
                     
                     <div id="pane1" class="pane-item active">
                         <p class="link-dotted">В ассортименте <a href="/turboshop/passenger">ТурбоМагазина</a> представлены новые, оригинальные и восстановленные турбины для легковых и грузовых автомобилей, автобусов, строительной и спецтехники. Все турбины из нашего каталога вы можете приобрести как в розницу, так и оптом.</p>
