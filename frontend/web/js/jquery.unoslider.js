@@ -100,48 +100,86 @@ $.fn.unoslider = function(options) {
         }
 
         var shiftTransition = function() {
-            // ..............
+
+            currentPane = panes.eq(currentIndex);
+            
+            var divRibbon = $('#uno-ribbon'),
+                leftShift = parseInt(divRibbon.css('left')) - currentPane.width();
+
+            if(currentIndex == 0) {
+                setTimeout(function() {
+                    divRibbon.animate({left: '0px'});
+                }, 500);
+                return;
+            }
+            
+            divRibbon.animate({left: leftShift }, 300);
         }
 
         var prepareShiftLayout = function() {
-            var paneBox =  $(paneBox),
+
+            var paneBox =  $this,
                 pane = panes.first(),
                 paneWidth = pane.width(),
                 paneHeight = pane.height(),
+                divWrap,
                 divFrame,
                 divRibbon;
 
+            
+            // panes.css({ display: 'block', opacity: 1 });
             // paneBox.css({position: 'relative',
                          // 'z-index': 3});
 
+
+            divWrap = $('<div />')
+                .attr({id: 'uno-wrap'})
+                .css({
+                    position: 'relative',
+
+                    'z-index': 2,
+                    width: paneWidth + 'px',
+                    height: paneHeight + 'px',
+                    overflow: 'hidden',
+                });
+
+            paneBox.wrap(divWrap);
+
             // divFrame = $('div').attr('id', 'div-frame').css({
-           paneBox.css({
-                position: 'relative',
-                'z-index': 2,
-                width: paneWidth + 'px',
-                height: paneHeight + 'px',
-                overflow: 'hidden',
-            // }).insertTo(paneBox);
-            }).addClass('hello');
+           // paneBox.css({
+           //      'list-style': 'none', 
+           //      margin: 0, padding: 0,
+           //      position: 'relative',
+           //      'z-index': 2,
+           //      width: paneWidth + 'px',
+           //      height: paneHeight + 'px',
+           //      overflow: 'hidden',
+           //  });
 
-            // divRibbon = $('div').css({
-            //     position: 'absolute',
-            //     top: '0px',
-            //     left: '0px',
-            //     'z-index': 1,
-            //     width: paneWidth * countItems + 'px',
-            //     height: paneHeight + 'px',
-            //     overflow: 'hidden',
-            // }).appendTo(divFrame);
+            divRibbon = $('<div />')
+                .attr('id', 'uno-ribbon')
+                .css({
+                    position: 'absolute',
+                    top: '0px',
+                    left: '0px',
+                    'z-index': 1,
+                    width: paneWidth * countItems + 'px',
+                    height: paneHeight + 'px',
+                    overflow: 'hidden',
+                })
+                .appendTo($('#uno-wrap'));
 
-            // $.each(panes, function(i, el){
-            //     el.css({
-            //         display: 'block',
-            //         opacity: '1',
-            //         float: 'left',
-            //     }).insertTo(divRibbon);
 
-            // });
+            $.each(panes, function(i){
+                $(this).css({
+                    display: 'block',
+                    opacity: '1',
+                    float: 'left',
+                })
+                .attr('rel', i + 1)
+                .appendTo($('#uno-ribbon'));
+            });
+            panes.first().clone().appendTo($('#uno-ribbon'));
 
         }
 

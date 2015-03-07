@@ -246,7 +246,7 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 @media (max-width: 768px) {
   .article figure.left, .article figure.right { width: 100%; float: none; padding: 0; margin: 14px 0; }
   .article img { width: 100%; }
-  .article figcaption { padding: 12px; }
+  .article figcaption { padding: 10px; }
 }
 
 /*ARTICLE SIDEBAR*/

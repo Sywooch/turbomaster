@@ -23,6 +23,8 @@ $mainPhoto = !empty($photos) ? CommonHelper::getImageSrc('/photo/product/240/' .
     <!-- <div class="col-md-10 col-md-offset-2 col-xs-8 product-thumbs"> -->
     <div class="col-md-10 col-xs-8" style="margin-top: 40px;">
         <?php
+
+
         if(count($photos) > 1) {
             echo '<ul id="photo-rotator">';
             // array_shift($photos);
