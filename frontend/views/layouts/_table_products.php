@@ -41,7 +41,7 @@ if(count($products) == 1) {
             echo 
             '<tr>
                 <td>'.Html::a($name, $link) .'</td>
-                <td>' .Html::a('', $link, ['class' => 'cart-add-product-link fa fa-search-plus', 'title' => 'Узнайте подробнее']) .'</td>
+                <td>' .Html::a('', $link, ['class' => 'fa fa-search-plus', 'title' => 'Узнайте подробнее']) .'</td>
                 <td>' . $item['partnumber'] . '</td>
                 <td class="price_cell"><span>' .$price .'</span></td>
                 <td>' .Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 20px;']) .'</td>
