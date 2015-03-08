@@ -34,18 +34,17 @@ $isWarning = false;
     <section id="item">
         <?= $this->render('_product_items', ['product' => $product, 'analogs' => $analogs]) ?>
 
-        <?= $this->render('_ask', ['product' => $product]) ?>
-
-        <h3 style="margin-top: 50px; color: #888;">Характеристики турбины:</h3>
+        <h3 style="margin-top: 20px; color: #888;">Характеристики турбины:</h3>
         <div class="row">
             <div class="col-md-8">
                 <?= $this->render('_product_card', ['product' => $product]) ?>
+                <?= $this->render('_ask', ['product' => $product]) ?>
             </div>
             <div class="col-md-4">
                 <?= $this->render('_product_photos', ['product' => $product, 'photos' => $photos, 'isWarning' => $isWarning]) ?>
             </div>
-            
         </div>
+        
     </section><!-- #item -->
          
 </div><!-- /.container -->

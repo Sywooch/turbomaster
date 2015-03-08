@@ -237,7 +237,7 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 .product-thumbs li img { max-width: 76px; height: auto;  }
 
 table.product-ask {  color: #333;}
-table.product-ask td { padding: 8px 8px; }
+table.product-ask td { padding: 8px 8px; vertical-align: top; }
 table.product-ask .icon { font-size: 24px; color: #fff; }
 
 
