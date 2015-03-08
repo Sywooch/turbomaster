@@ -85,7 +85,7 @@ $(document).ready(function() {
     }
 
     // fancybox
-    $("a.fancyble, a.zoom").fancybox({ openEffect:'none', closeEffect:'none', nextEffect:'fade', prevEffect:'fade', helpers:{ overlay:{ locked:false } } });
+    $("a.fancyble, a.zoom, .gallery-items a").fancybox({ openEffect:'none', closeEffect:'none', nextEffect:'fade', prevEffect:'fade', helpers:{ overlay:{ locked:false } } });
    
     // inputMask
     $("#question-phone-mask, #order-phone-mask").mask("+7(999) 999-99-99");
