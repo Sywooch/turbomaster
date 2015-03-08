@@ -24,7 +24,7 @@ use yii\helpers\Html;
   <!--          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li> -->
                 
-                <li class="fa-hover clearfix"><a href="/" style="padding-left: 0; padding-right: 2px;"><i class="fa fa-home"></i></a></li>
+                <li class="fa-hover clearfix"><a href="/" style="padding-left: 0; padding-right: 10px;"><i class="fa fa-home"></i></a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбины <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
