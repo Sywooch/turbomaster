@@ -37,12 +37,12 @@ use common\models\Cart;
                 <?= $form->field($model, 'address')->textArea(['placeholder' => 'Адрес доставки']) ?>
    
                 <h3 style="margin-top: 40px;">Список заказанных товаров</h3>
-                <table id="cart-list" class="cart-list-table">
+                <table id="cart-list" class="table table-striped cart-list-table">
                     <thead>
-                        <tr>
+                        <tr class="danger">
                             <th style="width: 260px;">Название товара</th>
                             <th style="width: 80px;">Кол-во</th>
-                            <th style="width: 120px;">Цена за экз.</th>
+                            <th style="width: 120px;">Цена экз.</th>
                             <th style="width: 40px;">Удалить</th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@ use common\models\Cart;
                 </table>
 
                 <div class="form-group">
-                        <?= Html::submitButton('', ['class' => 'btn_order', 'id' => 'form-order-submit', 'style' => 'margin: 10px 0 10px 120px;']) ?>
+                        <?= Html::submitButton('Заказать', ['class' => 'btn btn-danger btn-lg', 'id' => 'form-order-submit', 'style' => 'margin: 0px 0 10px 120px;']) ?>
                 </div>
                 <?php ActiveForm::end(); ?>
 

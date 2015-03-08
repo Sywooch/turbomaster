@@ -33,7 +33,7 @@ use common\models\Question;
 
 
                     <div class="form-group">
-                        <?= Html::submitButton('Отправить', ['id' => 'question_submit', 'class' => 'button', 'style' => 'margin: 10px 0 10px 120px;']) ?>
+                        <?= Html::submitButton('Отправить', ['id' => 'question_submit', 'class' => 'btn btn-danger btn-lg', 'style' => 'margin: 0px 0 10px 120px;']) ?>
                     </div>
 
                 <?php ActiveForm::end(); ?>

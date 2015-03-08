@@ -345,3 +345,68 @@ ul.uno-navi li { display: inline-block; margin-right: 8px; }
 ul.uno-navi li a { display: block; width: 12px; height: 12px; border-radius: 50%; background: #ce6967; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);  }
 ul.uno-navi li.active a { background: #f0f0f0; }
 
+
+
+/* popup elements */
+
+.blackscreen { display: block; position: fixed; width: 100%; height: 100%; background: #333; opacity: 0.8; z-index: 1001; }
+
+.center { text-align: center;}
+
+.popup-wrap { position: absolute; width: 540px; top: 100px; left: 200px; height: auto; overflow: visible; z-index: 1999; }
+
+.popup-wrap .form-group { margin-bottom: 0; }
+
+/*@media (max-width: 768px) {
+  .popup-wrap {  width: 95%; }
+}*/
+
+.popup-close { cursor: pointer; height: 36px; position: absolute; right: -18px;   top: -18px; width: 36px; z-index: 8040; background-image: url("../images/fancybox/fancybox_sprite.png"); }
+.popup-skin { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); background: url("../images/metal-texture.jpg") #d1d1d1; border-radius: 4px; color: #444; position: relative; padding: 10px; }
+
+.popup-inner { width: auto; background: #fff; line-height: 1.3; padding: 10px 20px;
+    border-radius: 4px; }
+.popup-inner h3 {margin: 10px 0; font-size: 26px; }
+.popup-inner input, .popup-inner textarea { border: 1px solid #ddd; padding: 5px 6px; margin: 5px 0; width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box; box-sizing: border-box; box-shadow: 0 1px 4px 0 rgba(0,0,0,.08) inset,0 1px 1px 0 rgba(0,0,0,.06) inset,0 -1px 1px 0 rgba(0,0,0,.06) inset; font: inherit; }  
+.popup-inner table { width: 100%; } 
+
+#question-phone-mask, #order-phone-mask {font-size: 18px;}
+
+
+/*my cart-form*/
+#cart-list .quantity_value { background: #fff; border: 1px solid #ccc; display: block; float: left; color: #777; font-weight: bold; text-align: center; width: 32px; height: 34px; margin: 0; padding: 0; }
+
+#cart-list .quantity_block { display: block; float: left; height: 24px; width: 20px; }
+#cart-list .decrease, #cart-list .increase { border-right: 1px solid #ccc; border-top: 1px solid #ccc; color: #777; display: block; height: 17px; width: 20px; text-align: center; background-image: -o-linear-gradient(bottom, #E8E8E8 0%, #fff 100%); background-image: -moz-linear-gradient(bottom, #E8E8E8 0%, #fff 100%); background-image: -webkit-linear-gradient(bottom, #E8E8E8 0%, #fff 100%); background-image: -ms-linear-gradient(bottom, #E8E8E8 0%, #fff 100%); background-image: linear-gradient(to bottom, #E8E8E8 0%, #fff 100%); padding-bottom: 2px; }
+#cart-list .decrease, #cart-list .increase  {  cursor: pointer; border-bottom: 1px solid #ccc; }
+
+a.cart-remove-line { background: url("../images/icon_delete_2.png") no-repeat; display: inline-block; height: 21px; margin: 0; width: 21px; cursor: pointer; }
+
+h1#order-form-empty-message {display: none;}
+
+/*fancybox*/
+
+
+.fancybox-title-float-wrap {
+    bottom: 15px;
+    left: 0;
+    margin-bottom: 0;
+    right: auto;
+    width: 100%;
+}
+.fancybox-title {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+}
+
+.fancybox-title-float-wrap .child {
+    background: #f7f7f7;
+    border-radius: 0;
+    color: #444;
+    display: block;
+    font-size: 1.1em;
+    line-height: 1.2em;
+    margin: 0 15px;
+    padding: 6px 0 0 0;
+    text-shadow: 0 1px 0 #fff;
+    white-space: normal;
+}
