@@ -4,11 +4,9 @@ $.fn.unoslider = function(options) {
 
     var defaults = {
             mode: 'fade',               // 'fade', 'shift', default: 'fade'
-
             outControls: false,         // default: false
             outControlsBox: '',         // eg '#controls-wrap',  
             createNavigation: false,    // default: false
-
             autoLoop: true,             // default: true
             pause: 5000,
             autoStart: true,            // after click
@@ -22,17 +20,26 @@ $.fn.unoslider = function(options) {
             panes = $this.find('> .pane-item'),
             countItems = panes.length,
             controls = false,
+            naviItems = false,
             currentIndex = 0,
             intervalId,
-            currentPane;
+            currentPane,
+
+            paneWidth = panes.first().width(),
+            paneHeight = panes.first().height(),
+
+            divWrap,
+            divNavi,
+            divRibbon;
 
   
         var init = function() {
-
             if(options.mode == 'shift') {
                 prepareShiftLayout();
             }
-
+            if(options.createNavigation && countItems > 1) {
+                createNavigation();
+            }
             if(options.outControls && options.outControlsBox) {
                 controls = $(options.outControlsBox + ' > li');
                 clickControlHandler();
@@ -48,9 +55,11 @@ $.fn.unoslider = function(options) {
             currentPane = panes.eq(currentIndex);
 
             if(options.outControls === true) {
-                changeControlElement(currentIndex);
+                changeControlElement();
             }
-            
+            if(options.createNavigation === true) {
+                changeNaviElement();
+            }
             goToNextPane();
         }
 
@@ -62,13 +71,15 @@ $.fn.unoslider = function(options) {
             }
         }
 
-        var changeControlElement = function(index) {
-            if(controls) {
-                controls.removeClass('active');
-                controls.eq(index).addClass('active');
-            }
+        var changeControlElement = function() {
+            controls.removeClass('active');
+            controls.eq(currentIndex).addClass('active');
         }
-
+        var changeNaviElement = function() {
+            naviItems.removeClass('active');
+            naviItems.eq(currentIndex).addClass('active');
+        }
+        
         var pause = function() {
             clearInterval(intervalId);
             if(options.autoStart) {
@@ -88,7 +99,6 @@ $.fn.unoslider = function(options) {
             });
         }
 
-
         var fadeTransition = function() {
             currentPane = panes.eq(currentIndex);
             panes.animate({opacity: 0}, 300);
@@ -100,64 +110,37 @@ $.fn.unoslider = function(options) {
         }
 
         var shiftTransition = function() {
-
-            currentPane = panes.eq(currentIndex);
-            
-            var divRibbon = $('#uno-ribbon'),
-                leftShift = parseInt(divRibbon.css('left')) - currentPane.width();
-
             if(currentIndex == 0) {
-                setTimeout(function() {
-                    divRibbon.animate({left: '0px'});
-                }, 500);
+                divRibbon.animate({left: '0px'}, 300);
                 return;
             }
-            
-            divRibbon.animate({left: leftShift }, 300);
+            divRibbon.animate({left: - paneWidth * currentIndex}, 300);
         }
 
         var prepareShiftLayout = function() {
-
-            var paneBox =  $this,
-                pane = panes.first(),
-                paneWidth = pane.width(),
-                paneHeight = pane.height(),
-                divWrap,
-                divFrame,
-                divRibbon;
-
             
-            // panes.css({ display: 'block', opacity: 1 });
-            // paneBox.css({position: 'relative',
-                         // 'z-index': 3});
+            // divWrap = $('<div>')
+            //     .attr({id: 'uno-wrap'})
+            //     .css({
+            //         position: 'relative',
+            //         'z-index': 2,
+            //         width: paneWidth + 'px',
+            //         height: paneHeight + 'px',
+            //         overflow: 'hidden',
+            //     });
+            // $this.wrap(divWrap);
 
-
-            divWrap = $('<div />')
-                .attr({id: 'uno-wrap'})
-                .css({
+            $this.css({
                     position: 'relative',
-
+                    'list-style': 'none',
                     'z-index': 2,
                     width: paneWidth + 'px',
                     height: paneHeight + 'px',
                     overflow: 'hidden',
                 });
 
-            paneBox.wrap(divWrap);
-
-            // divFrame = $('div').attr('id', 'div-frame').css({
-           // paneBox.css({
-           //      'list-style': 'none', 
-           //      margin: 0, padding: 0,
-           //      position: 'relative',
-           //      'z-index': 2,
-           //      width: paneWidth + 'px',
-           //      height: paneHeight + 'px',
-           //      overflow: 'hidden',
-           //  });
-
             divRibbon = $('<div />')
-                .attr('id', 'uno-ribbon')
+                .addClass('uno-ribbon')
                 .css({
                     position: 'absolute',
                     top: '0px',
@@ -165,10 +148,9 @@ $.fn.unoslider = function(options) {
                     'z-index': 1,
                     width: paneWidth * countItems + 'px',
                     height: paneHeight + 'px',
-                    overflow: 'hidden',
-                })
-                .appendTo($('#uno-wrap'));
-
+                    // overflow: 'hidden',
+                });
+            divRibbon.appendTo($this);
 
             $.each(panes, function(i){
                 $(this).css({
@@ -176,13 +158,36 @@ $.fn.unoslider = function(options) {
                     opacity: '1',
                     float: 'left',
                 })
-                .attr('rel', i + 1)
-                .appendTo($('#uno-ribbon'));
+                .appendTo(divRibbon);
             });
-            panes.first().clone().appendTo($('#uno-ribbon'));
+            panes.first().clone().appendTo(divRibbon);
+        }   
+        // end prepareShiftLayout
 
-        }
+        var createNavigation = function() {
+            divNavi = $('<ul>')
+                .addClass('uno-navi')
+                .css({
+                    position: 'absolute',
+                    'z-index': 2,
+                });
+            divNavi.appendTo($this);
 
+            for(var i = 0; i < countItems; i++) {
+                $('<li>').append($('<a>').attr('href', '#item')).appendTo(divNavi);
+            }   
+
+            naviItems = divNavi.find('li');
+            naviItems.first().addClass('active');
+
+            divNavi.find('a').on('click', function(event) {
+                event.preventDefault();
+                currentIndex = $(this).closest('li').index();
+                changeNaviElement();
+                goToNextPane();
+                pause();
+            });
+        }    
 
         var startLoop = function() {
             clearInterval(intervalId);

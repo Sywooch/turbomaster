@@ -13,7 +13,7 @@ if($analogs) {
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
-            <tr class="danger">
+            <tr class="danger-head">
                 <th>Наименование турбины</th>
                 <th>Артикул</th>
                 <th>Производитель</th>
@@ -29,7 +29,7 @@ if($analogs) {
                 echo '<tr class="warning"><th colspan="6">Аналоги:</th></tr>';
             }
         
-            $price = (!empty($item['price'])) ? CommonHelper::formatPrice($item['price']) .' руб.' : '<a href="/question/create" class="question-add-link link-dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
+            $price = (!empty($item['price'])) ? '<strong>' .CommonHelper::formatPrice($item['price']) .' руб.</strong>' : '<a href="/question/create" class="question-add-link link-dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
             
             $state = (in_array($item['type'], [1, 3])) ? 'новая' : Html::a('оборотная', ['product/refurbish']);
             ?>

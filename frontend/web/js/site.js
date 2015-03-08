@@ -3,9 +3,7 @@ $(document).ready(function() {
 
     $('#paneBox').unoslider( {outControls: true, outControlsBox: '#controls-wrap', pause: 10000});
     $('#paneBlockquote').unoslider( {pause: 12000});
-    
-    $('#photo-rotator').unoslider( {mode: 'shift'});
-
+    $('#photo-rotator').unoslider( {mode: 'shift', createNavigation: true});
 
 
     $('.stylerize').styler();

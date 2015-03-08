@@ -34,7 +34,9 @@ $isWarning = false;
     <section id="item">
         <?= $this->render('_product_items', ['product' => $product, 'analogs' => $analogs]) ?>
 
-        <h3 style="margin: 30px 0 12px 0; color: #888;">Характеристики турбины:</h3>
+        <?= $this->render('_ask', ['product' => $product]) ?>
+
+        <h3 style="margin-top: 50px; color: #888;">Характеристики турбины:</h3>
         <div class="row">
             <div class="col-md-8">
                 <?= $this->render('_product_card', ['product' => $product]) ?>

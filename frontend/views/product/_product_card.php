@@ -55,13 +55,5 @@ use yii\helpers\CommonHelper;
             <th>Гарантия</th>
             <td><?= $product['warranty'] ?></td>
         </tr>
-        <tr>
-            <th colspan="2" class="fa-hover" style="padding-left: 30%;">
-                <a href="/question/create" data-question-type="common_question" data-product-id="<?= $product['id'] ?>" class="question-add-link">
-                    <i class="fa fa-question-circle" style="font-size: 26px; color: #b04340;"></i>
-                    <span style="border-bottom: 1px dotted #b04340;">Задать вопрос о товаре</span>
-                </a>
-            </th>
-        </tr>
     </tbody>
 </table>

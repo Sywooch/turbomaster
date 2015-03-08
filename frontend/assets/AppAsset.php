@@ -14,12 +14,10 @@ class AppAsset extends AssetBundle
         'css/font-awesome.css',
         'css/jquery-ui.min.css',
         'css/jquery.formstyler.css',
-
-        'css/jquery.jcarousel.basic.css',
+        // 'css/jquery.jcarousel.basic.css',
         'css/jquery.fancybox.css',
         // 'css/jquery.mSimpleSlidebox.css',
         // 'css/jquery.bxslider.css',
-        
         'css/style.css',
     ];
 
@@ -37,7 +35,6 @@ class AppAsset extends AssetBundle
         // 'js/jquery.easing.1.3.js',
         // 'js/jquery.mSimpleSlidebox.js',
         // 'js/jquery.bxslider.min.js',
-
         'js/site.js',
     ];
 
