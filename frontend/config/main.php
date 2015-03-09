@@ -29,7 +29,7 @@ return [
         
         'urlManager' => [
             'rules'=> [
-                '<view:(about|contact|vacancy|warranty|delivery|payment|wholesale|turboservice|price|turboservice_gallery|turborepair|repair-price|quality-turbines)>' => 'site/static',  
+                '<view:(about|contact|vacancy|warranty|delivery|payment|wholesale|turboservice|price|turboservice_gallery|turborepair|repair-price|quality-turbines|diagnostika)>' => 'site/static',  
                 'page/<view>' => 'site/static',  
 
                 'product/<id:\d+>'  => 'product/view',

@@ -81,7 +81,7 @@ use yii\helpers\Html;
                         <div class="row">
                             <div class="col-md-6 divider-v">
                                 <li class="h4">ТурбоИнформация:</li>
-                                <li><a href="/article/diagnostika-neispravnostej-turbiny">Диагностика неисправностей турбины</a></li>
+                                <li><a href="/diagnostika">Диагностика неисправностей турбины</a></li>
                                 <li><a href="/article/petrol-or-fuel-oil">Бензин или дизель?</a></li>
                                 <li><a href="/article/choice">Номера турбин</a></li>
                                 <li><a href="/article/indentification">Идентификация турбокомпрессоров</a></li>
