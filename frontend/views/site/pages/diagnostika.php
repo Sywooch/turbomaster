@@ -22,6 +22,7 @@ $this->registerMetaTag([
     
             <h1>Диагностика неисправностей турбины</h1>
 
+            <div class="table-responsive">
             <table class="table table-bordered table-striped diagnostika">
     <thead>
         <tr>
@@ -503,6 +504,7 @@ $this->registerMetaTag([
         </tr>
     </tbody>
 </table>
+</div>
 
         </div><!-- /.col-md-12 -->
     </div><!-- /.row -->
