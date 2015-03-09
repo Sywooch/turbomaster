@@ -25,8 +25,8 @@ $.fn.unoslider = function(options) {
             intervalId,
             currentPane,
 
-            paneWidth = panes.first().width(),
-            paneHeight = panes.first().height(),
+            paneWidth = 0,
+            paneHeight = 0,
 
             divWrap,
             divNavi,
@@ -119,16 +119,7 @@ $.fn.unoslider = function(options) {
 
         var prepareShiftLayout = function() {
             
-            // divWrap = $('<div>')
-            //     .attr({id: 'uno-wrap'})
-            //     .css({
-            //         position: 'relative',
-            //         'z-index': 2,
-            //         width: paneWidth + 'px',
-            //         height: paneHeight + 'px',
-            //         overflow: 'hidden',
-            //     });
-            // $this.wrap(divWrap);
+            calculateSizes();
 
             $this.css({
                     position: 'relative',
@@ -153,11 +144,7 @@ $.fn.unoslider = function(options) {
             divRibbon.appendTo($this);
 
             $.each(panes, function(i){
-                $(this).css({
-                    display: 'block',
-                    opacity: '1',
-                    float: 'left',
-                })
+                $(this).css({display: 'block', opacity: '1', float: 'left'})
                 .appendTo(divRibbon);
             });
             panes.first().clone().appendTo(divRibbon);
@@ -167,10 +154,7 @@ $.fn.unoslider = function(options) {
         var createNavigation = function() {
             divNavi = $('<ul>')
                 .addClass('uno-navi')
-                .css({
-                    position: 'absolute',
-                    'z-index': 2,
-                });
+                .css({position: 'absolute', 'z-index': 2});
             divNavi.appendTo($this);
 
             for(var i = 0; i < countItems; i++) {
@@ -187,7 +171,13 @@ $.fn.unoslider = function(options) {
                 goToNextPane();
                 pause();
             });
-        }    
+        }   
+
+        var calculateSizes = function() {
+            panes.first().clone().css({display: 'block', opacity: '1'});
+            paneWidth = panes.first().width();
+            paneHeight = panes.first().height();
+        }
 
         var startLoop = function() {
             clearInterval(intervalId);
