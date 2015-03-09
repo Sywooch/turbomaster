@@ -364,10 +364,10 @@ $(document).ready(function() {
 
         var width = $(window).width();
          if(width < 768) {
-             this.width(width - 10);
+             this.width(width - 30);
          }
 
-        var left = $(window).width() > 768 ? ($(window).width() - $(this).outerWidth()) / 2 + $(window).scrollLeft() - 70 : 10;
+        var left = width > 768 ? (width - $(this).outerWidth()) / 2 + $(window).scrollLeft() - 70 : 10;
         this.css("left", left + "px");
         return this;
     }

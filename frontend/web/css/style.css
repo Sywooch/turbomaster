@@ -237,10 +237,12 @@ table.matroska tr:last-child td { padding-bottom: 8px!important;}
 .product-thumbs li { display: block; float: left; margin: 2px 6px 0 0; }
 .product-thumbs li img { max-width: 76px; height: auto;  }
 
-table.product-ask {  color: #333;}
+/*table.product-ask {  color: #333;}
 table.product-ask td { padding: 8px 8px; vertical-align: top; }
-table.product-ask .icon { font-size: 24px; color: #fff; }
+table.product-ask .icon { font-size: 24px; color: #fff; }*/
 
+ul.ask-phone { list-style1: none; padding-left: 0; }
+ul.ask-phone li { margin-left: 40px; }
 
 /* ARTICLE */
 .article { }
