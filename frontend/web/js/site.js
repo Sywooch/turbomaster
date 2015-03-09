@@ -362,6 +362,11 @@ $(document).ready(function() {
         this.css("position","absolute");
         this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
 
+        var width = $(window).width();
+         if(width < 768) {
+             this.width(width - 10);
+         }
+
         var left = $(window).width() > 768 ? ($(window).width() - $(this).outerWidth()) / 2 + $(window).scrollLeft() - 70 : 10;
         this.css("left", left + "px");
         return this;

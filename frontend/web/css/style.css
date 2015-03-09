@@ -356,10 +356,6 @@ ul.uno-navi li.active a { background: #f0f0f0; }
 
 .popup-wrap { position: absolute; width: 540px; top: 0px; left: 0px; height: auto; overflow: visible; z-index: 1999; }
 
-@media (max-width: 768px) {
-  .popup-wrap {  width: 90%; top: 10px; left: 0px; }
-}
-
 .popup-wrap .form-group { margin-bottom: 0; }
 
 
