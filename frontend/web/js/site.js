@@ -91,8 +91,9 @@ $(document).ready(function() {
     $("#question-phone-mask, #order-phone-mask").mask("+7(999) 999-99-99");
    
     var  openPopup = function(id) {
+        var el = $(id);
+        el.appendTo('body').show().center();
         createBlackScreen();
-        $(id).appendTo('body').show().center();
     }
 
 
@@ -361,7 +362,8 @@ $(document).ready(function() {
         this.css("position","absolute");
         this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 4) + $(window).scrollTop()) + "px");
 
-        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + $(window).scrollLeft()) - 70 + "px");
+        var left = $(window).width() > 768 ? ($(window).width() - $(this).outerWidth()) / 2 + $(window).scrollLeft() - 70 : 10;
+        this.css("left", left + "px");
         return this;
     }
   
