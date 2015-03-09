@@ -11,19 +11,20 @@ $this->registerMetaTag([
     'content' => 'контакты, турбомастер']);
 ?>
 
-<div class="container page-style">
+<div class="container page-style" style="margin-bottom: 30px;">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <section id="breadcrumbs">
                 <?= Breadcrumbs::widget([
                   'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
                   'links' => [['label' => 'Контакты']]    
                 ]) ?>
             </section>
-  
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
             <h1 class="catalog">Контакты</h1>
 
-        <article>
             <h2>Офис «ТурбоМастер»</h2>
 
             <p><strong>Адрес: </strong>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 208</p>
@@ -36,52 +37,58 @@ $this->registerMetaTag([
             <p>ОГРН 5137746006041<br> ИНН/КПП 7704848819/772301001<br> ОКПО 18886043<br> ОКАТО 45286590000<br> Юридический адрес:&nbsp;109316, г. Москва, Волгоградский пр-кт, д. 32, корп. 24.<br> Фактический адрес:&nbsp;<span style="background-color: rgba(255, 255, 255, 0.701961); color: #333333; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.71875px;"></span>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 208</p>
             <p><strong>Банковские реквизиты:</strong></p>
             <p>Расчетный счет: №&nbsp;40702810800000017393<br> в ОАО «Промсвязьбанк» (филиал ОАО «Промсвязьбанк»)<br> Корреспондентский счёт № 30101810400000000555 в ОПЕРУ Московского ГТУ Банка России<br> БИК 044525555, ИНН 7744000912, КПП 775001001<br> Генеральный директор: Самохин Максим Сергеевич (на основании Устава)</p>
-        </article>
 
-        <article>
 
-            <a name="map-turbomaster"></a>
-            <h3>Проход и проезд в &laquo;ТурбоМастер&raquo;</h3>
+        <a name="map-turbomaster"></a>
+        <h3>Проход и проезд в &laquo;ТурбоМастер&raquo;</h3>
+            
+        <div style="position: relative; width: 680ps; height: 540px; margin: 5px 15px 5px 0;">
+            <img src="/images/map/map.jpg" style="display: block; position: absolute; float: none; width: 680px; height: 538px; margin: 0; z-index: 1;">
                 
-            <div style="position: relative; width: 680ps; height: 548px; margin: 5px 15px 35px 0;">
-                <img src="/images/site/contacts/map.jpg" style="display: block; position: absolute; float: none; width: 680px; height: 538px; margin: 0; z-index: 1;">
+            <a href="/images/map/zoom_1.jpg" class="fancyble" data-fancybox-group="walker">
+                <img src="/images/map/point_1.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none;  z-index: 2; top: 139px; left: 270px; cursor: pointer;">
+            </a>
+            <a href="/images/map/zoom_2.jpg" class="fancyble" data-fancybox-group="walker">
+                <img src="/images/map/point_2.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none; z-index: 2; top: 346px; left: 160px; cursor: pointer;">
+            </a>
+            <a href="/images/map/zoom_3.jpg" class="fancyble" data-fancybox-group="walker">
+                <img src="/images/map/point_3.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none; z-index: 2; top: 400px; left: 208px; cursor: pointer;">
+            </a>
+        </div>
+        <p style="margin-bottom: 0px;">Кликните на маркеры  &laquo;1&raquo;, &laquo;2&raquo; и &laquo;3&raquo;, чтобы увидеть фотографии поворотов.
+        </p>
                     
-                <a href="/images/site/contacts/zoom_1.jpg" class="fancyble" data-fancybox-group="walker">
-                    <img src="/images/site/contacts/point_1.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none;  z-index: 2; top: 139px; left: 270px; cursor: pointer;">
-                </a>
-                <a href="/images/site/contacts/zoom_2.jpg" class="fancyble" data-fancybox-group="walker">
-                    <img src="/images/site/contacts/point_2.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none; z-index: 2; top: 346px; left: 160px; cursor: pointer;">
-                </a>
-                <a href="/images/site/contacts/zoom_3.jpg" class="fancyble" data-fancybox-group="walker">
-                    <img src="/images/site/contacts/point_3.png" style="display: block; position: absolute; float: none; width: 40px; height: 40px; margin: 0; border: none; box-shadow: none; z-index: 2; top: 400px; left: 208px; cursor: pointer;">
-                </a>
+        </div><!-- /.col-md-9 -->
+    </div><!-- /.row -->
+</div><!-- /.container -->
 
-            </div>
-
-            <p style="margin-bottom: 70px;">
-            Кликните на маркеры  &laquo;1&raquo;, &laquo;2&raquo; и &laquo;3&raquo;, чтобы увидеть фотографии поворотов.
-            </p>
-                    
-
-            <h3>Офис &laquo;ТурбоМастер&raquo; на карте &laquo;Яндекса&raquo;</h3>
+    <div class="container-fluid">
+        <div class="row">
+            <h3  style="text-align: center;">Офис &laquo;ТурбоМастер&raquo; на карте &laquo;Яндекса&raquo;</h3>
 
             <script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&lang=ru-RU"></script>
-            <div id="map-office" style="width:680px; height:400px; border:1px solid #969696;"></div>
-
-            <div style="width: 680px; height: 3px; clear: both; border-top: 3px solid #ccc; margin: 50px 0px 10px 0;"></div>
-
-            <a name="map-turboservice"></a>
-            <h2>&laquo;ТурбоСервис&raquo;</h2>
-
-            <p><b>Адрес сервиса:</b> г. Реутов, ул. Железнодорожная д.17А</p>
-            <p><b>Телефон:</b> +7 (499) 391-5875</p>
-            <p><b>Часы работы:</b> ежедневно с 9:00 до 21:00</p>
-            <h3>Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
-            <div id="map-service-enthusiast" style="width:680px; height:400px; border:1px solid #969696;"></div>
             
-            <h3>Проезд в &laquo;ТурбоСервис&raquo; с Носовихинского шоссе</h3>
+            <div id="map-office" style="width: 100%; height: 400px;"></div>
+        </div>
+           
+        <div class="row">
+            <div class="col-md-4 col-md-offset-3" style="margin-top: 40px;">
+                <a name="map-turboservice"></a>
+                <h2>&laquo;ТурбоСервис&raquo;</h2>
 
-            <div id="map-service-no-owls" style="width:680px; height:400px; border:1px solid #969696;"></div>
+                <p><b>Адрес сервиса:</b> г. Реутов, ул. Железнодорожная д.17А</p>
+                <p><b>Телефон:</b> +7 (499) 391-5875</p>
+                <p><b>Часы работы:</b> ежедневно с 9:00 до 21:00</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <h3 style="text-align: center;">Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
+            <div id="map-service-enthusiast" style="width: 100%; height: 400px;"></div>
+            
+            <h3 style="text-align: center;">Проезд в &laquo;ТурбоСервис&raquo; с Носовихинского шоссе</h3>
+
+            <div id="map-service-no-owls" style="width: 100%; height: 400px;"></div>
             <script language="javascript" type="text/javascript">
             //<![CDATA[
                 var turboMaps = {
@@ -172,8 +179,6 @@ $this->registerMetaTag([
                 }
             //]]>
             </script>
-            </article>
-        </div><!-- /.col-md-9 -->
-    </div><!-- /.row -->
-</div><!-- /.container -->
-       
+
+</div>
+</div>
