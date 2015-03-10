@@ -57,6 +57,7 @@ header {
   /*background-color: #26354a; */
   background-color: #222; 
 }
+
 @media (min-width: 992px) {
   header { 
     display: block; 

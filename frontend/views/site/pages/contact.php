@@ -22,7 +22,7 @@ $this->registerMetaTag([
             </section>
         </div>
 
-        <div class="col-md-10 col-md-offset-1">
+        <div class="col-md-10">
             <h1 class="catalog">Контакты</h1>
 
             <h2>Офис «ТурбоМастер»</h2>
@@ -32,12 +32,12 @@ $this->registerMetaTag([
             <p><strong>Мобильный телефон:</strong> +7 (963) 777-0949</p>
             <p><strong>Часы работы:</strong><br> пн-пт: с 8:00 до 19:00<br>сб: с 10:00 до 14:00</p>
             <p>E-mail: <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a></p>
-            <h2>Реквизиты</h2>
+            <h3>Реквизиты</h3>
             <p>Общество с ограниченной ответственностью «ТМ-13» (ООО «ТМ-13»)</p>
             <p>ОГРН 5137746006041<br> ИНН/КПП 7704848819/772301001<br> ОКПО 18886043<br> ОКАТО 45286590000<br> Юридический адрес:&nbsp;109316, г. Москва, Волгоградский пр-кт, д. 32, корп. 24.<br> Фактический адрес:&nbsp;<span style="background-color: rgba(255, 255, 255, 0.701961); color: #333333; font-family: 'Open Sans', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 18.71875px;"></span>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 208</p>
-            <p><strong>Банковские реквизиты:</strong></p>
+            <h3>Банковские реквизиты:</h3>
             <p>Расчетный счет: №&nbsp;40702810800000017393<br> в ОАО «Промсвязьбанк» (филиал ОАО «Промсвязьбанк»)<br> Корреспондентский счёт № 30101810400000000555 в ОПЕРУ Московского ГТУ Банка России<br> БИК 044525555, ИНН 7744000912, КПП 775001001<br> Генеральный директор: Самохин Максим Сергеевич (на основании Устава)</p>
-
+            <br>
 
         <a name="map-turbomaster"></a>
         <h3>Проход и проезд в &laquo;ТурбоМастер&raquo;</h3>
@@ -64,29 +64,29 @@ $this->registerMetaTag([
 
     <div class="container-fluid">
         <div class="row">
-            <h3  style="text-align: center;">Офис &laquo;ТурбоМастер&raquo; на карте &laquo;Яндекса&raquo;</h3>
+            <h3 style="text-align: center; font-size: 21px; color: #888;">Офис &laquo;ТурбоМастер&raquo; на карте &laquo;Яндекса&raquo;</h3>
 
             <script type="text/javascript" src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard,package.geoObjects&lang=ru-RU"></script>
             
             <div id="map-office" style="width: 100%; height: 400px;"></div>
         </div>
            
-        <div class="row">
-            <div class="col-md-4 col-md-offset-3" style="margin-top: 40px;">
+        <div class="row" style="background: #f0f0f0; border-top: 3px solid #ddd; ">
+            <div class="col-md-4 col-md-offset-4" style="padding-top: 40px; padding-bottom: 10px;">
                 <a name="map-turboservice"></a>
-                <h2>&laquo;ТурбоСервис&raquo;</h2>
-
+                <h2 style="padding-left: 40px;">&laquo;ТурбоСервис&raquo;</h2>
+                <br>
                 <p><b>Адрес сервиса:</b> г. Реутов, ул. Железнодорожная д.17А</p>
                 <p><b>Телефон:</b> +7 (499) 391-5875</p>
                 <p><b>Часы работы:</b> ежедневно с 9:00 до 21:00</p>
             </div>
         </div>
 
-        <div class="row">
-            <h3 style="text-align: center;">Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
+        <div class="row" style="background: #f0f0f0;">
+            <h3 style="text-align: center; font-size: 21px; color: #888;">Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
             <div id="map-service-enthusiast" style="width: 100%; height: 400px;"></div>
             
-            <h3 style="text-align: center;">Проезд в &laquo;ТурбоСервис&raquo; с Носовихинского шоссе</h3>
+            <h3 style="text-align: center; font-size: 21px; color: #888; padding-top: 20px;">Проезд в &laquo;ТурбоСервис&raquo; с Носовихинского шоссе</h3>
 
             <div id="map-service-no-owls" style="width: 100%; height: 400px;"></div>
             <script language="javascript" type="text/javascript">

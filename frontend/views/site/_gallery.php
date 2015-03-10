@@ -12,7 +12,7 @@ $arGallery = [
 ];
 ?>
 
-<div class="row">
+<div>
     <ul class="gallery-items img-140 clearfix">
     <!-- <ul class="bxslider"> -->
     <?php

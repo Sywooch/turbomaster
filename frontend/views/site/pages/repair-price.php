@@ -28,31 +28,7 @@ $this->registerMetaTag([
                 <p>На любые вопросы по теме ТурбоРемонт вам ответят по тел:&nbsp;<strong>(499) 650-76-45</strong>.</p>
             </section>
         
-            <h2 style="margin-top: 30px;">Фоторепортаж из нашего техцентра</h2>
-
-            <section class="photogallery">
-
-                <div class="row">
-                <!-- <p class="description"></p> -->
-                <!-- <div class="jcarousel-wrapper"> -->
-                    <!-- <div class="jcarousel" data-jcarousel="true"> -->
-                <ul class="gallery-items" style="margin: 20px 0 40px 15px;">
-                    <li><a href="/photo/gallery/big/84.jpg" title="Ремонт турбин немыслим без специализированного оборудования." data-fancybox-group="gallery16"><img width="100" height="100" alt="1" src="/photo/gallery/small/84.jpg"></a></li>
-                    <li><a href="/photo/gallery/big/85.jpg" title="Турбины ремонтируются по технологиям, рекомендованным производителями. " data-fancybox-group="gallery16"><img width="100" height="100" alt="2" src="/photo/gallery/small/85.jpg"></a></li>
-                    <li><a href="/photo/gallery/big/86.jpg" title="В работе используются оригинальные компоненты и запчасти от известных производителей. " data-fancybox-group="gallery16"><img width="100" height="100" alt="3" src="/photo/gallery/small/86.jpg"></a></li>
-                    <li><a href="/photo/gallery/big/87.jpg" title="Оригинальный ремкомплект турбины Garrett. " data-fancybox-group="gallery16"><img width="100" height="100" alt="4" src="/photo/gallery/small/87.jpg"></a></li>
-                    <li><a href="/photo/gallery/big/88.jpg" title="Оригинальный ремкомплект турбины Borg Warner. " data-fancybox-group="gallery16"><img width="100" height="100" alt="5" src="/photo/gallery/small/88.jpg"></a></li>
-                    <li><a href="/photo/gallery/big/89.jpg" title="Возможность ремонта и объем работ уточняются в ходе диагностики турбины (дефектовки). " data-fancybox-group="gallery16"><img width="100" height="100" alt="6" src="/photo/gallery/small/89.jpg"></a></li>
-                </ul>
-                    <!-- </div> -->
-                    <!-- <a class="jcarousel-control-prev inactive" href="#" data-jcarouselcontrol="true">‹</a>
-                    <a class="jcarousel-control-next" href="#" data-jcarouselcontrol="true">›</a> -->
-                    <!-- p class="jcarousel-pagination"></p -->
-                </div>
-            </section>
-
-   
-            <h2 style="margin-top: 50px;">Цены на ремонт турбин</h2>
+            <h2 style="margin-top: 50px; padding-bottom: 20px; font-size: 22px;">Цены на ремонт турбин</h2>
            
             <div class="table-responsive">
             <table class="table table-striped">
@@ -155,6 +131,23 @@ $this->registerMetaTag([
             </tbody>
             </table>
             </div>
+
+
+            <h3 style="margin-top: 30px;">Фоторепортаж из нашего техцентра</h3>
+
+            <section class="photogallery">
+                <div class="row">
+                <ul class="gallery-items" style="margin: 20px 0 40px 15px;">
+                    <li><a href="/photo/gallery/big/84.jpg" title="Ремонт турбин немыслим без специализированного оборудования." data-fancybox-group="gallery16"><img width="100" height="100" alt="1" src="/photo/gallery/small/84.jpg"></a></li>
+                    <li><a href="/photo/gallery/big/85.jpg" title="Турбины ремонтируются по технологиям, рекомендованным производителями. " data-fancybox-group="gallery16"><img width="100" height="100" alt="2" src="/photo/gallery/small/85.jpg"></a></li>
+                    <li><a href="/photo/gallery/big/86.jpg" title="В работе используются оригинальные компоненты и запчасти от известных производителей. " data-fancybox-group="gallery16"><img width="100" height="100" alt="3" src="/photo/gallery/small/86.jpg"></a></li>
+                    <li><a href="/photo/gallery/big/87.jpg" title="Оригинальный ремкомплект турбины Garrett. " data-fancybox-group="gallery16"><img width="100" height="100" alt="4" src="/photo/gallery/small/87.jpg"></a></li>
+                    <li><a href="/photo/gallery/big/88.jpg" title="Оригинальный ремкомплект турбины Borg Warner. " data-fancybox-group="gallery16"><img width="100" height="100" alt="5" src="/photo/gallery/small/88.jpg"></a></li>
+                    <li><a href="/photo/gallery/big/89.jpg" title="Возможность ремонта и объем работ уточняются в ходе диагностики турбины (дефектовки). " data-fancybox-group="gallery16"><img width="100" height="100" alt="6" src="/photo/gallery/small/89.jpg"></a></li>
+                </ul>
+                </div>
+            </section>
+
 
         </div><!-- /.col-md-9 -->
     </div><!-- /.row -->

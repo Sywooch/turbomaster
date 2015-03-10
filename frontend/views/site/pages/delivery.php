@@ -37,22 +37,18 @@ $this->registerMetaTag([
                 <p>Срок доставки зависит от способа перевозки (железнодорожный, автомобильный, авиа-) и обычно составляет несколько рабочих дней.&nbsp;</p>
                 <p>Стоимость доставки турбины (кроме авиа-) рассчитывается по минимальному тарифу, у разных перевозчиков она колеблется в пределах 300-500 руб.&nbsp;</p>
                 <p>Уточнить информацию о доставке турбин в регионы &nbsp;можно на сайтах транспортных компаний, с которыми мы активно сотрудничаем:</p>
-                <p>
-                    <a href="http://www.pecom.ru/">
-                        <img width="94" height="83" src="/images/site/delivery/logo-pek.png" alt="ПЭК">
-                    </a>
-                    <a href="http://www.ae5000.ru/">
-                        <img height="95" src="/images/site/delivery/avtotreyding.jpg" alt="Автотрейдинг">
-                    </a>
-                    <a href="http://www.jde.ru/calc">
-                        <img height="95" src="/images/site/delivery/logo-zeldor.gif" alt="ЖелДор">
-                    </a>
-                    <a href="http://www.baikalsr.ru/&lrm;">
-                        <img width="150" src="/images/site/delivery/logo-baykal.png" alt="Байкал-Сервис">
-                    </a>
-                </p>
-
             </article>
+
+            <section id="delivery-list" style="margin: 20px 0 0 0;">
+                <ul style="padding-left: 20px;">
+                    <li><a href="http://www.jde.ru">Желдорэкспедиция</a></li>
+                    <li><a href="http://www.baikalsr.ru">Байкал-сервис</a></li>
+                    <li><a href="http://www.dellin.ru">Деловые линии</a></li>
+                    <li><a href="http://nrg-tk.ru">Энергия</a></li>
+                    <li><a href="http://www.ae5000.ru">Автотрейдинг</a></li>
+                </ul>
+            </section>
+
         </div><!-- /.col-md-9 -->
     </div><!-- /.row -->
 </div><!-- /.container -->
