@@ -1,5 +1,7 @@
 <?php
 use yii\helpers\Html;
+use common\models\Manufacturer;
+
 ?>
 
 <nav class="navbar navbar-default topmenu">
@@ -21,8 +23,6 @@ use yii\helpers\Html;
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-  <!--          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                <li><a href="#">Link</a></li> -->
                 
                 <li class="fa-hover clearfix"><a href="/" style="padding-left: 0; padding-right: 10px;"><i class="fa fa-home"></i></a></li>
                 <li class="dropdown">
@@ -30,7 +30,7 @@ use yii\helpers\Html;
                     <ul class="dropdown-menu extended" role="menu">
                         <div class="container">
                         <div class="row">
-                            <div class="col-md-5 divider-v">
+                            <div class="col-md-4 divider-v">
 
                                 <li class="h4">Турбины по применению:</li>
 
@@ -43,54 +43,78 @@ use yii\helpers\Html;
                                 <li class="fa-hover clearfix"><a href="/turboshop/refurbish"><i class="fa fa-recycle"></i> Турбины восстановленные</a></li>
                                 
                                 <li class="fa-hover clearfix"><a href="/turboshop/ship"><i class="fa fa-ship"></i> Турбины судовые</a></li>
+                                
+                                <li class="fa-hover clearfix"><a href="/article/turbokit"><i class="fa fa-plug"></i> Турбо кит Нива Шевроле</a></li>
+                          
                             </div>
                             <div class="col-md-4 divider-v">
                                 <li class="h4">Турбины производителя:</li>
-                                <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
-                                <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                
+                                <?php
+                                $manufacturers = Manufacturer::find()->orderBy('name')->all();
+                                foreach($manufacturers as $manufacturer) {
+                                    echo '<li>' .HTML::a('Турбины ' .$manufacturer['name'],  ['product/index', 'manufacturer_alias' => $manufacturer['alias']]) ."</li>\n";
+                                }
+                                ?>  
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-4">
                                 <li class="h4">Запчасти для турбины:</li>
-                                <li><a href="/turboshop/cartridges">Картриджи для турбин</a></li>
-                                <li><a href="/article/turbokit">Турбо кит Нива Шевроле</a></li>
+                                <li><a href="/turboshop/cartridges">Картриджи</a></li>
+                                <li><a href="/turboshop/cartridges">Актюаторы</a></li>
+                                <li class="h4" style="margin-top: 60px;">Качество турбин:</li>
+                                <li><a href="/quality-turbines">Сертификаты турбин</a></li>
                             </div>
                         </div>
                         </div>
                     </ul>
                 </li><!-- /. ТурбоМагазин -->
+
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Сервис <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/turboservice">Замена турбины - дело тонкое</a></li>
-                        <li><a href="/price">Стоимость замены турбины</a></li>
-                        <li><a href="/turboservice_gallery">Фоторепортажи ТурбоСервиса</a></li>
-                        <li><a href="/articles/bulletins-turboservice">Бюллетени ТурбоСервиса</a></li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбоуслуги <span class="caret"></span></a>
+                    <ul class="dropdown-menu extended" role="menu">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 divider-v">
+                                <li class="h4">Замена турбины</li>
+                                <li><a href="/turboservice">Замена турбины - дело тонкое</a></li>
+                                <li><a href="/price">Стоимость замены турбины</a></li>
+                                <li><a href="/turboservice_gallery">Фоторепортажи ТурбоСервиса</a></li>
+                                <li><a href="/articles/bulletins-turboservice">Бюллетени ТурбоСервиса</a></li>
+                            </div>
+                            <div class="col-md-4 divider-v">
+                                 <li class="h4">Ремонт турбины</li>
+                                <li><a href="/turborepair">Профессиональный ремонт турбин</a></li>
+                                <li><a href="/repair-price">Стоимость ремонта турбины</a></li>
+                            </div>
+                            <div class="col-md-3">
+                                <li class="h4">Диагностика турбины</li>
+                                <li><a href="#">О диагностике</a></li>
+
+                                <li class="h4" style="margin-top: 20px;">Экспертиза турбины</li>
+                                <li><a href="#">Об экспертизе</a></li>
+                            </div>
+
+                        </div>
+                        </div>
                     </ul>
-                </li><!-- /. ТурбоСервис -->
+                </li><!-- /. ТурбоУслуги -->
+       
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Ремонт <span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="/turborepair">Профессиональный ремонт турбин</a></li>
-                        <li><a href="/repair-price">Стоимость ремонта турбины</a></li>
-                    </ul>
-                </li><!-- /. ТурбоРемонт -->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Инфо <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбоинформация <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
                         <div class="row">
                             <div class="col-md-6 divider-v">
-                                <li class="h4">ТурбоИнформация:</li>
+                                <li class="h4">Турбосекреты:</li>
                                 <li><a href="/diagnostika">Диагностика неисправностей турбины</a></li>
-                                <li><a href="/article/petrol-or-fuel-oil">Бензин или дизель?</a></li>
-                                <li><a href="/article/choice">Номера турбин</a></li>
+                                <li><a href="/articles/malfunction">Причины отказов</a></li>
                                 <li><a href="/article/indentification">Идентификация турбокомпрессоров</a></li>
+                                <li><a href="/articles/rules">Монтаж турбины</a></li>
+                                <li><a href="/article/choice">Номера турбин</a></li>
                                 <li><a href="/article/construction">Конструкция турбокомпрессора</a></li>
                                 <li><a href="/article/how-does-this-work">Принцип работы турбины</a></li>
-                                <li><a href="/articles/malfunction">Причины отказов</a></li>
-                                <li><a href="/articles/reference-materials">Справочные материалы</a></li>
+                                <li><a href="/article/petrol-or-fuel-oil">Бензин или дизель?</a></li>
                                 <li><a href="/article/glossary">Глоссарий </a></li>
-                                <li><a href="/articles/rules">Монтаж турбины</a></li>
+                                <li><a href="/articles/reference-materials">Справочные материалы</a></li>
                             </div>
                             <div class="col-md-6">
                                 <div class="vertical-divide-left">
@@ -104,12 +128,30 @@ use yii\helpers\Html;
                             </div>
                         </div>
                     </ul>
-                </li><!-- /. Чтиво -->                
-                <li><?= Html::a('Доставка', ['site/static', 'view' => 'delivery']) ?></li>    
-                <li><?= Html::a('Оплата', ['site/static', 'view' => 'payment']) ?></li>    
-                <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
-                <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
-                <li><?= Html::a('О компании', ['site/static', 'view'=>'about']) ?></li>    
+                </li><!-- /. Чтиво -->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Покупка <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><?= Html::a('Оплата', ['site/static', 'view' => 'payment']) ?></li>    
+                        <li><?= Html::a('Доставка', ['site/static', 'view' => 'delivery']) ?></li>    
+                        <li><?= Html::a('Карта продаж', ['#']) ?></li>    
+                        <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
+                        <li><a href="/quality-turbines">Сертификаты турбин</a></li>
+                    </ul>
+                </li><!-- /. Покупка -->
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">О компании <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><?= Html::a('Проект ТурбоМастер', ['site/static', 'view'=>'about']) ?></li>    
+                        <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
+                        <li><?= Html::a('Реквизиты', ['#']) ?></li>
+                        <li><?= Html::a('Вакансии', ['#']) ?></li>
+                        <li><?= Html::a('Сотрудничество', ['#']) ?></li>
+                    </ul>
+                </li><!-- /. О компании -->
+
                 <li><?= Html::a('Поиск', ['search/index', 'view'=>'about']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->

@@ -27,10 +27,10 @@ $this->registerMetaTag([
     
         <p>Высокое качество наших товаров подтверждается сертификатами соответствия, выданными российскими органами сертификации продукции.</p>
         
-        <h2>Сертификаты турбин BorgWarner (KKK, Schwitzer)</h2>
+        <h2 style="margin: 60px 0 20px 0;">Сертификаты турбин BorgWarner (KKK, Schwitzer)</h2>
 
-        <div class="certificate-items">
-            <ul class="bxslider">
+        <div>
+            <ul class="gallery-items">
                 <li>
                     <a class="zoom" rel="group" data-fancybox-group="gallery1" href="/photo/certificate/big/BorgWarner-1.jpg" title="Сертификат турбин BorgWarner (KKK, Schwitzer)">
                         <img  alt="Сертификат турбин BorgWarner (KKK, Schwitzer)" src="/photo/certificate/mini/BorgWarner-1.jpg" title="Сертификат турбин BorgWarner (KKK, Schwitzer)">
@@ -52,8 +52,8 @@ $this->registerMetaTag([
 
         <h2 style="margin: 60px 0 20px 0;">Сертификаты турбин Honeywell (Garrett)</h2>
 
-         <div class="certificate-items">
-            <ul class="bxslider">
+         <div>
+            <ul class="gallery-items">
                 <li>
                     <a class="zoom" rel="group" data-fancybox-group="gallery2" href="/photo/certificate/big/Garrett-1.jpg" title="Сертификат турбин Honeywell (Garrett)">
                         <img  alt="Сертификат турбин Honeywell (Garrett)" src="/photo/certificate/mini/Garrett-1.jpg" title="Сертификат турбин Honeywell (Garrett)">
@@ -70,8 +70,8 @@ $this->registerMetaTag([
 
 
         <h2 style="margin: 60px 0 20px 0;">Сертификаты турбин Mitsubishi (MHI)</h2>
-         <div class="certificate-items">
-            <ul class="bxslider">
+         <div>
+            <ul class="gallery-items">
                 <li>
                     <a class="zoom" href="/photo/certificate/big/Mitsubishi-1.jpg" title="Сертификат турбин Mitsubishi (MHI)">
                         <img  alt="Сертификат турбин Mitsubishi (MHI)" src="/photo/certificate/mini/Mitsubishi-1.jpg" title="Сертификат турбин Mitsubishi (MHI)">
