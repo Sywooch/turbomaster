@@ -72,7 +72,7 @@ use common\models\Manufacturer;
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбоуслуги <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
-                        <div class="container">
+                        <div class="container" style="width: 900px;">
                         <div class="row">
                             <div class="col-md-4 divider-v">
                                 <li class="h4">Замена турбины</li>
