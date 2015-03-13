@@ -250,6 +250,7 @@ ul.ask-phone li { margin-left: 40px; }
 /* ARTICLE */
 .article { }
 .article h1 { font-size: 32px; line-height: 1.1em; margin-bottom: 40px; }
+.article p { font-size: 15px; }
 
 .article figure.left { width: 30%; float: left; margin: 8px 24px 0.8em 0;  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); }
 .article figure.right { width: 30%; float: right; margin: 8px 0 0.8em 24px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); }
@@ -284,7 +285,7 @@ table.diagnostika i.fa { color: #b04340;  }
 
 .sidebar-mini h3 { margin: 0 0 30px 24px; }
 .sidebar-mini ul { list-style: none; padding-left: 22px; }
-.sidebar-mini li { color: #555; margin-bottom: 10px; line-height: 1.2em; }
+.sidebar-mini li { color: #555; margin-bottom: 14px; line-height: 1.2em; }
 .sidebar-mini li a { color: #555;  }
 
 
