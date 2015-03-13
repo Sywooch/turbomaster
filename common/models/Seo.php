@@ -55,18 +55,6 @@ class Seo extends \yii\db\ActiveRecord
     }
 
 
-    public static function findByCategoryAndBrand($category_alias, $brand_alias)
-    {   
-        return static::find()
-            ->where([
-                'category_alias' => $category_alias,
-                'brand_alias' => $brand_alias,
-                'model_alias' => NULL,
-                ])
-            ->asArray()
-            ->one();
-    }
-
     public static function findByCategoryAndBrandAndModel($category_alias, $brand_alias, $model_alias)
     {   
         return static::find()

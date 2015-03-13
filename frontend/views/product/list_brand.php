@@ -10,9 +10,11 @@ $brand_name = $products[0]['brand_name'];
 $common_name = $seo['rus_brand'] ? $seo['rus_brand'] : $brand_name;
 
 $this->title = "Турбины на $brand_name - Турбомастер.ру, продажа турбин (турбокомпрессоров) для $brand_name, диагностика и ремонт турбин";
+
 $title = $seo['rus_brand'] ? 'Турбины на ' .$seo['rus_brand'] .', турбокомпрессоры для ' .$brand_name : 'Турбины для ' .$brand_name;
+
 $this->registerMetaTag(['name' => 'description', 'content' => "Турбины на $brand_name, большой ассортимент турбин, турбокомпрессоров на $brand_name в наличии на складе в Москве и под заказ. Бесплатные консультации, информация о наличии и заказе турбин для $brand_name по телефону: (499) 650-76-45. Бесплатная доставка по Москве. Оперативная доставка во все регионы России!"]);
-$this->registerMetaTag(['name' => 'keywords', 'content' => "турбина на $brand_name, турбокомпрессор $brand_name, турбина для $brand_name"]);
+$this->registerMetaTag(['name' => 'keywords', 'content' => "турбина на $common_name, турбокомпрессор $brand_name, турбина для $brand_name"]);
 ?>
 
 <div class="container page-style">

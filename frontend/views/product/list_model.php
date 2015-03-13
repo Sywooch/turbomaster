@@ -9,9 +9,12 @@ use common\models\Product;
 $brand_name = $products[0]['brand_name'];
 $model_name   = $products[0]['model_name'];
 
-$this->title =  "Турбины на $brand_name $model_name - Турбомастер.ру, продажа турбин для $brand_name $model_name с доставкой по Москве и России";
-$this->registerMetaTag(['name' => 'description', 'content' => "Турбины на $brand_name $model_name  - наличие, цены, описание. Бесплатная доставка по Москве. При установке турбины в нашем ТурбоСервисе - расширенная общая гарантия на турбокомпрессор и на выполненные работы. Оперативная доставка во все регионы России!"]);
-$this->registerMetaTag(['name' => 'keywords', 'content' => "турбины на $brand_name $model_name, турбокомпрессоры на $brand_name $model_name, продажа турбин, каталог турбин, $brand_name $model_name, $model_name"]);
+$common_name = ($seo['rus_brand'] && $seo['rus_model']) ? $seo['rus_brand'] .' ' .$seo['rus_model'] : $brand_name .' ' .$model_name;
+
+$this->title =  "Турбины на $common_name - Турбомастер.ру, продажа турбин для $brand_name $model_name с доставкой по Москве и России";
+
+$this->registerMetaTag(['name' => 'description', 'content' => "Турбины на $common_name - наличие, цены, описание. Бесплатная доставка по Москве. При установке турбины в нашем ТурбоСервисе - расширенная общая гарантия на турбокомпрессор и на выполненные работы. Оперативная доставка во все регионы России!"]);
+$this->registerMetaTag(['name' => 'keywords', 'content' => "турбины на $common_name, турбокомпрессоры на $brand_name $model_name, продажа турбин, каталог турбин, $brand_name, $model_name"]);
 ?>
 
 <div class="container page-style">
@@ -34,7 +37,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => "турбины на 
         <?= $this->render('/layouts/_table_products', ['products' => $products, 'pages' => $pages, 'addClass' => 'emphasis']); ?> 
     </section>
     <section id="intro">
-        <p>Оригинальные турбины для всех моделей марки <?= $brand_name . ' ' .$model_name; ?> в наличии на складе в Москве и под заказ. Бесплатные консультации, информация о наличии и заказе турбин по телефону: (499) 650-76-45. Бесплатная доставка по Москве. Оперативная доставка во все регионы России!</p>
+        <p>Оригинальные турбины для всех моделей марки <?= $common_name ?> в наличии на складе в Москве и под заказ. Бесплатные консультации, информация о наличии и заказе турбин по телефону: (499) 650-76-45. Бесплатная доставка по Москве. Оперативная доставка во все регионы России!</p>
         <p>При заказе диагностики и ремонта турбины на <?= $brand_name . ' ' .$model_name; ?> в нашем ТурбоСервисе - расширенная общая гарантия на турбокомпрессор и на выполненные работы.</p>
         </p>
     </section>

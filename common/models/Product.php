@@ -108,11 +108,13 @@ class Product extends \yii\db\ActiveRecord
                 brand.id as brand_id, brand.name as brand_name, brand.alias as brand_alias,  
                 model.id as model_id, model.name as model_name, model.alias as model_alias, 
                 manufacturer.id as manufacturer_id, manufacturer.name as manufacturer_name, manufacturer.alias as  manufacturer_alias,
+                seo.rus_brand, seo.rus_model
                 ')
             ->leftJoin('category',     'category.id     = product.category_id')
             ->leftJoin('model',        'model.id        = product.model_id')
             ->leftJoin('brand',        'brand.id        = product.brand_id')
             ->leftJoin('manufacturer', 'manufacturer.id = product.manufacturer_id')
+            ->leftJoin('seo', 'seo.brand_alias = brand.alias AND seo.model_alias = model.alias')
             ->orderBy('product.name');
 
         // если надо выбрать только активные (в продаже) товары: 
@@ -264,14 +266,16 @@ class Product extends \yii\db\ActiveRecord
         $brand_name = $product['brand_name'] ? $product['brand_name'] : '';
         $model_name = $product['model_name'] ? $product['model_name'] : '';
 
-        $metaTagDescription = $product['name'] .', код ' .$product['partnumber'] .' для автомобиля ' .$brand_name .' ' .$model_name .' - наличие, цены, описание. Бесплатная доставка по Москве. Принимаем заказы со всех регионов России!';
+        $common_car_name = ($product['rus_brand'] && $product['rus_model']) ? $product['rus_brand'] .' ' .$product['rus_model'] : $brand_name .' ' .$model_name;
+
+        $metaTagDescription = $product['name'] .', код ' .$product['partnumber'] .' для автомобиля ' .$common_car_name .' - наличие, цены, описание. Бесплатная доставка по Москве. Принимаем заказы со всех регионов России!';
 
         $arrayMetaTagKeywords = [
           $brand_name.' '.$model_name,
           $product['name'],
           $product['partnumber'],
-          'купить турбину на '.$brand_name,
-          'продажа турбин на '.$brand_name,
+          'купить турбину на '.$common_car_name,
+          'продажа турбин на '.$brand_name .' ' .$model_name,
         ];
         $metaTagKeywords = implode(', ', $arrayMetaTagKeywords);
     
@@ -299,7 +303,7 @@ class Product extends \yii\db\ActiveRecord
             $links[] =  ['label' => $product['model_name'], 'url' => ['product/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias'], 'model_alias' => $product['model_alias']]];
             }
         }
-        // $links[] = ['label' => $product['name']];
+        $links[] = ['label' => $product['name']];
         return $links;
     }   
 
@@ -386,6 +390,5 @@ class Product extends \yii\db\ActiveRecord
         }
         return false;
     }
-
 
 }

@@ -151,20 +151,14 @@ class Yml
             $this->writeTag(['market_category', Html::encode('Авто/Запчасти/Двигатель')]);
             // $this->writeTag(['delivery', 'true']);
             // $this->writeTag(['pickup', 'true']);
-            if($photos) {
-                $photoSrc = '/photo/product/big/'.$photos[0]['src'];
+            
+            foreach($photos as $photo) {
+                $photoSrc = '/photo/product/big/'.$photo['src'];
                 $photoFile = Yii::getAlias('@public') .$photoSrc;
                 if(is_file($photoFile)) {
                     $this->writeTag(['picture', 'http://www.turbomaster.ru' . $photoSrc]);
                 }
             }
-                // foreach($photos as $photo) {
-                //     $photoSrc = '/photo/product/big/'.$photo['src'];
-                //     $photoFile = Yii::getAlias('@public') .$photoSrc;
-                //     if(is_file($photoFile)) {
-                //         $this->writeTag(['picture', 'http://www.turbomaster.ru' . $photoSrc]);
-                //     }
-                // }
             $this->writeTag(['vendor', Html::encode($p['manufacturer_name']) ]);
             $this->writeTag(['vendorCode', $p['partnumber'] ]);
             $this->writeTag(['model', $this->cleanText($p['name']) ]);
@@ -180,8 +174,15 @@ class Yml
 
  
     private function createProductDescription($product) 
-    {
+    {   
         $name = str_replace('Турбина', 'Турбина на', $product['name']);
+        
+        $rusCarName = ($product['rus_brand'] && $product['rus_model']) ? $product['rus_brand'] .' ' .$product['rus_model'] : null;
+
+        if($rusCarName) {
+            $name .= " ($rusCarName)"; 
+        }
+
         $interchange = str_replace(',', ', ', $product['interchange']);
 
         $str = $name .', ' .$product['partnumber'] .' (OEM ' .$interchange .'), двигатель ' .$product['engine'] .', ' .(int)$product['volume'] .' ccm. Турбина ' .$product['manufacturer_name'];
@@ -213,7 +214,6 @@ class Yml
         }
         return $str;
     }
-
 
 
 }

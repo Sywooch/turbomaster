@@ -26,6 +26,8 @@ class ProductController extends \yii\web\Controller
         }
         
         if($brand_alias) {
+            
+            $seo = Seo::findByCategoryAndBrandAndModel($category_alias, $brand_alias, $model_alias);
 
             if($model_alias) {
                 $products = Product::listByCategoryAliasAndBrandAliasAndModelAlias($category_alias, $brand_alias, $model_alias);
@@ -33,8 +35,6 @@ class ProductController extends \yii\web\Controller
             } else {
                 $products = Product::listByCategoryAliasAndBrandAlias($category_alias, $brand_alias);
                 $models = Model::listByCategoryAliasAndBrandAlias($category_alias, $brand_alias);
-
-                $seo = Seo::findByCategoryAndBrand($category_alias, $brand_alias);
                 $view = 'list_brand';
             }
 
@@ -49,7 +49,6 @@ class ProductController extends \yii\web\Controller
         }   
 
         if ($products)  {
-
             $pages = Product::$pages;
             return $this->render( $view, 
                 compact('products', 'brands', 'models', 'seo', 'pages'));
@@ -57,7 +56,7 @@ class ProductController extends \yii\web\Controller
             return $this->render('empty');
         }    
     }
-
+    
 
     public function actionRefurbish() {
         $products = Product::listByTematic(Product::TYPE_REFURBISH);
