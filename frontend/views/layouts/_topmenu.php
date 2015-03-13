@@ -137,6 +137,7 @@ use common\models\Manufacturer;
                     <ul class="dropdown-menu" role="menu">
                         <li><?= Html::a('Оплата', ['site/static', 'view' => 'payment']) ?></li>    
                         <li><?= Html::a('Доставка', ['site/static', 'view' => 'delivery']) ?></li>    
+                        <li><?= Html::a('Гарантия', ['site/static', 'view' => 'warranty']) ?></li>    
                         <li><?= Html::a('Карта продаж', ['#']) ?></li>    
                         <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                         <li><a href="/quality-turbines">Сертификаты турбин</a></li>
