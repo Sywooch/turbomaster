@@ -86,8 +86,8 @@ class ExcelManager extends \yii\db\ActiveRecord
             $category = !empty($val[0]) ? $val[0] : $prev_category;
             $category_id = isset($arrayCategory[$category]) ? $arrayCategory[$category] : $prev_category_id;
 
-            $brand = !empty($val[1]) ? $val[1] : $prev_brand;
-            $model = !empty($val[2]) ? $val[2] : $prev_model;
+            $brand = !empty($val[1]) ? trim($val[1]) : $prev_brand;
+            $model = !empty($val[2]) ? trim($val[2]) : $prev_model;
             
             if($brand != $prev_brand || $category_id != $prev_category_id) {
                 

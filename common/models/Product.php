@@ -274,7 +274,7 @@ class Product extends \yii\db\ActiveRecord
           $brand_name.' '.$model_name,
           $product['name'],
           $product['partnumber'],
-          'купить турбину на '.$common_car_name,
+          'купить турбину на '.$common_car_name .' ' .$product['partnumber'],
           'продажа турбин на '.$brand_name .' ' .$model_name,
         ];
         $metaTagKeywords = implode(', ', $arrayMetaTagKeywords);

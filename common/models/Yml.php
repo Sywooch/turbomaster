@@ -138,8 +138,7 @@ class Yml
                 $writedArray[] = $signatureProduct;
             }
             
-            $url = 'http://www.turbomaster.ru/goods/' .$p['brand_alias'] .'/' .$p['model_alias'] .'/' .$p['partnumber'];
-            $url = $this->removeNonPrintableCharacters($url);
+            $url = 'http://www.turbomaster.ru/goods/' .urlencode($p['brand_alias']) .'/' .urlencode($p['model_alias']) .'/' .urlencode($p['partnumber']);
 
             $photos = PhotoProduct::findByPartnumberOrInterchange($p);
             
@@ -161,7 +160,12 @@ class Yml
             }
             $this->writeTag(['vendor', Html::encode($p['manufacturer_name']) ]);
             $this->writeTag(['vendorCode', $p['partnumber'] ]);
-            $this->writeTag(['model', $this->cleanText($p['name']) ]);
+
+            $modelName = $this->cleanText($p['name']);
+            if($rusCarName = $this->getRusCarName($p)) {
+                $modelName .= ', ' .$rusCarName;
+            }
+            $this->writeTag(['model', $modelName]);
             $this->writeTag(['description', $this->cleanText( $this->createProductDescription($p), 500) ]);
             $this->writeTag(['manufacturer_warranty', 'true']);        
             $this->write('</offer>');
@@ -177,10 +181,8 @@ class Yml
     {   
         $name = str_replace('Турбина', 'Турбина на', $product['name']);
         
-        $rusCarName = ($product['rus_brand'] && $product['rus_model']) ? $product['rus_brand'] .' ' .$product['rus_model'] : null;
-
-        if($rusCarName) {
-            $name .= " ($rusCarName)"; 
+        if($rusCarName = $this->getRusCarName($product)) {
+            $name .= " / $rusCarName"; 
         }
 
         $interchange = str_replace(',', ', ', $product['interchange']);
@@ -190,10 +192,11 @@ class Yml
     }   
 
 
-    private function removeNonPrintableCharacters($str)
-    {
-        return trim(preg_replace("/\s+/", "", $str));
-    }
+    // private function removeNonPrintableCharacters($str)
+    // {   
+    //     $str = str_replace("%C2%A0", "", $str);
+    //     return trim(preg_replace("/\s+/", "", $str));
+    // }
 
 
     private function cleanText($str, $max = null)
@@ -214,6 +217,13 @@ class Yml
         }
         return $str;
     }
+
+
+    private function getRusCarName($product)
+    {
+       return ($product['rus_brand'] && $product['rus_model']) ? $product['rus_brand'] .' ' .$product['rus_model'] : null;
+    }
+
 
 
 }
