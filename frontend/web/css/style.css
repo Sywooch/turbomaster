@@ -55,7 +55,7 @@ header {
   display: none; 
   height: 120px; overflow: hidden; 
   /*background-color: #26354a; */
-  background-color: #222; 
+  background-color: #555; 
 }
 
 @media (min-width: 992px) {
