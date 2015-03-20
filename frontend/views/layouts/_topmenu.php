@@ -34,7 +34,7 @@ use common\models\Manufacturer;
                         <div class="row">
                             <div class="col-md-4 divider-v">
 
-                                <li class="h4">Турбины по применению:</li>
+                                <li class="h4">По применению:</li>
 
                                 <li class="fa-hover clearfix"><a href="/turboshop/passenger"><i class="fa fa-car"></i> Турбины для легковых автомобилей</a></li>
 
@@ -50,21 +50,25 @@ use common\models\Manufacturer;
                           
                             </div>
                             <div class="col-md-4 divider-v">
-                                <li class="h4">Турбины производителя:</li>
+                                <li class="h4">Производителя:</li>
+                                
+                                <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
+                                <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
+                                <li><a href="/turboshop/manufacturers/mitsubishi_mhi">Турбины MHI</a></li>
+                                <li><a href="/turboshop/manufacturers/ihi">Турбины IHI</a></li>
+                                <li><a href="/turboshop/manufacturers/cummins_holset">Турбины Holset</a></li>
                                 
                                 <?php
-                                $manufacturers = Manufacturer::find()->orderBy('name')->all();
-                                foreach($manufacturers as $manufacturer) {
-                                    echo '<li>' .HTML::a('Турбины ' .$manufacturer['name'],  ['product/index', 'manufacturer_alias' => $manufacturer['alias']]) ."</li>\n";
-                                }
+                                // $manufacturers = Manufacturer::find()->orderBy('name')->all();
+                                // foreach($manufacturers as $manufacturer) {
+                                //     echo '<li>' .HTML::a('Турбины ' .$manufacturer['name'],  ['product/index', 'manufacturer_alias' => $manufacturer['alias']]) ."</li>\n";
+                                // }
                                 ?>  
                             </div>
                             <div class="col-md-4">
-                                <li class="h4">Запчасти для турбины:</li>
+                                <li class="h4">Запчасти турбин:</li>
                                 <li><a href="/turboshop/cartridges">Картриджи</a></li>
                                 <li><a href="/turboshop/cartridges">Актюаторы</a></li>
-                                <li class="h4" style="margin-top: 60px;">Качество турбин:</li>
-                                <li><a href="/quality-turbines">Сертификаты турбин</a></li>
                             </div>
                         </div>
                         </div>
@@ -78,14 +82,14 @@ use common\models\Manufacturer;
                         <div class="row">
                             <div class="col-md-4 divider-v">
                                 <li class="h4">Замена турбины</li>
-                                <li><a href="/turboservice">Замена турбины - дело тонкое</a></li>
+                                <li><a href="/turboservice">Специфика замены турбины</a></li>
                                 <li><a href="/price">Стоимость замены турбины</a></li>
-                                <li><a href="/turboservice_gallery">Фоторепортажи ТурбоСервиса</a></li>
                                 <li><a href="/articles/bulletins-turboservice">Бюллетени ТурбоСервиса</a></li>
+                                <li><a href="/turboservice_gallery">Фоторепортажи ТурбоСервиса</a></li>
                             </div>
                             <div class="col-md-4 divider-v">
                                  <li class="h4">Ремонт турбины</li>
-                                <li><a href="/turborepair">Профессиональный ремонт турбин</a></li>
+                                <li><a href="/turborepair">Сертифицированный ремонт турбин</a></li>
                                 <li><a href="/repair-price">Стоимость ремонта турбины</a></li>
                             </div>
                             <div class="col-md-3">
@@ -102,21 +106,21 @@ use common\models\Manufacturer;
                 </li><!-- /. ТурбоУслуги -->
        
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Турбоинформация <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">ТурбоИнфо <span class="caret"></span></a>
                     <ul class="dropdown-menu extended" role="menu">
                         <div class="row">
                             <div class="col-md-6 divider-v">
-                                <li class="h4">Турбосекреты:</li>
-                                <li><a href="/diagnostika">Диагностика неисправностей турбины</a></li>
-                                <li><a href="/articles/malfunction">Причины отказов</a></li>
-                                <li><a href="/article/indentification">Идентификация турбокомпрессоров</a></li>
+                                <li class="h4">Турбо Секреты:</li>
+                                <li><a href="/diagnostika">Диагностика неисправностей</a></li>
+                                <li><a href="/articles/malfunction">Причины поломок</a></li>
+                                <li><a href="/article/indentification">Идентификация турбин</a></li>
                                 <li><a href="/articles/rules">Монтаж турбины</a></li>
                                 <li><a href="/article/choice">Номера турбин</a></li>
-                                <li><a href="/article/construction">Конструкция турбокомпрессора</a></li>
-                                <li><a href="/article/how-does-this-work">Принцип работы турбины</a></li>
+                                <li><a href="/article/construction">Конструкция турбины</a></li>
+                                <li><a href="/article/how-does-this-work">Принцип турбонаддува</a></li>
                                 <li><a href="/article/petrol-or-fuel-oil">Бензин или дизель?</a></li>
-                                <li><a href="/article/glossary">Глоссарий </a></li>
-                                <li><a href="/articles/reference-materials">Справочные материалы</a></li>
+                                <li><a href="/article/glossary">Терминология </a></li>
+                                <li><a href="/articles/reference-materials">Справочные данные</a></li>
                             </div>
                             <div class="col-md-6">
                                 <div class="vertical-divide-left">
@@ -125,7 +129,7 @@ use common\models\Manufacturer;
                                     <li><a href="/articles/technology">Современные турботехнологии</a></li>
                                     <li><a href="/articles/operation">Эксплуатация турбин</a></li>
                                     <li><a href="/articles/about-turbo">О турбонаддуве</a></li>
-                                    <li><a href="/articles/why">&laquo;Почему?...Почему?...&raquo;</a></li>
+                                    <li><a href="/articles/why">Что? Как? Почему?</a></li>
                                 </div>
                             </div>
                         </div>
@@ -138,9 +142,9 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Оплата', ['site/static', 'view' => 'payment']) ?></li>    
                         <li><?= Html::a('Доставка', ['site/static', 'view' => 'delivery']) ?></li>    
                         <li><?= Html::a('Гарантия', ['site/static', 'view' => 'warranty']) ?></li>    
-                        <li><?= Html::a('Карта продаж', ['#']) ?></li>    
                         <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                         <li><a href="/quality-turbines">Сертификаты турбин</a></li>
+                        <li><?= Html::a('Карта продаж', ['#']) ?></li>    
                     </ul>
                 </li><!-- /. Покупка -->
 
@@ -151,7 +155,9 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                         <li><?= Html::a('Реквизиты', ['#']) ?></li>
                         <li><?= Html::a('Вакансии', ['#']) ?></li>
+                        <li><?= Html::a('Партнеры', ['#']) ?></li>
                         <li><?= Html::a('Сотрудничество', ['#']) ?></li>
+                        <li><?= Html::a('Фотогаллерея', ['site/static', 'view' => 'photogallery']) ?></li>
                     </ul>
                 </li><!-- /. О компании -->
 

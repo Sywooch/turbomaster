@@ -13,7 +13,7 @@ use yii\helpers\Html;
                         <li class=""><a href="#">ТурбоСервис</a></li>
                         <li class=""><a href="#">ТурбоРемонт</a></li>
                         <li class=""><a href="#">ТурбоНовости</a></li>
-                        <li class=""><a href="#">ТурбоМастер от А до Я</a></li>
+                        <li class=""><a href="#">ТурбоХроника</a></li>
                         <li class=""><a href="#">ТурбоФакты</a></li>
                         <li class=""><a href="#">ТурбоПредложения</a></li>
                     </ul>
