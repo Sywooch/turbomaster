@@ -104,6 +104,32 @@ class Utilities extends \yii\db\ActiveRecord
 
     }
 
+    public static function checkIsWorkingHours()   
+    {   
+
+        $isWorkingHours = false;
+
+        date_default_timezone_set('Europe/Moscow');
+        $weekdayNumeric = date('N'); 
+       
+        // if working days
+        if (in_array($weekdayNumeric, [1,2,3,4,5])) {
+            $open_from = "08:00";
+            $open_to = "19:00";
+            if (date("H:i") > $open_from && date("H:i") < $open_to ) {
+                $isWorkingHours = true;
+            }
+        // if saturday
+        } elseif ($weekdayNumeric == 6)  {
+            $open_from = "10:00";
+            $open_to = "14:00";
+            if (date("H:i") > $open_from && date("H:i") < $open_to ) {
+                $isWorkingHours = true;
+            }
+        }
+
+        return $isWorkingHours;
+    }
 
 
 

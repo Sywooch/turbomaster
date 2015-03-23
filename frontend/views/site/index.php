@@ -10,4 +10,5 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбомасте
 <?php echo $this->render('_section_about', ['news' => $news, 'sweets' => $sweets, 'facts' => $facts]) ?>
 <?php echo $this->render('_section_populars', ['populars' => $populars]) ?>
 
+<?= $this->render('/layouts/_form_question'); ?>
 <?= $this->render('/layouts/_form_cart'); ?>

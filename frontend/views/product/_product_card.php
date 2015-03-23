@@ -57,3 +57,11 @@ use yii\helpers\CommonHelper;
         </tr>
     </tbody>
 </table>
+
+
+<div class="product-ask fa-hover" style="margin: 40px 30% 0;">
+    <a href="/question/create" data-question-type="common_question" data-product-id="<?= $product['id'] ?>" class="question-add-link">
+        <i style="font-size: 26px; color: #b04340;" class="fa fa-question-circle"></i>
+        <span style="border-bottom: 1px dotted #b04340; margin-left: 10px;">Задать вопрос о товаре</span>
+    </a>
+</div>
