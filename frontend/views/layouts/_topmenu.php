@@ -153,10 +153,10 @@ use common\models\Manufacturer;
                     <ul class="dropdown-menu" role="menu">
                         <li><?= Html::a('Проект ТурбоМастер', ['site/static', 'view'=>'about']) ?></li>    
                         <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
-                        <li><?= Html::a('Реквизиты', ['#']) ?></li>
-                        <li><?= Html::a('Вакансии', ['#']) ?></li>
+                        <li><?= Html::a('Реквизиты', ['site/static', 'view' => 'requisite']) ?></li>
+                        <li><?= Html::a('Вакансии', ['site/static', 'view' => 'vacancy']) ?></li>
                         <li><?= Html::a('Партнеры', ['#']) ?></li>
-                        <li><?= Html::a('Сотрудничество', ['#']) ?></li>
+                        <li><?= Html::a('Сотрудничество', ['site/static', 'view' => 'wholesale']) ?></li>
                         <li><?= Html::a('Фотогаллерея', ['site/static', 'view' => 'photogallery']) ?></li>
                     </ul>
                 </li><!-- /. О компании -->
