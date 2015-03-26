@@ -57,23 +57,40 @@
                         </div>
                     </div>
                 </div><!-- /.row -->
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4 col-xs-12">
+                        <ul class="social-icons">
+                            <li>
+                                <a href="https://vk.com/club75257283" target="_blank"><i class="social vk"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/pages/ТурбоМастер/1572151913018344" target="_blank"><i class="social facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="http://instagram.com/turbomastermoscow" target="_blank"><i class="social instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/msk_turbomaster" target="_blank"><i class="social twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- /.container -->
+        </div><!-- /.overlay-grid-dark -->
 
-                <section>
-                    <!--LiveInternet -->
-                    <script type="text/javascript"><!--
-                        document.write("<a href='http://www.liveinternet.ru/click' "+
-                            "target=_blank><img src='//counter.yadro.ru/hit?t45.3;r"+
-                            escape(document.referrer)+((typeof(screen)=="undefined")?"":
-                            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-                                screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-                            ";"+Math.random()+
-                            "' alt='' title='LiveInternet' "+
-                            "border='0' width='20' height='20'><\/a>")
-                    </script>
-                </section>
-
-            </div><!-- /.row -->
-        </div><!-- /.row -->
-    </div><!-- /.container -->
+        <section style="position: absolute; bottom: 4px; left: 4px;">
+            <!--LiveInternet -->
+            <script type="text/javascript">
+                document.write("<a href='http://www.liveinternet.ru/click' "+
+                    "target=_blank><img src='//counter.yadro.ru/hit?t45.3;r"+
+                    escape(document.referrer)+((typeof(screen)=="undefined")?"":
+                    ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+                        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+                    ";"+Math.random()+
+                    "' alt='' title='LiveInternet' "+
+                    "border='0' width='20' height='20'><\/a>")
+            </script>
+        </section>
+        
+    </div><!-- /.footer-wrap -->
 </footer>
-

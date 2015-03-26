@@ -78,7 +78,8 @@ header #about li { font-size: 13px; color: #ddd; line-height: 16px; }
 
 /* FOOTER */
 .footer-wrap {
- /* background-attachment: fixed; background-image: url("../images/main-intro-b.jpg"); background-repeat: no-repeat; background-size: cover; color: #fff; padding-top: 0; text-align: center;*/ 
+ /* background-attachment: fixed; background-image: url("../images/main-intro-b.jpg"); background-repeat: no-repeat; background-size: cover; color: #fff; padding-top: 0; text-align: center;*/
+ position: relative; 
  padding: 20px 20px 1px 20px;
   background: #ddd;  border-top: 4px solid #bbb; 
 }
@@ -406,9 +407,24 @@ a.cart-remove-line { background: url("../images/icon_delete_2.png") no-repeat; d
 
 h1#order-form-empty-message {display: none;}
 
+
+
+/*social icons*/
+ul.social-icons { padding: 20px 0 50px 60px; list-style: none;}
+
+.social { display: block; float: left; width: 33px; height: 33px; margin-right: 8px;  background: url("../images/social-33.png") no-repeat;  }
+
+.social.vk { background-position: 0px 0px; }
+.social.facebook { background-position: -33px 0px; }
+.social.instagram { background-position: -66px 0px; }
+.social.twitter { background-position: -99px 0px; }
+
+.social.vk:hover { background-position: 0px -33px; }
+.social.facebook:hover { background-position: -33px -33px; }
+.social.instagram:hover { background-position: -66px -33px; }
+.social.twitter:hover { background-position: -99px -33px; }
+
 /*fancybox*/
-
-
 .fancybox-title-float-wrap {
     bottom: 15px;
     left: 0;
