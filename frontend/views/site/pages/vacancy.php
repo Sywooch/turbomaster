@@ -19,7 +19,10 @@ $this->registerMetaTag([
                 'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
                 'links' => [['label' => 'Вакансии']]]) ?>
             </section>
-    
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
             <h1>Вакансии</h1>
             <article>
 

@@ -36,6 +36,9 @@
 .dropdown-menu > li > a { padding: 6px 20px; }
 
 h1, h2, h3, h4, h5, h6 { font-family: "Open Sans Condensed",sans-serif; font-weight: 700; color: #555; }
+
+h2, .h2 { font-size: 28px; margin-top: 30px; margin-bottom: 20px; }
+
 a, a:hover, a:visited { color: #b04340; }
 a:hover { text-decoration: none;}
 .link-dotted a, a.link-dotted { border-bottom: 1px dotted #b04340; }

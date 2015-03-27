@@ -94,10 +94,10 @@ use common\models\Manufacturer;
                             </div>
                             <div class="col-md-3">
                                 <li class="h4">Диагностика турбины</li>
-                                <li><a href="#">О диагностике</a></li>
+                                <li><a href="/diagnostics">О диагностике</a></li>
 
                                 <li class="h4" style="margin-top: 20px;">Экспертиза турбины</li>
-                                <li><a href="#">Об экспертизе</a></li>
+                                <li><a href="/expertise">Об экспертизе</a></li>
                             </div>
 
                         </div>
