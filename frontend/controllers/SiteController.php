@@ -62,9 +62,9 @@ class SiteController extends Controller
         $urls = [];
         $perPage = 20;
         
-        $pages = ['about', 'contact', 'feedback', 'warranty', 'delivery', 'payment', 'wholesale', 'turboservice', 'price', 'photogallery', 'turboservice_gallery', 'turborepair', 'repair-price'];
+        $pages = ['about', 'contact', 'requisite', 'vacancy', 'warranty', 'delivery', 'payment', 'wholesale', 'turboservice', 'price', 'turboservice_gallery' , 'turborepair', 'repair-price', 'quality-turbines', 'diagnostics', 'expertise', 'diagnostika'];
+
         foreach ($pages as $page ) {
-            // $urls[] = 'page/' .$page;
             $urls[] = $page;
         }
 

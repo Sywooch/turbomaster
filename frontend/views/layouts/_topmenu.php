@@ -68,7 +68,7 @@ use common\models\Manufacturer;
                             <div class="col-md-4">
                                 <li class="h4">Запчасти турбин:</li>
                                 <li><a href="/turboshop/cartridges">Картриджи</a></li>
-                                <li><a href="/turboshop/cartridges">Актюаторы</a></li>
+                                <!-- <li><a href="/turboshop/cartridges">Актюаторы</a></li> -->
                             </div>
                         </div>
                         </div>
@@ -155,7 +155,6 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                         <li><?= Html::a('Реквизиты', ['site/static', 'view' => 'requisite']) ?></li>
                         <li><?= Html::a('Вакансии', ['site/static', 'view' => 'vacancy']) ?></li>
-                        <li><?= Html::a('Партнеры', ['#']) ?></li>
                         <li><?= Html::a('Сотрудничество', ['site/static', 'view' => 'wholesale']) ?></li>
                         <li><?= Html::a('Фотогаллерея', ['site/static', 'view' => 'photogallery']) ?></li>
                     </ul>
