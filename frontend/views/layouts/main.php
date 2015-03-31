@@ -27,8 +27,13 @@ AppAsset::register($this);
         <?= $this->render('_topmenu'); ?>
         <?= $content ?>
         <?= $this->render('_footer'); ?>
-        <?php // echo $this->render('_counts'); ?>
+        <?= $this->render('_counts'); ?>
     <?php $this->endBody() ?>
+    <!-- BEGIN JIVOSITE CODE {literal} -->
+    <script type='text/javascript'>
+    (function(){ var widget_id = 'dT9qiIjnMV';
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//code.jivosite.com/script/widget/'+widget_id; var ss = document.getElementsByTagName('script')[0]; ss.parentNode.insertBefore(s, ss);})();</script>
+    <!-- {/literal} END JIVOSITE CODE -->
 </body>
 </html>
 <?php $this->endPage() ?>
