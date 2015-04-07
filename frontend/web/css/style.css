@@ -238,6 +238,11 @@ table.matroska td { padding: 4px 8px!important;}
 table.matroska tr:first-child td { padding-top: 8px!important;}
 table.matroska tr:last-child td { padding-bottom: 8px!important;}
 
+
+
+#photo-rotator .pane-item  { width: 240px; height: 240px; }
+
+
 .product-photo .attention { padding: 10px; font-size: 12px; line-height: 1.1em; background: #f0f0f0; color: #555; }
 .product-photo img { width: 100%; height: auto; }
 
