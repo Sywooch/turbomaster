@@ -50,7 +50,7 @@ use common\models\Manufacturer;
                           
                             </div>
                             <div class="col-md-4 divider-v">
-                                <li class="h4">Производителя:</li>
+                                <li class="h4">По марке:</li>
                                 
                                 <li><a href="/turboshop/manufacturers/honeywell_garrett">Турбины Garrett</a></li>
                                 <li><a href="/turboshop/manufacturers/borg_warner_schwitzer_3k">Турбины KKK</a></li>
@@ -156,7 +156,7 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Реквизиты', ['site/static', 'view' => 'requisite']) ?></li>
                         <li><?= Html::a('Вакансии', ['site/static', 'view' => 'vacancy']) ?></li>
                         <li><?= Html::a('Сотрудничество', ['site/static', 'view' => 'wholesale']) ?></li>
-                        <li><?= Html::a('Фотогаллерея', ['site/static', 'view' => 'photogallery']) ?></li>
+                        <li><?= Html::a('Фотогалерея', ['site/static', 'view' => 'photogallery']) ?></li>
                     </ul>
                 </li><!-- /. О компании -->
 

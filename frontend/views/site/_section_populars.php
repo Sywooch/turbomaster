@@ -15,7 +15,7 @@ use yii\helpers\CommonHelper;
                         <th>Марка</th>
                         <th>Название турбины</th>
                         <th></th>
-                        <th>Код производ.</th>
+                        <th>Артикул</th>
                         <th>Цена</th>
                         <th>Заказать</th>
                     </tr>

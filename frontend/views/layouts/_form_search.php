@@ -15,7 +15,7 @@ $modelList = ($brand_id) ? ArrayHelper::map(Model::listByBrandId($brand_id), 'id
 
 <div id="form-search">
 
-    <h3>Найди свою турбину!</h3>
+    <h3>Найдите свою турбину!</h3>
     <form method="get" action="<?= \Yii::$app->urlManager->createUrl(['search/index']); ?>" id="search-form">
 
         <div class="form-group">
@@ -32,7 +32,7 @@ $modelList = ($brand_id) ? ArrayHelper::map(Model::listByBrandId($brand_id), 'id
         </div>
 
         <div style="margin: 20px 0 0 0;" class="form-group">
-            <input type="submit" value="Найти" id="search-form-submit" class="btn btn-danger btn-lg">
+            <input type="submit" value="Искать" id="search-form-submit" class="btn btn-danger btn-lg">
         </div>
     </form>
 
