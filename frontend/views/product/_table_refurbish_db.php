@@ -1,3 +1,6 @@
+<?php
+if(count($products) > 0) { ?>
+
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
@@ -7,7 +10,7 @@
                         <th>Взаимозаменяемость</th>
                         <th>Применение</th>
                         <th>Состояние</th>
-                        <th>Производитель</th>
+                        <th>Артикул</th>
                         <th nowrap>Цена, руб.</th>
                     </tr>
                 </thead>
@@ -27,3 +30,4 @@
                 </tbody>
             </table>
         </div>
+<?php } ?>
