@@ -1,6 +1,6 @@
 <?php
 return [
-    'baseFrontendUrl' => 'http://www.admin-turbohost.loc',
+    // 'baseFrontendUrl' => 'http://www.admin-turbohost.loc',
 
     'adminShopEmails' => [
         'sales@turbomaster.ru', 
