@@ -28,14 +28,25 @@ class ArticleController extends Controller
     {   
         Article::$isActiveOnly = true;
         $items = Article::listByRubricAlias($alias);
-        $rubrics = Rubric::getListSubrubricHasPublishArticles();
-        return $this->render('index', compact('items', 'rubrics'));
+
+        if($items) {
+            $rubrics = Rubric::getListSubrubricHasPublishArticles();
+            return $this->render('index', compact('items', 'rubrics'));
+            
+         }  else {
+            throw new NotFoundHttpException(404);
+        }
     }
 
     public function actionRubrics($alias)
     {   
         $rubrics = Rubric::getRubricListByMainRubricAlias($alias);
-        return $this->render('list_rubric', ['rubrics' => $rubrics]);
+        if($rubrics) {
+            return $this->render('list_rubric', ['rubrics' => $rubrics]);
+            
+        }  else {
+            throw new NotFoundHttpException(404);
+        }
     }
  
 
@@ -43,10 +54,16 @@ class ArticleController extends Controller
     {   
         Article::$isActiveOnly = true;
         $article = Article::findByAlias($alias);
-        $photos  = Article::getPhotoArrayByArticleId($article['id']);
-        $rubrics = Rubric::getListSubrubricHasPublishArticles();
 
-        return $this->render('view', compact('article', 'photos', 'rubrics'));
+        if($article) {
+            $photos  = Article::getPhotoArrayByArticleId($article['id']);
+            $rubrics = Rubric::getListSubrubricHasPublishArticles();
+            return $this->render('view', compact('article', 'photos', 'rubrics'));
+        
+        }  else {
+            throw new NotFoundHttpException(404);
+        }
+
     }
 
 

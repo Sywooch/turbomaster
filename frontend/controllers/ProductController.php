@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\web\NotFoundHttpException;
 use common\models\Product;
 use common\models\Brand;
 use common\models\Model;
@@ -52,18 +53,26 @@ class ProductController extends \yii\web\Controller
             $pages = Product::$pages;
             return $this->render( $view, 
                 compact('products', 'brands', 'models', 'seo', 'pages'));
+        
         }  else {
-            return $this->render('empty');
+            throw new NotFoundHttpException(404);
         }    
     }
     
 
-    public function actionRefurbish() {
+    public function actionRefurbish() 
+    {
         $products = Product::listByTematic(Product::TYPE_REFURBISH);
-        return $this->render( 'list_refurbish', ['products' => $products]);
+        if ($products)  {
+            return $this->render( 'list_refurbish', ['products' => $products]);
+
+        }  else {
+            throw new NotFoundHttpException(404);
+        } 
     }
 
-    public function actionTuning() {
+    public function actionTuning() 
+    {
         $products = Product::listByTematic(Product::TYPE_TUNING);
         return $this->render( 'list_tuning', ['products' => $products]);
     }
@@ -100,7 +109,8 @@ class ProductController extends \yii\web\Controller
             return $this->render('view', compact('product', 'analogs', 'photos', 'metaTags', 'breadcrumbsLinks'));
                 
         } else {
-            $this->redirectToListSimilar();
+            // $this->redirectToListSimilar();
+            throw new NotFoundHttpException(404);
         }
     }
     
@@ -114,8 +124,9 @@ class ProductController extends \yii\web\Controller
                 'model_alias'   => $product['model_alias'], 
                 'partnumber'    => $product['partnumber'], 
                 ]);
+        
         }  else {
-            return $this->goHome();
+            throw new NotFoundHttpException(404);
         }
     }
     
@@ -131,9 +142,10 @@ class ProductController extends \yii\web\Controller
                 'brand_alias'    => $regArray[1], 
                 'model_alias'    => $regArray[2], 
                 ]);
-        } else {
-            return $this->goHome();
-        }         
+
+        }  else {
+            throw new NotFoundHttpException(404);
+        } 
     }
 
 

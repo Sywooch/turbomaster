@@ -20,12 +20,12 @@ class SiteController extends Controller
     public function actions()
     {
         return [
-            // 'error' => [
-            //     'class' => 'yii\web\ErrorAction',
-            // ],
-            'errorHandler' => [
-                'errorAction' => 'site/error',
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
             ],
+            // 'errorHandler' => [
+            //     'errorAction' => 'site/error',
+            // ],
             'static' => [
                 'class' => '\yii\web\ViewAction',
             ],
@@ -50,10 +50,10 @@ class SiteController extends Controller
     }
 
 
-    public function actionError() 
-    {   
-        return $this->goHome();
-    }    
+    // public function actionError() 
+    // {   
+    //     return $this->goHome();
+    // }    
 
 
 
