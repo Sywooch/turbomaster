@@ -7,7 +7,7 @@ use yii\helpers\Html;
 /* @var $message string */
 /* @var $exception Exception */
 
-$this->title = $name;
+$this->title = 'Error 404 — Страница не найдена';
 ?>
 
 <div class="container page-style">
@@ -17,7 +17,7 @@ $this->title = $name;
 
         <br>
         <p>Возможно, вы перешли по устаревшей ссылке.</p>
-        <p>Страница не найдена. <a href="/">Перейти на главную.</a></p>
+        <p>Страница не найдена. <a href="/">Перейти на главную</a></p>
 
 
     </div>

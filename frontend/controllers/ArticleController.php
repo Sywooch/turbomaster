@@ -33,8 +33,8 @@ class ArticleController extends Controller
             $rubrics = Rubric::getListSubrubricHasPublishArticles();
             return $this->render('index', compact('items', 'rubrics'));
             
-         }  else {
-            throw new NotFoundHttpException(404);
+        }  else {
+            throw new NotFoundHttpException();
         }
     }
 
@@ -45,7 +45,7 @@ class ArticleController extends Controller
             return $this->render('list_rubric', ['rubrics' => $rubrics]);
             
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         }
     }
  
@@ -61,7 +61,7 @@ class ArticleController extends Controller
             return $this->render('view', compact('article', 'photos', 'rubrics'));
         
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         }
 
     }
@@ -110,7 +110,7 @@ class ArticleController extends Controller
         if (($model = Article::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException();
         }
     }
 }

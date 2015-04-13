@@ -55,7 +55,7 @@ class ProductController extends \yii\web\Controller
                 compact('products', 'brands', 'models', 'seo', 'pages'));
         
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         }    
     }
     
@@ -67,7 +67,7 @@ class ProductController extends \yii\web\Controller
             return $this->render( 'list_refurbish', ['products' => $products]);
 
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         } 
     }
 
@@ -110,7 +110,7 @@ class ProductController extends \yii\web\Controller
                 
         } else {
             // $this->redirectToListSimilar();
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         }
     }
     
@@ -126,7 +126,7 @@ class ProductController extends \yii\web\Controller
                 ]);
         
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         }
     }
     
@@ -144,7 +144,7 @@ class ProductController extends \yii\web\Controller
                 ]);
 
         }  else {
-            throw new NotFoundHttpException(404);
+            throw new NotFoundHttpException();
         } 
     }
 
