@@ -63,12 +63,12 @@ class ProductController extends \yii\web\Controller
     public function actionRefurbish() 
     {
         $products = Product::listByTematic(Product::TYPE_REFURBISH);
-        if ($products)  {
-            return $this->render( 'list_refurbish', ['products' => $products]);
+        // if ($products)  {
+        return $this->render( 'list_refurbish', ['products' => $products]);
 
-        }  else {
-            throw new NotFoundHttpException();
-        } 
+        // }  else {
+            // throw new NotFoundHttpException();
+        // } 
     }
 
     public function actionTuning() 
