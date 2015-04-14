@@ -6,7 +6,7 @@ use frontend\assets\AppAsset;
 use yii\widgets\Breadcrumbs;
 use common\models\Product;
 
-$this->registerCssFile('css/print.css', ['depends' => [AppAsset::className()], 'media' => 'print']);
+// $this->registerCssFile('css/print.css', ['depends' => [AppAsset::className()], 'media' => 'print']);
 
 $this->title = $product['name'] .', код ' .$product['partnumber'] .' - ТурбоМагазин - Турбомастер.ру';
 $this->registerMetaTag(['name' =>'description','content'=>$metaTags['description']]);

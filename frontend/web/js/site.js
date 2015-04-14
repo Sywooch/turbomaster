@@ -49,7 +49,7 @@ $(document).ready(function() {
         });
       },
       select: function(event, ui) {
-        // yaCounter27743625.reachGoal('TARGET_SEARCH');
+        yaCounter27743625.reachGoal('TARGET_SEARCH');
         window.location = '/goods/' +ui.item.brand_alias +'/' +ui.item.model_alias +'/' +ui.item.partnumber;
       },
       minLength: 3
@@ -106,10 +106,10 @@ $(document).ready(function() {
     });
 
 
-    // $("#search-form-submit").on("click", function (event) {
-    //     yaCounter27743625.reachGoal('TARGET_SEARCH');
-    //     $("#search-form").submit();
-    // });   
+    $("#search-form-submit").on("click", function (event) {
+        yaCounter27743625.reachGoal('TARGET_SEARCH');
+        $("#search-form").submit();
+    });   
 
     // $(document).on('click', '.onicon_chat-s3-btn', function () {
     //     yaCounter27743625.reachGoal('TARGET_CHAT');
@@ -145,11 +145,12 @@ $(document).ready(function() {
                 success: function (response) {
                     if(response.state == 'success') {
                         $form.css('visibility', 'hidden');
+                        $('#question-popup-wrap ul.phones').hide();
                         $h3.text('Вопрос отправлен');
-                        $('<p/>').css('margin', '80px 0 -80px 0').text('В ближайшее время оператор  магазина ответит на ваш вопрос.').insertAfter($h3);
+                        $('<h4/>').css('marginn', '0').text('В ближайшее время оператор  магазина ответит на ваш вопрос.').insertAfter($h3);
 
                         // var yaCounter = new Ya.Metrika({id: 27743625});
-                        // yaCounter27743625.reachGoal('TARGET_QUESTION');
+                        yaCounter27743625.reachGoal('TARGET_QUESTION');
                     }
                 }
             });
@@ -261,7 +262,7 @@ $(document).ready(function() {
                 }
         });    
         if(!hasErrors) {
-            // yaCounter27743625.reachGoal('TARGET_ORDER');
+            yaCounter27743625.reachGoal('TARGET_ORDER');
             $btn.prop('disabled', true);
             $form.submit();
         }  
