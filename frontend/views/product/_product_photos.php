@@ -4,7 +4,7 @@ use yii\helpers\CommonHelper;
 ?>
 
 <div class="row">
-    <div class="col-md-10 col-md-offset-2 col-xs-12">
+    <div class="col-md-10 col-md-offset-2 col-xs-8">
         <?php 
         if(!empty($photos)) { 
             echo '<ul id="photo-rotator">';

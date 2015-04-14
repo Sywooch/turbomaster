@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 ?>
 
+<div class="row">
 <table id="product-card-table" class="table table-striped">
     <tbody>
         <tr>
@@ -57,11 +58,14 @@ use yii\helpers\CommonHelper;
         </tr>
     </tbody>
 </table>
+</div><!-- /.row -->
 
+<div class="row">
+    <div class="col-xs-6 col-xs-offset-3 fa-hover" style="margin-top: 20px; margin-bottom: 40px;">
 
-<div class="product-ask fa-hover" style="margin: 40px 30% 0;">
-    <a href="/question/create" data-question-type="common_question" data-product-id="<?= $product['id'] ?>" class="question-add-link">
-        <i style="font-size: 26px; color: #b04340;" class="fa fa-question-circle"></i>
-        <span style="border-bottom: 1px dotted #b04340; margin-left: 10px;">Задать вопрос о товаре</span>
-    </a>
-</div>
+        <a href="/question/create" data-question-type="common_question" data-product-id="<?= $product['id'] ?>" class="question-add-link">
+            <i style="font-size: 26px; color: #b04340;" class="fa fa-question-circle"></i>
+            <span style="border-bottom: 1px dotted #b04340; margin-left: 10px;">Задать вопрос о товаре</span>
+        </a>
+    </div>
+</div><!-- /.row -->
