@@ -55,7 +55,8 @@ class ProductController extends \yii\web\Controller
                 compact('products', 'brands', 'models', 'seo', 'pages'));
         
         }  else {
-            throw new NotFoundHttpException();
+            // throw new NotFoundHttpException();
+            return $this->render('empty');
         }    
     }
     
