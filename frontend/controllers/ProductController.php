@@ -109,8 +109,8 @@ class ProductController extends \yii\web\Controller
             return $this->render('view', compact('product', 'analogs', 'photos', 'metaTags', 'breadcrumbsLinks'));
                 
         } else {
-            // $this->redirectToListSimilar();
-            throw new NotFoundHttpException();
+            $this->redirectToListSimilar();
+            // throw new NotFoundHttpException();
         }
     }
     
