@@ -44,7 +44,8 @@ a:hover { text-decoration: none;}
 .link-dotted a, a.link-dotted { border-bottom: 1px dotted #b04340; }
 .link-red a, a.link-red { color: #b04340 !important; }
 
-.underline a, .underline a:hover { text-decoration: underline;}
+.underline a, .underline a:hover { text-decoration: underline; }
+.strong { font-weight: bold; }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus { background-color: #d9534f; border-color: #d9534f; }
 .pagination > li > a, .pagination > li > span, .pagination > li > a:hover { color: #d9534f; }

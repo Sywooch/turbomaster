@@ -41,7 +41,7 @@ if(count($products) == 1) {
             } 
             ?>
             <tr>
-                <td class="underline"><?= Html::a($name, $link) ?></td>
+                <td class="underline strong"><?= Html::a($name, $link) ?></td>
                 <td><?= Html::a('', $link, ['class' => 'fa fa-search-plus', 'title' => 'Узнайте подробнее']) ?></td>
                 <td class="engine"><?= CommonHelper::formatEngine($item) ?></td>
                 <td><?= $item['partnumber'] ?></td>

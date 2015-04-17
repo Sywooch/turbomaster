@@ -52,7 +52,6 @@ class CommonHelper extends BaseStringHelper
         $engine = '';
         if(!empty($item['engine'])) {
             $engine .= 'двигатель: ' .$item['engine'] .'<br>';
-            // $engine .= $item['engine'] .'<br>';
         }
         if(!empty($item['volume'])) {
             $engine .= 'объём: ' .$item['volume'] .' cm<sup>3</sup><br>';
