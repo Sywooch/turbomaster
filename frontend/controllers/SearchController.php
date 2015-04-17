@@ -19,7 +19,7 @@ class SearchController extends \yii\web\Controller
         } 
         if($partnumber = trim(Yii::$app->request->get('partnumber'))) {
             // $query->andWhere(['or like', 'product.interchange', $partnumber]);
-            $query->andWhere('product.partnumber like :partnumber OR product.interchange like :partnumber OR model.name like :partnumber OR product.name like :partnumber', [':partnumber' => '%' .$partnumber .'%']);
+            $query->andWhere('product.partnumber like :partnumber OR product.interchange like :partnumber OR model.name like :partnumber OR product.name like :partnumber OR product.engine like :partnumber', [':partnumber' => '%' .$partnumber .'%']);
         }
 
         $pages = new \yii\data\Pagination([
