@@ -471,7 +471,8 @@ class ExcelManager extends \yii\db\ActiveRecord
             $output['engine'] = trim(str_replace('XXX', '', $usageArray[0]));
             
             if(isset($usageArray[1])) {
-                $output['volume'] = trim(str_replace('куб.см', '', $usageArray[1]));
+                $str = trim(str_replace('куб.см', '', $usageArray[1]));
+                $output['volume'] = preg_replace("/\s*\.\s*/", "", $str);
             }
             if(isset($usageArray[2])) {
                 $output['power'] = trim(str_replace('л.с.', '', $usageArray[2]));
