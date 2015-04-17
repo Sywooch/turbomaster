@@ -47,7 +47,26 @@ class CommonHelper extends BaseStringHelper
         return number_format((int)$price, 0, ' ', ' ');
     }
 
-    
+    public static function formatEngine($item)
+    {
+        $engine = '';
+        if(!empty($item['engine'])) {
+            $engine .= 'двигатель: ' .$item['engine'] .'<br>';
+            // $engine .= $item['engine'] .'<br>';
+        }
+        if(!empty($item['volume'])) {
+            $engine .= 'объём: ' .$item['volume'] .' cm<sup>3</sup><br>';
+        }
+        if(!empty($item['power'])) {
+            $engine .= 'мощность: ' .$item['power'] .' л.с.<br>';
+        }
+        if(!empty($item['date_from'])) { 
+            $engine .= 'год: ';
+            $engine .= ($item['date_from']) ? 'с '.$item['date_from'] : '';
+            $engine .= ($item['date_to']) ? ' до ' .$item['date_to'] : '';
+        }
+        return $engine;
+    }
 
 
 }
