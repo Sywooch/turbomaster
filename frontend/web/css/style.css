@@ -440,6 +440,7 @@ ul.social-icons { padding: 20px 0 50px 60px; list-style: none;}
 
 .service-contact  { float: left;  padding: 10px 30px 20px 30px; margin-bottom: 30px; background: #f0f0f0;  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.16); }
 .service-contact h4 { margin-bottom: 30px; }
+.service-contact p { margin-bottom: 4px; }
 
 
 /*fancybox*/
