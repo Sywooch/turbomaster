@@ -39,6 +39,9 @@ class Product extends \yii\db\ActiveRecord
     const TYPE_COMMON    = 1;
     const TYPE_REFURBISH = 2;
     const TYPE_TUNING    = 3;
+    const TYPE_CARTRIDGE = 4;
+    const TYPE_ACTUATOR  = 5;
+
 
     public static $isActiveOnly = false; 
     public static $pages; 
@@ -232,7 +235,7 @@ class Product extends \yii\db\ActiveRecord
     }
 
 
-    public static function listByTematic($type)
+    public static function listByType($type)
     {
         return static::queryProductFull()
             ->andWhere('product.type = :type', [':type' => $type])

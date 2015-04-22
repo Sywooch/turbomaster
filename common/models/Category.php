@@ -16,9 +16,12 @@ use Yii;
  */
 class Category extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
+
+    const CARTRIDGE = 4;
+    const ACTUATOR = 5;
+
+
     public static function tableName()
     {
         return 'category';

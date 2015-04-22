@@ -63,7 +63,7 @@ class ProductController extends \yii\web\Controller
 
     public function actionRefurbish() 
     {
-        $products = Product::listByTematic(Product::TYPE_REFURBISH);
+        $products = Product::listByType(Product::TYPE_REFURBISH);
         // if ($products)  {
         return $this->render( 'list_refurbish', ['products' => $products]);
 
@@ -74,23 +74,31 @@ class ProductController extends \yii\web\Controller
 
     public function actionTuning() 
     {
-        $products = Product::listByTematic(Product::TYPE_TUNING);
+        $products = Product::listByType(Product::TYPE_TUNING);
         return $this->render( 'list_tuning', ['products' => $products]);
     }
 
-    public function actionCartridges() {
-        return $this->render( 'list_cartridge');
+
+    public function actionSparepart($alias = 'cartridge') {
+        $products = Product::listByCategoryAlias($alias);
+        return $this->render( 'list_' .$alias, compact('products', 'alias'));
     }
+
+
+    // public function actionCartridges() {
+    //     return $this->render( 'list_cartridge');
+    // }
 
     public function actionView()
     {
         Product::$isActiveOnly = true;
         
-        // temporary get('id')
         if($productId = Yii::$app->request->get('id')) {
+            // temporary get('id')
             $this->redirectToRightUri($productId);
-        
         } elseif($productId = Yii::$app->request->get('tuning_id')) {
+            $product = Product::findById($productId);
+        } elseif($productId = Yii::$app->request->get('sparepart_id')) {
             $product = Product::findById($productId);
         
         } elseif(Yii::$app->request->get('model_alias') && Yii::$app->request->get('partnumber')) {

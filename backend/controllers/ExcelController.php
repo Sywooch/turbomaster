@@ -10,6 +10,7 @@ use common\models\Excel;
 use common\models\ExcelManager;
 use common\models\Price;
 use common\models\Product;
+use common\models\Category;
 use yii\web\NotFoundHttpException;
 
 
@@ -111,6 +112,37 @@ class ExcelController extends AdminController
                 ]);
         }
     }
+
+
+    // SPAREPART ..................................
+    
+    public function actionSparepartLoader($category_id = Category::CARTRIDGE)
+    {   
+        ini_set('max_execution_time', 900);
+        $model = new Excel;
+        
+        if(Yii::$app->request->post() && $model->load(Yii::$app->request->post())) {
+            $table_uploaded = UploadedFile::getInstance($model, 'table_uploaded');
+            if(!is_null($table_uploaded)) {
+
+                $excelManager = new ExcelManager($table_uploaded);
+                $excelManager->loadSparepart($category_id);
+
+                return $this->redirect(['success', 'from' => 'sparepart']);
+            }  
+            Yii::$app->session->setFlash('success', 'Ошибка при загрузке файла');
+            return $this->redirect(['sparepart-loader']);
+            
+        } else {
+
+            $title = ($category_id == 1) ? 'картриджей' : 'актюаторов';
+            return $this->render('create_common', [
+                    'model' => $model, 
+                    'title' => 'Загрузка ' .$title,
+                ]);
+        }
+    }
+    
 
 
     // MARKET ..................................

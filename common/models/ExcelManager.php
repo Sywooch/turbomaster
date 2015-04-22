@@ -5,6 +5,7 @@ namespace common\models;
 use Yii;
 use common\models\Excel;
 use common\models\Product;
+use common\models\Category;
 use common\models\Price;
 
 
@@ -265,6 +266,61 @@ class ExcelManager extends \yii\db\ActiveRecord
         }   //for
 
     }  
+
+    public function loadSparepart($category_id) 
+    {
+        Product::deleteAll('category_id = ' .(int)$category_id); 
+
+        $mapCells = [
+            0 => 'name',
+            1 => 'manufacturer',
+            2 => 'interchange',
+            3 => 'price',
+        ];
+
+        $manufacturers = [];
+
+        $count = $this->getNumberRows() - 1;
+        for ($row = 2; $row <= $count; ++$row) {
+            foreach($mapCells as $k => $cell) {
+                ${$cell} = $this->getCellValue($k, $row);
+            } 
+
+            $conn = $this->getConnection();  
+
+
+            $alias = $this->createAlias($manufacturer);
+            $alias = $this->removeNonPrintableChars($alias);
+
+            if(isset($manufacturers[$alias])) {
+                $manufacturer_id = $manufacturers[$alias];
+            
+            }   else {
+                $manufacturer_id = $this->getIdByAlias('manufacturer', $alias);
+                if(!$manufacturer_id) {
+                    $conn->createCommand()->insert('manufacturer', [
+                        'name'   => $manufacturer,
+                        'alias'  => $alias,
+                    ])->execute();
+                    // $manufacturer_id = $this->getIdByAlias('manufacturer', $alias);
+                    $manufacturer_id = $conn->getLastInsertID();
+                }
+                $manufacturers[$alias] = $manufacturer_id;
+            }
+
+            $conn->createCommand()->insert('product', 
+            [
+                'manufacturer_id' => $manufacturer_id,
+                'category_id'     => $category_id,
+                'state'           => 1,
+                'name'            => $name,
+                'interchange'     => $interchange,
+                'price'           => (int)$price,
+            ])->execute();
+        }   //for
+
+    }  
+
 
 
     public function loadMarket() 

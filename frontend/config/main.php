@@ -34,12 +34,14 @@ return [
 
                 'product/<id:\d+>'  => 'product/view',
                 'tuning/<tuning_id:\d+>'  => 'product/view',
+                'sparepart/<sparepart_id:\d+>' => 'product/view',
                 'goods/<brand_alias:>/<model_alias:>/<partnumber:>' => 'product/view',
                 
                 'list/<category_id:\d+>'  => 'product/index',
                 'turboshop/tuning'  => 'product/tuning',
                 'turboshop/refurbish' => 'product/refurbish',
-                'turboshop/cartridges' => 'product/cartridges',
+                // 'turboshop/cartridges' => 'product/cartridges',
+                'turboshop/sparepart/<alias:>' => 'product/sparepart',
                 'turboshop/manufacturers/<manufacturer_alias:>' => 'product/index',
                 'turboshop/<category_alias:>/<brand_alias:>/<model_alias:>' => 'product/index',
                 'turboshop/<category_alias:>/<brand_alias:>'  => 'product/index',
