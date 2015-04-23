@@ -414,7 +414,7 @@ class ExcelManager extends \yii\db\ActiveRecord
 
         $products = Product::queryProductFull()
             ->andWhere('price > 0')
-            ->andWhere(['category_id' => [Category::CAR, Category::TRUCK, Category::SHIP] ])
+            ->andWhere(['product.category_id' => [Category::CAR, Category::TRUCK, Category::SHIP] ])
             ->orderBy('partnumber')
             ->asArray()
             ->all();
