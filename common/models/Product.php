@@ -104,26 +104,34 @@ class Product extends \yii\db\ActiveRecord
     }
 
 
-    public static function queryProductFull()
+    public static function queryProductFull($compact = false)
     {   
-        $query = static::find()
-            ->select('product.*,
+
+        $select = $compact ? 'product.*, manufacturer.name as manufacturer_name' : 
+                'product.*,
                 category.id as category_id, category.name as category_name, category.alias as category_alias, category.title_name as category_title_name, category.h1 as category_h1,
                 brand.id as brand_id, brand.name as brand_name, brand.alias as brand_alias,  
                 model.id as model_id, model.name as model_name, model.alias as model_alias, 
                 manufacturer.id as manufacturer_id, manufacturer.name as manufacturer_name, manufacturer.alias as  manufacturer_alias,
-                seo.rus_brand, seo.rus_model
-                ')
-            ->leftJoin('category',     'category.id     = product.category_id')
-            ->leftJoin('model',        'model.id        = product.model_id')
-            ->leftJoin('brand',        'brand.id        = product.brand_id')
-            ->leftJoin('manufacturer', 'manufacturer.id = product.manufacturer_id')
-            ->leftJoin('seo', 'seo.brand_alias = brand.alias AND seo.model_alias = model.alias')
-            ->orderBy('product.name');
+                seo.rus_brand, seo.rus_model';
+
+        $query = static::find()
+            ->select($select)
+            ->leftJoin('manufacturer', 'manufacturer.id = product.manufacturer_id');
+        
+        if(!$compact) {
+            $query
+            ->leftJoin('category',  'category.id  = product.category_id')
+            ->leftJoin('model',     'model.id     = product.model_id')
+            ->leftJoin('brand',     'brand.id     = product.brand_id')
+            ->leftJoin('seo', 'seo.brand_alias = brand.alias AND seo.model_alias = model.alias');
+        }
+        
+        $query->orderBy('product.name');
 
         // если надо выбрать только активные (в продаже) товары: 
         if(static::$isActiveOnly === true)    {
-            $query->andWhere('product.state = ' . static::STATE_ACTIVE);
+            $query->andWhere(['product.state' => static::STATE_ACTIVE ]);
         }
         return $query;
     }
@@ -132,7 +140,7 @@ class Product extends \yii\db\ActiveRecord
     public static function findById($id)
     {
         $product = static::queryProductFull()
-            ->andWhere('product.id = :id', [':id' => (int)$id])
+            ->andWhere(['product.id' => (int)$id ])
             ->asArray()
             ->one();
         return $product;
@@ -177,7 +185,7 @@ class Product extends \yii\db\ActiveRecord
     {
         $query = static::queryProductFull()
             ->andWhere(['manufacturer.alias' => $manufacturer_alias])
-            ->andWhere(['product.type' => static::TYPE_COMMON])
+            ->andWhere(['product.type' => static::TYPE_NEW])
             ->orderBy('product.name')
             ->asArray();
             
@@ -239,7 +247,7 @@ class Product extends \yii\db\ActiveRecord
     public static function listByType($type)
     {
         return static::queryProductFull()
-            ->andWhere('product.type = :type', [':type' => $type])
+            ->andWhere(['product.type' => $type])
             ->asArray()
             ->all();
     }  
@@ -250,7 +258,7 @@ class Product extends \yii\db\ActiveRecord
         $interchangeArray = static::createInterchangeArrayForInQuery($product);
 
         $products = static::find()
-            ->andWhere(['type' => static::TYPE_COMMON])
+            ->andWhere(['type' => static::TYPE_NEW])
             ->andWhere(['in', 'partnumber',  $interchangeArray])
             // ->andWhere(['partnumber' => $partnumber])
             // ->orWhere(['like', 'interchange', $partnumber])
