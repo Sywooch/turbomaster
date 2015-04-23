@@ -135,7 +135,7 @@ class ExcelController extends AdminController
             
         } else {
 
-            $title = ($category_id == 1) ? 'картриджей' : 'актюаторов';
+            $title = ($category_id == Category::CARTRIDGE) ? 'картриджей' : 'актюаторов';
             return $this->render('create_common', [
                     'model' => $model, 
                     'title' => 'Загрузка ' .$title,

@@ -3,6 +3,7 @@ namespace common\models;
 
 use Yii;
 use common\models\Product;
+use common\models\Category;
 
 /**
  * This is the model class for table "price_temp".
@@ -50,9 +51,11 @@ class Price extends \yii\db\ActiveRecord
 
 
     public function cleanPricesInProductTable() 
-    {
+    {   
         Product::deleteAll(['type' => Product::TYPE_REFURBISH ]);
-        Product::updateAll(['price' => 0], 'type = ' .Product::TYPE_COMMON);
+        
+        $categoryArray = [Category::CAR, Category::TRUCK, Category::SHIP];
+        Product::updateAll(['price' => 0], ['category_id' => $categoryArray]);
     }
 
     public function getNotFoundProducts() 
@@ -109,7 +112,7 @@ class Price extends \yii\db\ActiveRecord
 
         $exsistPriceArray = [];
 
-        $type = (!empty($type) && strtolower($type) == 'x') ? Product::TYPE_REFURBISH : Product::TYPE_COMMON;
+        $type = (!empty($type) && strtolower($type) == 'x') ? Product::TYPE_REFURBISH : Product::TYPE_NEW;
 
         $searchPartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         

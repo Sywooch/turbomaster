@@ -1,16 +1,18 @@
 <?php
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
+use common\models\Category;
 use common\models\Brand;
 use common\models\Model;
 use common\models\Manufacturer;
 
-$getArray = ['brand_id', 'model_id', 'manufacturer_id', 'type', 'state', 'is_yml'];
+$getArray = ['category_id', 'brand_id', 'model_id', 'manufacturer_id', 'type', 'state', 'is_yml'];
 foreach($getArray as $variable) {
   ${$variable} = (!empty($_GET[$variable])) ? $_GET[$variable] : 0;
 }
 
-$typeList  = [1 => 'новая', 2 => 'оборотная', 3 => 'для тюнинга'];
+$categoryList = ArrayHelper::map(Category::find()->all(), 'id', 'name');
+$typeList  = [1 => 'новая', 2 => 'оборотная'];
 $stateList = [1 => 'активные', 2 => 'не активные' ];
 $brandList = Brand::listForDropDownList();
 $modelList = ($brand_id) ? ArrayHelper::map(Model::listByBrandId($brand_id), 'id', 'name') : [];
@@ -21,13 +23,15 @@ $manufacturerList = ArrayHelper::map(Manufacturer::find()->all(), 'id', 'name');
 <form name="multi_search" id="form-search-panel" method="get" action="/product/index">
 
   <div class="inline right-bordered">
+    <div style="margin: 0 0 10px 0;">
+      <?= Html::dropDownList('category_id', $category_id, $categoryList, ['prompt'=>'--Категория--']);  ?>
+    </div>
     <div id="parent_block">
       <?php
       echo Html::dropDownList('brand_id', $brand_id, $brandList,
         ['prompt'=>'--Марка--', 'id'=>'dropDownBrands']); 
       ?>
     </div>
-
     <div id="children_block"  style="margin: 10px 0 0 0;">
       <div id="warpDropDownModels">
       <?= Html::dropDownList('model_id', $model_id, $modelList,
@@ -39,7 +43,7 @@ $manufacturerList = ArrayHelper::map(Manufacturer::find()->all(), 'id', 'name');
 
   <div class="inline right-bordered">
     <div>
-      <?= Html::dropDownList('manufacturer_id', $manufacturer_id, $manufacturerList, ['prompt'=>'--Производитель--', 'id' => 'manufacturer_id']);  ?>
+      <?= Html::dropDownList('manufacturer_id', $manufacturer_id, $manufacturerList, ['prompt'=>'--Производитель--']);  ?>
     </div>
     <div>
       <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>

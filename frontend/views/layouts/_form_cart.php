@@ -17,8 +17,8 @@ use common\models\Cart;
         <div class="popup-inner">
     
             <h3>Заказ</h3>
-            <p id="messages" style="color:#009900;display:none;">display:none;</p>
-            <p id="errors" style="color:#990000;display:none;"></p>
+            <p id="messages" style="color: #009900; display: none;"></p>
+            <p id="errors" style="color: #990000; display: none;"></p>
 
             <?php
             $model = new Order(['scenario' => 'buyer']);

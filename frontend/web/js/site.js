@@ -111,9 +111,9 @@ $(document).ready(function() {
         $("#search-form").submit();
     });   
 
-    // $(document).on('click', '.onicon_chat-s3-btn', function () {
-    //     yaCounter27743625.reachGoal('TARGET_CHAT');
-    // });
+    $(document).on('click', '.onicon_chat-s3-btn', function () {
+        yaCounter27743625.reachGoal('TARGET_CHAT');
+    });
 
 
     $("#question_submit").on("click", function (event) {
@@ -219,14 +219,25 @@ $(document).ready(function() {
             },
             success: function (response) {                                       
                 if(response.lines.length > 0)  {
-                    var $tbody = $('#cart-list tbody'), $tr, $td, $input, $div, price;
+                    var $tbody = $('#cart-list tbody'), 
+                        $tr, 
+                        $td, 
+                        $input, 
+                        $div,
+                        name,
+                        price;
+                        
                     $tbody.children('tr').remove();
 
                     $.each(response.lines, function(i, val) {
                         price = (val.price > 0) ? moneyFormat(val.price) : 'цена по запросу';
+                        name = val.name;
+                        if(val.partnumber) {
+                            name += "\n" + val.partnumber;
+                        }
 
                         $tr = $('<tr/>').attr({'data-line-id': val.line_id});
-                        $('<td/>').text(val.name + "\n" + val.partnumber).appendTo($tr);
+                        $('<td/>').text(name).appendTo($tr);
 
                         $td = $('<td/>');
                             $input = $('<input/>').attr({'type': 'text', 'readonly': 'readonly', 'id': 'input-quantity-' +val.line_id}).val(val.quantity).addClass('quantity_value').appendTo($td);

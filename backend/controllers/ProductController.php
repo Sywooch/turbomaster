@@ -86,7 +86,7 @@ class ProductController extends AdminController
         $model = new Product();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            if($model->type == Product::TYPE_COMMON) {
+            if($model->type == Product::TYPE_NEW) {
                 Product::updatePriceForAnalogs($model);
             }
             Yii::$app->session->setFlash('success', 'Товар сохранен');
@@ -104,7 +104,7 @@ class ProductController extends AdminController
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-             if($model->type == Product::TYPE_COMMON) {
+             if($model->type == Product::TYPE_NEW) {
                 Product::updatePriceForAnalogs($model);
             }
             Yii::$app->session->setFlash('success', 'Товар сохранен');

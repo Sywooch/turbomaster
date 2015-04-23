@@ -9,7 +9,7 @@ class SearchController extends \yii\web\Controller
     public function actionIndex()
     {
         $query = Product::queryProductFull()
-            ->andWhere(['type' => Product::TYPE_COMMON]);  
+            ->andWhere(['type' => Product::TYPE_NEW]);  
 
         if($brand_id = Yii::$app->request->get('brand_id')) {
             $query->andWhere(['brand.id'=> $brand_id]);

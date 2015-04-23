@@ -20,7 +20,10 @@ echo (count($lines) > 1) ? 'Заказанные товары:' : 'Заказа�
 foreach($lines as $line) {  
     $url = \Yii::$app->urlManagerFrontend->createAbsoluteUrl(['product/view', 'id'=> $line['id']]);
 
-    $productName = $line['name'] .' [' .$line['partnumber'] .']'; 
+    $productName = $line['name'];
+    if($line['partnumber']) {
+        $productName .= ' [' .$line['partnumber'] .']'; 
+    }
 
     $price = (!empty($line['price'])) ? ' - ' .$line['price'] . ' руб.' : '';
     echo $productName .' (' .$line['quantity'] .' экз.)' .$price ."\n";     

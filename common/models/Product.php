@@ -4,6 +4,9 @@ namespace common\models;
 
 use Yii;
 use yii\db\Query;
+use common\models\Category;
+use common\models\Image;
+use common\models\PhotoProduct;
 
 /**
  * This is the model class for table "product".
@@ -36,11 +39,8 @@ class Product extends \yii\db\ActiveRecord
     const STATE_INACTIVE = 0;
     const STATE_ACTIVE   = 1;
     
-    const TYPE_COMMON    = 1;
+    const TYPE_NEW       = 1;
     const TYPE_REFURBISH = 2;
-    const TYPE_TUNING    = 3;
-    const TYPE_CARTRIDGE = 4;
-    const TYPE_ACTUATOR  = 5;
 
 
     public static $isActiveOnly = false; 
@@ -80,12 +80,12 @@ class Product extends \yii\db\ActiveRecord
 
     public function getModel()
     {
-        return $this->hasOne(Model::className(), ['id' => 'model_id']);
+        return $this->hasOne('model', ['id' => 'model_id']);
     }
 
     public function getPhotos()
     {
-        return $this->hasMany(PhotoProduct::className(), ['partnumber' => 'partnumber']);
+        return $this->hasMany('photo_product', ['partnumber' => 'partnumber']);
     }
 
     public function getFullname() {
@@ -94,12 +94,13 @@ class Product extends \yii\db\ActiveRecord
 
     public function getOrderProducts()
     {
-        return $this->hasMany(OrderProduct::className(), ['product_id' => 'id']);
+        // return $this->hasMany(OrderProduct::className(), ['product_id' => 'id']);
+        return $this->hasMany('order', ['product_id' => 'id']);
     }
 
     public function getCartProducts()
     {
-        return $this->hasMany(CartProduct::className(), ['product_id' => 'id']);
+        return $this->hasMany('cart_product', ['product_id' => 'id']);
     }
 
 
@@ -293,7 +294,7 @@ class Product extends \yii\db\ActiveRecord
     {
         $links = [];
         $links[] = ['label' => 'ТурбоМагазин'];
-        if(isset($product['type']) && $product['type'] == static::TYPE_TUNING)  {
+        if(isset($product['category_id']) && $product['category_id'] == Category::TUNING)  {
             $links[] =  ['label' => 'Турбины для тюнинга', 'url' => ['product/tuning']];
         } else {
             if($product['category_name']) {

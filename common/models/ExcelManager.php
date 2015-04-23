@@ -104,7 +104,8 @@ class ExcelManager extends \yii\db\ActiveRecord
                         'name'        => $brand,
                         'alias'       => $alias,
                     ])->execute();
-                    $brand_id = $this->getIdByAlias('brand', $alias, $add_query);
+                    // $brand_id = $this->getIdByAlias('brand', $alias, $add_query);
+                    $brand_id = $conn->getLastInsertID();
                 }
             }
         
@@ -116,12 +117,13 @@ class ExcelManager extends \yii\db\ActiveRecord
                 $model_id = $this->getIdByAlias('model', $alias, $add_query);
                     
                 if(!$model_id) {
-                $conn->createCommand()->insert('model', [
-                    'brand_id' => $brand_id,
-                    'name'     => $model,
-                    'alias'    => $alias,
-                ])->execute();
-                $model_id = $this->getIdByAlias('model', $alias);
+                    $conn->createCommand()->insert('model', [
+                        'brand_id' => $brand_id,
+                        'name'     => $model,
+                        'alias'    => $alias,
+                    ])->execute();
+                    // $model_id = $this->getIdByAlias('model', $alias);
+                    $model_id = $conn->getLastInsertID();
                 }
             }   
 
@@ -131,11 +133,12 @@ class ExcelManager extends \yii\db\ActiveRecord
             $manufacturer_id = $this->getIdByAlias('manufacturer', $alias);
            
            if(!$manufacturer_id && !empty($manufacturer)) {
-                    $conn->createCommand()->insert('manufacturer', [
-                        'name'   => $manufacturer,
-                        'alias'  => $alias,
-                    ])->execute();
-                $manufacturer_id = $this->getIdByAlias('manufacturer', $alias);
+                $conn->createCommand()->insert('manufacturer', [
+                    'name'   => $manufacturer,
+                    'alias'  => $alias,
+                ])->execute();
+                // $manufacturer_id = $this->getIdByAlias('manufacturer', $alias);
+                $manufacturer_id = $conn->getLastInsertID();
             }    
 
             $usageOutput = $this->convertUsage($val[4]);
@@ -146,7 +149,7 @@ class ExcelManager extends \yii\db\ActiveRecord
                     'category_id'     => $category_id,
                     'brand_id'        => $brand_id,
                     'model_id'        => $model_id,
-                    'type'            => Product::TYPE_COMMON,
+                    'type'            => Product::TYPE_NEW,
                     'state'           => Product::STATE_ACTIVE,
                     'name'            => $val[3],
                     'partnumber'      => $val[5],
@@ -215,15 +218,14 @@ class ExcelManager extends \yii\db\ActiveRecord
     public function loadTuning() 
     {
         $exceptionsArray = [];
-        Product::deleteAll('type = ' .Product::TYPE_TUNING); 
+        Product::deleteAll(['category_id' => Category::TUNING]); 
 
         $mapCells = [
-            0 => 'category_id',
-            1 => 'name',
-            2 => 'partnumber',
-            3 => 'manufacturer',
-            4 => 'usage',
-            5 => 'price',
+            0 => 'name',
+            1 => 'partnumber',
+            2 => 'manufacturer',
+            3 => 'usage',
+            4 => 'price',
         ];
 
         $count = $this->getNumberRows() - 1;
@@ -250,9 +252,9 @@ class ExcelManager extends \yii\db\ActiveRecord
             $conn->createCommand()->insert('product', 
             [
                 'manufacturer_id' => $manufacturer_id,
-                'category_id'     => $category_id,
-                'type'            => Product::TYPE_TUNING,
-                'state'           => 1,
+                'category_id'     => Category::TUNING,
+                'type'            => Product::TYPE_NEW,
+                'state'           => Product::STATE_ACTIVE,
                 'name'            => $name,
                 'partnumber'      => $partnumber,
                 // 'warranty'     => $warranty,
@@ -268,8 +270,12 @@ class ExcelManager extends \yii\db\ActiveRecord
     }  
 
     public function loadSparepart($category_id) 
-    {
-        Product::deleteAll('category_id = ' .(int)$category_id); 
+    {   
+        if(!in_array($category_id, [ Category::CARTRIDGE, Category::ACTUATOR ])) {
+            return false;
+        }
+
+        Product::deleteAll(['category_id' => (int)$category_id]); 
 
         $mapCells = [
             0 => 'name',
@@ -312,7 +318,8 @@ class ExcelManager extends \yii\db\ActiveRecord
             [
                 'manufacturer_id' => $manufacturer_id,
                 'category_id'     => $category_id,
-                'state'           => 1,
+                'type'            => Product::TYPE_NEW,
+                'state'           => Product::STATE_ACTIVE,
                 'name'            => $name,
                 'interchange'     => $interchange,
                 'price'           => (int)$price,
@@ -407,8 +414,7 @@ class ExcelManager extends \yii\db\ActiveRecord
 
         $products = Product::queryProductFull()
             ->andWhere('price > 0')
-            // ->andWhere(['type' => Product::TYPE_COMMON])
-            ->andWhere('type != ' .Product::TYPE_TUNING)
+            ->andWhere(['category_id' => [Category::CAR, Category::TRUCK, Category::SHIP] ])
             ->orderBy('partnumber')
             ->asArray()
             ->all();

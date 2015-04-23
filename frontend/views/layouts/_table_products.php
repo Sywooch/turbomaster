@@ -1,5 +1,6 @@
 <?php
 use common\models\Product;
+use common\models\Category;
 use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 
@@ -30,7 +31,7 @@ if(count($products) == 1) {
 
             $price = (!empty($item['price'])) ? CommonHelper::formatPrice($item['price']) .' руб.' : '<a href="/question/create" class="question-add-link link-dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
 
-            if($item['type'] == Product::TYPE_TUNING) {
+            if($item['category_id'] == Category::TUNING) {
                 $link = ['product/view', 'tuning_id'=> $item['id']];
             } else {
                 $link = ['product/view', 

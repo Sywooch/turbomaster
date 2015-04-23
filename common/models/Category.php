@@ -17,9 +17,12 @@ use Yii;
 class Category extends \yii\db\ActiveRecord
 {
 
-
-    const CARTRIDGE = 4;
-    const ACTUATOR = 5;
+    const CAR       = 1; 
+    const TRUCK     = 2; 
+    const SHIP      = 3; 
+    const TUNING    = 4; 
+    const CARTRIDGE = 5;
+    const ACTUATOR  = 6;
 
 
     public static function tableName()

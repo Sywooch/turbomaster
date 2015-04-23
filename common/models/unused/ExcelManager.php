@@ -154,7 +154,7 @@ class ExcelManager extends \yii\db\ActiveRecord
                     'category_id'       => $category_id,
                     'brand_id'          => $brand_id,
                     'model_id'          => $model_id,
-                    'type'              => Product::TYPE_COMMON,
+                    'type'              => Product::TYPE_NEW,
                     'state'             => Product::STATE_ACTIVE,
                     'name'              => $name,
                     'partnumber'        => $partnumber,

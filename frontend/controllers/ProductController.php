@@ -72,14 +72,15 @@ class ProductController extends \yii\web\Controller
         // } 
     }
 
-    public function actionTuning() 
+    public function actionTuning($alias = 'tuning') 
     {
-        $products = Product::listByType(Product::TYPE_TUNING);
+        $products = Product::listByCategoryAlias($alias);
         return $this->render( 'list_tuning', ['products' => $products]);
     }
 
 
-    public function actionSparepart($alias = 'cartridge') {
+    public function actionSparepart($alias = 'cartridge') 
+    {
         $products = Product::listByCategoryAlias($alias);
         return $this->render( 'list_' .$alias, compact('products', 'alias'));
     }

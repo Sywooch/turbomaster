@@ -106,7 +106,7 @@ class SiteController extends Controller
        
         $products = Product::queryProductFull()
             ->andWhere('product.state = ' . Product::STATE_ACTIVE)
-            ->andWhere('product.type  = ' . Product::TYPE_COMMON)
+            ->andWhere('product.type  = ' . Product::TYPE_NEW)
             ->orderBy('product.category_id, product.brand_id, product.model_id')
             ->asArray()
             ->all();
@@ -116,17 +116,17 @@ class SiteController extends Controller
         }
 
 
-        $products = Product::queryProductFull()
-            ->andWhere('product.state = ' . Product::STATE_ACTIVE)
-            ->andWhere('product.type  = ' . Product::TYPE_TUNING)
-            ->orderBy('product.category_id, product.brand_id, product.model_id')
-            ->asArray()
-            ->all();
-
         // tuning
-        foreach ($products as $product ) {
-            $urls[] = 'tuning/' .$product['id'];
-        }
+        // $products = Product::queryProductFull()
+        //     ->andWhere('product.state = ' . Product::STATE_ACTIVE)
+        //     ->andWhere('product.type  = ' . Product::TYPE_TUNING)
+        //     ->orderBy('product.category_id, product.brand_id, product.model_id')
+        //     ->asArray()
+        //     ->all();
+
+        // foreach ($products as $product ) {
+        //     $urls[] = 'tuning/' .$product['id'];
+        // }
 
 
         // manufacturers
@@ -135,7 +135,7 @@ class SiteController extends Controller
             $manufacturer_alias = $row['alias'];
             $total = Product::queryProductFull()
                 ->andWhere(['manufacturer.alias' => $manufacturer_alias,
-                            'product.type' => Product::TYPE_COMMON])
+                            'product.type' => Product::TYPE_NEW])
                 ->count();
             $pages = ceil($total / 40); 
             for ($i = 1; $i <= $pages; $i++) {
