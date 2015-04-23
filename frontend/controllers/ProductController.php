@@ -82,7 +82,8 @@ class ProductController extends \yii\web\Controller
     public function actionSparepart($alias = 'cartridge') 
     {
         $products = Product::listByCategoryAlias($alias);
-        return $this->render( 'list_' .$alias, compact('products', 'alias'));
+        $pages = Product::$pages;
+        return $this->render( 'list_' .$alias, compact('products', 'pages', 'alias'));
     }
 
 

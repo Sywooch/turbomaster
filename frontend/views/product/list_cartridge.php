@@ -38,7 +38,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'картриджи �
     </section>
 
     <section style="margin: 30px 0 20px;">
-        <?= $this->render('_table_sparepart', ['products' => $products]); ?>
+        <?= $this->render('_table_sparepart', ['products' => $products, 'pages' => $pages]); ?>
     </section>
 </div>
 

@@ -30,7 +30,7 @@ if(count($products) > 0) {
                 // $link = ['product/view', 'sparepart_id'=> $item['id']];
             ?>
             <tr>
-                <td><?= $k + 1 ?></td>
+                <td><?= $item['id'] ?></td>
                 <td class=""><?= $item['name'] ?></td>
                 <td><?= $item['interchange'] ?></td>
                 <td><?= $item['manufacturer_name'] ?></td>
