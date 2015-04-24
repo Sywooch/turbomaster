@@ -68,7 +68,7 @@ use common\models\Manufacturer;
                             <div class="col-md-4">
                                 <li class="h4">Запчасти турбин:</li>
                                 <li><a href="/turboshop/sparepart/cartridge">Картриджи</a></li>
-                                <li><a href="/turboshop/sparepart/actuator">Актюаторы</a></li>
+                                <li><a href="/turboshop/sparepart/actuator">Актуаторы</a></li>
                             </div>
                         </div>
                         </div>
