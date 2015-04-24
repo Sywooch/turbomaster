@@ -416,7 +416,7 @@ class ExcelManager extends \yii\db\ActiveRecord
             ->andWhere('price > 0')
             ->andWhere(['product.category_id' => [Category::CAR, Category::TRUCK, Category::SHIP] ])
             ->orderBy('partnumber')
-            ->groupBy('partnumber')
+            ->groupBy('product.partnumber, product.type')
             ->asArray()
             ->all();
 
