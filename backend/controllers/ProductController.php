@@ -38,7 +38,10 @@ class ProductController extends AdminController
     {
         \common\models\Utilities::setBackUrl(Yii::$app->request->url);
 
-        $query = Product::queryProductFull($compact = true);
+
+        // for ajax search query -  full query
+        $compact = (Yii::$app->request->isAjax) ? false : true; 
+        $query = Product::queryProductFull($compact);
 
         $getsArray = ['category_id', 'brand_id', 'model_id', 'manufacturer_id', 'type', 'state', 'is_yml'];
         foreach($getsArray as $get) {
