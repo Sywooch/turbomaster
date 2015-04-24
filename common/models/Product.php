@@ -161,7 +161,7 @@ class Product extends \yii\db\ActiveRecord
 
 
     public static function listByCategoryAlias($category_alias)
-    {
+    {   
         $query = static::queryProductFull()
             ->andWhere(['category.alias' => $category_alias])
             ->asArray();
