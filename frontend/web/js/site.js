@@ -25,34 +25,60 @@ $(document).ready(function() {
         ); // end get
     });  
 
-     $( "#input-partnumber" ).autocomplete({
-      source: function(request, response){
-        $.ajax({
-          url: "/search/index",
-          data:{
-            'brand_id':   $('#select-cascade-brand').val(),
-            'model_id':   $('#select-cascade-model').val(),
-            'partnumber': $('#input-partnumber').val(),
-          },
-          success: function(data){
-            // приведем полученные данные к необходимому формату 
-            response($.map(data, function(item){
-              return{
-                label:        item.name + ", " + item.partnumber,
-                product_id:   item.id,
-                brand_alias:  item.brand_alias,
-                model_alias:  item.model_alias,
-                partnumber:   item.partnumber
+    $( "#input-partnumber" ).autocomplete({
+
+
+        source: function (request, response) {
+            var name,
+                url,
+                categories = [1, 2, 3, 5, 6];
+
+            $.ajax({
+                url: "/search/index",
+                data: {
+                    brand_id:   $('#select-cascade-brand').val(),
+                    model_id:   $('#select-cascade-model').val(),
+                    partnumber: $('#input-partnumber').val(),
+                },
+            success: function (data) {
+                // приведем полученные данные к необходимому формату 
+                response($.map(data, function (item) {
+                    
+                    name = item.name;
+                    if(item.partnumber) {
+                        name += ", " + item.partnumber;
+                    }   
+                    return {
+                        label:        name,
+                        product_id:   item.id,
+                        category_id:  item.category_id,
+                        brand_alias:  item.brand_alias,
+                        model_alias:  item.model_alias,
+                        partnumber:   item.partnumber
+                    }
+                }));
               }
-            }));
-          }
-        });
-      },
-      select: function(event, ui) {
-        yaCounter27743625.reachGoal('TARGET_SEARCH');
-        window.location = '/goods/' +ui.item.brand_alias +'/' +ui.item.model_alias +'/' +ui.item.partnumber;
-      },
-      minLength: 3
+            });
+        },
+        select: function(event, ui) {
+            yaCounter27743625.reachGoal('TARGET_SEARCH');
+
+            switch(ui.item.category_id) {
+            case '4':
+                url = '/tuning/' + ui.item.product_id;
+                break;
+            case '5':
+                url = '/sparepart/' + ui.item.product_id;
+                break;
+            case '6':
+                url = '/sparepart/' + ui.item.product_id;
+                break;
+            default:
+                url = '/goods/' + ui.item.brand_alias + '/' + ui.item.model_alias + '/' + ui.item.partnumber;
+            } 
+            window.location = url;
+        },
+        minLength: 3
     });
 
     function hideTableColumns(target, columns) {

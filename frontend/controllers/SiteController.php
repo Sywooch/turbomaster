@@ -68,11 +68,11 @@ class SiteController extends Controller
             $urls[] = $page;
         }
 
-        $types = ['passenger', 'trucks', 'tuning', 'refurbish', 'ship', 'cartridges', 'manufacturers/honeywell_garrett', 'manufacturers/borg_warner_schwitzer_3k'];
+        $types = ['passenger', 'trucks', 'tuning', 'refurbish', 'ship', 'sparepart/cartridge', 'sparepart/actuator', 'manufacturers/honeywell_garrett', 'manufacturers/borg_warner_schwitzer_3k'];
         foreach ($types as $type ) {
             $urls[] = 'turboshop/' .$type;
         }
-        
+
         $products = Product::queryProductFull()
             ->andWhere('product.state = ' . Product::STATE_ACTIVE)
             ->andWhere('product.brand_id IS NOT NULL')
