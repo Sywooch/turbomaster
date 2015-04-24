@@ -5,6 +5,7 @@ use Yii;
 use common\models\Mainpage;
 use common\models\Popular;
 use common\models\Product;
+use common\models\Category;
 use common\models\Manufacturer;
 use common\models\Article;
 use common\models\Fact;
@@ -112,21 +113,19 @@ class SiteController extends Controller
             ->all();
 
         foreach ($products as $product ) {
-            $urls[] = 'goods/' .$product['brand_alias'] .'/'  .$product['model_alias'] .'/' .trim($product['partnumber']);
+
+            $category_id = $product['category_id'];
+
+            if($category_id == Category::TUNING) {
+                $link = 'tuning/' .$product['id'];
+            }   elseif(in_array($category_id, [Category::CARTRIDGE, Category::ACTUATOR ])) {
+                $link = 'sparepart/' .$product['id'];
+            }   else {
+                $link = 'goods/' .$product['brand_alias'] .'/' .$product['model_alias'] .'/' .trim($product['partnumber']);
+            }
+
+            $urls[] = $link;
         }
-
-
-        // tuning
-        // $products = Product::queryProductFull()
-        //     ->andWhere('product.state = ' . Product::STATE_ACTIVE)
-        //     ->andWhere('product.type  = ' . Product::TYPE_TUNING)
-        //     ->orderBy('product.category_id, product.brand_id, product.model_id')
-        //     ->asArray()
-        //     ->all();
-
-        // foreach ($products as $product ) {
-        //     $urls[] = 'tuning/' .$product['id'];
-        // }
 
 
         // manufacturers

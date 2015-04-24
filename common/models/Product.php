@@ -280,20 +280,42 @@ class Product extends \yii\db\ActiveRecord
 
         $common_car_name = ($product['rus_brand'] && $product['rus_model']) ? $product['rus_brand'] .' ' .$product['rus_model'] : $brand_name .' ' .$model_name;
 
-        $metaTagDescription = $product['name'] .', код ' .$product['partnumber'] .' для автомобиля ' .$common_car_name .' - наличие, цены, описание. Бесплатная доставка по Москве. Принимаем заказы со всех регионов России!';
+        $description = $product['name'];
+        if(!empty($product['partnumber'])) {
+            $description .= ', код ' .$product['partnumber'];
+        }
+        if(strlen($common_car_name) > 2) {
+            $description .= ' для автомобиля ' .$common_car_name ;
+        }
+        $description .= ' - наличие, цены, описание. Бесплатная доставка по Москве. Принимаем заказы со всех регионов России!';
 
-        $arrayMetaTagKeywords = [
-          $brand_name.' '.$model_name,
-          $product['name'],
-          $product['partnumber'],
-          'купить турбину на '.$common_car_name .' ' .$product['partnumber'],
-          'продажа турбин на '.$brand_name .' ' .$model_name,
-        ];
-        $metaTagKeywords = implode(', ', $arrayMetaTagKeywords);
+        $keywords = [];
+        $keywords[] = $product['name'];
+
+        if(!empty($brand_name) && !empty($model_name)) {
+            $keywords[] = $brand_name.' '.$model_name;
+            $keywords[] = 'продажа турбин на ' .$brand_name .' ' .$model_name;
+        }
+        if(!empty($product['partnumber'])) {
+            $keywords[] = $product['partnumber'];
+        }
+        
+        $str = '';
+        if(strlen($common_car_name) > 2) {
+            $str = $common_car_name;
+        }
+        if(!empty($product['partnumber'])) {
+            $str .= ' ' .$product['partnumber'];
+        }
+        if(strlen($str) > 2) {
+            $keywords[] = 'купить турбину на ' .$str;
+        }
+
+        $metaKeywords = implode(', ', $keywords);
     
         return [
-            'description' => $metaTagDescription, 
-            'keywords'    => $metaTagKeywords
+            'description' => $description, 
+            'keywords'    => $metaKeywords
         ];
     }
 
