@@ -106,7 +106,7 @@ class Product extends \yii\db\ActiveRecord
 
     public static function queryProductFull($compact = false)
     {   
-
+        $compact = true;
         $select = $compact ? 'product.*, manufacturer.name as manufacturer_name' : 
                 'product.*,
                 category.id as category_id, category.name as category_name, category.alias as category_alias, category.title_name as category_title_name, category.h1 as category_h1,
