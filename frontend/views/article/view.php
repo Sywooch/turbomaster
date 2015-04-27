@@ -9,7 +9,6 @@ use frontend\assets\AppAsset;
 $category_name      =  $article['category_name'];
 $maincategory_name  =  $article['maincategory_name'];
 
-$this->registerJsFile('js/article.js', ['depends' => [AppAsset::className()]]);
 $this->title = $article['title'] .' - Турбомастер.ру';
 
 
