@@ -4,6 +4,7 @@ namespace common\models;
 
 use Yii;
 use common\models\Product;
+use common\models\Category;
 use common\models\PhotoProduct;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -119,6 +120,7 @@ class Yml
             ->andWhere([
                 'state' => Product::STATE_ACTIVE,
                 'type' => Product::TYPE_NEW,
+                'category_id' => Category::CAR,
                 ])
             ->andWhere('price > 0');
 
