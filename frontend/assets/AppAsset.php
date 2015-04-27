@@ -11,14 +11,10 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     
     public $css = [
-        'css/font-awesome.css',
+        'css/font-awesome.min.css',
         'css/jquery-ui.min.css',
-        'css/jquery.formstyler.css',
-        // 'css/jquery.jcarousel.basic.css',
         'css/jquery.fancybox.css',
-        // 'css/jquery.mSimpleSlidebox.css',
-        // 'css/jquery.bxslider.css',
-        'css/style.css',
+        'css/style.min.css',
     ];
 
     public $js = [
@@ -26,16 +22,11 @@ class AppAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/jquery.formstyler.min.js',
         'js/jquery.maskedinput.min.js',
-
-        'js/jquery.unoslider.js',
-        // 'js/jquery.jcarousel.min.js',
+        'js/jquery.unoslider.min.js',
         'js/jquery.fancybox.pack.js',
         'js/jquery.columnizer.min.js',
         // 'js/modernizr.custom.js',
-        // 'js/jquery.easing.1.3.js',
-        // 'js/jquery.mSimpleSlidebox.js',
-        // 'js/jquery.bxslider.min.js',
-        'js/site.js',
+        'js/site.min.js',
     ];
 
     public $depends = [

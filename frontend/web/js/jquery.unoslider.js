@@ -1,6 +1,6 @@
 (function($) {
 
-$.fn.unoslider = function(options) {
+$.fn.unoslider = function(opts) {
 
     var defaults = {
             mode: 'fade',               // 'fade', 'shift', default: 'fade'
@@ -12,7 +12,7 @@ $.fn.unoslider = function(options) {
             autoStart: true,            // after click
             delay: 20000,
         },
-        options = $.extend(defaults, options);
+        options = $.extend(defaults, opts);
 
     return this.each(function () {
 
@@ -47,7 +47,7 @@ $.fn.unoslider = function(options) {
             if(options.autoLoop === true) {
                 startLoop();
             }
-        }
+        };
 
         var next = function() {
             currentIndex += 1;
@@ -61,7 +61,7 @@ $.fn.unoslider = function(options) {
                 changeNaviElement();
             }
             goToNextPane();
-        }
+        };
 
         var goToNextPane = function() {
             if(options.mode == 'fade') {
@@ -69,16 +69,16 @@ $.fn.unoslider = function(options) {
             }  else if(options.mode == 'shift') {
                 shiftTransition();
             }
-        }
+        };
 
         var changeControlElement = function() {
             controls.removeClass('active');
             controls.eq(currentIndex).addClass('active');
-        }
+        };
         var changeNaviElement = function() {
             naviItems.removeClass('active');
             naviItems.eq(currentIndex).addClass('active');
-        }
+        };
         
         var pause = function() {
             clearInterval(intervalId);
@@ -87,7 +87,7 @@ $.fn.unoslider = function(options) {
                     startLoop();
                 }, options.delay);
             }
-        }
+        };
 
         var clickControlHandler = function() {
             controls.find('a').on('click', function(event) {
@@ -97,7 +97,7 @@ $.fn.unoslider = function(options) {
                 goToNextPane();
                 pause();
             });
-        }
+        };
 
         var fadeTransition = function() {
             currentPane = panes.eq(currentIndex);
@@ -107,15 +107,15 @@ $.fn.unoslider = function(options) {
                 panes.hide();
                 currentPane.show().animate({opacity: 1}, 600);
             }, 300); 
-        }
+        };
 
         var shiftTransition = function() {
-            if(currentIndex == 0) {
+            if(currentIndex === 0) {
                 divRibbon.animate({left: '0px'}, 300);
                 return;
             }
             divRibbon.animate({left: - paneWidth * currentIndex}, 300);
-        }
+        };
 
         var prepareShiftLayout = function() {
             
@@ -148,7 +148,7 @@ $.fn.unoslider = function(options) {
                 .appendTo(divRibbon);
             });
             panes.first().clone().appendTo(divRibbon);
-        }   
+        };
         // end prepareShiftLayout
 
         var createNavigation = function() {
@@ -171,24 +171,24 @@ $.fn.unoslider = function(options) {
                 goToNextPane();
                 pause();
             });
-        }   
+        };
 
         var calculateSizes = function() {
             panes.first().clone().css({display: 'block', opacity: '1'});
             paneWidth = panes.first().width();
             paneHeight = panes.first().height();
-        }
+        };
 
         var startLoop = function() {
             clearInterval(intervalId);
             intervalId = setInterval(function() {
                 next();
             }, options.pause);
-        }
+        };
 
         init();
 
     });
 
-  } 
+  };
 })(jQuery);
