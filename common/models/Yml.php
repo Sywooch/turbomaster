@@ -118,9 +118,9 @@ class Yml
 
         $sql = Product::queryProductFull()
             ->andWhere([
-                'state' => Product::STATE_ACTIVE,
-                'type' => Product::TYPE_NEW,
-                'category_id' => Category::CAR,
+                'product.state' => Product::STATE_ACTIVE,
+                'product.type' => Product::TYPE_NEW,
+                'category.id' => Category::CAR,
                 ])
             ->andWhere('price > 0');
 
@@ -136,7 +136,7 @@ class Yml
 
         foreach($products as $p) {
             
-            if(empty($p['price'])) {
+            if(empty($p['price']) && empty($p['brand_alias']) && empty($p['model_alias']) && empty($p['partnumber'])) {
                 continue;
             }
 
