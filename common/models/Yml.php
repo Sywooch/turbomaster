@@ -112,13 +112,18 @@ class Yml
     private function renderProducts() {
         
         $params = $this->getParams();
-        $products = Product::queryProductFull()
-            ->where([
-                'is_yml' => 1,
+
+        $countIsYml = Product::find()->select('id')->where(['is_yml' => 1])->count();
+
+        $sql = Product::queryProductFull()
+            ->andWhere([
                 'state' => Product::STATE_ACTIVE,
-                ])
-            ->asArray()
-            ->all();
+                'type' => Product::TYPE_NEW,
+                ]);
+        if($countIsYml > 0) {
+            $sql->andWhere(['is_yml' => 1]);
+        }
+        $products = $sql->asArray()->all();
         
         $this->write('<offers>');
 
