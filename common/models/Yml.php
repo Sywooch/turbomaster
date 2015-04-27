@@ -118,9 +118,9 @@ class Yml
 
         $sql = Product::queryProductFull()
             ->andWhere([
-                'product.state' => Product::STATE_ACTIVE,
-                'product.type' => Product::TYPE_NEW,
-                'product.category_id' => Category::CAR,
+                'state' => Product::STATE_ACTIVE,
+                'type' => Product::TYPE_NEW,
+                'category_id' => Category::CAR,
                 ])
             ->andWhere('price > 0');
 
