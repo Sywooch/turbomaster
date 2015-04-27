@@ -119,7 +119,9 @@ class Yml
             ->andWhere([
                 'state' => Product::STATE_ACTIVE,
                 'type' => Product::TYPE_NEW,
-                ]);
+                ])
+            ->andWhere('price > 0');
+
         if($countIsYml > 0) {
             $sql->andWhere(['is_yml' => 1]);
         }
