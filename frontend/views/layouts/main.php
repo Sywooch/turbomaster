@@ -14,6 +14,8 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
+    <?= Html::cssFile('@web/css/style.min.css?v=' . filemtime(Yii::getAlias('@webroot/css/style.min.css'))) ?>
+
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">   
@@ -28,9 +30,12 @@ AppAsset::register($this);
         <?= $content ?>
         <?= $this->render('_footer'); ?>
         <?= $this->render('_counts'); ?>
+
+        <?php // echo Html::jsFile('@web/js/jquery.min.js') ?>
+        <?= Html::jsFile('@web/js/scripts.min.js?v=' . filemtime(Yii::getAlias('@webroot/js/scripts.min.js'))) ?>
     <?php $this->endBody() ?>
 
-<script type="text/javascript">document.write('<script type="text/javascript" charset="utf-8" async="true" id="onicon_loader" src="http://cp.onicon.ru/js/simple_loader.js?site_id=5530b5442866886c5f8b4571&srv=1&' + (new Date).getTime() + '"></scr' + 'ipt>');</script>
+    <script type="text/javascript">document.write('<script type="text/javascript" charset="utf-8" async="true" id="onicon_loader" src="http://cp.onicon.ru/js/simple_loader.js?site_id=5530b5442866886c5f8b4571&srv=1&' + (new Date).getTime() + '"></scr' + 'ipt>');</script>
 </body>
 </html>
 <?php $this->endPage() ?>

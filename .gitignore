@@ -5,6 +5,8 @@ frontend/web/photo/*
 frontend/web/yml/*
 backend/web/excel/*
 
+/node_modules
+
 # phpstorm, netbeans, zend studio for eclipse project files
 .idea
 nbproject
