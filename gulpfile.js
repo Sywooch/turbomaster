@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     myth = require('gulp-myth'),
     minifyCss = require('gulp-minify-css'),
+    imagemin = require('gulp-imagemin'),
     notify = require('gulp-notify'),
 
     fr_js_dir = 'frontend/web/js/',
@@ -56,6 +57,11 @@ gulp.task('css', function () {
         .pipe(notify({ message: 'Concat and Minifying CSS files'}));
 });
 
+gulp.task('images', function() {
+    gulp.src('frontend/web/images/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('frontend/web/images/imagemin'));
+});
 
 
 gulp.task('watch', function() {
@@ -63,5 +69,5 @@ gulp.task('watch', function() {
     gulp.watch(fr_css, ['css']);
 });
 
-// gulp.task('default', ['js', 'watch']);
+
 gulp.task('default', ['watch']);
