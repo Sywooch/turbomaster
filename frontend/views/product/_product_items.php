@@ -11,7 +11,7 @@ if($analogs) {
 <h3 style="margin: 30px 0 10px 0; color: #888;">На складе:</h3>
 
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table table-striped" style="border-bottom: 2px solid #bbb;">
         <thead>
             <tr class="danger-head">
                 <th>Наименование турбины</th>

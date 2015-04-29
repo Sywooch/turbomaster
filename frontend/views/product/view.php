@@ -18,7 +18,7 @@ $isWarning = false;
     
     <div id="print-label" class="visible-lg visible-md">
         <a onclick="window.print(); return false;" href="#">
-            <div class="fa fa-print" title="Распечатать страницу"></div>
+            <div class="fa fa-print" style="color: #999;" title="Распечатать страницу"></div>
         </a>
     </div>
 

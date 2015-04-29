@@ -623,12 +623,14 @@ tr.gross > td {
 }
 
 .danger-head th {
-    background: #f2dede;
+    /*background: #f2dede;*/
+    background: #ddd;
     font-weight: normal;
 }
 
 #product-card-table {
-    border: 1px solid #ddd;
+    background: #eee;
+    border: 1px solid #bbb;
 }
 
 table.matroska td {
@@ -641,6 +643,10 @@ table.matroska tr:first-child td {
 
 table.matroska tr:last-child td {
     padding-bottom: 8px!important;
+}
+
+#photo-rotator  {  
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5); 
 }
 
 #photo-rotator .pane-item {
@@ -1072,12 +1078,12 @@ ul.uno-navi li a {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ce6967;
+    background: #f0f0f0;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 ul.uno-navi li.active a {
-    background: #f0f0f0;
+    background: #ce6967;
 }
 /* popup elements */
 
