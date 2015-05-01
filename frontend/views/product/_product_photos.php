@@ -22,10 +22,12 @@ use yii\helpers\CommonHelper;
             $imgSrc = CommonHelper::getImageSrc('/photo/product/default/240/' .$product['manufacturer_alias'] .'.jpg');
 
             if($imgSrc) {
-                echo '<div class="product-photo">' 
+                echo '
+                <div class="product-photo">
+                    <div>' 
                     .Html::img($imgSrc, ['alt' => $product['name']]) 
-                    .'<div class="attention">Внимание! На фотографии представлен образец оригинальной турбины ' .$product['manufacturer_name'] .', НЕ идентичный данному товару.
-                    </div>
+                    .'</div>
+                    <div class="attention">Внимание! На фотографии представлен образец оригинальной турбины ' .$product['manufacturer_name'] .', <br>НЕ идентичный данному товару.</div>
                 </div>';
             }
         }
