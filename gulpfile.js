@@ -2,10 +2,10 @@
 var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    myth = require('gulp-myth'),
     minifyCss = require('gulp-minify-css'),
-    imagemin = require('gulp-imagemin'),
-    notify = require('gulp-notify'),
+    // myth = require('gulp-myth'),
+    // imagemin = require('gulp-imagemin'),
+    // notify = require('gulp-notify'),
 
     fr_js_dir = 'frontend/web/js/',
     fr_js = [
@@ -43,25 +43,25 @@ gulp.task('js', function () {
         .src(fr_js)
         .pipe(concat(fr_js_ready_name))
         .pipe(uglify())
-        .pipe(gulp.dest(fr_js_dest))
-        .pipe(notify({ message: 'Concat and Minifying JavaScript files'}));
+        .pipe(gulp.dest(fr_js_dest));
+        // .pipe(notify({ message: 'Concat and Minifying JavaScript files'}));
 });
 
 gulp.task('css', function () {
     return gulp
         .src(fr_css)
         .pipe(concat(fr_css_ready_name))
-        .pipe(myth())
         .pipe(minifyCss())
-        .pipe(gulp.dest(fr_css_dest))
-        .pipe(notify({ message: 'Concat and Minifying CSS files'}));
+        .pipe(gulp.dest(fr_css_dest));
+        // .pipe(myth())
+        // .pipe(notify({ message: 'Concat and Minifying CSS files'}));
 });
 
-gulp.task('images', function() {
-    gulp.src('frontend/web/images/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest('frontend/web/images/imagemin'));
-});
+// gulp.task('images', function() {
+//     gulp.src('frontend/web/images/*')
+//         .pipe(imagemin())
+//         .pipe(gulp.dest('frontend/web/images/imagemin'));
+// });
 
 
 gulp.task('watch', function() {
