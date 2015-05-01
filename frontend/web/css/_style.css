@@ -624,8 +624,8 @@ tr.gross > td {
 }
 
 .danger-head th {
-    /*background: #f2dede;*/
-    background: #ddd;
+    background: #f2dede;
+    /*background: #ddd;*/ 
     font-weight: normal;
 }
 
