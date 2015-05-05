@@ -28,7 +28,7 @@ $modelList = ($brand_id) ? ArrayHelper::map(Model::listByBrandId($brand_id), 'id
         </div>
         <div class="form-group">
             <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-            <input type="text" value="" placeholder="Введите номер производителя или ОЕM-код" class="turbosearch ui-autocomplete-input" id="input-partnumber" name="partnumber" autocomplete="off">
+            <input type="text" value="" placeholder="Артикул, ОЕM-номер, модель авто, двигателя" class="turbosearch ui-autocomplete-input" id="input-partnumber" name="partnumber" autocomplete="off">
         </div>
 
         <div style="margin: 20px 0 0 0;" class="form-group">

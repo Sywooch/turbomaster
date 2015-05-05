@@ -144,7 +144,7 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Гарантия', ['site/static', 'view' => 'warranty']) ?></li>    
                         <li><?= Html::a('Отзывы', ['opinion/index']) ?></li>    
                         <li><a href="/quality-turbines">Сертификаты турбин</a></li>
-                        <li><?= Html::a('Карта продаж', ['#']) ?></li>    
+                        <li><?= Html::a('Карта продаж', ['site/static', 'view' => 'sales-map']) ?></li>
                     </ul>
                 </li><!-- /. Покупка -->
 
@@ -157,6 +157,7 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Вакансии', ['site/static', 'view' => 'vacancy']) ?></li>
                         <li><?= Html::a('Сотрудничество', ['site/static', 'view' => 'wholesale']) ?></li>
                         <li><?= Html::a('Фотогалерея', ['site/static', 'view' => 'photogallery']) ?></li>
+                        <li><a href="/articles/news">Новости</a></li>
                     </ul>
                 </li><!-- /. О компании -->
 
