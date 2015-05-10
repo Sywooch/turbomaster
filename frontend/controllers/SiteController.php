@@ -47,7 +47,7 @@ class SiteController extends Controller
         $populars = Popular::getProductList();
         $news = Article::listForMainpage(3);
         $facts = Fact::find()->orderBy('RAND()')->asArray()->all();
-        $opinions = Opinion::find()->where(['approved' => 1])->orderBy('RAND()')->limit(10)->asArray()->all();
+        $opinions = Opinion::find()->where(['approved' => 1])->orderBy('created_at DESC')->limit(10)->asArray()->all();
 
         return $this->render('index', compact('sweets', 'populars', 'news', 'facts', 'opinions'));
     }
