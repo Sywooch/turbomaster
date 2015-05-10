@@ -8,7 +8,7 @@ if($count > 0 ) {
         $class = ($i == 0) ? ' active' : '';
         echo '<div class="pane-item' .$class .'">';
 
-        for($k = 0; $k < 2; $k++) {
+        for($k = 0; $k < 3; $k++) {
             $index = $i * 2 + $k;
             ?>
             <blockquote<?php if($k == 1) echo ' style="margin-top: 30px;"'; ?>><?= $facts[$index]['content'] ?></blockquote>

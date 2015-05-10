@@ -16,6 +16,7 @@ use yii\helpers\Html;
                         <li class=""><a href="#">ТурбоХроника</a></li>
                         <li class=""><a href="#">ТурбоФакты</a></li>
                         <li class=""><a href="#">ТурбоПредложения</a></li>
+                        <li class=""><a href="#">ТурбоОтзывы</a></li>
                     </ul>
                 </div>
             </div><!-- /.col-md-4 -->
@@ -169,14 +170,20 @@ use yii\helpers\Html;
                     </div>
                     
                     <div id="pane6" class="pane-item" style="position: relative;">
-                       <div id="paneBlockquote">
+                       <div class="blockquote-rotator">
                             <?= $this->render('_facts', ['facts' => $facts]) ?>
                         </div>
                     </div>
 
                     <div id="pane7" class="pane-item" style="position: relative;">
-                       <div id="paneBlockquote">
+                       <div>
                             <?= $this->render('_sweet', ['sweets' => $sweets]) ?>
+                        </div>
+                    </div>
+
+                    <div id="pane8" class="pane-item" style="position: relative;">
+                       <div class="blockquote-rotator">
+                            <?= $this->render('_opinions', ['items' => $opinions]) ?>
                         </div>
                     </div>
 

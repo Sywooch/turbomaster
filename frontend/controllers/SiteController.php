@@ -9,6 +9,7 @@ use common\models\Category;
 use common\models\Manufacturer;
 use common\models\Article;
 use common\models\Fact;
+use common\models\Opinion;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -46,8 +47,9 @@ class SiteController extends Controller
         $populars = Popular::getProductList();
         $news = Article::listForMainpage(3);
         $facts = Fact::find()->orderBy('RAND()')->asArray()->all();
+        $opinions = Opinion::find()->where(['approved' => 1])->orderBy('RAND()')->limit(10)->asArray()->all();
 
-        return $this->render('index', compact('sweets', 'populars', 'news', 'facts'));
+        return $this->render('index', compact('sweets', 'populars', 'news', 'facts', 'opinions'));
     }
 
 

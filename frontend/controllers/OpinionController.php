@@ -47,7 +47,7 @@ class OpinionController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             
-            // $this->sendEmails($model);
+            $this->sendEmails($model);
             return ['state' => 'success'];
         } 
         else {
@@ -57,24 +57,23 @@ class OpinionController extends Controller
 
 
     private function sendEmails($model)  
-    {   
-        $subject = ($model->type == Question::TYPE_COMMON_QUESTION) ? 'Новый вопрос о товаре' : 'Новый запрос цены товара';
-        date_default_timezone_set("Europe/Moscow");
-        $subject .= ' - ' .date("d.m.Y H:i");    
+    {
+        $messages = [];
+        $subject =  'Новый отзыв о магазине Tурбомастер';
 
         foreach(Yii::$app->params['adminShopEmails'] as $emailTo) {
-            Yii::$app->mail
-                ->compose(
-                    [
-                        'html' => 'question-html',
-                        'text' => 'question-text',
+            $messages[] = Yii::$app->mail
+                ->compose([
+                        'text' => 'opinion-text',
                     ], 
-                    ['question' => $model])
+                    [
+                        'model' => $model,
+                    ])
                 ->setFrom(Yii::$app->params['informatorEmail'])
                 ->setTo($emailTo)
-                ->setSubject($subject)
-                ->send(); 
+                ->setSubject($subject); 
         }
+        Yii::$app->mail->sendMultiple($messages);
     }
 
 

@@ -324,26 +324,18 @@ ul.dropdown-menu.extended .fa-hover a .fa {
     font-weight: bold;
 }
 /* MAIN PAGE */
-/*#paneBlockquote */
 
 blockquote {
-    /*border-left: 6px solid #ddd;*/
-    
     border-left: 0;
-    font: 16px/1.2em "Open Sans", sans-serif;
+    font: 15px/1.2em "Open Sans", sans-serif;
     color: #555;
-    /*margin-top: 40px;*/
-    
     padding: 10px 14px;
 }
 
 blockquote:before {
     color: #d9534f;
-    /*font: bold italic 22px Arial,sans-serif;*/
-    
     content: "\201C";
     /* Непечатаемый символ слева */
-    
     font-size: 3em;
     line-height: 0.1em;
     margin-right: 0.2em;
@@ -395,6 +387,7 @@ ul.tabs-stack {
 
 #paneBox {
     position: relative;
+    margin-top: 20px;
 }
 
 .pane-item {
