@@ -349,26 +349,24 @@ $(document).ready(function() {
     });
 
 
-    $("#opinion_submit").on("click", function (event) {
+    $("#opinion-submit").on("click", function (event) {
         event.preventDefault();
-        var hasErrors = false;
-        var $btn = $(this);
-        var $form = $btn.parents('form');
+        
+        var hasErrors = false,
+            $btn = $(this),
+            $form = $btn.parents('form'),
+            $popup = $('#opinion-popup-wrap .popup-inner'),
+            $h3 = $popup.children('h3');
 
         $form.find('input[type=text]:not("#input-company"), textarea').each(function(){
-            if($(this).val() === 0) {
+            if($(this).val().length === 0) {
                 hasErrors = true;
             }
         });    
         if(hasErrors) {
-            alert('Заполните все поля');
+             $h3.text('Заполните все поля');
         }  else {
-        
             $btn.prop('disabled', true);
-            // $form.submit();
-            var $popup = $('#opinion-popup-wrap .popup-inner');
-            var $h3    = $popup.children('h3');
-
             $.ajax({
                 url: "/opinion/create",
                 type: "post",

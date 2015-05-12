@@ -16,21 +16,21 @@ use common\models\Opinion;
 
                 $form = ActiveForm::begin([
                     'action' => Url::to(['opinion/create']),
-                    'options' => ['id' => 'question_form'],
-                    // 'enableAjaxValidation' => false,
-                    // 'enableClientValidation' => true,
+                    'options' => ['id' => 'opinion-form'],
+                    'enableAjaxValidation' => false,
+                    'enableClientValidation' => false,
                     ]); ?>
 
                     <?= $form->field($model, 'name')->textInput(['placeholder' => 'Имя']) ?>
                     <?= $form->field($model, 'email')->textInput(['placeholder' => 'E-mail']) ?>
                     <?= $form->field($model, 'city')->textInput(['placeholder' => 'Город']) ?>
                     <?= $form->field($model, 'company')->textInput(['placeholder' => 'Компания (не обязательно)', 'id' => 'input-company']) ?>
-                    <?= $form->field($model, 'content')->textArea(['placeholder' => 'Текст отзыва']) ?>
+                    <?= $form->field($model, 'content')->textArea(['placeholder' => 'Текст отзыва', 'style' => 'height: 190px;']) ?>
                     
                     <?= $form->field($model, 'approved')->hiddenInput(['value' => 0]) ?>
 
                     <div class="form-group">
-                        <?= Html::submitButton('Отправить', ['id' => 'opinion_submit', 'class' => 'button', 'style' => 'margin: 10px 0 10px 120px;']) ?>
+                        <?= Html::submitButton('Отправить', ['id' => 'opinion-submit', 'class' => 'btn btn-danger btn-lg', 'style' => 'margin: 10px 0 10px 120px;']) ?>
                     </div>
 
                 <?php ActiveForm::end(); ?>
