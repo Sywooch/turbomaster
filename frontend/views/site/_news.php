@@ -24,7 +24,7 @@ if(count($news) > 0 ) { ?>
         </li>
     <?php } ?>
     </ul>
-    <div class="link-dotted" style="position: absolute; bottom: 0px; right: 10px;">
+    <div class="link-dotted" style="position: absolute; bottom: -10px; right: 10px;">
         <?= Html::a('Все новости', 'articles/news'); ?>
     </div>
 </div>

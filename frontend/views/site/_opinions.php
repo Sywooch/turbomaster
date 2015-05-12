@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 
 $count = count($items);
 $loops = floor($count/2); 
@@ -20,3 +21,7 @@ if($count > 0 ) {
         echo '</div>';
     } 
 }
+?>
+    <div class="link-dotted" style="position: absolute; bottom: -20px; right: 20px;">
+        <?= Html::a('Все отзывы', 'feedback'); ?>
+    </div>
