@@ -1,11 +1,23 @@
 $(document).ready(function() {
 
+    $('.stylerize').styler(); 
 
     $('#paneBox').unoslider( {outControls: true, outControlsBox: '#controls-wrap', pause: 10000});
     $('.blockquote-rotator').unoslider( {pause: 12000});
     $('#photo-rotator').unoslider( {mode: 'shift', createNavigation: true});
 
-    $('.stylerize').styler(); 
+
+    function promoSpin(el, min, max) {
+        min += 3;
+        if (min < max) {
+            el.text(min);
+            setTimeout(function() {
+                promoSpin(el, min, max);
+            }, 50);
+        }
+    }
+    promoSpin($('#promo-count-turbine'), 3251, 3456);
+
 
     $("#select-cascade-brand").change(function(e) {
         $.get('/brand/modellist', {'id': this.value }, 
@@ -25,7 +37,6 @@ $(document).ready(function() {
     });  
 
     $( "#input-partnumber" ).autocomplete({
-
 
         source: function (request, response) {
             var name,

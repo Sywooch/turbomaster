@@ -32,7 +32,7 @@ use yii\helpers\Html;
                                     <i class="fa fa-tags"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <h4>3211 &nbsp; моделей турбин</h4>
+                                    <h4><span id="promo-count-turbine">3211</span>&nbsp; моделей турбин</h4>
                                     <p>В наличии на складе в Москве</p>
                                 </div>                          
                             </div>
