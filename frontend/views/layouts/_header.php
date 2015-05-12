@@ -38,8 +38,7 @@ use yii\helpers\Html;
                     <li>Москва, Волгоградский проспект,<br>д. 32, к. 24, офис 208 &nbsp;
                     <a href="/contact#map-turbomaster" style="text-decoration: underline;"> на карте</a>
                     </li>
-                    <li style="margin-top: 2px;">пн-пт 8:00-19:00<br>сб 10:00-14:00</li>
-                    <li><a href="/article/rabota-v-majskie-prazdniki" style="text-decoration: underline;">График работы в праздники</a></li>
+                    <li style="margin-top: 10px;">пн-пт 8:00-19:00<br>сб 10:00-14:00</li>
                 </ul>
             </div>
         </div>
