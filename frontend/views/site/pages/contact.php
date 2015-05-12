@@ -27,11 +27,13 @@ $this->registerMetaTag([
 
             <h2>Офис «ТурбоМастер»</h2>
 
-            <p><strong>Адрес: </strong>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 208</p>
-            <p><strong>Телефон:</strong> +7 (499) 650-7645</p>
-            <p><strong>Мобильный телефон:</strong> +7 (963) 777-0949</p>
-            <p><strong>Часы работы:</strong><br> пн-пт: с 8:00 до 19:00<br>сб: с 10:00 до 14:00</p>
-            <p>E-mail: <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a></p>
+            <div class="service-contact">
+                <p><strong>Адрес: </strong>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 208</p>
+                <p><strong>Телефон:</strong> +7 (499) 650-7645</p>
+                <p><strong>Мобильный телефон:</strong> +7 (963) 777-0949</p>
+                <p><strong>Часы работы:</strong><br> пн-пт: с 8:00 до 19:00<br>сб: с 10:00 до 14:00</p>
+                <p>E-mail: <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a></p>
+            </div>
            
 
         <a name="map-turbomaster"></a>
@@ -57,7 +59,7 @@ $this->registerMetaTag([
     </div><!-- /.row -->
 </div><!-- /.container -->
 
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <h3 style="text-align: center; font-size: 21px; color: #888;">Офис &laquo;ТурбоМастер&raquo; на карте &laquo;Яндекса&raquo;</h3>
 
@@ -66,19 +68,18 @@ $this->registerMetaTag([
             <div id="map-office" style="width: 100%; height: 400px;"></div>
         </div>
            
-        <div class="row" style="background: #f0f0f0; border-top: 3px solid #ddd; ">
-            <div class="col-md-4 col-md-offset-4" style="padding-top: 40px; padding-bottom: 10px;">
+        <div class="row" style="margin-top: 40px; border-top: 3px solid #ddd; ">
+            <div class="col-md-6" style="padding-top: 20px; padding-bottom: 10px;">
                 <a name="map-turboservice"></a>
-                <h2 style="padding-left: 40px;">&laquo;ТурбоСервис&raquo;</h2>
-                <br>
-                <p><b>Адрес сервиса:</b> г. Реутов, ул. Железнодорожная д.17А</p>
-                <p><b>Телефон:</b> +7 (499) 391-5875</p>
-                <p><b>Часы работы:</b> ежедневно с 9:00 до 21:00</p>
+                <h2>&laquo;ТурбоСервис&raquo;</h2>
+                
+                 <?= $this->render('/layouts/_service_contact', ['hideLink' => true]) ?>
             </div>
         </div>
 
-        <div class="row" style="background: #f0f0f0;">
-            <h3 style="text-align: center; font-size: 21px; color: #888;">Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
+        <div class="row" style="margin-bottom: 30px;">
+
+            <h3 style="text-align: center; font-size: 21px; color: #888; ">Проезд в &laquo;ТурбоСервис&raquo; с шоссе Энтузиастов</h3>
             <div id="map-service-enthusiast" style="width: 100%; height: 400px;"></div>
             
             <h3 style="text-align: center; font-size: 21px; color: #888; padding-top: 20px;">Проезд в &laquo;ТурбоСервис&raquo; с Носовихинского шоссе</h3>
