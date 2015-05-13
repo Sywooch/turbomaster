@@ -7,16 +7,27 @@ $(document).ready(function() {
     $('#photo-rotator').unoslider( {mode: 'shift', createNavigation: true});
 
 
-    function promoSpin(el, min, max) {
-        min += 3;
+    function promoSpin(el, min, max, increase, delay, callback) {
+        increase = increase || 3;
+        delay = delay || 50;
+        min += increase;
         if (min < max) {
             el.text(min);
             setTimeout(function() {
-                promoSpin(el, min, max);
-            }, 50);
+                promoSpin(el, min, max, increase, delay, callback);
+            }, delay);
+        }  else {
+            if(callback) {
+                callback();
+            }          
         }
     }
-    promoSpin($('#promo-count-turbine'), 3251, 3456);
+    
+    var $spinTurbine = $('#promo-count-turbine'),
+        $spinWarranty = $('#promo-count-warranty');
+
+    promoSpin($spinTurbine, 3251, 3459, 3, 50, function () { $spinTurbine.css('color', '#555'); });
+    promoSpin($spinWarranty, 4, 13, 1, 200, function () { $spinWarranty.css('color', '#555'); });
 
 
     $("#select-cascade-brand").change(function(e) {

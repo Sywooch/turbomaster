@@ -32,7 +32,7 @@ use yii\helpers\Html;
                                     <i class="fa fa-tags"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <h4><span id="promo-count-turbine">3211</span>&nbsp; моделей турбин</h4>
+                                    <h4><span id="promo-count-turbine" style="color: #d9534f;">3211</span>&nbsp; моделей турбин</h4>
                                     <p>В наличии на складе в Москве</p>
                                 </div>                          
                             </div>
@@ -41,7 +41,7 @@ use yii\helpers\Html;
                                     <i class="fa fa-thumbs-up"></i>
                                 </div>
                                 <div class="feature-box-content">
-                                    <h4>12 &nbsp;месяцев гарантии</h4>
+                                    <h4><span id="promo-count-warranty" style="display: inline-block; width: 16px; text-align: right; color: #d9534f;">6</span> &nbsp;месяцев гарантии</h4>
                                     <p>На все новые турбины</p>
                                 </div>                          
                             </div>
@@ -53,7 +53,7 @@ use yii\helpers\Html;
                                 </div>
                                 <div class="feature-box-content">
                                     <h4>География продаж</h4>
-                                    <p>Мы отправляем турбины во все регионы России и страны СНГ</p>
+                                    <p>Мы отправляем турбины во все регионы России и страны СНГ. <a href="/sales-map" class="link-dotted">Карта продаж</a></p>
                                 </div>                          
                             </div>
                             <div class="col-md-6"> 
