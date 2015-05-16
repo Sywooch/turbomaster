@@ -116,6 +116,8 @@ class Price extends \yii\db\ActiveRecord
 
         $searchPartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         
+
+        // fix here, possible:    andWhere(['type' => $type])
         $products = Product::find()
             ->where(['partnumber' => $searchPartnumber])
             ->orWhere(['like', 'interchange', $searchPartnumber])
