@@ -116,14 +116,17 @@ class Price extends \yii\db\ActiveRecord
 
         $searchPartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         
+        $sql = Product::find()
+            ->andWhere(['partnumber' => $searchPartnumber]);
+        
+        // отсечь трубины с короткими артикулами
+        // if (strlen($searchPartnumber) > 5) {
+        if ($type == Product::TYPE_NEW) {
+            $sql->orWhere(['like', 'interchange', $searchPartnumber]);
+        }
+        $products = $sql->all();
 
-        // fix here, possible:    andWhere(['type' => $type])
-        $products = Product::find()
-            ->where(['partnumber' => $searchPartnumber])
-            ->orWhere(['like', 'interchange', $searchPartnumber])
-            ->all();
-
-        if(!$products) {
+        if (!$products) {
             $this->_notFoundProducts[] = $partnumber;
         
         // для оборотных турбин создать дубликат товара:
@@ -139,11 +142,13 @@ class Price extends \yii\db\ActiveRecord
                 $refurbish->warranty    = '6 мес';
                 $refurbish->price       = $price;
                 $refurbish->save();
+
+                $exsistPriceArray[] = $refurbish->id;
             }
         }  else {  //  update price for exsisting product 
 
             foreach($products as $product) {
-                if($product['partnumber'] == $partnumber) {
+                if($product['partnumber'] == $partnumber && $product['type'] == $type) {
                     $exsistPriceArray[] = $product->id;
                     $product->price = $price;
                     $product->save();

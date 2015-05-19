@@ -40,8 +40,8 @@ class ProductController extends AdminController
 
 
         // for ajax search query -  full query
-        $compact = (Yii::$app->request->isAjax) ? false : true; 
-        $query = Product::queryProductFull($compact);
+        // $compact = (Yii::$app->request->isAjax) ? false : true; 
+        $query = Product::queryProductFull($compact = false);
 
         $getsArray = ['category_id', 'brand_id', 'model_id', 'manufacturer_id', 'type', 'state', 'is_yml'];
         foreach($getsArray as $get) {
