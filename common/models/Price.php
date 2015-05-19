@@ -119,7 +119,6 @@ class Price extends \yii\db\ActiveRecord
         $sql = Product::find()
             ->andWhere(['partnumber' => $searchPartnumber]);
         
-        // отсечь трубины с короткими артикулами
         // if (strlen($searchPartnumber) > 5) {
         if ($type == Product::TYPE_NEW) {
             $sql->orWhere(['like', 'interchange', $searchPartnumber]);
