@@ -108,30 +108,45 @@ class Price extends \yii\db\ActiveRecord
 
     public function populatePrice($partnumber, $type, $price) 
     {   
-        $productProperties = ['manufacturer_id', 'category_id', 'brand_id', 'model_id', 'state', 'name', 'interchange', 'warranty', 'engine', 'volume', 'power', 'date_from', 'date_to'];
+        $productProperties = ['manufacturer_id', 'category_id', 'brand_id', 'model_id', 'state', 'name', 'interchange', 'engine', 'volume', 'power', 'date_from', 'date_to'];
 
         $exsistPriceArray = [];
 
         $type = (!empty($type) && strtolower($type) == 'x') ? Product::TYPE_REFURBISH : Product::TYPE_NEW;
 
-        $searchPartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
+        $preparePartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         
-        $sql = Product::find()
-            ->andWhere(['partnumber' => $searchPartnumber]);
-        
-        // if (strlen($searchPartnumber) > 5) {
-        if ($type == Product::TYPE_NEW) {
-            $sql->orWhere(['like', 'interchange', $searchPartnumber]);
-        }
-        $products = $sql->all();
+        $products = Product::find()
+            ->andWhere(['partnumber' => $preparePartnumber])
+            ->orWhere(['like', 'interchange', $preparePartnumber])
+            ->all();
+
+        // if (strlen($preparePartnumber) > 5) {
+        // if ($type == Product::TYPE_NEW) {
+        //     $sql->orWhere(['like', 'interchange', $preparePartnumber]);
+        // }
+        // $products = $sql->all();
 
         if (!$products) {
             $this->_notFoundProducts[] = $partnumber;
         
-        // для оборотных турбин создать дубликат товара:
+        // для оборотного артикула из прайса создать оборотный дубликат турбины:
         }  elseif ($type == Product::TYPE_REFURBISH) {
 
             foreach($products as $product) {
+
+                $interchangeArray = explode(',', $product->interchange);
+
+                // Проверить артикул оборотной турбины из excel-таблицы 
+                // (без последнего знака 'X')
+                // на точное соответствие с одной из interchange-турбин,
+                // а также убедиться, что найденная турбина новая (не делать
+                // дубликаты оборотных турбин):
+
+                if(!in_array($preparePartnumber, $interchangeArray) && $product->type != Product::TYPE_NEW) {
+                    continue;
+                }
+
                 $refurbish = new Product;
                 foreach ($productProperties as $prop) {
                     $refurbish->{$prop} = $product->{$prop};
@@ -141,18 +156,19 @@ class Price extends \yii\db\ActiveRecord
                 $refurbish->warranty    = '6 мес';
                 $refurbish->price       = $price;
                 $refurbish->save();
-
-                $exsistPriceArray[] = $refurbish->id;
             }
-        }  else {  //  update price for exsisting product 
+
+        // для нового артикула из прайса - обновить цены на найденные новые турбины и аналоги:
+        }  elseif ($type == Product::TYPE_NEW) {
 
             foreach($products as $product) {
-                if($product['partnumber'] == $partnumber && $product['type'] == $type) {
+                if ($product->partnumber == $partnumber && $product->type == $type) {
+                    
                     $exsistPriceArray[] = $product->id;
                     $product->price = $price;
                     $product->save();
 
-                } elseif(!in_array($product->id, $exsistPriceArray)) {
+                } elseif (!in_array($product->id, $exsistPriceArray)) {
                     $product->price = $price;
                     $product->save();
                 }
