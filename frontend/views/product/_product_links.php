@@ -16,21 +16,27 @@ $linkShopModel = $is_turbine ? [
 
 <div class="row">
     <ul class="product-card-links">
-        <div class="col-md-6">
+        <div class="col-md-12">
         <?php 
         if($is_turbine && $name) { ?>
             <li>
-                <?= Html::a('Все турбины для ' .$name, $linkShopModel) ?>
+                <?= Html::a('<i class="fa fa-tags"></i>Все турбины для ' .$name, $linkShopModel) ?>
             </li>
             <li>
-                <a href="/turborepair?name=<?= $name ?>">Ремонтировать турбину для <?= $name ?></a>
+                <a href="/turborepair?name=<?= $name ?>"><i class="fa fa-wrench"></i>Ремонтировать турбину для <?= $name ?></a>
             </li>
-            <li><a href="/turboservice?name=<?= $name ?>"><i class="fa fa-dashboard"></i>Заменить турбину для <?= $name ?></a></li>
+            <li>
+                <a href="/turboservice?name=<?= $name ?>"><i class="fa fa-recycle"></i>Заменить турбину для <?= $name ?></a>
+            </li>
+            <li>
+                <a href="/delivery" style="text-decoration: none;"><i class="fa fa-truck"></i>Турбину для <?= $name ?> <span style="text-decoration: underline;"> доставим БЕСПЛАТНО</span></a>
+            </li>
+            <li>
+                <a href="/diagnostika"><i class="fa fa-life-ring "></i>Узнать, чем болеет турбина для <?= $name ?></a>
+            </li>
         <?php } ?>
         </div>
-        <div class="col-md-6">
-            <li><a href="/turboservice?name=<?= $name ?>"><i class="fa fa-dashboard"></i>Заменить турбину для <?= $name ?></a></li>
-        </div>
+        
     </ul>
 </div>
 

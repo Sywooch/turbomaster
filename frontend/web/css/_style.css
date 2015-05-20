@@ -697,10 +697,11 @@ ul.ask-phone li {
 }
 
 .product-card-links li {
-    margin: 0 0 10px 0;
+    margin: 0 0 14px 0;
+    line-height: 1.1em;
 }
 .product-card-links li a {
-    text-decoration: underline;
+    text-decoration: underline; 
 }
 .product-card-links a i.fa {
     color: #b04340;
