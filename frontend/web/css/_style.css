@@ -690,6 +690,26 @@ ul.ask-phone {
 ul.ask-phone li {
     margin-left: 40px;
 }
+
+.product-card-links {
+    list-style: none;
+    padding: 4px 0 0 0;
+}
+
+.product-card-links li {
+    margin: 0 0 10px 0;
+}
+.product-card-links li a {
+    text-decoration: underline;
+}
+.product-card-links a i.fa {
+    color: #b04340;
+    display: block;
+    float: left;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
 /* ARTICLE */
 
 .article {}

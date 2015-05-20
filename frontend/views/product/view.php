@@ -38,6 +38,7 @@ $isWarning = false;
         <div class="row">
             <div class="col-md-8">
                 <?= $this->render('_product_card', ['product' => $product]) ?>
+                <?= $this->render('_product_links', ['product' => $product]) ?>
             </div>
             <div class="col-md-4">
                 <?= $this->render('_product_photos', ['product' => $product, 'photos' => $photos, 'isWarning' => $isWarning]) ?>
