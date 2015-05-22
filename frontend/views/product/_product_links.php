@@ -32,7 +32,10 @@ $linkShopModel = $is_turbine ? [
                 <a href="/delivery" style="text-decoration: none;"><i class="fa fa-truck"></i>Турбину для <?= $name ?> <span style="text-decoration: underline;"> доставим БЕСПЛАТНО</span></a>
             </li>
             <li>
-                <a href="/diagnostika"><i class="fa fa-life-ring "></i>Узнать, чем болеет турбина для <?= $name ?></a>
+                <a href="/diagnostika"><i class="fa fa-life-ring"></i>Узнать, чем болеет турбина для <?= $name ?></a>
+            </li>
+             <li>
+                <a href="/feedback"><i class="fa fa-cart-arrow-down"></i>Получить скидку на турбину для <?= $name ?></a>
             </li>
         <?php } ?>
         </div>
