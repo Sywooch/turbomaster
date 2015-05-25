@@ -414,7 +414,14 @@ ul.tabs-stack {
 .intro-bg {
     position: relative;
     height: 380px;
+}
+
+.intro-bg.bg-1  {
     background: url("../images/main-intro-f.jpg") no-repeat scroll center -20px / cover rgba(0, 0, 0, 0);
+}
+
+.intro-bg.bg-2  {
+    background: url("../images/main-intro-g.jpg") no-repeat scroll center -20px / cover rgba(0, 0, 0, 0);
 }
 
 @media (max-width: 768px) {
