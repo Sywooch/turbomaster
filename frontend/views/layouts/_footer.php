@@ -49,7 +49,7 @@
                         <h4>О компании:</h4>
                         <div id="copyright" style="margin-top: 14px; font-size: 13px;">
                             "ТурбоМастер" © 2015+<br>
-                            109316, г. Москва, Волгоградский проспект. д.32, к.24, офис 208 <a href="/contact#map-turbomaster">(cхема проезда)</a><br>
+                            109316, г. Москва, Волгоградский проспект. д.32, к.24, офис 206 <a href="/contact#map-turbomaster">(cхема проезда)</a><br>
                             <span class="bold">+7 (499) 650-76-45</span>, 
                             <span class="bold">+7 (963) 777-0949</span><br>
                             <!-- Пн-Пт с 8:00 до 19:00<br> Сб с 10:00 до 14:00<br> -->

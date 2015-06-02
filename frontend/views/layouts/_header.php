@@ -35,7 +35,7 @@ use yii\helpers\Html;
             <div class="col-md-4" id="about">
                 <ul>
                     <li class="strong">ТурбоМагазин:</li>
-                    <li>Москва, Волгоградский проспект,<br>д. 32, к. 24, офис 208 &nbsp;
+                    <li>Москва, Волгоградский проспект,<br>д. 32, к. 24, офис 206 &nbsp;
                     <a href="/contact#map-turbomaster" style="text-decoration: underline;"> на карте</a>
                     </li>
                     <li style="margin-top: 10px;">пн-пт 8:00-19:00<br>сб 10:00-14:00</li>
