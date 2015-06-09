@@ -30,7 +30,29 @@ $isWarning = false;
     </section>
 
     <h1><?= $product['name'] ?></h1>
-    
+
+    <section itemtype="http://schema.org/Product" itemscope>
+        <meta itemprop="name" content="<?= $product['name'] ?>" />
+        <meta itemprop="sku" content="<?= $product['partnumber'] ?>" />
+        <div itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="<?= $product['manufacturer_name'] ?>" />
+        </div>
+        <div itemprop="brand" itemscope itemtype="http://schema.org/Brand">
+            <meta itemprop="name" content="<?= $product['manufacturer_name'] ?>" />
+        </div> 
+  
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <meta itemprop="availability" content="http://schema.org/<?= ($product['price'] > 0 ) ? 'InStock' : 'PreOrder' ?>" />
+            <meta itemprop="itemCondition" content="http://schema.org/<?= (in_array($product['type'], [1, 3])) ? 'NewCondition' : 'RefurbishedCondition' ?>" />
+        <?php 
+        if (!empty($product['price'])) { ?>
+            <meta itemprop="price" content="<?= $product['price'] ?>.00" />
+            <meta itemprop="priceCurrency" content="RUB" />
+        <?php } ?>
+        </div>
+    </section><!-- /itemscope -->
+
+
     <section id="item">
         <?= $this->render('_product_items', ['product' => $product, 'analogs' => $analogs]) ?>
 

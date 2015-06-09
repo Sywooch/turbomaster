@@ -344,7 +344,7 @@ class PrepareFirstController extends Controller
 
         foreach($list as $file) {
 
-            $path_parts = pathinfo($file);  !!!!
+            $path_parts = pathinfo($file); 
             $fileName = $path_parts['filename'];
             $fileNameArray = explode('.', $fileName);
 
