@@ -33,10 +33,8 @@ $isWarning = false;
 
     <section itemtype="http://schema.org/Product" itemscope>
         <meta itemprop="name" content="<?= $product['name'] ?>" />
+        <meta itemprop="description" content="<?= $product['name'] ?>" />
         <meta itemprop="sku" content="<?= $product['partnumber'] ?>" />
-        <div itemprop="manufacturer" itemscope itemtype="http://schema.org/Organization">
-            <meta itemprop="name" content="<?= $product['manufacturer_name'] ?>" />
-        </div>
         <div itemprop="brand" itemscope itemtype="http://schema.org/Brand">
             <meta itemprop="name" content="<?= $product['manufacturer_name'] ?>" />
         </div> 
