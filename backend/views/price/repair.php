@@ -39,6 +39,7 @@ $this->registerJsFile('js/price.js', ['depends' => [AdminAsset::className()]]);
         foreach($items as $k => $item) {
 
             $variants = explode('|', $item['price_var']);
+            sort($variants);
             ?>
                 <tr>
                     <td><?= $item['partnumber'] ?></td>
@@ -50,7 +51,7 @@ $this->registerJsFile('js/price.js', ['depends' => [AdminAsset::className()]]);
                     }
                     ?>
                     </td>
-                    <td class="confirmed"><?= CommonHelper::formatPrice($item['price']) ?></td>
+                    <td class="confirmed"><?= CommonHelper::formatPrice($variants[0]) ?></td>
                 </tr>
     <?php   
         } 

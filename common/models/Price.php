@@ -20,6 +20,7 @@ class Price extends \yii\db\ActiveRecord
 
     private $_connection = null;
     private $_notFoundProducts = [];
+    private $_refurbishItems = [];
 
 
     public static function tableName()
@@ -116,16 +117,11 @@ class Price extends \yii\db\ActiveRecord
 
         $preparePartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         
-        $products = Product::find()
+         $products = Product::find()
             ->andWhere(['partnumber' => $preparePartnumber])
             ->orWhere(['like', 'interchange', $preparePartnumber])
+            ->andWhere(['type' => Product::TYPE_NEW])
             ->all();
-
-        // if (strlen($preparePartnumber) > 5) {
-        // if ($type == Product::TYPE_NEW) {
-        //     $sql->orWhere(['like', 'interchange', $preparePartnumber]);
-        // }
-        // $products = $sql->all();
 
         if (!$products) {
             $this->_notFoundProducts[] = $partnumber;
@@ -133,7 +129,7 @@ class Price extends \yii\db\ActiveRecord
         // для оборотного артикула из прайса создать оборотный дубликат турбины:
         }  elseif ($type == Product::TYPE_REFURBISH) {
 
-            foreach($products as $product) {
+            foreach ($products as $product) {
 
                 $interchangeArray = explode(',', $product->interchange);
 
@@ -143,7 +139,9 @@ class Price extends \yii\db\ActiveRecord
                 // а также убедиться, что найденная турбина новая (не делать
                 // дубликаты оборотных турбин):
 
-                if(!in_array($preparePartnumber, $interchangeArray) && $product->type != Product::TYPE_NEW) {
+                $key = md5($product['name'] . $partnumber);
+
+                if (in_array($key, $this->_refurbishItems) || !in_array($preparePartnumber, $interchangeArray) || $product->type != Product::TYPE_NEW) {
                     continue;
                 }
 
@@ -156,6 +154,8 @@ class Price extends \yii\db\ActiveRecord
                 $refurbish->warranty    = '6 мес';
                 $refurbish->price       = $price;
                 $refurbish->save();
+
+                $this->_refurbishItems[] = $key;
             }
 
         // для нового артикула из прайса - обновить цены на найденные новые турбины и аналоги:

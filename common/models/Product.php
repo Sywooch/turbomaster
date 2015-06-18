@@ -238,6 +238,7 @@ class Product extends \yii\db\ActiveRecord
             ->andWhere(['product.partnumber' => $interchangeArray])
 
             // // ->orWhere(['like', 'interchange', $product['partnumber']])
+            ->groupBy('product.partnumber')
             ->asArray()
             ->all();
         return $query;
