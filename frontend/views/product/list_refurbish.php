@@ -53,7 +53,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'каталог ту�
         </div>     
     </section>
 
-    <?php  echo $this->render('_table_refurbish_db', ['products' => $products]); ?>
+    <?php  echo $this->render('_table_refurbish_db', ['products' => $products, 'pages' => $pages]); ?>
 
 </div>
 

@@ -39,7 +39,7 @@ class ProductController extends \yii\web\Controller
                 $view = 'list_brand';
             }
 
-        } elseif($manufacturer_alias) {
+        } elseif ($manufacturer_alias) {
             $products = Product::listByManufacturerAlias($manufacturer_alias);
             $view     = 'list_manufacturer';
 
@@ -64,12 +64,8 @@ class ProductController extends \yii\web\Controller
     public function actionRefurbish() 
     {
         $products = Product::listByType(Product::TYPE_REFURBISH);
-        // if ($products)  {
-        return $this->render( 'list_refurbish', ['products' => $products]);
-
-        // }  else {
-            // throw new NotFoundHttpException();
-        // } 
+        $pages = Product::$pages;
+        return $this->render( 'list_refurbish', compact('products', 'pages'));
     }
 
     public function actionTuning($alias = 'tuning') 

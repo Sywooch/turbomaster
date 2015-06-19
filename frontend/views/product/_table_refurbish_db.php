@@ -19,7 +19,7 @@ use yii\helpers\CommonHelper;
         </thead>
         <tbody>
         <?php
-        foreach($products as $item) {
+        foreach ($products as $item) {
 
             // $nameArray = explode(' ', $item['name']);
             // $name = implode(' ', array_slice($nameArray, 1));
@@ -27,7 +27,7 @@ use yii\helpers\CommonHelper;
 
             $price = (!empty($item['price'])) ? CommonHelper::formatPrice($item['price']) .' руб.' : '<a href="/question/create" class="question-add-link link-dotted" data-question-type="price_request" data-product-id="' .$item['id'] .'">цена по запросу</a>';
 
-            if($item['category_id'] == Category::TUNING) {
+            if ($item['category_id'] == Category::TUNING) {
                 $link = ['product/view', 'tuning_id'=> $item['id']];
             } else {
                 $link = ['product/view', 
@@ -50,9 +50,9 @@ use yii\helpers\CommonHelper;
         </table>
     </div>
     <?php
-    if(isset($pages) && $pages->pageCount > 1) {
-            echo \yii\widgets\LinkPager::widget([
-                                'pagination' => $pages,
-                                ]);
+    if (isset($pages) && $pages->pageCount > 1) {
+        echo \yii\widgets\LinkPager::widget([
+                'pagination' => $pages,
+            ]);
     }
     ?>

@@ -247,10 +247,12 @@ class Product extends \yii\db\ActiveRecord
 
     public static function listByType($type)
     {
-        return static::queryProductFull()
+        $query = static::queryProductFull()
             ->andWhere(['product.type' => $type])
-            ->asArray()
-            ->all();
+            ->asArray();
+
+        $paginator = self::createPaginator($query, 20);
+        return  $query->offset(static::$pages->offset)->limit(static::$pages->limit)->all();
     }  
     
 
