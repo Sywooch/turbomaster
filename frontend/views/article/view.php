@@ -78,4 +78,5 @@ if(isset($category_name))
         </div><!-- /.col-md-3 -->
     </div><!-- /.row -->
 </div><!-- /.container -->
+<?= $this->render('_uptolike_btns') ?>)
 
