@@ -27,7 +27,8 @@ $this->registerMetaTag([
             <p>Сотрудники ТурбоСервиса – мастера с большим опытом работы, специализирующиеся в области сервиса систем турбонаддува. Подтверждением сказанному служит размещенный здесь фоторепортаж. Посмотрите как мы живем и работаем!</p>
 
             <div class="row">
-            <section class="photogallery" style="margin-left: 20px;">
+                <div class="col-md-9">
+                <section class="photogallery">
                 <ul class="gallery-items" style="margin: 20px 0 40px 0px;">
                     <li><a href="/photo/gallery/big/1.jpg" title="За «белым безмолвием» - напряженный ритм Турбосервиса." data-fancybox-group="gallery1"><img width="100" height="100" alt="Снег да снег кругом" src="/photo/gallery/small/1.jpg"></a></li>
                     <li><a href="/photo/gallery/big/83.jpg" title="За внешним спокойствием - напряженная работа ТурбоСервиса" data-fancybox-group="gallery1"><img width="100" height="100" alt="Летний вариант" src="/photo/gallery/small/83.jpg"></a></li>
@@ -43,6 +44,7 @@ $this->registerMetaTag([
                     <li><a href="/photo/gallery/big/11.jpg" title="С таким клапаном рециркуляции &ndash; не жизнь..." data-fancybox-group="gallery1"><img width="100" height="100" alt="Ёршик нужен" src="/photo/gallery/small/11.jpg"></a></li>
                 </ul>
             </section>
+            </div>
             </div>
 
             <div style="margin: 40px 0 0 0;">
