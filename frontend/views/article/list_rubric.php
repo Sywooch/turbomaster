@@ -17,18 +17,23 @@ $this->title = $maincategory_name  .' - Турбомастер.ру';
                   'links' => ['label' => $maincategory_name]]) ?>
             </section>
             
-            <h2><?= $maincategory_name ?></h2>
+            <h1><?= $maincategory_name ?></h1>
 
             <section id="articles-list">
-                <ul>
-                <?php foreach($rubrics as $rubric) { 
-                    ?>
-                    <li>
-                        <p>
-                            <?= Html::a($rubric['name'], ['article/index', 'alias'=>$rubric['alias']]); ?>
-                        </p>
-                    </li>
-            <?php } ?>
+                <ul class="rubric-list">
+                <?php
+
+                if (null !== $add_links = $rubrics[0]['add_links']) {
+
+                    $links = unserialize($add_links);
+                    foreach ($links as $link) { ?>
+                         <li><?= Html::a($link['name'], [$link['url']]) ?></li>
+                    <?php } 
+                }
+
+                foreach ($rubrics as $rubric) { ?>
+                    <li><?= Html::a($rubric['name'], ['article/index', 'alias'=>$rubric['alias']]) ?></li>
+                <?php } ?>
                 </ul>
             </section>
         </div>

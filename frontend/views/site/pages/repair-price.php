@@ -17,7 +17,7 @@ $this->registerMetaTag([
             <section id="breadcrumbs">
                 <?= Breadcrumbs::widget([
                   'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
-                  'links' => [['label' => 'ТурбоРемонт'], ['label' => 'Стоимость ремонта турбины']]]) ?>
+                  'links' => [['label' => 'ТурбоРемонт']]]) ?>
             </section>
     
             <h1>Стоимость ремонта турбины</h1>

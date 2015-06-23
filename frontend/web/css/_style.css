@@ -886,6 +886,17 @@ ul.articles-list .text span {
 #articles-list ul.pagination {
     margin-left: 40px;
 }
+
+/* RUBRIC LIST */
+.rubric-list li {
+    margin: 0 0 20px;
+}
+
+.rubric-list li a {
+   font: 15px/18px Arial sans-serif;
+   border-bottom: 1px dotted #b04340;
+}
+
 /*GALLERY PARTIAL */
 
 ul.gallery-items {

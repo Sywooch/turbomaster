@@ -11,6 +11,7 @@ use Yii;
  * @property string $name
  * @property string $alias
  * @property integer $pos
+ * @property string $add_links
  */
 class Rubric extends \yii\db\ActiveRecord
 {
@@ -25,7 +26,8 @@ class Rubric extends \yii\db\ActiveRecord
     {
         return [
             [['parent_id', 'pos'], 'integer'],
-            [['name', 'alias'], 'string', 'max' => 255]
+            [['name', 'alias'], 'string', 'max' => 255],
+            [['add_links'], 'string']
         ];
     }
 
@@ -38,6 +40,7 @@ class Rubric extends \yii\db\ActiveRecord
             'name' => 'Name',
             'alias' => 'Alias',
             'pos' => 'Pos',
+            'add_links' => 'Add Links',
         ];
     }
 
@@ -45,10 +48,12 @@ class Rubric extends \yii\db\ActiveRecord
     public static function getRubricListByMainRubricAlias($alias)
     {   
         return static::find()
-            ->select('rubric.*, mainrubric.alias as mainrubric_alias, mainrubric.name as mainrubric_name')
+            ->select('rubric.*, mainrubric.alias as mainrubric_alias, mainrubric.name as mainrubric_name, mainrubric.add_links')
+            ->innerJoin('article', 'article.category_id = rubric.id')
             ->leftJoin('rubric AS mainrubric', 
                   'rubric.parent_id = mainrubric.id') 
-            ->andWhere('mainrubric.alias = :alias', [':alias' => $alias])
+            ->andWhere(['mainrubric.alias' => $alias])
+            ->andWhere(['article.state' => 1])
             // ->andWhere('rubric.parent_id > 0')
             ->orderBy('rubric.pos')
             ->asArray()

@@ -12,7 +12,7 @@ if($maincategory_name) {
     $links[] = ['label' => $maincategory_name, 'url' => ['article/rubrics', 'alias' => $items[0]['maincategory_alias']]];
 }
 if($category_name) {
-    $links[] = ['label' => $category_name];
+    // $links[] = ['label' => $category_name];
 }
 ?>
 <div class="container page-style">
@@ -24,6 +24,11 @@ if($category_name) {
                       'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl], 'links' => $links]) ?>
             </section>
             <?php
+
+            if($category_name) {
+                echo "<h1>$category_name</h1>";
+            }
+
             if(count($items) > 0 ) { ?>
             <section style="margin-top: 40px;">
                 <ul class="articles-list">

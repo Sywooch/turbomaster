@@ -56,6 +56,36 @@ class PrepareController extends Controller
     }
     ///////////////////////////////////
 
+
+    public function actionSerializeRubric()
+    {
+        $obj = [
+            [
+                'name' => 'Замена турбины. Специфика',
+                'url' => '/page/turboservice',
+            ],
+            [
+                'name' => 'Бюллетени ТурбоСервиса',
+                'url' => '/page/price',
+            ],
+            [
+                'name' => 'Стоимость замены турбины',
+                'url' => '/articles/bulletins-turboservice',
+            ],
+            [
+                'name' => 'Фоторепортажи ТурбоСервиса',
+                'url' => '/page/turboservice_gallery',
+            ],
+        ];
+
+        $objSerialized = serialize($obj);
+
+        echo $objSerialized; exit;
+    }
+
+
+    ///////////////////////////////////
+
     public function actionReorder_pos_photo_product()
     {   
         $connection = \Yii::$app->db;
