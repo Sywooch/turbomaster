@@ -10,7 +10,7 @@ $this->title = $maincategory_name  .' - Турбомастер.ру';
 
 <div class="container page-style">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <section id="breadcrumbs">
                 <?= Breadcrumbs::widget([
                   'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
