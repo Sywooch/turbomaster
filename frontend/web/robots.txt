@@ -5,6 +5,7 @@ Disallow: /common
 Disallow: /backend
 Disallow: /ask_a_question*
 Disallow: /advanced_search_result*
+Host: turbomaster.ru
 
 User-Agent: Yandex
 Sitemap: http://turbomaster.ru/sitemap.xml
