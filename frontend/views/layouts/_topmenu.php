@@ -161,6 +161,7 @@ use common\models\Manufacturer;
                     </ul>
                 </li><!-- /. О компании -->
 
+                <li><?= Html::a('Контакты', ['site/static', 'view' => 'contact']) ?></li>
                 <li><?= Html::a('Поиск', ['search/index', 'view'=>'about']) ?></li>
             </ul>
         </div><!-- /.navbar-collapse -->
