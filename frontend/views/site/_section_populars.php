@@ -46,7 +46,8 @@ use yii\helpers\CommonHelper;
             </table>
         </div><!-- /.table-responsive -->
 
-        <p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/passenger">каталог турбин</a></p>
+        <p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/passenger">каталог турбин для легковых</a></p>
+        <p class="link-dotted" style="text-align: left;">Открыть полный <a href="/turboshop/trucks">каталог турбин для грузовых</a></p>
     
     </div><!-- /.container -->
 </section>
