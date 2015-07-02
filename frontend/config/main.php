@@ -35,7 +35,7 @@ return [
         
         'urlManager' => [
             'rules'=> [
-                '<view:(about|contact|requisite|vacancy|warranty|delivery|payment|wholesale|turboservice|price|turboservice_gallery|turborepair|repair-price|quality-turbines|diagnostics|expertise|diagnostika|sales-map)>' => 'site/static',  
+                '<view:(about|contact|requisite|vacancy|warranty|delivery|payment|wholesale|turboservice|price|turboservice_gallery|turborepair|repair-price|quality-turbines|diagnostics|expertise|diagnostika|sales-map|partners)>' => 'site/static',  
                 'page/<view>' => 'site/static',  
 
                 'product/<id:\d+>'  => 'product/view',

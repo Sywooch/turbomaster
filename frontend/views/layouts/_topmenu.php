@@ -157,6 +157,7 @@ use common\models\Manufacturer;
                         <li><?= Html::a('Вакансии', ['site/static', 'view' => 'vacancy']) ?></li>
                         <li><?= Html::a('Сотрудничество', ['site/static', 'view' => 'wholesale']) ?></li>
                         <li><?= Html::a('Фотогалерея', ['site/static', 'view' => 'photogallery']) ?></li>
+                        <li><?= Html::a('Наши партнеры', ['site/static', 'view' => 'partners']) ?></li>
                         <li><a href="/articles/news">Новости</a></li>
                     </ul>
                 </li><!-- /. О компании -->
