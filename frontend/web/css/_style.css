@@ -1361,6 +1361,55 @@ ul.social-icons {
 .service-contact p {
     margin-bottom: 4px;
 }
+
+/*popup-down*/
+
+.fixblock {
+    display: none;
+    position: fixed;
+    width: 25%;
+    min-height: 200px;
+    
+    right: 0;
+    bottom: -100%;
+
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    z-index: 2;
+}
+
+.fixblock h4 {
+    position: relative;
+    margin: 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    padding: 6px;
+    text-align: center;
+    background: #b04340;
+    color: #f3f3f3;
+    font-size: 20px;
+}
+
+.fixblock a.fixblock-delete { 
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    color: #e3e3e3;
+    font-size: 15px;
+}
+
+.fixblock .wrap { 
+    padding: 40px 30px;
+}
+
+.fixblock a {
+    color: #444;
+    text-decoration: underline;
+}
+
 /*fancybox*/
 
 .fancybox-title-float-wrap {

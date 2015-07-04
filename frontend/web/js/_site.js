@@ -29,6 +29,12 @@ $(document).ready(function() {
     promoSpin($spinTurbine, 3251, 3459, 3, 50, function () { $spinTurbine.css('color', '#555'); });
     promoSpin($spinWarranty, 4, 13, 1, 200, function () { $spinWarranty.css('color', '#555'); });
 
+    $('.fixblock').delay(10000).show().animate({bottom: 0}, 1000); 
+    $('.fixblock-delete').click(function (event) {
+        event.preventDefault();
+        $('.fixblock').animate({bottom: '-100%'}, 1000); 
+    } );
+
 
     $("#select-cascade-brand").change(function(e) {
         $.get('/brand/modellist', {'id': this.value }, 

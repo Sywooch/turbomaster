@@ -8,6 +8,7 @@ use common\models\Brand;
 use common\models\Model;
 use common\models\Seo;
 use common\models\PhotoProduct;
+use common\models\Link;
 
 class ProductController extends \yii\web\Controller
 {   
@@ -110,10 +111,11 @@ class ProductController extends \yii\web\Controller
         if ($product) {
             $analogs  = Product::findAnalogs($product);
             $photos   = PhotoProduct::findByPartnumberOrInterchange($product);
+            $interestingLink = Link::getRandomInterestingLink();
             $metaTags = Product::createMetaTagsForItem($product);
             $breadcrumbsLinks = Product::createBreadcrumbsLinksForItem($product);
             
-            return $this->render('view', compact('product', 'analogs', 'photos', 'metaTags', 'breadcrumbsLinks'));
+            return $this->render('view', compact('product', 'analogs', 'photos', 'interestingLink', 'metaTags', 'breadcrumbsLinks'));
                 
         } else {
             $this->redirectToListSimilar();

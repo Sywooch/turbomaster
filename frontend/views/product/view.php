@@ -75,6 +75,7 @@ $isWarning = false;
 
 <?= $this->render('/layouts/_form_question'); ?>
 <?= $this->render('/layouts/_form_cart'); ?>
+<?= $this->render('/layouts/_link_interesting', ['link' => $interestingLink]); ?>
 
 
 

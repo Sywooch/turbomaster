@@ -37,6 +37,7 @@ $newOrderCount = Order::find()->where(['state' => Order::STATE_NEW])->count();
             <li><?= HTML::a('Бренды транспорта', ['brand/index']); ?></li>
             <li><?= HTML::a('Бренды турбин', ['manufacturer/index']); ?></li>
             <li><?= HTML::a('Отзывы', ['opinion/index']); ?></li>
+            <li><?= HTML::a('Ссылки', ['link/index']); ?></li>
           </ul>
         </li>
         
