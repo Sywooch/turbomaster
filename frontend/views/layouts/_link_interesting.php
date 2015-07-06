@@ -16,9 +16,23 @@ if ($start && $link) { ?>
             <i class="fa fa-times"></i>
         </a>
     </h4>
+
     <div class="wrap">
-        <?= Html::a($link['title'], '/' .$link['url']) ?>
-    </div>
+        <h5><?= $link['title'] ?></h5>
+        <?php 
+        if (!empty($link['brief'])) { ?>
+            <a href="/<?= $link['url'] ?>">
+                <p><?= $link['brief'] ?></p>
+            </a>
+        <?php } ?>
+        
+        <div class="link-box">
+            <div class="col-md-9" style="text-align: right;"><a href="/<?= $link['url'] ?>">Узнать прямо сейчас</a></div>
+            <div class="col-md-3" style="margin-top: -2px; padding-left: 0; text-align: left;"><a href="/<?= $link['url'] ?>"><i class="fa fa-arrow-circle-right"></i></a></div>
+        </div>
+        
+    </div><!-- /wrap -->
+
 </div>
 
 <?php } ?>
