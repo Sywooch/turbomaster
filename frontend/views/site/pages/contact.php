@@ -29,10 +29,16 @@ $this->registerMetaTag([
 
             <div class="service-contact">
                 <p><strong>Адрес: </strong>109316, г. Москва, Волгоградский проспект, д. 32, корпус 24, оф. 206</p>
+                <br>
+                
                 <p><strong>Телефон:</strong> +7 (499) 650-7645</p>
                 <p><strong>Мобильный телефон:</strong> +7 (963) 777-0949</p>
+                <p><strong>Приложение WhatsApp:</strong> +7 (963) 777-0949</p>
+                <p><strong>E-mail:</strong> <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a></p>
+                
+                <br>
+
                 <p><strong>Часы работы:</strong><br> пн-пт: с 8:00 до 19:00<br>сб: с 10:00 до 14:00</p>
-                <p>E-mail: <a href="mailto:sales@turbomaster.ru">sales@turbomaster.ru</a></p>
             </div>
            
 

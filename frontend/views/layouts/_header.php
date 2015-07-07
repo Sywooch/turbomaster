@@ -14,6 +14,10 @@ use yii\helpers\Html;
                         <span class="icon"><i class="fa fa-phone-square"></i></span>
                         <a class="cellphone tel" title="Мобильный телефон" href="tel:+79637770949">8 (963) 777-09-49</a>
                     </li>
+                     <li>
+                        <span class="icon"><i class="fa fa-whatsapp "></i></span>
+                        <a class="cellphone tel" title="WhatsApp " href="tel:+79637770949">8 (963) 777-09-49</a>
+                    </li>
                     <li>
                         <span style="font-size: 12px;">Бесплатный звонок по России:</span>
                     </li>
@@ -21,7 +25,7 @@ use yii\helpers\Html;
                         <span class="icon"><i class="fa fa-comments"></i></span>
                         <a class="freephone tel" title="Бесплатный звонок по России" href="tel:+78003336623">8 (800) 333-66-23</a>
                     </li>
-                    <li style="margin-top: 6px;">
+                    <li style="margin-top: -1px;">
                         <span class="icon" style="font-size: 13px;"><i class="fa fa-envelope"></i></span>
                         <a href="mailto:sales@turbomaster.ru" class="email">sales@turbomaster.ru</a>
                     </li>
