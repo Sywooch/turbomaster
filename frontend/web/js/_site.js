@@ -29,7 +29,7 @@ $(document).ready(function() {
     promoSpin($spinTurbine, 3251, 3459, 3, 50, function () { $spinTurbine.css('color', '#555'); });
     promoSpin($spinWarranty, 4, 13, 1, 200, function () { $spinWarranty.css('color', '#555'); });
 
-    $('.fixblock').delay(10000).show().animate({right: 0}, 1400);
+    $('.fixblock').delay(12000).show().animate({right: 0}, 1400);
    
     $('.fixblock a.arrow').click(function (event) {
         event.preventDefault();
