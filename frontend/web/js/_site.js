@@ -29,11 +29,22 @@ $(document).ready(function() {
     promoSpin($spinTurbine, 3251, 3459, 3, 50, function () { $spinTurbine.css('color', '#555'); });
     promoSpin($spinWarranty, 4, 13, 1, 200, function () { $spinWarranty.css('color', '#555'); });
 
-    $('.fixblock').delay(2000).show().animate({bottom: 0}, 1000); 
-    $('.fixblock-delete').click(function (event) {
+    $('.fixblock').delay(2000).show().animate({right: 0}, 1400); 
+   
+    $('.fixblock a.arrow').click(function (event) {
         event.preventDefault();
-        $('.fixblock').animate({bottom: '-100%'}, 1000); 
-    } );
+        var $icon = $(this).children('i');
+        
+        if ($icon.hasClass('fa-arrow-circle-right')) {
+            $('.fixblock').animate({right: -210}, 300);
+        }   else {
+            $('.fixblock').animate({right: 0}, 300);
+        }
+
+        $icon.toggleClass('fa-arrow-circle-right fa-arrow-circle-left');
+    });
+
+
 
 
     $("#select-cascade-brand").change(function(e) {

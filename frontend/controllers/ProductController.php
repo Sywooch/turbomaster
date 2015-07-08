@@ -111,11 +111,11 @@ class ProductController extends \yii\web\Controller
         if ($product) {
             $analogs  = Product::findAnalogs($product);
             $photos   = PhotoProduct::findByPartnumberOrInterchange($product);
-            $interestingLink = Link::getRandomInterestingLink();
+            $interestLink = Link::getRandomInterestLink();
             $metaTags = Product::createMetaTagsForItem($product);
             $breadcrumbsLinks = Product::createBreadcrumbsLinksForItem($product);
             
-            return $this->render('view', compact('product', 'analogs', 'photos', 'interestingLink', 'metaTags', 'breadcrumbsLinks'));
+            return $this->render('view', compact('product', 'analogs', 'photos', 'interestLink', 'metaTags', 'breadcrumbsLinks'));
                 
         } else {
             $this->redirectToListSimilar();

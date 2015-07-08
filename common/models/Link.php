@@ -40,7 +40,7 @@ class Link extends \yii\db\ActiveRecord
         ];
     }
 
-    public static function getRandomInterestingLink()
+    public static function getRandomInterestLink()
     {
         return self::find()
             ->orderBy('RAND()')

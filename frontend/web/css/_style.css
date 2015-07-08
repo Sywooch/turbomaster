@@ -1367,67 +1367,32 @@ ul.social-icons {
 .fixblock {
     display: none;
     position: fixed;
-    width: 25%;
-    min-height: 160px;
-    right: 0;
-    bottom: -100%;
-    padding-bottom: 30px;
-
-    background-color: #f0f0f0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 20%;
+    right: -100%;
+    width: 240px;
+    min-height: 180px;
+    background: #fff url("../images/bg-fixbox.png") repeat-y;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
     z-index: 2;
 }
 
-.fixblock h4 {
-    position: relative;
-    margin: 0;
-    padding: 10px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-    text-align: center;
-    background: #b04340;
-    color: #f3f3f3;
-    font-size: 20px;
-}
-
-.fixblock .wrap { 
-    margin: 20px;
-    padding-bottom: 80px;
-    background: #fff;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-}
-
-.fixblock h5 {
-    background: #f2dede;
-    font-size: 18px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-} 
-
+.fixblock .content { position: relative; padding: 10px 10px 30px 50px; }
+.fixblock a.arrow { position: absolute; top: 20px; left: 5px; }
+.fixblock .title  { position: absolute; top: 70px; left: 5px;
+    width: 21px; height: 115px; background: url("../images/fixbox-label.png") no-repeat; }
+.fixblock i.fa { color: #fff; opacity: 0.8; font-size: 24px; }
+.fixblock i.fa:hover { opacity: 1.0; }
+.fixblock h4 { margin-bottom: 20px; background: #f2dede; font-size: 16px; padding: 6px 4px; text-align: center; } 
+.fixblock p { font: 13px/15px Arial,sans-serif;  }
 .fixblock a p { color: #222; }
 .fixblock a:hover p { background: #f5f5f5; }
-.fixblock p { padding: 20px; }
 
-.fixblock a.fixblock-delete { 
-    position: absolute;
-    top: 8px;
-    right: 10px;
-}
-.fixblock a.fixblock-delete i.fa { 
-    font-size: 15px;
-    color: #e3e3e3 !important;
-    opacity: 0.5;
-}
 
-.fixblock .link-box { padding: 20px 0 0 0; }
-.fixblock .link-box a { text-decoration: underline; }
-.fixblock i.fa { color: #b04340; font-size: 28px; }
+
 
 /*fancybox*/
-
 .fancybox-title-float-wrap {
     bottom: 15px;
     left: 0;
