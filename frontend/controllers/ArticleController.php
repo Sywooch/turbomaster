@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Article;
 use common\models\Rubric;
+use common\models\Link;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -58,7 +59,8 @@ class ArticleController extends Controller
         if($article) {
             $photos  = Article::getPhotoArrayByArticleId($article['id']);
             $rubrics = Rubric::getListSubrubricHasPublishArticles();
-            return $this->render('view', compact('article', 'photos', 'rubrics'));
+            $interestLink = Link::getRandomInterestLink();
+            return $this->render('view', compact('article', 'photos', 'rubrics', 'interestLink'));
         
         }  else {
             throw new NotFoundHttpException();
