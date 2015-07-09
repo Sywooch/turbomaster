@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+<yml_catalog date="2015-07-09 21:50">
+<shop>
+<name>ТурбоМастер</name>
+<company>Интернет-магазин &quot;ТурбоМастер&quot;</company>
+<url>http://www.turbomaster.ru</url>
+<email>ol3012@yandex.ru</email>
+<currencies>
+<currency id="RUR" rate="1"/>
+</currencies>
+<categories>
+<category id="1">Турбины (турбокомпрессоры)</category>
+</categories>
+<offers>
+<offer id="269" type="vendor.model"  available="true" bid="1">
+<url>http://www.turbomaster.ru/goods/audi/tt/18559880000</url>
+<price>89800</price>
+<currencyId>RUR</currencyId>
+<categoryId>1</categoryId>
+<market_category>Авто/Запчасти/Двигатель</market_category>
+<vendor>Borg Warner/Schwitzer/3K</vendor>
+<vendorCode>18559880000</vendorCode>
+<model>Турбина Audi TT RS 2.5 TFSI, Ауди ТТ</model>
+<description>Турбина на Audi TT RS 2.5 TFSI / Ауди ТТ, 18559880000 (OEM 07K145701B, 07K145701A, 18559700000), двигатель CEPA R5, 2480 ccm. Турбина Borg Warner/Schwitzer/3K</description>
+<manufacturer_warranty>true</manufacturer_warranty>
+</offer>
+<offer id="289" type="vendor.model"  available="true" bid="2">
+<url>http://www.turbomaster.ru/goods/bmw/135_i/18539880003</url>
+<price>46500</price>
+<currencyId>RUR</currencyId>
+<categoryId>1</categoryId>
+<market_category>Авто/Запчасти/Двигатель</market_category>
+<vendor>Borg Warner/Schwitzer/3K</vendor>
+<vendorCode>18539880003</vendorCode>
+<model>Турбина BMW 135i (E82/E88)</model>
+<description>Турбина на BMW 135i (E82/E88), 18539880003 (OEM 18539880003, 18539700003, 18539880003, 18539700003, 18539880003, 18539700003, 18539880007, 18539700007, 18539880007, 18539700007, 18539880007, 18539700007, 11657588995, 11654577236, 11657636424), двигатель N55B30, 2979 ccm. Турбина Borg Warner/Schwitzer/3K</description>
+<manufacturer_warranty>true</manufacturer_warranty>
+</offer>
+<offer id="329" type="vendor.model"  available="true" bid="3">
+<url>http://www.turbomaster.ru/goods/bmw/335_i/18539880003</url>
+<price>46500</price>
+<currencyId>RUR</currencyId>
+<categoryId>1</categoryId>
+<market_category>Авто/Запчасти/Двигатель</market_category>
+<vendor>Borg Warner/Schwitzer/3K</vendor>
+<vendorCode>18539880003</vendorCode>
+<model>Турбина BMW 335i (E90/E91/E92/E93</model>
+<description>Турбина на BMW 335i (E90/E91/E92/E93, 18539880003 (OEM 18539880003, 18539700003, 18539880003, 18539700003, 18539880003, 18539700003, 18539880007, 18539700007, 18539880007, 18539700007, 18539880007, 18539700007, 11657588995, 11654577236, 11657636424), двигатель N55, 2979 ccm. Турбина Borg Warner/Schwitzer/3K</description>
+<manufacturer_warranty>true</manufacturer_warranty>
+</offer>
+<offer id="413" type="vendor.model"  available="true" bid="4">
+<url>http://www.turbomaster.ru/goods/bmw/x1/18539880003</url>
+<price>46500</price>
+<currencyId>RUR</currencyId>
+<categoryId>1</categoryId>
+<market_category>Авто/Запчасти/Двигатель</market_category>
+<vendor>Borg Warner/Schwitzer/3K</vendor>
+<vendorCode>18539880003</vendorCode>
+<model>Турбина BMW X1 35iX (E84)</model>
+<description>Турбина на BMW X1 35iX (E84), 18539880003 (OEM 18539880003, 18539700003, 18539880003, 18539700003, 18539880003, 18539700003, 18539880007, 18539700007, 18539880007, 18539700007, 18539880007, 18539700007, 11657588995, 11654577236, 11657636424), двигатель N55B30, 2979 ccm. Турбина Borg Warner/Schwitzer/3K</description>
+<manufacturer_warranty>true</manufacturer_warranty>
+</offer>
+</offers>
+</shop>
+</yml_catalog>

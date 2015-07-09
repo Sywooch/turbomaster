@@ -56,7 +56,9 @@ class Price extends \yii\db\ActiveRecord
         Product::deleteAll(['type' => Product::TYPE_REFURBISH ]);
         
         $categoryArray = [Category::CAR, Category::TRUCK, Category::SHIP];
-        Product::updateAll(['price' => 0], ['category_id' => $categoryArray]);
+        Product::updateAll(
+            ['price' => 0, 'is_yml' => 0], 
+            ['category_id' => $categoryArray]);
     }
 
     public function getNotFoundProducts() 
@@ -107,13 +109,15 @@ class Price extends \yii\db\ActiveRecord
 
 
 
-    public function populatePrice($partnumber, $type, $price) 
+    public function populatePrice($partnumber, $type, $price, $is_yml) 
     {   
         $productProperties = ['manufacturer_id', 'category_id', 'brand_id', 'model_id', 'state', 'name', 'interchange', 'engine', 'volume', 'power', 'date_from', 'date_to'];
 
         $exsistPriceArray = [];
 
         $type = (!empty($type) && strtolower($type) == 'x') ? Product::TYPE_REFURBISH : Product::TYPE_NEW;
+
+        $is_yml = (!empty($is_yml) && strtolower($is_yml) == 'y') ? 1 : 0;
 
         $preparePartnumber = ($type == Product::TYPE_REFURBISH && substr($partnumber, -1) == 'X') ? substr($partnumber, 0, -1) : $partnumber;
         
@@ -161,15 +165,17 @@ class Price extends \yii\db\ActiveRecord
         // для нового артикула из прайса - обновить цены на найденные новые турбины и аналоги:
         }  elseif ($type == Product::TYPE_NEW) {
 
-            foreach($products as $product) {
+            foreach ($products as $product) {
                 if ($product->partnumber == $partnumber && $product->type == $type) {
                     
                     $exsistPriceArray[] = $product->id;
                     $product->price = $price;
+                    $product->is_yml = $is_yml;
                     $product->save();
 
                 } elseif (!in_array($product->id, $exsistPriceArray)) {
                     $product->price = $price;
+                    $product->is_yml = $is_yml;
                     $product->save();
                 }
             }

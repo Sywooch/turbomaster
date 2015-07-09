@@ -180,7 +180,9 @@ class ExcelManager extends \yii\db\ActiveRecord
             0 => 'partnumber',
             // 1 => 'manufacturer',
             2 => 'type',
-            3 => 'price'];
+            3 => 'price',
+            4 => 'is_yml',
+        ];
 
         $priceManager->cleanPricesInProductTable();
         $count = $this->getNumberRows();
@@ -189,7 +191,7 @@ class ExcelManager extends \yii\db\ActiveRecord
             foreach($mapCells as $k => $cell) {
                 ${$cell} = $this->getCellValue($k, $row);
             } 
-            $priceManager->populatePrice($partnumber, $type, $price);
+            $priceManager->populatePrice($partnumber, $type, $price, $is_yml);
         } 
     }
 
@@ -200,7 +202,8 @@ class ExcelManager extends \yii\db\ActiveRecord
             0 => 'partnumber',
             // 1 => 'manufacturer',
             2 => 'type',
-            3 => 'price'];
+            3 => 'price'
+        ];
 
         $priceManager = new Price;
 

@@ -49,7 +49,7 @@ class Yml
     }
 
 
-    private function createYandexYML() {   
+    public function createYandexYML($fileName = null) {   
         $this->setTimeZone();
 
         $this->write('<?xml version="1.0" encoding="utf-8"?>');
@@ -63,8 +63,14 @@ class Yml
         $this->write('</shop>');
         $this->write('</yml_catalog>');
 
-        $this->createFileName();
-        $file = $this->getCreatedFilePath($this->_fileName);
+        // for create static (cron) file:
+        if ($fileName) {
+            $file = $this->getCreatedFilePath($fileName .'.xml');
+        // for create dinamic file:
+        } else {
+            $this->createFileName();
+            $file = $this->getCreatedFilePath($this->_fileName);
+        }
 
         $fileHandler = fopen($file, 'w');
         fwrite($fileHandler, $this->_content);
@@ -136,7 +142,7 @@ class Yml
 
         foreach($products as $p) {
             
-            if(empty($p['price']) && empty($p['brand_alias']) && empty($p['model_alias']) && empty($p['partnumber'])) {
+            if(empty($p['price']) || empty($p['brand_alias']) || empty($p['model_alias']) || empty($p['partnumber'])) {
                 continue;
             }
 
