@@ -10,7 +10,7 @@ use common\models\Yml;
 class CronController extends Controller
 {
 
-    // wget http:/turbomaster.ru/cron/create-static-yml
+    // */10 * * * wget http://turbomaster.ru/cron/create-static-yml
     public function actionCreateStaticYml()
     {   
         $this->layout = false;
