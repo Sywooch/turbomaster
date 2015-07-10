@@ -26,9 +26,17 @@ $this->registerMetaTag([
                 <p>Серьезный бизнес немыслим без партнерства. Будучи многопрофильной компанией, «ТурбоМастер» в своей работе сотрудничает со множеством фирм, круг которых необычайно широк.</p>  
                 <p>Мы рады представить наших партнеров на этой странице.</p>
 
-
                 <h2>Производители турбин:</h2>
-                
+                <section style="margin: 20px 0 0 0;">
+                    <ul style="padding-left: 20px;">
+                        <li><a href="http://www.turbos.bwauto.com">BorgWarner</a></li>
+                        <li><a href="http://turbo.honeywell.com">Honeywell</a></li>
+                        <li><a href="http://www.mhi-global.com/products/category/turbocharger.html">MHI</a></li>
+                        <li><a href="http://www.cumminsturbotechnologies.com/ctt/index.jsp">Cummins</a></li>
+                    </ul>
+                </section>
+
+                <h2>Представители российского турборынка:</h2>
                 <section style="margin: 20px 0 0 0;">
                     <ul style="padding-left: 20px;">
                         <li><a href="#">Первая компания</a></li>
@@ -37,9 +45,7 @@ $this->registerMetaTag([
                     </ul>
                 </section>
 
-
                 <h2>Транспортные компании:</h2>
-                
                 <section style="margin: 20px 0 0 0;">
                     <ul style="padding-left: 20px;">
                         <li><a href="http://www.jde.ru">Желдорэкспедиция</a></li>
@@ -50,14 +56,12 @@ $this->registerMetaTag([
                     </ul>
                 </section>
 
-
                 <h2>Информационные ресурсы:</h2>
-                
                 <section style="margin: 20px 0 0 0;">
                     <ul style="padding-left: 20px;">
                         <li><a href="http://abs-magazine.ru">Журнал "АБС-авто"</a></li>
-                        <li><a href="#">Вторая ссылка</a></li>
-                        <li><a href="#">Третья ссылка</a></li>
+                        <li><a href="#">Второе СМИ</a></li>
+                        <li><a href="#">Третье СМИ</a></li>
                     </ul>
                 </section>
 
