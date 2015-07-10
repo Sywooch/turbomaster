@@ -41,7 +41,6 @@ $this->registerMetaTag([
                     <ul style="padding-left: 20px;">
                         <li><a href="#">Первая компания</a></li>
                         <li><a href="#">Вторая компания</a></li>
-                        <li><a href="#">Третья компания</a></li>
                     </ul>
                 </section>
 
