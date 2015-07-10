@@ -54,7 +54,9 @@ class PrepareController extends Controller
         echo "table   $table_name  filled <br>";
         exit;
     }
-    ///////////////////////////////////
+
+
+    ///////////////// dddd ///////////////
 
 
     public function actionSerializeRubric()
