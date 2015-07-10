@@ -80,4 +80,5 @@ if(isset($category_name))
 </div><!-- /.container -->
 <?= $this->render('_uptolike_btns') ?>)
 
-<?= $this->render('/layouts/_box_interest', ['link' => $interestLink, 'randomOf' => 3]); ?>
+<?php // echo  $this->render('/layouts/_box_interest', ['link' => $interestLink, 'randomOf' => 3]); ?>
+<?= $this->render('/layouts/_box_interest', ['link' => $interestLink]) ?>
