@@ -5,7 +5,7 @@ use yii\widgets\Breadcrumbs;
 $this->title = 'Партнеры - Турбомастер.ру';
 $this->registerMetaTag([
     'name' => 'description', 
-    'content' => 'Партнеры сайта']);
+    'content' => 'Партнеры ТурбоМастера']);
 $this->registerMetaTag([
     'name' => 'keywords', 
     'content' => 'партнеры, ссылки']);
