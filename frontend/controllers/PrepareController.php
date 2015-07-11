@@ -56,7 +56,7 @@ class PrepareController extends Controller
     }
 
 
-    //////////////////////////
+    ////////////// ffff ////////////
 
 
     public function actionSerializeRubric()
