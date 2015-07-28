@@ -203,6 +203,24 @@ class Article extends \yii\db\ActiveRecord
         return  $query->offset(static::$pages->offset)->limit(static::$pages->limit)->all();
     } 
 
+    public static function getSimilars($article, $limit = 4)
+    { 
+        $id  = (int)$article['id'];
+        $category_id = (int)$article['category_id'];
+        $queryRandom = (Yii::$app->db->getDriverName() == 'pgsql') 
+                ? 'RANDOM()' 
+                : 'RAND()';
+        return static::find()
+            ->select('article.id, article.title, article.alias, photo_article.src as image')
+            ->leftJoin('photo_article', 'article.id = photo_article.article_id AND photo_article.is_main = 1')
+            ->andWhere(['category_id' => $category_id, 'state' => 1])
+            ->andWhere("article.id != $id")
+            ->andWhere('article.state = ' . static::STATE_ACTIVE)
+            ->orderBy($queryRandom)
+            ->limit($limit)
+            ->asArray()
+            ->all();
+    }
 
     public static function contentViewFormat($string)
     {

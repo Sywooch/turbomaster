@@ -62,6 +62,9 @@ if(isset($category_name))
                 }
                 ?>        
             </article>
+
+             <?= $this->render('_similars', ['similars' => $similars]) ?>
+             
         </div><!-- /.col-md-9 -->
 
         <div class="col-md-3 visible-lg visible-md">

@@ -59,8 +59,10 @@ class ArticleController extends Controller
         if($article) {
             $photos  = Article::getPhotoArrayByArticleId($article['id']);
             $rubrics = Rubric::getListSubrubricHasPublishArticles();
+            $similars = Article::getSimilars($article);
             $interestLink = Link::getRandomInterestLink();
-            return $this->render('view', compact('article', 'photos', 'rubrics', 'interestLink'));
+
+            return $this->render('view', compact('article', 'photos', 'rubrics', 'similars', 'interestLink'));
         
         }  else {
             throw new NotFoundHttpException();
