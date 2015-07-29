@@ -853,13 +853,13 @@ table.diagnostika i.fa {
 }
 
 .sidebar-mini {
-    background: none repeat scroll 0 0 #fafafa;
+    background: #fafafa;
+    border-top: 6px solid #d43f3a;
     border-radius: 3px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     margin-left: 20px;
     margin-top: 0;
     padding: 10px 20px 10px 0;
-    border-top: 3px solid #ddd;
 }
 
 .sidebar-mini h3 {
