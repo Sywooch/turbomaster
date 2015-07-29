@@ -12,8 +12,10 @@ if(count($similars) > 0) {
         <h3 class="rubric">На ту же тему:</h3>
         <?php 
         foreach($similars as $item) { 
+
             $link = ['article/view', 'alias' => $item['alias']];
-            $imgSrc = CommonHelper::getImageSrc('/photo/article/250/' .$item['image'], '/images/empty_250.png');
+            $random = '/photo/article/samples/sample_' .rand(1, 6) .'.jpg';
+            $imgSrc = CommonHelper::getImageSrc('/photo/article/250/' .$item['image'], $random);
             ?>
             <li>
                 <div class="col-md-3 col-xs-6">
