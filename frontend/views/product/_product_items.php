@@ -8,12 +8,12 @@ if($analogs) {
 }
 ?>
 
-<h3 style="margin: 30px 0 10px 0; color: #888;">На складе:</h3>
+<h3 style="margin: 30px 0 10px 0; color: #b04340;">На складе:</h3>
 
 <div class="table-responsive">
     <table class="table table-striped" style="border-bottom: 2px solid #bbb;">
         <thead>
-            <tr class="danger-head">
+            <tr>
                 <th>Наименование турбины</th>
                 <th>Артикул</th>
                 <th>Производитель</th>
