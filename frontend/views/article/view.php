@@ -74,8 +74,6 @@ if(isset($category_name))
                     <?php
                     foreach($rubrics as $rubric) {
                         $class = $rubric['id'] == $article['category_id'] ? ' class="active"' : '';
-
-
                         echo '<li' .$class .'>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
                     }
                     ?>
