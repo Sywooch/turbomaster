@@ -38,7 +38,6 @@ $introArray = [
         <?= Breadcrumbs::widget([
             'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
             'links' => [['label' => 'ТурбоМагазин'],
-              // ['label' => $products[0]['category_name']]
               ]]) ?>
     </section>
     

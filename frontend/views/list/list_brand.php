@@ -24,8 +24,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => "турбина на 
           'homeLink' => false,
           'links' => [
             ['label' => 'ТурбоМагазин'],
-            ['label' => $products[0]['category_name'], 'url' => ['product/index', 'category_alias' => Yii::$app->request->get('category_alias')]],
-            // ['label' => $brand_name],
+            ['label' => $products[0]['category_name'], 'url' => ['list/index', 'category_alias' => Yii::$app->request->get('category_alias')]],
           ]]); ?>
     </section>
     <h1><?= $title ?></h1>

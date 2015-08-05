@@ -8,17 +8,17 @@ if($analogs) {
 }
 ?>
 
-<h3 style="margin: 30px 0 10px 0; color: #b04340;">На складе:</h3>
+<!-- <h3 style="margin: 30px 0 10px 0; color: #b04340;">На складе:</h3> -->
 
-<div class="table-responsive">
-    <table class="table table-striped" style="border-bottom: 2px solid #bbb;">
+<div class="table-responsive" style="margin-top: 20px;">
+    <table class="table table-striped" style="border-bottom: 2px solid #bbb; margin-top: 20px;">
         <thead>
-            <tr>
+            <tr class="grey">
                 <th>Наименование турбины</th>
                 <th>Артикул</th>
                 <th>Производитель</th>
                 <th>Состоян.</th>
-                <th style="width: 84px; padding-right: 2px;">Цена</th>
+                <th style="">Цена</th>
                 <th>Заказать</th>
             </tr>
         </thead>
@@ -41,7 +41,7 @@ if($analogs) {
                 <td><?= $state ?></td>
                 <td nowrap class="price_cell"><?= $price ?></td>
                 <td>
-                <?= Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link fa fa-shopping-cart', 'style' => 'font-size: 30px; line-height: 24px; padding-left: 15px;']) ?>
+                <?= Html::a('', ['cart/create'], ['data-product-id' => $item['id'], 'class' => 'cart-add-product-link btn btn-lg btn-danger fa fa-shopping-cart', 'style' => 'font-size: 26px; padding: 4px 12px;']) ?>
                 </td>
             </tr>
         <?php } ?>   

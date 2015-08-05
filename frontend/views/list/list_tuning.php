@@ -17,7 +17,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'турбо, тюни
                 'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
                 'links' => [
                 ['label' => 'ТурбоМагазин'],
-                // ['label' => 'Турбины для тюнинга']
             ]]) ?>
     </section>
     <h1>Турбо тюнинг</h1>

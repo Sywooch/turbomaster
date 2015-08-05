@@ -125,6 +125,7 @@ a.underlinea:hover,
 .pagination > li.disabled {
     display: none;
 }
+
 /* COMMON STYLE */
 
 body {
@@ -615,6 +616,10 @@ ul.models-list ul li a {
 
 #print-label div {
     font-size: 28px;
+}
+
+tr.grey th {
+    background: #eee;
 }
 
 tr.gross > td {

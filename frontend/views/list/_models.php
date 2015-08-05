@@ -37,7 +37,7 @@ foreach($models as $k => $model) {
     echo '
             <li>' .
               HTML::a($model['name'], 
-                ['product/index', 
+                ['list/index', 
                   'category_alias' => $category_alias,
                   'brand_alias' => $brand_alias, 
                   'model_alias' => $model['alias']],
