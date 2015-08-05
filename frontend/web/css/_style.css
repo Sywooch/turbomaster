@@ -765,6 +765,8 @@ ul.ask-phone li {
     color: #444;
 }
 
+.article ul { clear: both; }
+
 @media (max-width: 768px) {
     .article figure.left,
     .article figure.right {
@@ -936,12 +938,16 @@ ul.articles-list .text span {
 }
 
 /* RUBRIC LIST */
+.rubric-list {
+    padding-left: 20px;
+}
+
 .rubric-list li {
     margin: 0 0 20px;
 }
 
 .rubric-list li a {
-   font: 15px/18px Arial sans-serif;
+   font-size: 17px;
    border-bottom: 1px dotted #b04340;
 }
 
