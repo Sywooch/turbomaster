@@ -130,7 +130,9 @@ class Article extends \yii\db\ActiveRecord
     public static function queryArticleFull()
     {   
         $query = static::find()
-            ->select('article.*, rubric.name as category_name, mainrubric.name as maincategory_name, rubric.alias as category_alias, mainrubric.alias as maincategory_alias, photo_article.src as mainphoto_src')
+            ->select('article.*, 
+                rubric.id as category_id, rubric.name as category_name, mainrubric.name as maincategory_name, rubric.alias as category_alias, mainrubric.alias as maincategory_alias, 
+                photo_article.src as mainphoto_src')
             ->leftJoin('rubric', 'article.category_id = rubric.id')
             ->leftJoin('rubric mainrubric', 'rubric.parent_id = mainrubric.id')
             ->leftJoin('photo_article', 'article.id = photo_article.article_id AND photo_article.is_main = 1');

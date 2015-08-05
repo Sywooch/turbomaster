@@ -849,22 +849,15 @@ table.diagnostika i.fa {
 }
 /*ARTICLE SIDEBAR*/
 
-.sidebar-mini {
-    margin-top: 0px;
-    padding: 10px 20px 20px 0px;
-    background: #fafafa;
-    border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-}
 
 .sidebar-mini {
+    margin-top: 30px;
+    margin-left: 20px;
+    padding: 10px 20px 10px 0;
     background: #fafafa;
     border-top: 6px solid #d43f3a;
     border-radius: 3px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.18);
-    margin-left: 20px;
-    margin-top: 0;
-    padding: 10px 20px 10px 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.28);
 }
 
 .sidebar-mini h3 {
@@ -878,8 +871,12 @@ table.diagnostika i.fa {
 
 .sidebar-mini li {
     color: #555;
-    margin-bottom: 14px;
+    /*margin-bottom: 14px;*/
     line-height: 1.2em;
+    padding: 6px 4px; 
+}
+.sidebar-mini li.active  {
+    background: #f2dede;
 }
 
 .sidebar-mini li a {
