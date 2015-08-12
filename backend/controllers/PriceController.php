@@ -99,7 +99,7 @@ class PriceController extends AdminController
             $priceManager->cleanPricesInProductTable();
             
             foreach($items as $item) {
-                $priceManager->populatePrice($item['partnumber'], $item['type'], $item['price']);
+                $priceManager->populatePrice($item['partnumber'], $item['type'], $item['price'], null);
             }
 
             $conn = \Yii::$app->db;    
