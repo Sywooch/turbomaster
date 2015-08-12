@@ -18,7 +18,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'каталог ту�
                 'homeLink' => ['label' => 'Главная', 'url' => Yii::$app->homeUrl],
                 'links' => [
                 ['label' => 'ТурбоМагазин'],
-                // ['label' => 'Восстановленные турбины']
             ]]) ?>
     </section>
     <h1>Восстановленные турбины</h1>
@@ -53,7 +52,7 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => 'каталог ту�
         </div>     
     </section>
 
-    <?php  echo $this->render('_table_refurbish_db', ['products' => $products]); ?>
+    <?php  echo $this->render('_table_refurbish_db', ['products' => $products, 'pages' => $pages]); ?>
 
 </div>
 

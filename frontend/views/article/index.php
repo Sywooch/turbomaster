@@ -3,8 +3,10 @@ use yii\helpers\Html;
 use yii\helpers\CommonHelper;
 use yii\widgets\Breadcrumbs;
 
-$category_name = $items[0]['category_name'];
-$maincategory_name = $items[0]['maincategory_name'];
+$item = $items[0];
+$category_id = $item['category_id'];
+$category_name = $item['category_name'];
+$maincategory_name = $item['maincategory_name'];
 $this->title = $maincategory_name .' - Турбомастер.ру';
 
 $links = [];
@@ -62,7 +64,8 @@ if($category_name) {
                 <ul>
                     <?php
                     foreach($rubrics as $rubric) {
-                    echo '<li>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
+                        $class = $rubric['id'] == $category_id ? ' class="active"' : '';
+                        echo '<li' .$class .'>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
                     }
                     ?>
                 </ul>

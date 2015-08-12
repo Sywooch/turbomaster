@@ -46,7 +46,6 @@ $this->registerMetaTag(['name' => 'keywords', 'content' => $metaKeywords]);
                 'links' => [
                 ['label' => 'ТурбоМагазин'],
                 ['label' => 'Производители турбин'],
-                // ['label' => $manufacturer_name],
             ]]) ?>
     </section>
     <?php

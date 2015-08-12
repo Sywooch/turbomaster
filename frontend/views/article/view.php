@@ -62,6 +62,9 @@ if(isset($category_name))
                 }
                 ?>        
             </article>
+
+             <?= $this->render('_similars', ['similars' => $similars]) ?>
+             
         </div><!-- /.col-md-9 -->
 
         <div class="col-md-3 visible-lg visible-md">
@@ -70,7 +73,8 @@ if(isset($category_name))
                 <ul>
                     <?php
                     foreach($rubrics as $rubric) {
-                    echo '<li>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
+                        $class = $rubric['id'] == $article['category_id'] ? ' class="active"' : '';
+                        echo '<li' .$class .'>' .Html::a($rubric['name'], ['article/index', 'alias' => $rubric['alias']]) . '</li>';
                     }
                     ?>
                 </ul>

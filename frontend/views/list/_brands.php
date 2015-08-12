@@ -30,7 +30,7 @@ foreach($brands as $k => $brand) {
     } 
 
     echo '
-            <li>' .HTML::a($brand['name'], ['product/index', 'category_alias' => Yii::$app->request->get('category_alias'), 'brand_alias' => $brand['alias']]) ."</li>";
+            <li>' .HTML::a($brand['name'], ['list/index', 'category_alias' => Yii::$app->request->get('category_alias'), 'brand_alias' => $brand['alias']]) ."</li>";
       
     $previosFirstLetter = $firstLetter;
 } 

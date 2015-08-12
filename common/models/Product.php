@@ -328,16 +328,16 @@ class Product extends \yii\db\ActiveRecord
         $links = [];
         $links[] = ['label' => 'ТурбоМагазин'];
         if(isset($product['category_id']) && $product['category_id'] == Category::TUNING)  {
-            $links[] =  ['label' => 'Турбины для тюнинга', 'url' => ['product/tuning']];
+            $links[] =  ['label' => 'Турбины для тюнинга', 'url' => ['list/tuning']];
         } else {
             if($product['category_name']) {
-            $links[] =  ['label' => $product['category_name'], 'url' => ['product/index', 'category_alias'  => $product['category_alias']]];
+            $links[] =  ['label' => $product['category_name'], 'url' => ['list/index', 'category_alias'  => $product['category_alias']]];
             }
             if($product['brand_name']) {
-            $links[] =  ['label' => $product['brand_name'], 'url' => ['product/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias']]];
+            $links[] =  ['label' => $product['brand_name'], 'url' => ['list/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias']]];
             }
             if($product['model_name']) {
-            $links[] =  ['label' => $product['model_name'], 'url' => ['product/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias'], 'model_alias' => $product['model_alias']]];
+            $links[] =  ['label' => $product['model_name'], 'url' => ['list/index', 'category_alias'  => $product['category_alias'], 'brand_alias' => $product['brand_alias'], 'model_alias' => $product['model_alias']]];
             }
         }
         $links[] = ['label' => $product['name']];
