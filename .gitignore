@@ -2,8 +2,11 @@
 
 /yii
 frontend/web/photo/*
+frontend/web/robots.txt
 frontend/web/yml/*
+
 backend/web/excel/*
+backend/web/robots.txt
 
 /node_modules
 
