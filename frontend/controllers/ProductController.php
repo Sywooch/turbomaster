@@ -12,6 +12,8 @@ class ProductController extends \yii\web\Controller
 
     public function actionView()
     {
+
+
         Product::$isActiveOnly = true;
         
         if($productId = Yii::$app->request->get('id')) {
@@ -68,7 +70,7 @@ class ProductController extends \yii\web\Controller
         $regArray = explode('/', $req);
         if(count($regArray) > 3 && $regArray[0] == 'goods') {
 
-            $this->redirect(['product/index', 
+            $this->redirect(['/list/index', 
                 'category_alias' => 'passenger', 
                 'brand_alias'    => $regArray[1], 
                 'model_alias'    => $regArray[2], 
