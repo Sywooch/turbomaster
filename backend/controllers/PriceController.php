@@ -89,10 +89,7 @@ class PriceController extends AdminController
     {   
         ini_set('max_execution_time', 900);
 
-        $items = Price::find()
-            ->where('price_var IS NULL')
-            ->asArray()
-            ->all();
+        $items = Price::find()->all();
         
         if(count($items) > 0) {
             $priceManager = new Price;

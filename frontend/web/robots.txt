@@ -3,6 +3,7 @@ Disallow: /vendor
 Disallow: /frontend
 Disallow: /common
 Disallow: /backend
+Disallow: /product
 Disallow: /ask_a_question*
 Disallow: /advanced_search_result*
 Host: turbomaster.ru

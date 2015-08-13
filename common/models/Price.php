@@ -96,6 +96,11 @@ class Price extends \yii\db\ActiveRecord
                 $existPrice->price_var = $existPrice->price;
             }
             $existPrice->price_var .= '|' .$price;
+
+            if ($price < $existPrice->price) {
+                $existPrice->price = $price;
+            }
+            
             $existPrice->save();
         
         } else {
