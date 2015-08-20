@@ -3,7 +3,11 @@
 use yii\helpers\Html;
 
 $product = \common\models\Product::findById($question->product_id);
-$url = \Yii::$app->urlManagerFrontend->createAbsoluteUrl(['product/view', 'id'=> $product['id']]);
+$url = \Yii::$app->urlManagerFrontend->createAbsoluteUrl(['product/view', 
+                  'brand_alias' => $product['brand_alias'], 
+                  'model_alias' => $product['model_alias'], 
+                  'partnumber'  => $product['partnumber']]);
+
 
 $message = ($question->type == \common\models\Question::TYPE_COMMON_QUESTION) ? 'был задан вопрос о товаре' : 'была заполнена форма запроса цены у товара';
 ?>
