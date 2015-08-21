@@ -30,13 +30,13 @@ p {margin:0; padding:0; margin-bottom:0;}
     *[class="emailDisplayFullWidth"] {width: 100%!important; min-width: 100%!important; max-width: 100%!important; border: none!important; height: auto!important;}
     *[class="emailBlock"] {width: 100%!important; padding: 0px!important;}
     *[class="emailBlockButton"] {width: 100%!important; padding: 0px!important;}
-    *[class="emailArticleHeading"] {padding: 0px!important; font-size: 26px!important; line-height: 32px!important;}
-    *[class="emailImageHeading"] {padding: 20px 0 0 0!important; font-size: 26px!important; line-height: 32px!important;}
+    *[class="emailArticleHeading"] {padding: 0px!important; font-size: 22px!important; line-height: 32px!important;}
+    *[class="emailImageHeading"] {padding: 20px 0 0 0!important; font-size: 22px!important; line-height: 32px!important;}
     *[class="emailButtonHeading"] {text-align: center; padding-bottom: 15px!important;}
     *[class="emailCopy"] {font-size: 14px!important; line-height: 142%!important;}
     *[class="emailSection"] {padding: 25px 20px 30px 20px!important;}
     *[class="emailTopBar"] {padding: 20px 20px!important;}
-    *[class="emailHeadline"] {padding: 0 0 10px 0!important; font-size: 36px!important; line-height: 40px!important;}
+    *[class="emailHeadline"] {padding: 0 0 10px 0!important; font-size: 32px!important; line-height: 40px!important;}
     *[class="emailFooter"] {padding: 25px 20px 0 20px!important;}
     *[class="emailIcon"] {text-align: left!important;}
     *[class="emailSponsored"] {text-align: left!important; padding: 15px 0 15px 0!important;}
